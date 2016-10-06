@@ -47,8 +47,8 @@ namespace ComponentFactory.Krypton.Docking
         public KryptonDockingFloatingWindow(string name, Form owner, KryptonDockingFloatspace floatspace)
             : base(name)
         {
-            if (owner == null)      throw new ArgumentNullException("owner");
-            if (floatspace == null) throw new ArgumentNullException("floatspace");
+            if (owner == null)      throw new ArgumentNullException(nameof(owner));
+            if (floatspace == null) throw new ArgumentNullException(nameof(floatspace));
 
             _floatspace = floatspace;
             _floatspace.Disposed += new EventHandler(OnDockingFloatspaceDisposed);

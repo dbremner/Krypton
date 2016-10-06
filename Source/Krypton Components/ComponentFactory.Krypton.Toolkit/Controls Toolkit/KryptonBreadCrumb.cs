@@ -443,7 +443,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         temp = temp.Parent;
 
                     if ((value != null) && (temp == null))
-                        throw new ArgumentOutOfRangeException("value", "Item must be inside the RootItem hierarchy.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Item must be inside the RootItem hierarchy.");
 
                     _selectedItem = value;
                     OnSelectedItemChanged(EventArgs.Empty);

@@ -301,7 +301,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate reference parameter
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // If the user pressed the escape key
             if (e.KeyCode == Keys.Escape)

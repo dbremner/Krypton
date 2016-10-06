@@ -69,7 +69,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 Debug.Assert(checkButton != null);
 
                 if (checkButton == null)
-                    throw new ArgumentNullException("checkButton");
+                    throw new ArgumentNullException(nameof(checkButton));
 
                 if (Contains(checkButton))
                     throw new ArgumentException("Reference already exists in the collection");
@@ -109,10 +109,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 Debug.Assert(checkButton != null);
 
                 if (checkButton == null)
-                    throw new ArgumentNullException("checkButton");
+                    throw new ArgumentNullException(nameof(checkButton));
 
                 if ((index < 0) || (index > Count))
-                    throw new ArgumentOutOfRangeException("index");
+                    throw new ArgumentOutOfRangeException(nameof(index));
 
                 if (Contains(checkButton))
                     throw new ArgumentException("Reference already in collection");
@@ -129,7 +129,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 Debug.Assert(checkButton != null);
 
                 if (checkButton == null)
-                    throw new ArgumentNullException("checkButton");
+                    throw new ArgumentNullException(nameof(checkButton));
 
                 if (!Contains(checkButton))
                     throw new ArgumentException("No matching reference to remove");
@@ -147,7 +147,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 get
                 {
                     if ((index < 0) || (index > Count))
-                        throw new ArgumentOutOfRangeException("index");
+                        throw new ArgumentOutOfRangeException(nameof(index));
 
                     return (KryptonCheckButton)base.List[index];
                 }
@@ -241,7 +241,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(container != null);
 
             // Validate reference parameter
-            if (container == null) throw new ArgumentNullException("container");
+            if (container == null) throw new ArgumentNullException(nameof(container));
 
             container.Add(this);
         }
@@ -312,7 +312,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     // Check the new target is associated with us already
                     if ((value != null) && !CheckButtons.Contains(value))
-                        throw new ArgumentOutOfRangeException("value", "Provided value is not a KryptonCheckButton associated with this set.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Provided value is not a KryptonCheckButton associated with this set.");
 
                     // Prevent processing events caused by ourself
                     _ignoreEvents = true;
@@ -356,7 +356,7 @@ namespace ComponentFactory.Krypton.Toolkit
             {
                 // Check for a value outside of limits
                 if ((value < -1) || (value >= CheckButtons.Count))
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new ArgumentOutOfRangeException(nameof(value));
 
                 // Special case the value of -1 as requesting nothing checked
                 if (value == -1)

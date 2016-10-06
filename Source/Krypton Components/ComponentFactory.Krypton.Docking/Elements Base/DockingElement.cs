@@ -94,7 +94,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot resolve a null reference
             if (path == null)
-                throw new ArgumentNullException("path");
+                throw new ArgumentNullException(nameof(path));
 
             // Path names cannot be zero length
             if (path.Length == 0)

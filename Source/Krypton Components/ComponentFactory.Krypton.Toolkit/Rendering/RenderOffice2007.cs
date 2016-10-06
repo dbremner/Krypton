@@ -92,7 +92,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(colorPalette != null);
 
             // Validate incoming parameter
-            if (colorPalette == null) throw new ArgumentNullException("colorPalette");
+            if (colorPalette == null) throw new ArgumentNullException(nameof(colorPalette));
 
             // Use the professional renderer but pull colors from the palette
             KryptonOffice2007Renderer renderer = new KryptonOffice2007Renderer(colorPalette.ColorTable);

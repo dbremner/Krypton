@@ -283,8 +283,8 @@ namespace ComponentFactory.Krypton.Navigator
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
-            if (e == null) throw new ArgumentNullException("e");
+            if (c == null) throw new ArgumentNullException(nameof(c));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // If the user pressed the escape key
             if (e.KeyCode == Keys.Escape)
@@ -327,7 +327,7 @@ namespace ComponentFactory.Krypton.Navigator
             Debug.Assert(c != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
+            if (c == null) throw new ArgumentNullException(nameof(c));
 
             // If we are capturing mouse input
             if (_captured)

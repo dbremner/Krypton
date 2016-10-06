@@ -443,11 +443,11 @@ namespace ComponentFactory.Krypton.Navigator
 
 					// Range check the index
 					if ((value < 0) || (value >= Pages.Count))
-						throw new ArgumentOutOfRangeException("value", "Index out of range");
+						throw new ArgumentOutOfRangeException(nameof(value), "Index out of range");
 
                     // Can only select a page that is visible
                     if (!Pages[value].LastVisibleSet)
-                        throw new ArgumentNullException("value", "Cannot select a page that is not visible");
+                        throw new ArgumentNullException(nameof(value), "Cannot select a page that is not visible");
 
                     // Request the change by changing the SelectedPage
                     SelectedPage = _pages[value];
@@ -476,14 +476,14 @@ namespace ComponentFactory.Krypton.Navigator
                     
                     // You cannot remove the selection entirely by using null
 					if (value == null)
-						throw new ArgumentOutOfRangeException("value", "Value cannot be null");
+						throw new ArgumentOutOfRangeException(nameof(value), "Value cannot be null");
 
                     // Check the page is in the pages collection
                     if (Pages.Contains(value))
                     {
                         // Can only select a page that is visible
                         if (!value.LastVisibleSet)
-                            throw new ArgumentNullException("value", "Cannot select a page that is not visible");
+                            throw new ArgumentNullException(nameof(value), "Cannot select a page that is not visible");
 
                         // Change of selected page means we get rid of any showing popup page
                         DismissPopups();

@@ -857,7 +857,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // Change in setting means we need to evaluate transparent painting
             _evalTransparent = true;
@@ -976,7 +976,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
         }
         #endregion
 

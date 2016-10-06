@@ -1945,7 +1945,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             // Check index actually exists
             if ((index < 0) || (index >= Items.Count))
-                throw new ArgumentOutOfRangeException("index", "index out of range");
+                throw new ArgumentOutOfRangeException(nameof(index), "index out of range");
 
             return CheckedItems.GetCheckedState(index);
         }
@@ -1969,7 +1969,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             // Check index actually exists
             if ((index < 0) || (index >= Items.Count))
-                throw new ArgumentOutOfRangeException("index", "index out of range");
+                throw new ArgumentOutOfRangeException(nameof(index), "index out of range");
 
             // Is the new state different from the current checked state?
             CheckState checkedState = CheckedItems.GetCheckedState(index);

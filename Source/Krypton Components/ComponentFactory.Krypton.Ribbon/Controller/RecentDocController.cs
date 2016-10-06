@@ -230,8 +230,8 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null)  throw new ArgumentNullException("c");
-            if (e == null)  throw new ArgumentNullException("e");
+            if (c == null)  throw new ArgumentNullException(nameof(c));
+            if (e == null)  throw new ArgumentNullException(nameof(e));
 
             switch (e.KeyCode)
             {
@@ -274,8 +274,8 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
-            if (e == null) throw new ArgumentNullException("e");
+            if (c == null) throw new ArgumentNullException(nameof(c));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             _viewManager.KeyMnemonic(e.KeyChar);
         }
@@ -292,8 +292,8 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
-            if (e == null) throw new ArgumentNullException("e");
+            if (c == null) throw new ArgumentNullException(nameof(c));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             return false;
         }

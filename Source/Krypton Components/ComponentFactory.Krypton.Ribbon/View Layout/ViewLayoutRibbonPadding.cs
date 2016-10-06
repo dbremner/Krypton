@@ -71,7 +71,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override void Layout(ViewLayoutContext context)
 		{
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
             
             // We take on all the available display area
 			ClientRectangle = context.DisplayRectangle;

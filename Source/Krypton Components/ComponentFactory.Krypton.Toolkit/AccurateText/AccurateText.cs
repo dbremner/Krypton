@@ -61,9 +61,9 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(text != null);
             Debug.Assert(font != null);
 
-            if (g == null) throw new ArgumentNullException("g");
-            if (text == null) throw new ArgumentNullException("text");
-            if (font == null) throw new ArgumentNullException("font");
+            if (g == null) throw new ArgumentNullException(nameof(g));
+            if (text == null) throw new ArgumentNullException(nameof(text));
+            if (font == null) throw new ArgumentNullException(nameof(font));
 
             // An empty string cannot be drawn, so uses the empty memento
             if (text.Length == 0)
@@ -188,11 +188,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // Cannot draw with a null graphics instance
             if (g == null)
-                throw new ArgumentNullException("g");
+                throw new ArgumentNullException(nameof(g));
 
             // Cannot draw with a null memento instance
             if (memento == null)
-                throw new ArgumentNullException("memento");
+                throw new ArgumentNullException(nameof(memento));
 
             bool ret = true;
 

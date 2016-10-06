@@ -106,7 +106,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(container != null);
             
             // Validate reference parameter
-            if (container == null) throw new ArgumentNullException("container");
+            if (container == null) throw new ArgumentNullException(nameof(container));
 
             container.Add(this);
         }
@@ -164,7 +164,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                 _globalPaletteMode = tempMode;
                                 _globalPalette = tempPalette;
 
-                                throw new ArgumentOutOfRangeException("value", "Cannot use palette that would create a circular reference");
+                                throw new ArgumentOutOfRangeException(nameof(value), "Cannot use palette that would create a circular reference");
                             }
                             else
                             {
@@ -227,7 +227,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         _globalPaletteMode = tempMode;
                         _globalPalette = tempPalette;
 
-                        throw new ArgumentOutOfRangeException("value", "Cannot use palette that would create a circular reference");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Cannot use palette that would create a circular reference");
                     }
                     else
                     {

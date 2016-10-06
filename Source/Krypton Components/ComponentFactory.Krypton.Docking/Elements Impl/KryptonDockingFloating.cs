@@ -43,7 +43,7 @@ namespace ComponentFactory.Krypton.Docking
             : base(name)
         {
             if (ownerForm == null)
-                throw new ArgumentNullException("owner");
+                throw new ArgumentNullException(nameof(ownerForm));
 
             _ownerForm = ownerForm;
         }

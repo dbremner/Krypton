@@ -194,8 +194,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null)  throw new ArgumentNullException("c");
-            if (e == null)  throw new ArgumentNullException("e");
+            if (c == null)  throw new ArgumentNullException(nameof(c));
+            if (e == null)  throw new ArgumentNullException(nameof(e));
 
             switch(e.KeyCode)
             {
@@ -261,8 +261,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
-            if (e == null) throw new ArgumentNullException("e");
+            if (c == null) throw new ArgumentNullException(nameof(c));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             return _captured;
         }
@@ -286,7 +286,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(c != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
+            if (c == null) throw new ArgumentNullException(nameof(c));
 
             // If we are capturing mouse input
             if (_captured)

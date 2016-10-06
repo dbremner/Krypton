@@ -232,7 +232,7 @@ namespace ComponentFactory.Krypton.Navigator
                 throw new InvalidOperationException("Cannot DragStart when already performing dragging operation.");
 
             if (dragEndData == null)
-                throw new ArgumentNullException("Cannot provide an empty DragEndData.");
+                throw new ArgumentNullException(nameof(dragEndData), "Cannot provide an empty DragEndData.");
 
             // Generate drag targets from the set of target provides
             ClearTargets();

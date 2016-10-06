@@ -435,7 +435,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // If required, layout the control
             if (e.NeedLayout && !_layoutDirty)

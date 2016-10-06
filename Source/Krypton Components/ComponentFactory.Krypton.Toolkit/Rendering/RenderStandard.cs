@@ -315,7 +315,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(colorPalette != null);
 
             // Validate incoming parameter
-            if (colorPalette == null) throw new ArgumentNullException("colorPalette");
+            if (colorPalette == null) throw new ArgumentNullException(nameof(colorPalette));
 
             // Use the professional renderer but pull colors from the palette
             KryptonStandardRenderer renderer = new KryptonStandardRenderer(colorPalette.ColorTable);
@@ -342,7 +342,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter reference
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             PaletteDrawBorders borders = palette.GetBorderDrawBorders(state);
 
@@ -407,7 +407,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter reference
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             PaletteDrawBorders borders = palette.GetBorderDrawBorders(state);
 
@@ -496,8 +496,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -530,8 +530,8 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -566,8 +566,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -601,8 +601,8 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -723,8 +723,8 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -911,8 +911,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(values != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -1002,8 +1002,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(values != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -1148,8 +1148,8 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(memento is StandardContentMemento);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -1527,7 +1527,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter reference
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             // Get the width of the border
             int borderWidth = palette.GetBorderWidth(state);
@@ -1691,8 +1691,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -1724,8 +1724,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -1756,8 +1756,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -2046,9 +2046,9 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteBorder != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteBack == null) throw new ArgumentNullException("paletteBack");
-            if (paletteBorder == null) throw new ArgumentNullException("paletteBorder");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteBack == null) throw new ArgumentNullException(nameof(paletteBack));
+            if (paletteBorder == null) throw new ArgumentNullException(nameof(paletteBorder));
 
             Debug.Assert(context.Control != null);
             Debug.Assert(!context.Control.IsDisposed);
@@ -2108,8 +2108,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             // Grab an image appropriate to the state
             Image drawImage = palette.GetCheckBoxImage(enabled, checkState, tracking, pressed);
@@ -2149,8 +2149,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             // Grab an image appropriate to the state
             Image drawImage = palette.GetCheckBoxImage(enabled, checkState, tracking, pressed);
@@ -2230,8 +2230,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             // Grab an image appropriate to the state
             Image drawImage = palette.GetRadioButtonImage(enabled, checkState, tracking, pressed);
@@ -2307,8 +2307,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(palette != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (palette == null) throw new ArgumentNullException("palette");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (palette == null) throw new ArgumentNullException(nameof(palette));
 
             // Grab an image appropriate to the state
             Image drawImage = palette.GetDropDownButtonImage(state);
@@ -2334,8 +2334,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteContent != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteContent == null) throw new ArgumentNullException("paletteContent");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteContent == null) throw new ArgumentNullException(nameof(paletteContent));
 
             Color c1 = paletteContent.GetContentShortTextColor1(state);
             Color c2 = paletteContent.GetContentShortTextColor2(state);
@@ -2371,8 +2371,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteContent != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteContent == null) throw new ArgumentNullException("paletteContent");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteContent == null) throw new ArgumentNullException(nameof(paletteContent));
 
             Color c1 = paletteContent.GetContentShortTextColor1(state);
             Color c2 = paletteContent.GetContentShortTextColor2(state);
@@ -2408,8 +2408,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteContent != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteContent == null) throw new ArgumentNullException("paletteContent");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteContent == null) throw new ArgumentNullException(nameof(paletteContent));
 
             Color c1 = paletteContent.GetContentShortTextColor1(state);
             Color c2 = paletteContent.GetContentShortTextColor2(state);
@@ -2447,8 +2447,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteGeneral != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteGeneral == null) throw new ArgumentNullException("paletteGeneral");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteGeneral == null) throw new ArgumentNullException(nameof(paletteGeneral));
 
             switch (shape)
             {
@@ -2509,8 +2509,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteGeneral != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteGeneral == null) throw new ArgumentNullException("paletteGeneral");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteGeneral == null) throw new ArgumentNullException(nameof(paletteGeneral));
 
             Color darkColor = (state == PaletteState.Disabled ? paletteGeneral.GetRibbonDisabledDark(state) :
                                                                 paletteGeneral.GetRibbonDropArrowDark(state));
@@ -2562,8 +2562,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteGeneral != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteGeneral == null) throw new ArgumentNullException("paletteGeneral");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteGeneral == null) throw new ArgumentNullException(nameof(paletteGeneral));
 
             Color c1 = paletteGeneral.GetRibbonQATButtonDark(state);
             Color c2 = paletteGeneral.GetRibbonQATButtonLight(state);
@@ -2615,8 +2615,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteGeneral != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteGeneral == null) throw new ArgumentNullException("paletteGeneral");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteGeneral == null) throw new ArgumentNullException(nameof(paletteGeneral));
 
             Color c1 = paletteGeneral.GetRibbonQATButtonDark(state);
             Color c2 = paletteGeneral.GetRibbonQATButtonLight(state);
@@ -2665,8 +2665,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteGeneral != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteGeneral == null) throw new ArgumentNullException("paletteGeneral");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteGeneral == null) throw new ArgumentNullException(nameof(paletteGeneral));
 
             int x = displayRect.X + (displayRect.Width - 2) / 2;
             Color darkColor = paletteGeneral.GetRibbonGroupSeparatorDark(state);
@@ -4799,7 +4799,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 default:
                     // Should never happen!
                     Debug.Assert(false);
-                    throw new ArgumentOutOfRangeException("imageStyle");
+                    throw new ArgumentOutOfRangeException(nameof(imageStyle));
             }
 
             return brush;
@@ -5422,7 +5422,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 default:
                     // Should never happen!
                     Debug.Assert(false);
-                    throw new ArgumentOutOfRangeException("align");
+                    throw new ArgumentOutOfRangeException(nameof(align));
             }
         }
 

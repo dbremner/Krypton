@@ -340,7 +340,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.GridDataCellCustom1:
                     return PaletteGraphicsHint.None;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
 		}
 
@@ -495,7 +495,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             else
                                 return SystemColors.Window;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.TabDock:
                 case PaletteBackStyle.TabDockAutoHidden:
@@ -512,7 +512,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return SystemColors.Window;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.ControlToolTip:
                     return _toolTipBack1;
@@ -554,7 +554,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-							throw new ArgumentOutOfRangeException("state");
+							throw new ArgumentOutOfRangeException(nameof(state));
 					}
                 case PaletteBackStyle.ButtonCalendarDay:
                     switch (state)
@@ -573,7 +573,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.ButtonInputControl:
                     switch (state)
@@ -591,7 +591,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Pressed:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.ContextMenuItemHighlight:
                     switch (state)
@@ -603,10 +603,10 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Tracking:
                             return ColorTable.MenuItemSelectedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -756,7 +756,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return SystemColors.Window;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.TabDock:
                     switch (state)
@@ -773,7 +773,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return SystemColors.Window;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.TabDockAutoHidden:
                     switch (state)
@@ -789,7 +789,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return MergeColors(SystemColors.Window, 0.8f, SystemColors.Highlight, 0.2f);
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.ControlToolTip:
                     return _toolTipBack2;
@@ -831,7 +831,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedGradientEnd;
 						default:
-							throw new ArgumentOutOfRangeException("state");
+							throw new ArgumentOutOfRangeException(nameof(state));
 					}
                 case PaletteBackStyle.ButtonCalendarDay:
                     switch (state)
@@ -850,7 +850,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.ButtonInputControl:
                     switch (state)
@@ -868,7 +868,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Pressed:
                             return ColorTable.ButtonPressedGradientEnd;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBackStyle.ContextMenuItemHighlight:
                     switch (state)
@@ -880,10 +880,10 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Tracking:
                             return ColorTable.MenuItemSelectedGradientEnd;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -984,7 +984,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.TabDockAutoHidden:
                     return PaletteColorStyle.OneNote;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -1081,7 +1081,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.ContextMenuItemImageColumn:
                     return PaletteRectangleAlign.Local;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -1178,7 +1178,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.ContextMenuItemImageColumn:
                     return 0f;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -1274,7 +1274,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.GridDataCellCustom1:
                     return null;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -1370,7 +1370,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.GridDataCellCustom1:
                     return PaletteImageStyle.Tile;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -1466,7 +1466,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBackStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
         #endregion
@@ -1581,7 +1581,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             return InheritBool.True;
                     }
                 default:	
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -1672,7 +1672,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.ContextMenuItemSplit:
                     return PaletteDrawBorders.None;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
         
@@ -1762,7 +1762,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return PaletteGraphicsHint.None;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
 		}
 
@@ -1904,7 +1904,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.MenuBorder;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBorderStyle.TabDock:
                     switch (state)
@@ -1921,7 +1921,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.MenuBorder;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBorderStyle.TabDockAutoHidden:
                     switch (state)
@@ -1937,7 +1937,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return MergeColors(ColorTable.OverflowButtonGradientEnd, 0.5f, SystemColors.Highlight, 0.5f);
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBorderStyle.ButtonStandalone:
                 case PaletteBorderStyle.ButtonGallery:
@@ -1977,7 +1977,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedBorder;
 						default:
-							throw new ArgumentOutOfRangeException("state");
+							throw new ArgumentOutOfRangeException(nameof(state));
 					}
                 case PaletteBorderStyle.ButtonCalendarDay:
                     switch (state)
@@ -1998,10 +1998,10 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2139,7 +2139,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.MenuBorder;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBorderStyle.TabDock:
                     switch (state)
@@ -2156,7 +2156,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.MenuBorder;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBorderStyle.TabDockAutoHidden:
                     switch (state)
@@ -2172,7 +2172,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return MergeColors(ColorTable.OverflowButtonGradientEnd, 0.5f, SystemColors.Highlight, 0.5f);
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 case PaletteBorderStyle.ButtonStandalone:
                 case PaletteBorderStyle.ButtonGallery:
@@ -2212,7 +2212,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedBorder;
 						default:
-							throw new ArgumentOutOfRangeException("state");
+							throw new ArgumentOutOfRangeException(nameof(state));
 					}
                 case PaletteBorderStyle.ButtonCalendarDay:
                     switch (state)
@@ -2233,10 +2233,10 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.CheckedTracking:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2325,7 +2325,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return PaletteColorStyle.Solid;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2415,7 +2415,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2504,7 +2504,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return 90f;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2594,7 +2594,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return 1;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2684,7 +2684,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.ControlGroupBox:
                     return 3;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2773,7 +2773,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return null;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2862,7 +2862,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return PaletteImageStyle.Tile;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -2951,7 +2951,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
         #endregion
@@ -3081,7 +3081,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return PaletteRelativeAlign.Far;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -3169,7 +3169,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ButtonInputControl:
                     return PaletteRelativeAlign.Center;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -3261,7 +3261,7 @@ namespace ComponentFactory.Krypton.Toolkit
 					else
 						return PaletteImageEffect.Normal;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -3349,7 +3349,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return Color.Empty;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -3437,7 +3437,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return Color.Empty;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -3525,7 +3525,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return Color.Empty;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -3637,7 +3637,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ButtonCalendarDay:
                     return _calendarFont;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -3737,7 +3737,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteTextHint.ClearTypeGridFit;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -3826,7 +3826,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return PaletteTextHotkeyPrefix.None;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -3914,7 +3914,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return InheritBool.True;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -4002,7 +4002,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteTextTrim.EllipsisCharacter;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -4092,7 +4092,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return PaletteRelativeAlign.Far;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -4181,7 +4181,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.LabelSuperTip:
                     return PaletteRelativeAlign.Near;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -4269,7 +4269,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteRelativeAlign.Near;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -4397,7 +4397,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return ColorTable.MenuItemText;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -4514,7 +4514,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return ColorTable.MenuItemText;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -4602,7 +4602,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteColorStyle.Solid;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -4690,7 +4690,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -4778,7 +4778,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return 90f;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -4866,7 +4866,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return null;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -4954,7 +4954,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteImageStyle.TileFlipXY;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -5042,7 +5042,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -5148,7 +5148,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ButtonCalendarDay:
                     return _calendarFont;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5248,7 +5248,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteTextHint.ClearTypeGridFit;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5337,7 +5337,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return InheritBool.False;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5425,7 +5425,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteTextTrim.EllipsisCharacter;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5514,7 +5514,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteTextHotkeyPrefix.None;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
         
@@ -5604,7 +5604,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridHeaderColumnSheet:
                     return PaletteRelativeAlign.Center;
 				default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5694,7 +5694,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.LabelSuperTip:
                     return PaletteRelativeAlign.Center;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5784,7 +5784,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return PaletteRelativeAlign.Near;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -5895,7 +5895,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return ColorTable.MenuItemText;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6008,7 +6008,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.ContextMenuItemShortcutText:
                     return ColorTable.MenuItemText;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6096,7 +6096,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteColorStyle.Solid;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6184,7 +6184,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6272,7 +6272,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return 90f;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6360,7 +6360,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return null;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6448,7 +6448,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteImageStyle.TileFlipXY;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
 
@@ -6536,7 +6536,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.GridDataCellCustom1:
                     return PaletteRectangleAlign.Local;
                 default:
-                    throw new ArgumentOutOfRangeException("style");
+                    throw new ArgumentOutOfRangeException(nameof(style));
             }
         }
         
@@ -6650,7 +6650,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.TabDockAutoHidden:
                     return _contentPaddingButton7;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 
@@ -6739,7 +6739,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteContentStyle.LabelSuperTip:
                     return 5;
                 default:
-					throw new ArgumentOutOfRangeException("style");
+					throw new ArgumentOutOfRangeException(nameof(style));
 			}
 		}
 		#endregion
@@ -8372,7 +8372,7 @@ namespace ComponentFactory.Krypton.Toolkit
 						case PaletteState.Pressed:
                             return ColorTable.ButtonPressedBorder;
 						default:
-							throw new ArgumentOutOfRangeException("state");
+							throw new ArgumentOutOfRangeException(nameof(state));
 					}
                 default:
                     // Should never happen!
@@ -8413,7 +8413,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Pressed:
                             return ControlPaint.Light(ColorTable.ButtonPressedGradientBegin);
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
 
                 default:
@@ -8461,7 +8461,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Pressed:
                             return ColorTable.ButtonPressedGradientBegin;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 default:
                     // Should never happen!
@@ -8508,7 +8508,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         case PaletteState.Pressed:
                             return ColorTable.ButtonPressedGradientEnd;
                         default:
-                            throw new ArgumentOutOfRangeException("state");
+                            throw new ArgumentOutOfRangeException(nameof(state));
                     }
                 default:
                     // Should never happen!

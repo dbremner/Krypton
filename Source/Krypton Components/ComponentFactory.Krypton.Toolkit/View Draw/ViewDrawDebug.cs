@@ -88,7 +88,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
          
             // Ignore renderer, we just draw using solid color for debugging purposes
             using (SolidBrush brush = new SolidBrush(_color))

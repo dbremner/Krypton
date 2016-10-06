@@ -122,7 +122,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // Layout the button drawing elements using a reduced size
             Rectangle beforeRect = context.DisplayRectangle;

@@ -541,7 +541,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot resolve a null reference
             if (path == null)
-                throw new ArgumentNullException("path");
+                throw new ArgumentNullException(nameof(path));
 
             // Path names cannot be zero length
             if (path.Length == 0)
@@ -566,7 +566,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             ShowPages(new string[] { page.UniqueName });
         }
@@ -579,7 +579,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             ShowPages(new string[] { uniqueName });
         }
@@ -592,7 +592,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -618,7 +618,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {
@@ -654,7 +654,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             HidePages(new string[]{ page.UniqueName });
         }
@@ -667,7 +667,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             if (uniqueName.Length > 0)
                 HidePages(new string[] { uniqueName });
@@ -681,7 +681,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -708,7 +708,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {
@@ -745,7 +745,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot search for a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             return IsPageShowing(page.UniqueName);
         }
@@ -759,7 +759,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot search for a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -781,7 +781,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             RemovePages(new string[]{ page.UniqueName }, disposePage);
         }
@@ -795,7 +795,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (uniqueName == null)     
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0) 
@@ -813,7 +813,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -841,7 +841,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {
@@ -881,7 +881,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot find a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             return ContainsPage(page.UniqueName);
         }
@@ -895,7 +895,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot find a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -917,7 +917,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot find a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -935,7 +935,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             StorePages(new string[]{ page.UniqueName });
         }
@@ -948,7 +948,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -965,7 +965,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -992,7 +992,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {
@@ -1028,7 +1028,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -1054,11 +1054,11 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot clear a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             // Cannot clear an empty array
             if (uniqueNames.Length == 0)
-                throw new ArgumentOutOfRangeException("uniqueNames", "array cannot be empry");
+                throw new ArgumentOutOfRangeException(nameof(uniqueNames), "array cannot be empry");
 
             // Cannot clear a null or zero length unique name
             foreach (string uniqueName in uniqueNames)
@@ -1092,7 +1092,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot find a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             return FindPageLocation(page.UniqueName);
         }
@@ -1106,7 +1106,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1125,7 +1125,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot find a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             return FindPageElement(page.UniqueName);
         }
@@ -1139,7 +1139,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1159,7 +1159,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot find a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             return FindStorePageElement(location, page.UniqueName);
         }
@@ -1174,7 +1174,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot replace a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1355,11 +1355,11 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot action a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             // Cannot action an empty array
             if (uniqueNames.Length == 0)
-                throw new ArgumentOutOfRangeException("uniqueNames", "array cannot be empry");
+                throw new ArgumentOutOfRangeException(nameof(uniqueNames), "array cannot be empry");
 
             // Cannot action a null or zero length unique name
             foreach (string uniqueName in uniqueNames)
@@ -1408,7 +1408,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot process a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1469,7 +1469,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot process a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1535,7 +1535,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot process a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1600,7 +1600,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot process a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1662,7 +1662,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot process a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1729,8 +1729,8 @@ namespace ComponentFactory.Krypton.Docking
         public virtual bool ShowPageContextMenuRequest(KryptonPage page, KryptonContextMenu kcm)
         {
             // Cannot action a null reference
-            if (page == null) throw new ArgumentNullException("page");
-            if (kcm == null) throw new ArgumentNullException("kcm");
+            if (page == null) throw new ArgumentNullException(nameof(page));
+            if (kcm == null) throw new ArgumentNullException(nameof(kcm));
 
             // By default there is nothing to display
             bool retDisplay = false;
@@ -1833,7 +1833,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot switch a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -1920,11 +1920,11 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot action a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             // Cannot action an empty array
             if (uniqueNames.Length == 0)
-                throw new ArgumentOutOfRangeException("uniqueNames", "array cannot be empry");
+                throw new ArgumentOutOfRangeException(nameof(uniqueNames), "array cannot be empry");
 
             // Cannot action a null or zero length unique name
             foreach (string uniqueName in uniqueNames)
@@ -2033,11 +2033,11 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot action a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             // Cannot action an empty array
             if (uniqueNames.Length == 0)
-                throw new ArgumentOutOfRangeException("uniqueNames", "array cannot be empry");
+                throw new ArgumentOutOfRangeException(nameof(uniqueNames), "array cannot be empry");
 
             // Cannot action a null or zero length unique name
             foreach (string uniqueName in uniqueNames)
@@ -2163,11 +2163,11 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot action a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             // Cannot action an empty array
             if (uniqueNames.Length == 0)
-                throw new ArgumentOutOfRangeException("uniqueNames", "array cannot be empry");
+                throw new ArgumentOutOfRangeException(nameof(uniqueNames), "array cannot be empry");
 
             // Cannot action a null or zero length unique name
             foreach (string uniqueName in uniqueNames)
@@ -2254,7 +2254,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot switch a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -2377,7 +2377,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2458,7 +2458,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2562,7 +2562,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2607,7 +2607,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2638,7 +2638,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2676,7 +2676,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2759,7 +2759,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot add a null array
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Array must contain some values
             if (pages.Length == 0)
@@ -2820,11 +2820,11 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot drag a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             // Cannot drag an empty collection
             if (pages.Count == 0)
-                throw new ArgumentOutOfRangeException("pages", "collection cannot be empry");
+                throw new ArgumentOutOfRangeException(nameof(pages), "collection cannot be empry");
 
             // Create docking specific drag manager for moving the pages around
             DockingDragManager dragManager = new DockingDragManager(this, c);
@@ -2964,7 +2964,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot drag a null reference
             if (window == null)
-                throw new ArgumentNullException("window");
+                throw new ArgumentNullException(nameof(window));
 
             // Create a list of all the visible pages inside the floating window
             KryptonPageCollection pages = new KryptonPageCollection();

@@ -44,7 +44,7 @@ namespace ComponentFactory.Krypton.Docking
         public KryptonAutoHiddenProxyPage(KryptonPage page)
         {
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             // We are a proxy for this cached page reference
             _page = page;

@@ -117,7 +117,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // Should the group be active
             bool tracking = _viewGroup.ClientRectangle.Contains(new Point(e.X, e.Y));
@@ -142,7 +142,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // Do we need to remove tracking
             if (_viewGroup.Tracking)

@@ -143,8 +143,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteGeneral != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteGeneral == null) throw new ArgumentNullException("paletteGeneral");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteGeneral == null) throw new ArgumentNullException(nameof(paletteGeneral));
 
             Color darkColor = (state == PaletteState.Disabled ? paletteGeneral.GetRibbonDisabledDark(state) :
                                                                 paletteGeneral.GetRibbonGroupDialogDark(state));
@@ -182,8 +182,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteContent != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteContent == null) throw new ArgumentNullException("paletteContent");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteContent == null) throw new ArgumentNullException(nameof(paletteContent));
 
             Color c1 = paletteContent.GetContentShortTextColor1(state);
 
@@ -215,8 +215,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteContent != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteContent == null) throw new ArgumentNullException("paletteContent");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteContent == null) throw new ArgumentNullException(nameof(paletteContent));
 
             Color c1 = paletteContent.GetContentShortTextColor1(state);
 
@@ -248,8 +248,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(paletteContent != null);
 
             // Validate parameter references
-            if (context == null) throw new ArgumentNullException("context");
-            if (paletteContent == null) throw new ArgumentNullException("paletteContent");
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (paletteContent == null) throw new ArgumentNullException(nameof(paletteContent));
 
             Color c1 = paletteContent.GetContentShortTextColor1(state);
 
@@ -276,7 +276,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(colorPalette != null);
 
             // Validate incoming parameter
-            if (colorPalette == null) throw new ArgumentNullException("colorPalette");
+            if (colorPalette == null) throw new ArgumentNullException(nameof(colorPalette));
 
             // Use the professional renderer but pull colors from the palette
             KryptonSparkleRenderer renderer = new KryptonSparkleRenderer(colorPalette.ColorTable);

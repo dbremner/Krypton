@@ -279,11 +279,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // We do not allow an empty button spec to be added
 			if (item == null)
-				throw new ArgumentNullException("item");
+				throw new ArgumentNullException(nameof(item));
 
             // Not allow to add the same button spec more than once
 			if (_specs.Contains(item))
-                throw new ArgumentOutOfRangeException("item", "T already in collection");
+                throw new ArgumentOutOfRangeException(nameof(item), "T already in collection");
 
             // Generate before insert event
             OnInserting(new ButtonSpecEventArgs(item, index));
@@ -365,11 +365,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // We do not allow an empty button spec to be added
 			if (item == null)
-				throw new ArgumentNullException("item");
+				throw new ArgumentNullException(nameof(item));
 
             // Not allow to add the same button spec more than once
 			if (_specs.Contains(item))
-                throw new ArgumentOutOfRangeException("item", "T already in collection");
+                throw new ArgumentOutOfRangeException(nameof(item), "T already in collection");
 
             // Generate inserting event
             OnInserting(new ButtonSpecEventArgs(item, _specs.Count));
@@ -456,7 +456,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
 			// Cannot pass a null target array
 			if (array == null)
-				throw new ArgumentNullException("array");
+				throw new ArgumentNullException(nameof(array));
 
             // Try and copy each button spec to the destination array
             foreach (T spec in this)

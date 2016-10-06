@@ -221,7 +221,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(Root != null);
 
             // Validate incoming reference
-            if (renderer == null) throw new ArgumentNullException("renderer");
+            if (renderer == null) throw new ArgumentNullException(nameof(renderer));
 
             // Create a layout context for calculating size and positioning
             using (ViewContext context = new ViewContext(this,
@@ -383,8 +383,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (renderer == null) throw new ArgumentNullException("renderer");
-            if (e == null) throw new ArgumentNullException("e");
+            if (renderer == null) throw new ArgumentNullException(nameof(renderer));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // Do nothing if the control is disposed or inside a layout call
             if (!_control.IsDisposed)
@@ -412,7 +412,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(Root != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // Do nothing if the control is disposed or inside a layout call
             if (!_control.IsDisposed)
@@ -452,7 +452,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
             
             Point pt = new Point(e.X, e.Y);
 
@@ -474,7 +474,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
             
             Point pt = new Point(e.X, e.Y);
 
@@ -499,7 +499,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
             
             Point pt = new Point(e.X, e.Y);
 
@@ -527,7 +527,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
             
             // If there is an active element
             if (ActiveView != null)

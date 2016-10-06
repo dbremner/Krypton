@@ -822,7 +822,7 @@ namespace ComponentFactory.Krypton.Navigator
                 default:
 					// Should never happen!
 					Debug.Assert(false);
-					throw new ArgumentOutOfRangeException("mode");
+					throw new ArgumentOutOfRangeException(nameof(mode));
 			}
 		}
 		#endregion

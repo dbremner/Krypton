@@ -187,13 +187,13 @@ namespace ComponentFactory.Krypton.Toolkit
 			get
 			{
 				// Argument must be out of range because we never have any views
-				throw new ArgumentOutOfRangeException("index");
+				throw new ArgumentOutOfRangeException(nameof(index));
 			}
 
 			set
 			{
 				// Argument must be out of range because we never have any views
-				throw new ArgumentOutOfRangeException("index");
+				throw new ArgumentOutOfRangeException(nameof(index));
 			}
 		}
 

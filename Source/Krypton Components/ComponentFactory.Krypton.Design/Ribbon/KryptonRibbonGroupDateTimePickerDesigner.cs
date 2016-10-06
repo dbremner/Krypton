@@ -67,7 +67,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(component != null);
 
             // Validate the parameter reference
-            if (component == null) throw new ArgumentNullException("component");
+            if (component == null) throw new ArgumentNullException(nameof(component));
 
             // Let base class do standard stuff
             base.Initialize(component);

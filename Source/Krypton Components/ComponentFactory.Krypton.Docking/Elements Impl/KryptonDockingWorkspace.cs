@@ -50,7 +50,7 @@ namespace ComponentFactory.Krypton.Docking
             : base(name, storeName)
         {
             if (workspace == null)
-                throw new ArgumentNullException("workspace");
+                throw new ArgumentNullException(nameof(workspace));
 
             SpaceControl = workspace;
 
@@ -96,7 +96,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             ShowPages(new string[] { page.UniqueName });
         }
@@ -109,7 +109,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             ShowPages(new string[] { uniqueName });
         }
@@ -122,7 +122,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -148,7 +148,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot show a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {
@@ -184,7 +184,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (page == null)
-                throw new ArgumentNullException("page");
+                throw new ArgumentNullException(nameof(page));
 
             HidePages(new string[] { page.UniqueName });
         }
@@ -197,7 +197,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             if (uniqueName.Length > 0)
                 HidePages(new string[] { uniqueName });
@@ -211,7 +211,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -238,7 +238,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot hide a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {
@@ -275,7 +275,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (uniqueName == null)
-                throw new ArgumentNullException("uniqueName");
+                throw new ArgumentNullException(nameof(uniqueName));
 
             // Unique names cannot be zero length
             if (uniqueName.Length == 0)
@@ -293,7 +293,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (pages == null)
-                throw new ArgumentNullException("pages");
+                throw new ArgumentNullException(nameof(pages));
 
             if (pages.Length > 0)
             {
@@ -321,7 +321,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Cannot remove a null reference
             if (uniqueNames == null)
-                throw new ArgumentNullException("uniqueNames");
+                throw new ArgumentNullException(nameof(uniqueNames));
 
             if (uniqueNames.Length > 0)
             {

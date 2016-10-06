@@ -36,7 +36,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(triple != null);
 
             // Validate incoming references
-            if (triple == null) throw new ArgumentNullException("triple");
+            if (triple == null) throw new ArgumentNullException(nameof(triple));
             
             // Create the triple override instances
             _overrideBack = new PaletteBackInheritNode(triple.PaletteBack);

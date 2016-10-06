@@ -51,7 +51,7 @@ namespace ComponentFactory.Krypton.Docking
             : base(name)
         {
             if (control == null)
-                throw new ArgumentNullException("control");
+                throw new ArgumentNullException(nameof(control));
 
             Construct(control, null);
         }
@@ -66,10 +66,10 @@ namespace ComponentFactory.Krypton.Docking
             : base(name)
         {
             if (control == null)
-                throw new ArgumentNullException("control");
+                throw new ArgumentNullException(nameof(control));
 
             if (navigator == null)
-                throw new ArgumentNullException("navigator");
+                throw new ArgumentNullException(nameof(navigator));
 
             Construct(control, navigator);
         }
@@ -84,10 +84,10 @@ namespace ComponentFactory.Krypton.Docking
             : base(name)
         {
             if (control == null)
-                throw new ArgumentNullException("control");
+                throw new ArgumentNullException(nameof(control));
 
             if (workspace == null)
-                throw new ArgumentNullException("workspace");
+                throw new ArgumentNullException(nameof(workspace));
 
             Construct(control, workspace);
         }

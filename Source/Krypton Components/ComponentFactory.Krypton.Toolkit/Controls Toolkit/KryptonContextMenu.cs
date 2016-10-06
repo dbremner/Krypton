@@ -602,7 +602,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // Pass request onto the displaying control if we have one
             if (_contextMenu != null)

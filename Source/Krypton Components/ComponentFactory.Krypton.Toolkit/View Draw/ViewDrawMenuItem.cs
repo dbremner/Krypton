@@ -568,7 +568,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // If we have image display
             if (_fixedImage != null)

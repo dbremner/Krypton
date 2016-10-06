@@ -40,8 +40,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(category != null);
         
             // Validate parameters
-            if (verb == null) throw new ArgumentNullException("verb");
-            if (category == null) throw new ArgumentNullException("category");
+            if (verb == null) throw new ArgumentNullException(nameof(verb));
+            if (category == null) throw new ArgumentNullException(nameof(category));
 
             // Remember details
             _verb = verb;

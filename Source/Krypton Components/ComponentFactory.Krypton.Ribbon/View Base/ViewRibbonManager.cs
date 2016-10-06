@@ -143,7 +143,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             if (!_ribbon.InDesignMode)
             {
@@ -190,7 +190,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(e != null);
 
             // Validate incoming reference
-            if (e == null) throw new ArgumentNullException("e");
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             if (!_ribbon.InDesignMode)
             {

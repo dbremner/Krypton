@@ -217,8 +217,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
-            if (e == null) throw new ArgumentNullException("e");
+            if (c == null) throw new ArgumentNullException(nameof(c));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             if (e.KeyCode == Keys.Space)
             {
@@ -253,8 +253,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(e != null);
 
             // Validate incoming references
-            if (c == null) throw new ArgumentNullException("c");
-            if (e == null) throw new ArgumentNullException("e");
+            if (c == null) throw new ArgumentNullException(nameof(c));
+            if (e == null) throw new ArgumentNullException(nameof(e));
 
             // If the user pressed the escape key
             if ((e.KeyCode == Keys.Escape) || (e.KeyCode == Keys.Space))

@@ -38,7 +38,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Must provide a valid docking element reference
             if (dockingElement == null)
-                throw new ArgumentNullException("dockingElement");
+                throw new ArgumentNullException(nameof(dockingElement));
 
             // Inform docking elements that a multi-part update is starting
             _dockingElement = dockingElement;

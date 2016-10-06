@@ -637,11 +637,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // Check if trying to show a message box from a service and the owner has been specified, this is not possible
             if ((owner != null) && ((options & (MessageBoxOptions.ServiceNotification | MessageBoxOptions.DefaultDesktopOnly)) != 0))
-                throw new ArgumentException("Cannot show message box from a service with an owner specified", "options");
+                throw new ArgumentException("Cannot show message box from a service with an owner specified", nameof(options));
 
             // Check if trying to show a message box from a service and help information is specified, this is not possible
             if ((helpInfo != null) && ((options & (MessageBoxOptions.ServiceNotification | MessageBoxOptions.DefaultDesktopOnly)) != 0))
-                throw new ArgumentException("Cannot show message box from a service with help specified", "options");
+                throw new ArgumentException("Cannot show message box from a service with help specified", nameof(options));
 
             // If help information provided or we are not a service/default desktop application then grab an owner for showing the message box
             IWin32Window showOwner = null;

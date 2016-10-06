@@ -110,7 +110,7 @@ namespace ComponentFactory.Krypton.Docking
 
             // Cannot insert to a null cell
             if (cell == null)
-                throw new ArgumentNullException("cell");
+                throw new ArgumentNullException(nameof(cell));
 
             // Check that we actually contain the provided workspace cell
             KryptonWorkspaceCell checkCell = SpaceControl.FirstCell();
@@ -155,7 +155,7 @@ namespace ComponentFactory.Krypton.Docking
 
             // Cannot insert to a null cell
             if (cell == null)
-                throw new ArgumentNullException("cell");
+                throw new ArgumentNullException(nameof(cell));
 
             // Check that we actually contain the provided workspace cell
             KryptonWorkspaceCell checkCell = SpaceControl.FirstCell();
@@ -710,7 +710,7 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Cannot set a null reference!
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException(nameof(value));
 
                 // Should only ever set the value once
                 if (_space != null)

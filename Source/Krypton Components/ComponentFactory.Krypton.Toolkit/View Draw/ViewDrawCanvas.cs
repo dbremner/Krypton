@@ -404,7 +404,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // Ensure any content children have correct composition setting
             foreach (ViewBase child in this)
@@ -442,7 +442,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
             
             // We take on all the available display area
 			ClientRectangle = context.DisplayRectangle;
@@ -498,7 +498,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // Do we need to draw the background?
             if (_drawCanvas &&(_paletteBack.GetBackDraw(State) == InheritBool.True))
@@ -570,7 +570,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             if (_drawCanvas && (_paletteBorder != null))
             {

@@ -53,7 +53,7 @@ namespace ComponentFactory.Krypton.Navigator
 
 			// We only allow KryptonPage controls to be added
 			if (page == null)
-				throw new ArgumentException("Only KryptonPage controls can be added.", "value");
+				throw new ArgumentException("Only KryptonPage controls can be added.", nameof(value));
 
 			// Let base class perform actual add
 			base.Add(value);

@@ -46,8 +46,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(overrideStates != null);
 
             // Validate incoming references
-            if (normalStates == null) throw new ArgumentNullException("normalStates");
-            if (overrideStates == null) throw new ArgumentNullException("overrideStates");
+            if (normalStates == null) throw new ArgumentNullException(nameof(normalStates));
+            if (overrideStates == null) throw new ArgumentNullException(nameof(overrideStates));
 
             // Create the triple override instances
             _back = normalStates.Back;

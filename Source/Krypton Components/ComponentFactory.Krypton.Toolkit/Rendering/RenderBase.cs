@@ -910,7 +910,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(context != null);
 
             // Validate reference parameter
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             try
             {
@@ -951,7 +951,7 @@ namespace ComponentFactory.Krypton.Toolkit
             lock (_threadLock)
             {
                 // Validate reference parameter
-                if (context == null) throw new ArgumentNullException("context");
+                if (context == null) throw new ArgumentNullException(nameof(context));
 
                 // Use image attributes class to modify image drawing for effects
                 ImageAttributes attribs = new ImageAttributes();

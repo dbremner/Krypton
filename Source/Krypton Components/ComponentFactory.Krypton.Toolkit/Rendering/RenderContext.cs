@@ -120,7 +120,7 @@ namespace ComponentFactory.Krypton.Toolkit
 				default:
 					// Should never call this routine with inherit value
 					Debug.Assert(false);
-					throw new ArgumentOutOfRangeException("align");
+					throw new ArgumentOutOfRangeException(nameof(align));
 			}
 		}
 		#endregion

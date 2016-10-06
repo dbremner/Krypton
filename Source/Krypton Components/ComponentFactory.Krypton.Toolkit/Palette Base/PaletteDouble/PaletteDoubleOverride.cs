@@ -38,8 +38,8 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(normalTriple != null);
             Debug.Assert(overrideTriple != null);
 
-            if (normalTriple == null) throw new ArgumentNullException("normalTriple");
-            if (overrideTriple == null) throw new ArgumentNullException("overrideTriple");
+            if (normalTriple == null) throw new ArgumentNullException(nameof(normalTriple));
+            if (overrideTriple == null) throw new ArgumentNullException(nameof(overrideTriple));
 
             // Create the triple override instances
             _overrideBack = new PaletteBackInheritOverride(normalTriple.PaletteBack, overrideTriple.PaletteBack);

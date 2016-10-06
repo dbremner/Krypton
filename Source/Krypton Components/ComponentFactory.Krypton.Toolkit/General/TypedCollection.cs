@@ -210,11 +210,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // We do not allow an empty ribbon tab to be added
 			if (item == null)
-				throw new ArgumentNullException("item");
+				throw new ArgumentNullException(nameof(item));
 
             // Not allow to add the same item more than once
 			if (_list.Contains(item))
-				throw new ArgumentOutOfRangeException("item", "Item already in collection");
+				throw new ArgumentOutOfRangeException(nameof(item), "Item already in collection");
 
             // Generate before insert event
             OnInserting(new TypedCollectionEventArgs<T>(item, index));
@@ -314,11 +314,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // We do not allow an empty item to be added
 			if (item == null)
-				throw new ArgumentNullException("item");
+				throw new ArgumentNullException(nameof(item));
 
             // Not allow to add the same item more than once
 			if (_list.Contains(item))
-				throw new ArgumentOutOfRangeException("item", "Item already in collection");
+				throw new ArgumentOutOfRangeException(nameof(item), "Item already in collection");
 
             // Generate before insert event
             OnInserting(new TypedCollectionEventArgs<T>(item, _list.Count));
@@ -419,7 +419,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
 			// Cannot pass a null target array
 			if (array == null)
-				throw new ArgumentNullException("array");
+				throw new ArgumentNullException(nameof(array));
 
             // Try and copy each item to the destination array
 			foreach (T item in this)

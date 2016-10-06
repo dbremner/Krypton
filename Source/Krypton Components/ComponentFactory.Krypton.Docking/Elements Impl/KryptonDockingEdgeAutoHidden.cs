@@ -52,7 +52,7 @@ namespace ComponentFactory.Krypton.Docking
             : base(name)
         {
             if (control == null)
-                throw new ArgumentNullException("control");
+                throw new ArgumentNullException(nameof(control));
 
             _control = control;
             _edge = edge;

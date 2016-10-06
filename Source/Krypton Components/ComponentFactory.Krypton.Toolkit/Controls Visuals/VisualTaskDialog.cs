@@ -151,7 +151,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             // Must provide a valid reference
             if (taskDialog == null)
-                throw new ArgumentNullException("taskDialog");
+                throw new ArgumentNullException(nameof(taskDialog));
 
             _taskDialog = taskDialog;
 

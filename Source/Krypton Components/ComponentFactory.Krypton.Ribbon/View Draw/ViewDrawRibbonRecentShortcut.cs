@@ -58,7 +58,7 @@ namespace ComponentFactory.Krypton.Ribbon
 			Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // Only draw the shortcut text if there is some defined
             string shortcut = Values.GetShortText();
