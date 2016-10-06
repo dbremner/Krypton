@@ -46,8 +46,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override bool OnMouseEnter(Glyph g)
         {
             // Notify the split container so it can track mouse message
-            if (_splitContainer != null)
-                _splitContainer.DesignMouseEnter();
+            _splitContainer?.DesignMouseEnter();
 
             return base.OnMouseEnter(g);
         }
@@ -107,8 +106,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override bool OnMouseUp(Glyph g, MouseButtons button)
         {
             // Notify the split container so it can track mouse message
-            if (_splitContainer != null)
-                _splitContainer.DesignMouseUp(button);
+            _splitContainer?.DesignMouseUp(button);
 
             return base.OnMouseUp(g, button);
         }
@@ -121,9 +119,8 @@ namespace ComponentFactory.Krypton.Toolkit
         public override bool OnMouseLeave(Glyph g)
         {
             // Notify the split container so it can track mouse message
-            if (_splitContainer != null)
-                _splitContainer.DesignMouseLeave();
-            
+            _splitContainer?.DesignMouseLeave();
+
             return base.OnMouseLeave(g);
         }
         #endregion

@@ -797,38 +797,27 @@ namespace ComponentFactory.Krypton.Toolkit
             // tell the palette instances to update now so that when the instance controls are updated the new fonts
             // and other resources are recreated as needed.
 
-            if (_paletteProfessionalOffice2003 != null)
-                _paletteProfessionalOffice2003.UserPreferenceChanged();
+            _paletteProfessionalOffice2003?.UserPreferenceChanged();
 
-            if (_paletteProfessionalSystem != null)
-                _paletteProfessionalSystem.UserPreferenceChanged();
+            _paletteProfessionalSystem?.UserPreferenceChanged();
 
-            if (_paletteOffice2007Blue != null)
-                _paletteOffice2007Blue.UserPreferenceChanged();
+            _paletteOffice2007Blue?.UserPreferenceChanged();
 
-            if (_paletteOffice2007Silver != null)
-                _paletteOffice2007Silver.UserPreferenceChanged();
+            _paletteOffice2007Silver?.UserPreferenceChanged();
 
-            if (_paletteOffice2007Black != null)
-                _paletteOffice2007Black.UserPreferenceChanged();
+            _paletteOffice2007Black?.UserPreferenceChanged();
 
-            if (_paletteOffice2010Blue != null)
-                _paletteOffice2010Blue.UserPreferenceChanged();
+            _paletteOffice2010Blue?.UserPreferenceChanged();
 
-            if (_paletteOffice2010Silver != null)
-                _paletteOffice2010Silver.UserPreferenceChanged();
+            _paletteOffice2010Silver?.UserPreferenceChanged();
 
-            if (_paletteOffice2010Black != null)
-                _paletteOffice2010Black.UserPreferenceChanged();
+            _paletteOffice2010Black?.UserPreferenceChanged();
 
-            if (_paletteSparkleBlue != null)
-                _paletteSparkleBlue.UserPreferenceChanged();
-            
-            if (_paletteSparkleOrange != null)
-                _paletteSparkleOrange.UserPreferenceChanged();
+            _paletteSparkleBlue?.UserPreferenceChanged();
 
-            if (_paletteSparklePurple != null)
-                _paletteSparklePurple.UserPreferenceChanged();
+            _paletteSparkleOrange?.UserPreferenceChanged();
+
+            _paletteSparklePurple?.UserPreferenceChanged();
 
             UpdateToolStripManager();
         }
@@ -859,16 +848,14 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private static void OnGlobalAllowFormChromeChanged(EventArgs e)
         {
-            if (GlobalAllowFormChromeChanged != null)
-                GlobalAllowFormChromeChanged(null, e);
+            GlobalAllowFormChromeChanged?.Invoke(null, e);
         }
 
         private static void OnGlobalPaletteChanged(EventArgs e)
         {
             UpdateToolStripManager();
 
-            if (GlobalPaletteChanged != null)
-                GlobalPaletteChanged(null, e);
+            GlobalPaletteChanged?.Invoke(null, e);
         }
 
         private static void UpdateToolStripManager()

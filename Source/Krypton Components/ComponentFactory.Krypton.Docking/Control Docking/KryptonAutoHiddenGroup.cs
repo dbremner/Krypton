@@ -155,8 +155,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An StorePageEventArgs containing the event data.</param>
         protected virtual void OnStoringPage(UniqueNameEventArgs e)
         {
-            if (StoringPage != null)
-                StoringPage(this, e);
+            StoringPage?.Invoke(this, e);
         }
 
         /// <summary>

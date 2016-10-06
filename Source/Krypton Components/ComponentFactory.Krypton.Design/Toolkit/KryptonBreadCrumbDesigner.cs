@@ -154,8 +154,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_breadCrumb != null)
-                _breadCrumb.DesignerMouseLeave();
+            _breadCrumb?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

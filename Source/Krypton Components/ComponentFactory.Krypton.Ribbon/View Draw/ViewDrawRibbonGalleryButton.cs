@@ -324,8 +324,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #region Private
         private void OnButtonClick(object sender, MouseEventArgs e)
         {
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
         }
         #endregion
     }

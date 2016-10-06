@@ -904,8 +904,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCollapsedChanged(EventArgs e)
         {
-            if (CollapsedChanged != null)
-                CollapsedChanged(this, e);
+            CollapsedChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -1116,8 +1115,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (m.Msg == PI.WM_WINDOWPOSCHANGED)
             {
                 // Uncover from the covered area
-                if (_obscurer != null)
-                    _obscurer.Uncover();
+                _obscurer?.Uncover();
             }
 
             base.WndProc(ref m);
@@ -1141,11 +1139,10 @@ namespace ComponentFactory.Krypton.Toolkit
 		#region Implementation
         private void OnRemoveObscurer(object sender, EventArgs e)
         {
-            if (_obscurer != null)
-                _obscurer.Uncover();
+            _obscurer?.Uncover();
         }
 
-        private void OnHeaderGroupTextChanged(object sender, EventArgs e)
+	    private void OnHeaderGroupTextChanged(object sender, EventArgs e)
         {
             OnTextChanged(EventArgs.Empty);
         }
@@ -1189,8 +1186,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     if (sourceContent != null)
                     {
                         // Remove any currently showing tooltip
-                        if (_visualPopupToolTip != null)
-                            _visualPopupToolTip.Dispose();
+                        _visualPopupToolTip?.Dispose();
 
                         // Create the actual tooltip popup object
                         _visualPopupToolTip = new VisualPopupToolTip(Redirector,
@@ -1212,11 +1208,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private void OnCancelToolTip(object sender, EventArgs e)
         {
             // Remove any currently showing tooltip
-            if (_visualPopupToolTip != null)
-                _visualPopupToolTip.Dispose();
+            _visualPopupToolTip?.Dispose();
         }
 
-        private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
+	    private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
         {
             // Unhook events from the specific instance that generated event
             VisualPopupToolTip popupToolTip = (VisualPopupToolTip)sender;

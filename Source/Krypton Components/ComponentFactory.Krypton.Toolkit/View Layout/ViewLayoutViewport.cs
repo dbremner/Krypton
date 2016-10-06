@@ -952,8 +952,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _offset.Y = Math.Min(Math.Max(_offset.Y, _limit.Y), 0);
 
             // Request the layout and paint to reflect change
-            if (AnimateStep != null)
-                AnimateStep.Invoke(this, EventArgs.Empty);
+            AnimateStep?.Invoke(this, EventArgs.Empty);
         }
         #endregion
     }

@@ -680,8 +680,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnButtonSpecChanged(object sender, EventArgs e)
         {
-            if (ButtonSpecChanged != null)
-                ButtonSpecChanged(this, e);
+            ButtonSpecChanged?.Invoke(this, e);
         }
         #endregion
     }

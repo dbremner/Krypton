@@ -307,8 +307,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Update with the new scroll value
             _scrollBar.Value = e.NewValue;
 
-            if (ScrollChanged != null)
-                ScrollChanged(this, EventArgs.Empty);
+            ScrollChanged?.Invoke(this, EventArgs.Empty);
         }
         #endregion
     }

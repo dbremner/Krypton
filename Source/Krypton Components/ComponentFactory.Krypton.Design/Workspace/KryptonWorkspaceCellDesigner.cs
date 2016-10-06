@@ -51,11 +51,8 @@ namespace ComponentFactory.Krypton.Workspace
                 {
                     // Cell an only be inside a workspace sequence
                     KryptonWorkspaceSequence sequence = (KryptonWorkspaceSequence)cell.WorkspaceParent;
-                    if (sequence != null)
-                    {
-                        // Remove the cell from the parent
-                        sequence.Children.Remove(cell);
-                    }
+                    // Remove the cell from the parent
+                    sequence?.Children.Remove(cell);
                 }
             }
 

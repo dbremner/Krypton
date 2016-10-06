@@ -92,10 +92,10 @@ namespace ComponentFactory.Krypton.Toolkit
         public virtual void Dispose()
         {
             // Dispose of the associated element hierarchy
-            if (_root != null)
-                _root.Dispose();
+            _root?.Dispose();
         }
-        #endregion
+
+	    #endregion
 
 		#region Public Properties
         /// <summary>
@@ -249,14 +249,12 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _activeView)
                 {
                     // Inform old element that mouse is leaving
-                    if (_activeView != null)
-                        _activeView.MouseLeave(value);
+                    _activeView?.MouseLeave(value);
 
                     _activeView = value;
 
                     // Inform new element that mouse is entering
-                    if (_activeView != null)
-                        _activeView.MouseEnter();
+                    _activeView?.MouseEnter();
                 }
             }
         }
@@ -341,15 +339,13 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (context.Renderer == null) throw new ArgumentNullException("renderer");
 
                 // If someone is interested, tell them the layout cycle to beginning
-                if (LayoutBefore != null)
-                    LayoutBefore(this, EventArgs.Empty);
+                LayoutBefore?.Invoke(this, EventArgs.Empty);
 
                 // Ask the view to perform a layout
                 Root.Layout(context);
 
                 // If someone is interested, tell them the layout cycle has finished
-                if (LayoutAfter != null)
-                    LayoutAfter(this, EventArgs.Empty);
+                LayoutAfter?.Invoke(this, EventArgs.Empty);
 
                 if (_outputDebug)
                 {
@@ -460,8 +456,7 @@ namespace ComponentFactory.Krypton.Toolkit
             UpdateViewFromPoint(_control, pt);
 
 			// Tell current view of mouse movement
-			if (ActiveView != null)
-                ActiveView.MouseMove(rawPt);
+		    ActiveView?.MouseMove(rawPt);
 		}
 
 		/// <summary>
@@ -507,10 +502,9 @@ namespace ComponentFactory.Krypton.Toolkit
             UpdateViewFromPoint(_control, pt);
 
 			// Tell current view of mouse up
-            if (ActiveView != null)
-                ActiveView.MouseUp(rawPt, e.Button);
+            ActiveView?.MouseUp(rawPt, e.Button);
 
-			// Release any capture of the mouse
+            // Release any capture of the mouse
             MouseCaptured = false;
 
             // Generate event to indicate the view manager has processed a mouse up
@@ -547,12 +541,10 @@ namespace ComponentFactory.Krypton.Toolkit
         public virtual void DoubleClick(Point pt)
         {
             // If there is an active element
-            if (ActiveView != null)
-                ActiveView.DoubleClick(pt);
+            ActiveView?.DoubleClick(pt);
 
             // Generate event to indicate the view manager has processed a mouse up
-            if (DoubleClickProcessed != null)
-                DoubleClickProcessed(this, pt);
+            DoubleClickProcessed?.Invoke(this, pt);
         }
 
         /// <summary>
@@ -561,8 +553,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A MouseEventArgs containing the event data.</param>
         public void PerformMouseDownProcessed(MouseEventArgs e)
         {
-            if (MouseDownProcessed != null)
-                MouseDownProcessed(this, e);
+            MouseDownProcessed?.Invoke(this, e);
         }
 
         /// <summary>
@@ -571,8 +562,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A MouseEventArgs containing the event data.</param>
         public void PerformMouseUpProcessed(MouseEventArgs e)
         {
-            if (MouseUpProcessed != null)
-                MouseUpProcessed(this, e);
+            MouseUpProcessed?.Invoke(this, e);
         }
         #endregion
 
@@ -586,8 +576,10 @@ namespace ComponentFactory.Krypton.Toolkit
             // Tell current view of key event
             if (ActiveView != null)
                 ActiveView.KeyDown(e);
-            else if (_root != null)
-                _root.KeyDown(e);
+            else
+            {
+                _root?.KeyDown(e);
+            }
         }
 
         /// <summary>
@@ -599,8 +591,10 @@ namespace ComponentFactory.Krypton.Toolkit
             // Tell current view of key event
             if (ActiveView != null)
                 ActiveView.KeyPress(e);
-            else if (_root != null)
-                _root.KeyPress(e);
+            else
+            {
+                _root?.KeyPress(e);
+            }
         }
 
         /// <summary>
@@ -626,8 +620,10 @@ namespace ComponentFactory.Krypton.Toolkit
             // Tell current view of source event
             if (ActiveView != null)
                 ActiveView.GotFocus(_control);
-            else if (_root != null)
-                _root.GotFocus(_control);
+            else
+            {
+                _root?.GotFocus(_control);
+            }
         }
 
         /// <summary>
@@ -638,8 +634,10 @@ namespace ComponentFactory.Krypton.Toolkit
             // Tell current view of source event
             if (ActiveView != null)
                 ActiveView.LostFocus(_control);
-            else if (_root != null)
-                _root.LostFocus(_control);
+            else
+            {
+                _root?.LostFocus(_control);
+            }
         }
         #endregion
 

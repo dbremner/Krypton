@@ -354,8 +354,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnAutoSizeChanged(EventArgs e)
 		{
-			if (AutoSizeChanged != null)
-				AutoSizeChanged(this, e);
+            AutoSizeChanged?.Invoke(this, e);
 
             base.OnAutoSizeChanged(e);
         }
@@ -366,8 +365,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnDockChanged(EventArgs e)
 		{
-			if (DockChanged != null)
-				DockChanged(this, e);
+            DockChanged?.Invoke(this, e);
 
             base.OnDockChanged(e);
         }
@@ -378,8 +376,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnLocationChanged(EventArgs e)
 		{
-			if (LocationChanged != null)
-				LocationChanged(this, e);
+            LocationChanged?.Invoke(this, e);
 
             base.OnLocationChanged(e);
         }
@@ -390,8 +387,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnTabIndexChanged(EventArgs e)
 		{
-			if (TabIndexChanged != null)
-				TabIndexChanged(this, e);
+            TabIndexChanged?.Invoke(this, e);
 
             base.OnTabIndexChanged(e);
         }
@@ -402,8 +398,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnTabStopChanged(EventArgs e)
 		{
-			if (TabStopChanged != null)
-				TabStopChanged(this, e);
+            TabStopChanged?.Invoke(this, e);
 
             base.OnTabStopChanged(e);
         }
@@ -414,8 +409,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnVisibleChanged(EventArgs e)
 		{
-			if (VisibleChanged != null)
-				VisibleChanged(this, e);
+            VisibleChanged?.Invoke(this, e);
 
             base.OnVisibleChanged(e);
 		}

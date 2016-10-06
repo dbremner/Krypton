@@ -90,43 +90,40 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override void RenderAfter(RenderContext context)
 		{
             // Do we have a status strip to try and merge?
-            if (_statusStrip != null)
+            // Is the status strip using the global renderer?
+            if (_statusStrip?.RenderMode == ToolStripRenderMode.ManagerRenderMode)
             {
-                // Is the status strip using the global renderer?
-                if (_statusStrip.RenderMode == ToolStripRenderMode.ManagerRenderMode)
+                // Cast to correct type
+                KryptonForm form = context.Control as KryptonForm;
+
+                if (form != null)
                 {
-                    // Cast to correct type
-                    KryptonForm form = context.Control as KryptonForm;
+                    // Find the size of the borders around the form
+                    Padding borders = form.RealWindowBorders;
 
-                    if (form != null)
+                    // Grab the global renderer to use for painting
+                    ToolStripRenderer renderer = ToolStripManager.Renderer;
+
+                    // Size the render strip to the apparent size when merged into borders
+                    _renderStrip.Width = form.Width;
+                    _renderStrip.Height = _statusStrip.Height + borders.Bottom;
+
+                    // Find vertical start of the status strip
+                    int y = _statusStrip.Top + borders.Top;
+
+                    try
                     {
-                        // Find the size of the borders around the form
-                        Padding borders = form.RealWindowBorders;
+                        // We need to transform downwards from drawing at 0,0 to actual required position
+                        context.Graphics.TranslateTransform(0, y);
 
-                        // Grab the global renderer to use for painting
-                        ToolStripRenderer renderer = ToolStripManager.Renderer;
-
-                        // Size the render strip to the apparent size when merged into borders
-                        _renderStrip.Width = form.Width;
-                        _renderStrip.Height = _statusStrip.Height + borders.Bottom;
-
-                        // Find vertical start of the status strip
-                        int y = _statusStrip.Top + borders.Top;
-
-                        try
-                        {
-                            // We need to transform downwards from drawing at 0,0 to actual required position
-                            context.Graphics.TranslateTransform(0, y);
-
-                            // Use the tool strip renderer to draw the correct status strip border/background
-                            renderer.DrawToolStripBorder(new ToolStripRenderEventArgs(context.Graphics, _renderStrip));
-                            renderer.DrawToolStripBackground(new ToolStripRenderEventArgs(context.Graphics, _renderStrip));
-                        }
-                        finally
-                        {
-                            // Make sure that even a crash in the renderer does not prevent the transform reversal
-                            context.Graphics.TranslateTransform(0, -y);
-                        }
+                        // Use the tool strip renderer to draw the correct status strip border/background
+                        renderer.DrawToolStripBorder(new ToolStripRenderEventArgs(context.Graphics, _renderStrip));
+                        renderer.DrawToolStripBackground(new ToolStripRenderEventArgs(context.Graphics, _renderStrip));
+                    }
+                    finally
+                    {
+                        // Make sure that even a crash in the renderer does not prevent the transform reversal
+                        context.Graphics.TranslateTransform(0, -y);
                     }
                 }
             }

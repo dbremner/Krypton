@@ -1121,8 +1121,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 foreach (KryptonContextMenuItemBase item in after.Values)
                     if (!before.ContainsKey(item))
                     {
-                        if (context.Container != null)
-                            context.Container.Add(item as IComponent);
+                        context.Container?.Add(item as IComponent);
                     }
 
                 // Delete all old components (in the 'before' but not the 'after'
@@ -1131,8 +1130,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DestroyInstance(item);
 
-                        if (context.Container != null)
-                            context.Container.Remove(item as IComponent);
+                        context.Container?.Remove(item as IComponent);
                     }
 
                 IComponentChangeService changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));

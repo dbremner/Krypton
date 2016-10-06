@@ -3242,8 +3242,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Can only generate change events if not suspended
             if (_suspendCount == 0)
             {
-                if (PalettePaint != null)
-                    PalettePaint(this, e);
+                PalettePaint?.Invoke(this, e);
             }
         }
 
@@ -3257,8 +3256,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Can only generate change events if not suspended
             if (_suspendCount == 0)
             {
-                if (AllowFormChromeChanged != null)
-                    AllowFormChromeChanged(this, e);
+                AllowFormChromeChanged?.Invoke(this, e);
             }
         }
 
@@ -3272,8 +3270,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Can only generate change events if not suspended
             if (_suspendCount == 0)
             {
-                if (BasePaletteChanged != null)
-                    BasePaletteChanged(this, e);
+                BasePaletteChanged?.Invoke(this, e);
             }
         }
 
@@ -3287,8 +3284,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Can only generate change events if not suspended
             if (_suspendCount == 0)
             {
-                if (BaseRendererChanged != null)
-                    BaseRendererChanged(this, e);
+                BaseRendererChanged?.Invoke(this, e);
             }
         }
 
@@ -3302,8 +3298,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Can only generate change events if not suspended
             if (_suspendCount == 0)
             {
-                if (ButtonSpecChanged != null)
-                    ButtonSpecChanged(this, e);
+                ButtonSpecChanged?.Invoke(this, e);
             }
         }
         #endregion

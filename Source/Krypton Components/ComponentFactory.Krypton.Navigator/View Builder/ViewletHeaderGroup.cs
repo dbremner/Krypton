@@ -133,8 +133,7 @@ namespace ComponentFactory.Krypton.Navigator
         public void UpdateButtons()
         {
             // Ensure buttons are recreated to reflect different page
-            if (_buttonManager != null)
-                _buttonManager.RecreateButtons();
+            _buttonManager?.RecreateButtons();
         }
 
         /// <summary>

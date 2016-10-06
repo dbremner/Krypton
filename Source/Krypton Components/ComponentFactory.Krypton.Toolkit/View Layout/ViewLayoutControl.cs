@@ -302,11 +302,8 @@ namespace ComponentFactory.Krypton.Toolkit
                     context.DisplayRectangle = new Rectangle(LayoutOffset, ClientSize);
 
                     // Do we have a child view to layout?
-                    if (_viewChild != null)
-                    {
-                        // Layout the child view
-                        _viewChild.Layout(context);
-                    }
+                    // Layout the child view
+                    _viewChild?.Layout(context);
 
                     // Put back the original display value now we have finished
                     context.DisplayRectangle = ClientRectangle;

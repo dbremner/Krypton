@@ -224,8 +224,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">Event arguments assocaited with the event.</param>
         protected void OnButtonClick(object sender, MouseEventArgs e)
         {
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
         }
 
         /// <summary>
@@ -235,8 +234,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">Event arguments assocaited with the event.</param>
         protected void OnButtonMouseSelect(object sender, MouseEventArgs e)
         {
-            if (MouseSelect != null)
-                MouseSelect(this, e);
+            MouseSelect?.Invoke(this, e);
         }
         #endregion
     }

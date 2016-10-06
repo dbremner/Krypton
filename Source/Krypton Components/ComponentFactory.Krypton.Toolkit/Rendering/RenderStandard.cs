@@ -690,8 +690,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             // Remember to dispose of resources
                             borderPath0.Dispose();
 
-                            if (borderPath1 != null)
-                                borderPath1.Dispose();
+                            borderPath1?.Dispose();
                         }
                     }
 				}
@@ -6556,8 +6555,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupAreaBorder))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupAreaBorder(rect, c1, c2, c3, c4, c5);
                     memento = cache;
@@ -6675,8 +6673,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupAreaBorder3))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupAreaBorder3(rect, c1, c2, c3, c4, c5);
                     memento = cache;
@@ -6753,8 +6750,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupAreaBorderContext))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupAreaBorderContext(rect, c1, c2, c3);
                     memento = cache;
@@ -6864,8 +6860,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonTabTracking2007))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonTabTracking2007(rect, c1, c2, orientation);
                     memento = cache;
@@ -7313,8 +7308,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonTabTracking2010))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonTabTracking2010(rect, c1, c2, c3, c4, orientation);
                     memento = cache;
@@ -10184,8 +10178,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupCollapsedBorder))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupCollapsedBorder(rect, c1, c2, c3, c4);
                     memento = cache;
@@ -10268,8 +10261,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupCollapsedFrameBorder))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupCollapsedFrameBorder(rect, c1, c2);
                     memento = cache;
@@ -10334,8 +10326,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupGradientOne))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupGradientOne(rect, c1, c2);
                     memento = cache;
@@ -10387,8 +10378,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonGroupGradientTwo))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonGroupGradientTwo(rect, c1, c2, c3, c4);
                     memento = cache;
@@ -10449,8 +10439,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonQATMinibar))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonQATMinibar(rect, c1, c2, c3, c4, c5);
                     memento = cache;
@@ -10578,8 +10567,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonQATMinibar))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonQATMinibar(rect, c1, c2, c3, c4, c5);
                     memento = cache;
@@ -10746,8 +10734,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonLinearBorder))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonLinearBorder(rect, c1, c2);
                     memento = cache;
@@ -10807,8 +10794,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonAppButtonInner))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonAppButtonInner(rect, c1, c2);
                     memento = cache;
@@ -10859,8 +10845,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonAppButtonOuter))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonAppButtonOuter(rect, c1, c2, c3);
                     memento = cache;
@@ -10925,8 +10910,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonQATFullbarRound))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonQATFullbarRound(rect, c1, c2, c3);
                     memento = cache;
@@ -11010,8 +10994,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonQATFullbarSquare))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonQATFullbarSquare(rect, c1, c2, c3);
                     memento = cache;
@@ -11068,8 +11051,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonQATOverflow))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonQATOverflow(rect, c1, c2);
                     memento = cache;

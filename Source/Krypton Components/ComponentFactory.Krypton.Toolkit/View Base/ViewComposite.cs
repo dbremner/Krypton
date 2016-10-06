@@ -261,12 +261,11 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="arrayIndex">Starting array index.</param>
 		public override void CopyTo(ViewBase[] array, int arrayIndex)
 		{
-			// Let type safe collection perform operation
-            if (_views != null)
-                _views.CopyTo(array, arrayIndex);
+		    // Let type safe collection perform operation
+		    _views?.CopyTo(array, arrayIndex);
 		}
 
-		/// <summary>
+	    /// <summary>
 		/// Removes first occurance of specified view.
 		/// </summary>
 		/// <param name="item">ViewBase reference.</param>
@@ -358,15 +357,12 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <returns>ViewBase at specified index.</returns>
 		public override ViewBase this[int index] 
 		{ 
-			get 
-            {
-                if (_views != null)
-                    return _views[index];
-                else
-                    return null;
-            }
+			get
+			{
+			    return _views?[index];
+			}
 
-			set
+		    set
 			{
 				// We do not allow null references in the collection
 				if (value == null)

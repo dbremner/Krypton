@@ -173,8 +173,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnButtonClick(object sender, MouseEventArgs e)
         {
-            if (Click != null)
-                Click(this, EventArgs.Empty);
+            Click?.Invoke(this, EventArgs.Empty);
         }
         #endregion
     }

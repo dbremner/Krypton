@@ -478,9 +478,8 @@ namespace ComponentFactory.Krypton.Ribbon
 		/// <param name="e">A MouseEventArgs containing the event data.</param>
 		protected virtual void OnClick(MouseEventArgs e)
 		{
-			if (Click != null)
-				Click(_target, e);
-		}
+            Click?.Invoke(_target, e);
+        }
 
         /// <summary>
         /// Raises the ContextClick event.
@@ -488,8 +487,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A MouseEventArgs containing the event data.</param>
         protected virtual void OnContextClick(MouseEventArgs e)
         {
-            if (ContextClick != null)
-                ContextClick(_target, e);
+            ContextClick?.Invoke(_target, e);
         }
         
         /// <summary>

@@ -777,8 +777,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			base.OnClick(e);
 
             // If we have an attached command then execute it
-            if (KryptonCommand != null)
-                KryptonCommand.PerformExecute();
+		    KryptonCommand?.PerformExecute();
 		}
 
 		/// <summary>
@@ -833,8 +832,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ContextPositionMenuArgs containing the event data.</param>
         protected virtual void OnDropDown(ContextPositionMenuArgs e)
         {
-            if (DropDown != null)
-                DropDown(this, e);
+            DropDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -843,8 +841,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnKryptonCommandChanged(EventArgs e)
         {
-            if (KryptonCommandChanged != null)
-                KryptonCommandChanged(this, e);
+            KryptonCommandChanged?.Invoke(this, e);
 
             // Use the values from the new command
             if (KryptonCommand != null)

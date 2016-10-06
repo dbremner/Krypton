@@ -772,8 +772,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal int InternalItemCount
@@ -820,8 +819,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnImageListChanged(EventArgs e)
         {
-            if (ImageListChanged != null)
-                ImageListChanged(this, e);
+            ImageListChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -830,8 +828,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedIndexChanged(EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(this, e);
+            SelectedIndexChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -840,8 +837,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An ImageSelectEventArgs containing the event data.</param>
         protected virtual void OnTrackingImage(ImageSelectEventArgs e)
         {
-            if (TrackingImage != null)
-                TrackingImage(this, e);
+            TrackingImage?.Invoke(this, e);
         }
 
         /// <summary>
@@ -850,8 +846,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An GalleryDropMenuEventArgs containing the event data.</param>
         protected virtual void OnGalleryDropMenu(GalleryDropMenuEventArgs e)
         {
-            if (GalleryDropMenu != null)
-                GalleryDropMenu(this, e);
+            GalleryDropMenu?.Invoke(this, e);
         }
 
         /// <summary>
@@ -860,8 +855,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnGotFocus(EventArgs e)
         {
-            if (GotFocus != null)
-                GotFocus(this, e);
+            GotFocus?.Invoke(this, e);
         }
 
         /// <summary>
@@ -870,8 +864,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnLostFocus(EventArgs e)
         {
-            if (LostFocus != null)
-                LostFocus(this, e);
+            LostFocus?.Invoke(this, e);
         }
 
         /// <summary>
@@ -880,8 +873,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -900,14 +892,12 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnControlEnter(object sender, EventArgs e)
         {
-            if (MouseEnterControl != null)
-                MouseEnterControl(this, e);
+            MouseEnterControl?.Invoke(this, e);
         }
 
         private void OnControlLeave(object sender, EventArgs e)
         {
-            if (MouseLeaveControl != null)
-                MouseLeaveControl(this, e);
+            MouseLeaveControl?.Invoke(this, e);
         }
 
         private void OnGalleryImageListChanged(object sender, EventArgs e)

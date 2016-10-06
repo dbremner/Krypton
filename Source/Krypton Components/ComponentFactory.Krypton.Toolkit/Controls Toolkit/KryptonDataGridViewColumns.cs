@@ -259,8 +259,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Internal
         internal void PerfomButtonSpecClick(DataGridViewButtonSpecClickEventArgs args)
         {
-            if (ButtonSpecClick != null)
-                ButtonSpecClick(this, args);
+            ButtonSpecClick?.Invoke(this, args);
         }
         #endregion
     }
@@ -364,8 +363,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     kryptonTextBox.ButtonSpecs.Clear();
 
                     TextBox textBox = kryptonTextBox.Controls[0] as TextBox;
-                    if (textBox != null)
-                        textBox.ClearUndo();
+                    textBox?.ClearUndo();
                 }
             }
 
@@ -2723,8 +2721,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewNumericUpDownCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewNumericUpDownCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetDecimalPlaces(rowIndex, value);
+                        dataGridViewCell?.SetDecimalPlaces(rowIndex, value);
                     }
                     
                     DataGridView.InvalidateColumn(Index);
@@ -2765,8 +2762,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewNumericUpDownCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewNumericUpDownCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetHexadecimal(rowIndex, value);
+                        dataGridViewCell?.SetHexadecimal(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -2802,8 +2798,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewNumericUpDownCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewNumericUpDownCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetIncrement(rowIndex, value);
+                        dataGridViewCell?.SetIncrement(rowIndex, value);
                     }
                 }
             }
@@ -2844,8 +2839,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewNumericUpDownCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewNumericUpDownCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMaximum(rowIndex, value);
+                        dataGridViewCell?.SetMaximum(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -2888,8 +2882,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewNumericUpDownCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewNumericUpDownCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMinimum(rowIndex, value);
+                        dataGridViewCell?.SetMinimum(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -2932,8 +2925,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewNumericUpDownCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewNumericUpDownCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetThousandsSeparator(rowIndex, value);
+                        dataGridViewCell?.SetThousandsSeparator(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -2955,8 +2947,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Internal
         internal void PerfomButtonSpecClick(DataGridViewButtonSpecClickEventArgs args)
         {
-            if (ButtonSpecClick != null)
-                ButtonSpecClick(this, args);
+            ButtonSpecClick?.Invoke(this, args);
         }
         #endregion
     }
@@ -3191,8 +3182,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     numericUpDown.ButtonSpecs.Clear();
 
                     TextBox textBox = numericUpDown.Controls[0].Controls[1] as TextBox;
-                    if (textBox != null)
-                        textBox.ClearUndo();
+                    textBox?.ClearUndo();
                 }
             }
 
@@ -3907,8 +3897,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Internal
         internal void PerfomButtonSpecClick(DataGridViewButtonSpecClickEventArgs args)
         {
-            if (ButtonSpecClick != null)
-                ButtonSpecClick(this, args);
+            ButtonSpecClick?.Invoke(this, args);
         }
         #endregion
     }
@@ -4002,8 +3991,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     domainUpDown.ButtonSpecs.Clear();
 
                     TextBox textBox = domainUpDown.Controls[0].Controls[1] as TextBox;
-                    if (textBox != null)
-                        textBox.ClearUndo();
+                    textBox?.ClearUndo();
                 }
             }
 
@@ -4576,8 +4564,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetDropDownStyle(rowIndex, value);
+                        dataGridViewCell?.SetDropDownStyle(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4620,8 +4607,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMaxDropDownItems(rowIndex, value);
+                        dataGridViewCell?.SetMaxDropDownItems(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4665,8 +4651,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMaxDropDownItems(rowIndex, value);
+                        dataGridViewCell?.SetMaxDropDownItems(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4709,8 +4694,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetDropDownWidth(rowIndex, value);
+                        dataGridViewCell?.SetDropDownWidth(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4772,8 +4756,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetAutoCompleteMode(rowIndex, value);
+                        dataGridViewCell?.SetAutoCompleteMode(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4816,8 +4799,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetAutoCompleteSource(rowIndex, value);
+                        dataGridViewCell?.SetAutoCompleteSource(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4861,8 +4843,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewComboBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewComboBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetDisplayMember(rowIndex, value);
+                        dataGridViewCell?.SetDisplayMember(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -4885,8 +4866,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Internal
         internal void PerfomButtonSpecClick(DataGridViewButtonSpecClickEventArgs args)
         {
-            if (ButtonSpecClick != null)
-                ButtonSpecClick(this, args);
+            ButtonSpecClick?.Invoke(this, args);
         }
         #endregion
     }
@@ -5709,8 +5689,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetShowCheckBox(rowIndex, value);
+                        dataGridViewCell?.SetShowCheckBox(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -5751,8 +5730,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetShowUpDown(rowIndex, value);
+                        dataGridViewCell?.SetShowUpDown(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -5794,8 +5772,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetFormat(rowIndex, value);
+                        dataGridViewCell?.SetFormat(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -5836,8 +5813,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetAutoShift(rowIndex, value);
+                        dataGridViewCell?.SetAutoShift(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -5878,8 +5854,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetChecked(rowIndex, value);
+                        dataGridViewCell?.SetChecked(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -5920,8 +5895,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCustomFormat(rowIndex, value);
+                        dataGridViewCell?.SetCustomFormat(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -5962,8 +5936,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCustomNullText(rowIndex, value);
+                        dataGridViewCell?.SetCustomNullText(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6003,8 +5976,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMaxDate(rowIndex, value);
+                        dataGridViewCell?.SetMaxDate(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6058,8 +6030,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMinDate(rowIndex, value);
+                        dataGridViewCell?.SetMinDate(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6114,8 +6085,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarDimensions(rowIndex, value);
+                        dataGridViewCell?.SetCalendarDimensions(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6156,8 +6126,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarTodayText(rowIndex, value);
+                        dataGridViewCell?.SetCalendarTodayText(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6206,8 +6175,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarFirstDayOfWeek(rowIndex, value);
+                        dataGridViewCell?.SetCalendarFirstDayOfWeek(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6248,8 +6216,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarShowToday(rowIndex, value);
+                        dataGridViewCell?.SetCalendarShowToday(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6290,8 +6257,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarCloseOnTodayClick(rowIndex, value);
+                        dataGridViewCell?.SetCalendarCloseOnTodayClick(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6332,8 +6298,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarShowTodayCircle(rowIndex, value);
+                        dataGridViewCell?.SetCalendarShowTodayCircle(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6374,8 +6339,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarShowWeekNumbers(rowIndex, value);
+                        dataGridViewCell?.SetCalendarShowWeekNumbers(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6415,8 +6379,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewDateTimePickerCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewDateTimePickerCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCalendarTodayDate(rowIndex, value);
+                        dataGridViewCell?.SetCalendarTodayDate(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -6550,8 +6513,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Internal
         internal void PerfomButtonSpecClick(DataGridViewButtonSpecClickEventArgs args)
         {
-            if (ButtonSpecClick != null)
-                ButtonSpecClick(this, args);
+            ButtonSpecClick?.Invoke(this, args);
         }
         #endregion
     }
@@ -7757,8 +7719,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetPromptChar(rowIndex, value);
+                        dataGridViewCell?.SetPromptChar(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -7799,8 +7760,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetAllowPromptAsInput(rowIndex, value);
+                        dataGridViewCell?.SetAllowPromptAsInput(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -7841,8 +7801,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetAsciiOnly(rowIndex, value);
+                        dataGridViewCell?.SetAsciiOnly(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -7883,8 +7842,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetBeepOnError(rowIndex, value);
+                        dataGridViewCell?.SetBeepOnError(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -7925,8 +7883,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetCutCopyMaskFormat(rowIndex, value);
+                        dataGridViewCell?.SetCutCopyMaskFormat(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -7967,8 +7924,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetHidePromptOnLeave(rowIndex, value);
+                        dataGridViewCell?.SetHidePromptOnLeave(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8009,8 +7965,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetHideSelection(rowIndex, value);
+                        dataGridViewCell?.SetHideSelection(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8051,8 +8006,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetInsertKeyMode(rowIndex, value);
+                        dataGridViewCell?.SetInsertKeyMode(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8093,8 +8047,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetMask(rowIndex, value);
+                        dataGridViewCell?.SetMask(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8135,8 +8088,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetPasswordChar(rowIndex, value);
+                        dataGridViewCell?.SetPasswordChar(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8177,8 +8129,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetRejectInputOnFirstFailure(rowIndex, value);
+                        dataGridViewCell?.SetRejectInputOnFirstFailure(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8219,8 +8170,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetResetOnPrompt(rowIndex, value);
+                        dataGridViewCell?.SetResetOnPrompt(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8261,8 +8211,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetResetOnSpace(rowIndex, value);
+                        dataGridViewCell?.SetResetOnSpace(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8303,8 +8252,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetSkipLiterals(rowIndex, value);
+                        dataGridViewCell?.SetSkipLiterals(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8345,8 +8293,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetTextMaskFormat(rowIndex, value);
+                        dataGridViewCell?.SetTextMaskFormat(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8387,8 +8334,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // This could have severe performance repercussions.
                         DataGridViewRow dataGridViewRow = dataGridViewRows.SharedRow(rowIndex);
                         KryptonDataGridViewMaskedTextBoxCell dataGridViewCell = dataGridViewRow.Cells[Index] as KryptonDataGridViewMaskedTextBoxCell;
-                        if (dataGridViewCell != null)
-                            dataGridViewCell.SetUseSystemPasswordChar(rowIndex, value);
+                        dataGridViewCell?.SetUseSystemPasswordChar(rowIndex, value);
                     }
 
                     DataGridView.InvalidateColumn(Index);
@@ -8410,8 +8356,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Internal
         internal void PerfomButtonSpecClick(DataGridViewButtonSpecClickEventArgs args)
         {
-            if (ButtonSpecClick != null)
-                ButtonSpecClick(this, args);
+            ButtonSpecClick?.Invoke(this, args);
         }
         #endregion
     }
@@ -8857,8 +8802,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     maskedTextBox.ButtonSpecs.Clear();
 
                     TextBox textBox = maskedTextBox.Controls[0] as TextBox;
-                    if (textBox != null)
-                        textBox.ClearUndo();
+                    textBox?.ClearUndo();
                 }
             }
 

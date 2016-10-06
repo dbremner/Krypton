@@ -205,8 +205,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event arguments associated with the event.</param>
         protected void OnChildMaximizeRestoreClicked(object sender, EventArgs e)
         {
-            if (MaximizeRestoreClicked != null)
-                MaximizeRestoreClicked(sender, e);
+            MaximizeRestoreClicked?.Invoke(sender, e);
         }
 
         /// <summary>
@@ -224,8 +223,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event arguments associated with the event.</param>
         protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, e);
+            PropertyChanged?.Invoke(this, e);
         }
         #endregion
     }

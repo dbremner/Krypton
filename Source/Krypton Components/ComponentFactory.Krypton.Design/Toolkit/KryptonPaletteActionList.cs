@@ -105,9 +105,9 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private void OnExportClick(object sender, EventArgs e)
         {
-            if (_palette != null)
-                _palette.Export();
+            _palette?.Export();
         }
+
         #endregion
     }
 }

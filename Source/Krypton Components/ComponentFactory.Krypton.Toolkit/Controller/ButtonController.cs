@@ -830,8 +830,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ButtonDragRectangleEventArgs containing the event args.</param>
         protected virtual void OnButtonDragRectangle(ButtonDragRectangleEventArgs e)
         {
-            if (ButtonDragRectangle != null)
-                ButtonDragRectangle(this, e);
+            ButtonDragRectangle?.Invoke(this, e);
         }
 
         /// <summary>
@@ -840,8 +839,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ButtonDragOffsetEventArgs containing the event args.</param>
         protected virtual void OnButtonDragOffset(ButtonDragOffsetEventArgs e)
         {
-            if (ButtonDragOffset != null)
-                ButtonDragOffset(this, e);
+            ButtonDragOffset?.Invoke(this, e);
         }
 
         /// <summary>
@@ -855,9 +853,8 @@ namespace ComponentFactory.Krypton.Toolkit
             // Convert point from client to screen coordinates
             mousePt = _target.OwningControl.PointToScreen(mousePt);
             DragStartEventCancelArgs ce = new DragStartEventCancelArgs(mousePt, offset, c);
-            
-            if (DragStart != null)
-                DragStart(this, ce);
+
+            DragStart?.Invoke(this, ce);
 
             // If event is not cancelled then allow dragging
             _dragging = !ce.Cancel;
@@ -898,8 +895,7 @@ namespace ComponentFactory.Krypton.Toolkit
         protected virtual void OnDragQuit()
         {
             _dragging = false;
-            if (DragQuit != null)
-                DragQuit(this, EventArgs.Empty);
+            DragQuit?.Invoke(this, EventArgs.Empty);
         }
 
 		/// <summary>
@@ -908,9 +904,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">A MouseEventArgs containing the event data.</param>
 		protected virtual void OnClick(MouseEventArgs e)
 		{
-			if (Click != null)
-				Click(_target, e);
-		}
+            Click?.Invoke(_target, e);
+        }
 
         /// <summary>
         /// Raises the RightClick event.
@@ -918,8 +913,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A MouseEventArgs containing the event data.</param>
         protected virtual void OnRightClick(MouseEventArgs e)
         {
-            if (RightClick != null)
-                RightClick(_target, e);
+            RightClick?.Invoke(_target, e);
         }
         
         /// <summary>
@@ -928,9 +922,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">A MouseEventArgs containing the event data.</param>
 		protected virtual void OnMouseSelect(MouseEventArgs e)
 		{
-			if (MouseSelect != null)
-				MouseSelect(_target, e);
-		}
+            MouseSelect?.Invoke(_target, e);
+        }
 
 		/// <summary>
 		/// Raises the NeedPaint event.
@@ -938,9 +931,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="needLayout">Does the palette change require a layout.</param>
 		protected virtual void OnNeedPaint(bool needLayout)
 		{
-            if (_needPaint != null)
-                _needPaint(this, new NeedLayoutEventArgs(needLayout, _target.ClientRectangle));
-		}
+            _needPaint?.Invoke(this, new NeedLayoutEventArgs(needLayout, _target.ClientRectangle));
+        }
 		#endregion
 
         #region Implementation

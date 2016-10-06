@@ -534,8 +534,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnProviderClosing(object sender, CancelEventArgs e)
         {
-            if (_ribbon != null)
-                _ribbon.OnAppButtonMenuClosing(e);
+            _ribbon?.OnAppButtonMenuClosing(e);
         }
 
         private void OnProviderClose(object sender, CloseReasonEventArgs e)

@@ -720,8 +720,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             PerformNeedPaint(true);
 
-            if (ValueChanged != null)
-                ValueChanged(this, e);
+            ValueChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -730,8 +729,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnScroll(EventArgs e)
         {
-            if (Scroll != null)
-                Scroll(this, e);
+            Scroll?.Invoke(this, e);
         }
 
         /// <summary>

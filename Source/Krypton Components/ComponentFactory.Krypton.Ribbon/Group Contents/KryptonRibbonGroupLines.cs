@@ -470,106 +470,89 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
         #region Internal
         internal void OnDesignTimeAddButton()
         {
-            if (DesignTimeAddButton != null)
-                DesignTimeAddButton(this, EventArgs.Empty);
+            DesignTimeAddButton?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddColorButton()
         {
-            if (DesignTimeAddColorButton != null)
-                DesignTimeAddColorButton(this, EventArgs.Empty);
+            DesignTimeAddColorButton?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddCheckBox()
         {
-            if (DesignTimeAddCheckBox != null)
-                DesignTimeAddCheckBox(this, EventArgs.Empty);
+            DesignTimeAddCheckBox?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddRadioButton()
         {
-            if (DesignTimeAddRadioButton != null)
-                DesignTimeAddRadioButton(this, EventArgs.Empty);
+            DesignTimeAddRadioButton?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddLabel()
         {
-            if (DesignTimeAddLabel != null)
-                DesignTimeAddLabel(this, EventArgs.Empty);
+            DesignTimeAddLabel?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddCustomControl()
         {
-            if (DesignTimeAddCustomControl != null)
-                DesignTimeAddCustomControl(this, EventArgs.Empty);
+            DesignTimeAddCustomControl?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddCluster()
         {
-            if (DesignTimeAddCluster != null)
-                DesignTimeAddCluster(this, EventArgs.Empty);
+            DesignTimeAddCluster?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddTextBox()
         {
-            if (DesignTimeAddTextBox != null)
-                DesignTimeAddTextBox(this, EventArgs.Empty);
+            DesignTimeAddTextBox?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddMaskedTextBox()
         {
-            if (DesignTimeAddMaskedTextBox != null)
-                DesignTimeAddMaskedTextBox(this, EventArgs.Empty);
+            DesignTimeAddMaskedTextBox?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddRichTextBox()
         {
-            if (DesignTimeAddRichTextBox != null)
-                DesignTimeAddRichTextBox(this, EventArgs.Empty);
+            DesignTimeAddRichTextBox?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddComboBox()
         {
-            if (DesignTimeAddComboBox != null)
-                DesignTimeAddComboBox(this, EventArgs.Empty);
+            DesignTimeAddComboBox?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddNumericUpDown()
         {
-            if (DesignTimeAddNumericUpDown != null)
-                DesignTimeAddNumericUpDown(this, EventArgs.Empty);
+            DesignTimeAddNumericUpDown?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddDomainUpDown()
         {
-            if (DesignTimeAddDomainUpDown != null)
-                DesignTimeAddDomainUpDown(this, EventArgs.Empty);
+            DesignTimeAddDomainUpDown?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddDateTimePicker()
         {
-            if (DesignTimeAddDateTimePicker != null)
-                DesignTimeAddDateTimePicker(this, EventArgs.Empty);
+            DesignTimeAddDateTimePicker?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddTrackBar()
         {
-            if (DesignTimeAddTrackBar != null)
-                DesignTimeAddTrackBar(this, EventArgs.Empty);
+            DesignTimeAddTrackBar?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal override bool ProcessCmdKey(ref Message msg, Keys keyData)

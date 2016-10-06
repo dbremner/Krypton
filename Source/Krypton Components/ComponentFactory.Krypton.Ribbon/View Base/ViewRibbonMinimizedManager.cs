@@ -242,8 +242,7 @@ namespace ComponentFactory.Krypton.Ribbon
         public override void KeyPress(KeyPressEventArgs e)
         {
             // Tell current view of key event
-            if (FocusView != null)
-                FocusView.KeyPress(e);
+            FocusView?.KeyPress(e);
         }
 
         /// <summary>
@@ -301,14 +300,12 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (_focusView != value)
                 {
                     // Remove focus from existing view
-                    if (_focusView != null)
-                        _focusView.LostFocus(Root.OwningControl);
+                    _focusView?.LostFocus(Root.OwningControl);
 
                     _focusView = value;
 
                     // Add focus to the new view
-                    if (_focusView != null)
-                        _focusView.GotFocus(Root.OwningControl);
+                    _focusView?.GotFocus(Root.OwningControl);
                 }
             }
         }
@@ -320,8 +317,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void PerformNeedPaint(bool needLayout, Rectangle invalidRect)
         {
-            if (_needPaintDelegate != null)
-                _needPaintDelegate(this, new NeedLayoutEventArgs(needLayout, invalidRect));
+            _needPaintDelegate?.Invoke(this, new NeedLayoutEventArgs(needLayout, invalidRect));
         }
         #endregion
     }

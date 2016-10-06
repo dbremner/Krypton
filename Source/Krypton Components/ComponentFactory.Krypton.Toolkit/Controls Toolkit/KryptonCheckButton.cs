@@ -311,8 +311,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A CancelEventArgs containing the event data.</param>
         protected virtual void OnCheckedChanging(CancelEventArgs e)
         {
-            if (CheckedChanging != null)
-                CheckedChanging(this, e);
+            CheckedChanging?.Invoke(this, e);
         }
 
         /// <summary>
@@ -321,8 +320,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCheckedChanged(EventArgs e)
         {
-            if (CheckedChanged != null)
-                CheckedChanged(this, e);
+            CheckedChanged?.Invoke(this, e);
 
             // If there is a command associated then update with new state
             if (KryptonCommand != null)

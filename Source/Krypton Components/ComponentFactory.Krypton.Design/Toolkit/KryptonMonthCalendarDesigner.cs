@@ -174,8 +174,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_monthCalendar != null)
-                _monthCalendar.DesignerMouseLeave();
+            _monthCalendar?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

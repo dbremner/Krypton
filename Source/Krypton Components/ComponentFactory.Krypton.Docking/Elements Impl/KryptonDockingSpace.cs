@@ -344,8 +344,7 @@ namespace ComponentFactory.Krypton.Docking
                                 {
                                     // Find the cell that contains the target so we can remove the page
                                     KryptonWorkspaceCell cell = SpaceControl.CellForPage(removePage);
-                                    if (cell != null)
-                                        cell.Pages.Remove(removePage);
+                                    cell?.Pages.Remove(removePage);
                                 }
                             }
                         }
@@ -602,13 +601,10 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Find the cell that contains the target named paged
             KryptonWorkspaceCell cell = CellForPage(uniqueName);
-            if (cell != null)
-            {
-                // Check that the pages collection contains the named paged
-                KryptonPage page = cell.Pages[uniqueName];
-                if (page != null)
-                    cell.SelectedPage = page;
-            }
+            // Check that the pages collection contains the named paged
+            KryptonPage page = cell?.Pages[uniqueName];
+            if (page != null)
+                cell.SelectedPage = page;
         }
 
         /// <summary>
@@ -887,8 +883,7 @@ namespace ComponentFactory.Krypton.Docking
         private void OnSpaceControlRecreateLoadingPage(object sender, RecreateLoadingPageEventArgs e)
         {
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.RaiseRecreateLoadingPage(e);
+            dockingManager?.RaiseRecreateLoadingPage(e);
         }
         #endregion
     }

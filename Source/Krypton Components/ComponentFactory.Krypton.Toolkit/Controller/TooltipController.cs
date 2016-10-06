@@ -60,8 +60,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             _manager.MouseEnter(_targetElement, c);
 
-            if (_targetController != null)
-                _targetController.MouseEnter(c);
+            _targetController?.MouseEnter(c);
         }
 
         /// <summary>
@@ -73,8 +72,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             _manager.MouseMove(_targetElement, c, pt);
 
-            if (_targetController != null)
-                _targetController.MouseMove(c, pt);
+            _targetController?.MouseMove(c, pt);
         }
 
         /// <summary>
@@ -104,8 +102,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             _manager.MouseUp(_targetElement, c, pt, button);
 
-            if (_targetController != null)
-                _targetController.MouseUp(c, pt, button);
+            _targetController?.MouseUp(c, pt, button);
         }
 
         /// <summary>
@@ -116,9 +113,8 @@ namespace ComponentFactory.Krypton.Toolkit
         public void MouseLeave(Control c, ViewBase next)
         {
             _manager.MouseLeave(_targetElement, c, next);
-            
-            if (_targetController != null)
-                _targetController.MouseLeave(c, next);
+
+            _targetController?.MouseLeave(c, next);
         }
 
         /// <summary>
@@ -128,9 +124,8 @@ namespace ComponentFactory.Krypton.Toolkit
         public void DoubleClick(Point pt)
         {
             _manager.DoubleClick(_targetElement, pt);
-            
-            if (_targetController != null)
-                _targetController.DoubleClick(pt);
+
+            _targetController?.DoubleClick(pt);
         }
 
         /// <summary>

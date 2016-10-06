@@ -413,17 +413,14 @@ namespace ComponentFactory.Krypton.Toolkit
             bool rtl = false;
 
             // We need a valid control to find a top level form
-            if (control != null)
-            {
-                // Search for a top level form associated with the control
-                Form topForm = control.FindForm();
+            // Search for a top level form associated with the control
+            Form topForm = control?.FindForm();
 
-                // If can find an owning form
-                if (topForm != null)
-                {
-                    // Use the form setting instead
-                    rtl = topForm.RightToLeftLayout;
-                }
+            // If can find an owning form
+            if (topForm != null)
+            {
+                // Use the form setting instead
+                rtl = topForm.RightToLeftLayout;
             }
 
             return rtl;
@@ -1276,8 +1273,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 // If the new object has an associated designer then use that now to initialize the instance
                 IComponentInitializer designer = host.GetDesigner((IComponent)retObj) as IComponentInitializer;
-                if (designer != null)
-                    designer.InitializeNewComponent(null);
+                designer?.InitializeNewComponent(null);
             }
             else
             {
@@ -1308,8 +1304,7 @@ namespace ComponentFactory.Krypton.Toolkit
             {
                 // Fallback to calling any exposed dispose method
                 IDisposable disposable = instance as IDisposable;
-                if (disposable != null)
-                    disposable.Dispose();
+                disposable?.Dispose();
             }
         }
 

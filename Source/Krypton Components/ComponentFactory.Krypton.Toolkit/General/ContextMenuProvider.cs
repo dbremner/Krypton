@@ -189,8 +189,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         public void OnDispose(EventArgs e)
         {
-            if (Dispose != null)
-                Dispose(this, e);
+            Dispose?.Invoke(this, e);
         }
 
         /// <summary>
@@ -201,8 +200,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             if (_parent != null)
                 _parent.OnClosing(cea);
-            else if (Closing != null)
-                Closing(this, cea);
+            else Closing?.Invoke(this, cea);
         }
 
         /// <summary>
@@ -213,8 +211,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             if (_parent != null)
                 _parent.OnClose(e);
-            else if (Close != null)
-                Close(this, e);
+            else Close?.Invoke(this, e);
         }
 
         /// <summary>

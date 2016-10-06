@@ -104,9 +104,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An NeedLayoutEventArgs containing event data.</param>
         protected virtual void OnNeedPaint(object sender, NeedLayoutEventArgs e)
 		{
-            if (_needPaint != null)
-                _needPaint(this, e);
-		}
+            _needPaint?.Invoke(this, e);
+        }
 		#endregion
 	}
 }

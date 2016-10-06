@@ -446,8 +446,10 @@ namespace ComponentFactory.Krypton.Toolkit
 
             if (defaultButton != null)
                 defaultButton.Select();
-            else if (firstButton != null)
-                firstButton.Select();
+            else
+            {
+                firstButton?.Select();
+            }
         }
 
         private void UpdateCheckbox()
@@ -849,8 +851,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private void _linkLabelFooter_LinkClicked(object sender, EventArgs e)
         {
-            if (_taskDialog != null)
-                _taskDialog.RaiseFooterHyperlinkClicked();
+            _taskDialog?.RaiseFooterHyperlinkClicked();
         }
 
         private void _buttonClose_Click(object sender, EventArgs e)

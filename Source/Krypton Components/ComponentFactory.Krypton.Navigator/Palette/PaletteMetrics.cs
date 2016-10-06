@@ -84,8 +84,7 @@ namespace ComponentFactory.Krypton.Navigator
                 {
                     _pageButtonSpecInset = value;
 
-                    if (_navigator != null)
-                        _navigator.OnViewBuilderPropertyChanged("PageButtonSpecInset");
+                    _navigator?.OnViewBuilderPropertyChanged("PageButtonSpecInset");
                 }
             }
         }
@@ -116,8 +115,7 @@ namespace ComponentFactory.Krypton.Navigator
                 {
                     _pageButtonSpecPadding = value;
 
-                    if (_navigator != null)
-                        _navigator.OnViewBuilderPropertyChanged("PageButtonSpecPadding");
+                    _navigator?.OnViewBuilderPropertyChanged("PageButtonSpecPadding");
                 }
             }
         }

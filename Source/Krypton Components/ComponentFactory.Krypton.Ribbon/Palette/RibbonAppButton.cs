@@ -155,8 +155,7 @@ namespace ComponentFactory.Krypton.Ribbon
                     _appButtonImage = value;
 
                     // Captin area is not created when property first set to default value
-                    if (_ribbon.CaptionArea != null)
-                        _ribbon.CaptionArea.AppButtonChanged();
+                    _ribbon.CaptionArea?.AppButtonChanged();
                 }
             }
         }

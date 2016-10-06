@@ -191,8 +191,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A PropertyChangedEventArgs containing the event data.</param>
         protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, e);
+            PropertyChanged?.Invoke(this, e);
         }
         #endregion 
     }

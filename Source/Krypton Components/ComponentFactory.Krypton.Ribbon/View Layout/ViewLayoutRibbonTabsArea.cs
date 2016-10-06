@@ -232,8 +232,7 @@ namespace ComponentFactory.Krypton.Ribbon
                                 _captionArea.PreventIntegration = !show;
 
                                 // Need to recalcualte the composition and so the client area that is turned into glass
-                                if (_captionArea.KryptonForm != null)
-                                    _captionArea.KryptonForm.RecalculateComposition();
+                                _captionArea.KryptonForm?.RecalculateComposition();
                             }
                         }
                         else
@@ -417,8 +416,7 @@ namespace ComponentFactory.Krypton.Ribbon
                 {
                     // Close down the associated application window
                     Form ownerForm = _ribbon.FindForm();
-                    if (ownerForm != null)
-                        ownerForm.Close();
+                    ownerForm?.Close();
                 }
             }
         }
@@ -444,9 +442,9 @@ namespace ComponentFactory.Krypton.Ribbon
         /// </summary>
         public void RecreateButtons()
         {
-            if (_buttonManager != null)
-                _buttonManager.RecreateButtons();
+            _buttonManager?.RecreateButtons();
         }
+
         #endregion
 
         #region Protected
@@ -979,8 +977,7 @@ namespace ComponentFactory.Krypton.Ribbon
                     if (sourceContent != null)
                     {
                         // Remove any currently showing tooltip
-                        if (_visualPopupToolTip != null)
-                            _visualPopupToolTip.Dispose();
+                        _visualPopupToolTip?.Dispose();
 
                         // Create the actual tooltip popup object
                         _visualPopupToolTip = new VisualPopupToolTip(_ribbon.GetRedirector(),
@@ -1005,8 +1002,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private void OnCancelToolTip(object sender, EventArgs e)
         {
             // Remove any currently showing tooltip
-            if (_visualPopupToolTip != null)
-                _visualPopupToolTip.Dispose();
+            _visualPopupToolTip?.Dispose();
         }
 
         private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
@@ -1021,8 +1017,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnTabsPaintBackground(object sender, PaintEventArgs e)
         {
-            if (PaintBackground != null)
-                PaintBackground(sender, e);
+            PaintBackground?.Invoke(sender, e);
         }
         #endregion
     }

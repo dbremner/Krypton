@@ -228,8 +228,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A TooltipEventArgs that contains the event data.</param>
         protected virtual void OnShowToolTip(ToolTipEventArgs e)
         {
-            if (ShowToolTip != null)
-                ShowToolTip(this, e);
+            ShowToolTip?.Invoke(this, e);
         }
 
         /// <summary>
@@ -237,8 +236,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected virtual void OnCancelToolTip()
         {
-            if (CancelToolTip != null)
-                CancelToolTip(this, EventArgs.Empty);
+            CancelToolTip?.Invoke(this, EventArgs.Empty);
         }
         #endregion
 

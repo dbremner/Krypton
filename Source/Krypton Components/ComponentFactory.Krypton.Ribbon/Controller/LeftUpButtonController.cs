@@ -334,9 +334,8 @@ namespace ComponentFactory.Krypton.Ribbon
 		/// <param name="e">A MouseEventArgs containing the event data.</param>
 		protected virtual void OnClick(MouseEventArgs e)
 		{
-			if (Click != null)
-				Click(_target, e);
-		}
+            Click?.Invoke(_target, e);
+        }
 
 		/// <summary>
 		/// Raises the NeedPaint event.
@@ -344,9 +343,8 @@ namespace ComponentFactory.Krypton.Ribbon
 		/// <param name="needLayout">Does the palette change require a layout.</param>
 		protected virtual void OnNeedPaint(bool needLayout)
 		{
-			if (_needPaint != null)
-                _needPaint(this, new NeedLayoutEventArgs(needLayout));
-		}
+            _needPaint?.Invoke(this, new NeedLayoutEventArgs(needLayout));
+        }
 		#endregion
 	}
 }

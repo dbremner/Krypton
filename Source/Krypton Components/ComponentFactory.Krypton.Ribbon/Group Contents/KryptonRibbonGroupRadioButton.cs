@@ -513,21 +513,20 @@ namespace ComponentFactory.Krypton.Ribbon
                     if (VisualPopupManager.Singleton.CurrentPopup != null)
                     {
                         // Do we need to fire a delegate stating the click processing has finished?
-                        if (fireDelegate && (finishDelegate != null))
-                            finishDelegate(this, EventArgs.Empty);
+                        if (fireDelegate)
+                            finishDelegate?.Invoke(this, EventArgs.Empty);
 
                         fireDelegate = false;
                     }
 
                     // Generate actual click event
-                    if (Click != null)
-                        Click(this, EventArgs.Empty);
+                    Click?.Invoke(this, EventArgs.Empty);
                 }
             }
 
             // Do we need to fire a delegate stating the click processing has finished?
-            if (fireDelegate && (finishDelegate != null))
-                finishDelegate(this, EventArgs.Empty);
+            if (fireDelegate)
+                finishDelegate?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -536,8 +535,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCheckedChanged(EventArgs e)
         {
-            if (CheckedChanged != null)
-                CheckedChanged(this, e);
+            CheckedChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -546,16 +544,14 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
         #region Internal
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal override bool ProcessCmdKey(ref Message msg, Keys keyData)

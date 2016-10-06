@@ -102,9 +102,9 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="ribbon">Reference to owning ribbon instance.</param>
         public void KeyTipSelect(KryptonRibbon ribbon)
         {
-            if (_target != null)
-                _target.KeyTipSelect(ribbon);
+            _target?.KeyTipSelect(ribbon);
         }
+
         #endregion
     }
 }

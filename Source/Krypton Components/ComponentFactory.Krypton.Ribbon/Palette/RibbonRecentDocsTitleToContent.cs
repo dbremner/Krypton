@@ -49,9 +49,9 @@ namespace ComponentFactory.Krypton.Ribbon
         /// </summary>
         public void Dispose()
         {
-            if (_shortTextFont != null)
-                _shortTextFont.Dispose();
+            _shortTextFont?.Dispose();
         }
+
         #endregion
 
         #region IPaletteContent
@@ -122,8 +122,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <returns>Font value.</returns>
         public override Font GetContentShortTextFont(PaletteState state)
         {
-            if (_shortTextFont != null)
-                _shortTextFont.Dispose();
+            _shortTextFont?.Dispose();
 
             _shortTextFont = new Font(RibbonGeneral.GetRibbonTextFont(state), FontStyle.Bold);
             return _shortTextFont;

@@ -179,8 +179,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     PaintTransparentBackground(e);
 
                 // Give handles a change to draw the background
-                if (PaintBackground != null)
-                    PaintBackground(this, e);
+                PaintBackground?.Invoke(this, e);
 
                 // Create a render context for drawing the view
                 using (RenderContext context = new RenderContext(GetViewManager(),
@@ -441,8 +440,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A ViewControlHitTestArgs containing the event data.</param>
         protected virtual void OnWndProcHitTest(ViewControlHitTestArgs e)
         {
-            if (WndProcHitTest != null)
-                WndProcHitTest(this, e);
+            WndProcHitTest?.Invoke(this, e);
         }
         #endregion
 

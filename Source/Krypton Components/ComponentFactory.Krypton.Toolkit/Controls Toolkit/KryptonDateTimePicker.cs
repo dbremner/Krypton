@@ -1702,8 +1702,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnRightToLeftLayoutChanged(EventArgs e)
         {
-            if (RightToLeftLayoutChanged != null)
-                RightToLeftLayoutChanged(this, e);
+            RightToLeftLayoutChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1712,8 +1711,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatChanged(EventArgs e)
         {
-            if (FormatChanged != null)
-                FormatChanged(this, e);
+            FormatChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1722,8 +1720,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCheckedChanged(EventArgs e)
         {
-            if (CheckedChanged != null)
-                CheckedChanged(this, e);
+            CheckedChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1732,8 +1729,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDown(DateTimePickerDropArgs e)
         {
-            if (DropDown != null)
-                DropDown(this, e);
+            DropDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1742,8 +1738,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An DateTimePickerCloseArgs containing the event data.</param>
         protected virtual void OnCloseUp(DateTimePickerCloseArgs e)
         {
-            if (CloseUp != null)
-                CloseUp(this, e);
+            CloseUp?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1752,8 +1747,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCloseUpMonthCalendarChanged(EventArgs e)
         {
-            if (CloseUpMonthCalendarChanged != null)
-                CloseUpMonthCalendarChanged(this, e);
+            CloseUpMonthCalendarChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1762,8 +1756,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         internal protected virtual void OnAutoShiftOverflow(CancelEventArgs e)
         {
-            if (AutoShiftOverflow != null)
-                AutoShiftOverflow(this, e);
+            AutoShiftOverflow?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1772,8 +1765,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnValueChanged(EventArgs e)
         {
-            if (ValueChanged != null)
-                ValueChanged(this, e);
+            ValueChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1782,8 +1774,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnValueNullableChanged(EventArgs e)
         {
-            if (ValueNullableChanged != null)
-                ValueNullableChanged(this, e);
+            ValueNullableChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1792,8 +1783,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnActiveFragmentChanged(EventArgs e)
         {
-            if (ActiveFragmentChanged != null)
-                ActiveFragmentChanged(this, e);
+            ActiveFragmentChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -2312,8 +2302,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     if (sourceContent != null)
                     {
                         // Remove any currently showing tooltip
-                        if (_visualPopupToolTip != null)
-                            _visualPopupToolTip.Dispose();
+                        _visualPopupToolTip?.Dispose();
 
                         // Create the actual tooltip popup object
                         _visualPopupToolTip = new VisualPopupToolTip(Redirector,
@@ -2511,11 +2500,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private void OnCancelToolTip(object sender, EventArgs e)
         {
             // Remove any currently showing tooltip
-            if (_visualPopupToolTip != null)
-                _visualPopupToolTip.Dispose();
+            _visualPopupToolTip?.Dispose();
         }
 
-        private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
+	    private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
         {
             // Unhook events from the specific instance that generated event
             VisualPopupToolTip popupToolTip = (VisualPopupToolTip)sender;

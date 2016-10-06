@@ -131,8 +131,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnInitialized(EventArgs e)
         {
-            if (Initialized != null)
-                Initialized(this, EventArgs.Empty);
+            Initialized?.Invoke(this, EventArgs.Empty);
         }
         #endregion
     }

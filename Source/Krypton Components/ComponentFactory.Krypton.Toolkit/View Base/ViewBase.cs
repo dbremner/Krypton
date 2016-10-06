@@ -138,10 +138,10 @@ namespace ComponentFactory.Krypton.Toolkit
             {
                 if (_owningControl != null)
                     return _owningControl;
-                else if (Parent != null)
-                    return Parent.OwningControl;
                 else
-                    return null;
+                {
+                    return Parent?.OwningControl;
+                }
             }
 
             set { _owningControl = value; }
@@ -449,10 +449,7 @@ namespace ComponentFactory.Krypton.Toolkit
             else
             {
                 // Bubble event up to the parent
-                if (Parent != null)
-                    return Parent.FindMouseController();
-                else
-                    return null;
+                return Parent?.FindMouseController();
             }
         }
 
@@ -466,9 +463,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 MouseController.MouseEnter(OwningControl);
 			else
 			{
-				// Bubble event up to the parent
-				if (Parent != null)
-					Parent.MouseEnter();
+			    // Bubble event up to the parent
+			    Parent?.MouseEnter();
 			}
 		}
 
@@ -483,9 +479,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 MouseController.MouseMove(OwningControl, pt);
 			else
 			{
-				// Bubble event up to the parent
-				if (Parent != null)
-					Parent.MouseMove(pt);
+			    // Bubble event up to the parent
+			    Parent?.MouseMove(pt);
 			}
 		}
 
@@ -522,9 +517,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 MouseController.MouseUp(OwningControl, pt, button);
 			else
 			{
-				// Bubble event up to the parent
-				if (Parent != null)
-					Parent.MouseUp(pt, button);
+			    // Bubble event up to the parent
+			    Parent?.MouseUp(pt, button);
 			}
 		}
 
@@ -539,9 +533,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 MouseController.MouseLeave(OwningControl, next);
 			else
 			{
-				// Bubble event up to the parent
-				if (Parent != null)
-                    Parent.MouseLeave(next);
+			    // Bubble event up to the parent
+			    Parent?.MouseLeave(next);
 			}
 		}
 
@@ -556,9 +549,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 MouseController.DoubleClick(pt);
 			else
 			{
-				// Bubble event up to the parent
-				if (Parent != null)
-                    Parent.DoubleClick(pt);
+			    // Bubble event up to the parent
+			    Parent?.DoubleClick(pt);
 			}
         }
         #endregion
@@ -576,8 +568,7 @@ namespace ComponentFactory.Krypton.Toolkit
             else
             {
                 // Bubble event up to the parent
-                if (Parent != null)
-                    Parent.KeyDown(e);
+                Parent?.KeyDown(e);
             }
         }
 
@@ -593,8 +584,7 @@ namespace ComponentFactory.Krypton.Toolkit
             else
             {
                 // Bubble event up to the parent
-                if (Parent != null)
-                    Parent.KeyPress(e);
+                Parent?.KeyPress(e);
             }
         }
 
@@ -632,8 +622,7 @@ namespace ComponentFactory.Krypton.Toolkit
             else
             {
                 // Bubble event up to the parent
-                if (Parent != null)
-                    Parent.GotFocus(c);
+                Parent?.GotFocus(c);
             }
         }
 
@@ -649,8 +638,7 @@ namespace ComponentFactory.Krypton.Toolkit
             else
             {
                 // Bubble event up to the parent
-                if (Parent != null)
-                    Parent.LostFocus(c);
+                Parent?.LostFocus(c);
             }
         }
         #endregion

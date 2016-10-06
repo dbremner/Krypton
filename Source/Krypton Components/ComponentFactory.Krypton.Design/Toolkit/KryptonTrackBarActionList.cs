@@ -230,18 +230,14 @@ namespace ComponentFactory.Krypton.Toolkit
                 PropertyDescriptor orientationProp = TypeDescriptor.GetProperties(_trackBar)["Orientation"];
 
                 // If we succeeded in getting the property
-                if (orientationProp != null)
-                {
-                    // Update the actual property with the new value
-                    orientationProp.SetValue(_trackBar, orientation);
-                }
+                // Update the actual property with the new value
+                orientationProp?.SetValue(_trackBar, orientation);
 
                 // Get the user interface service associated with actions
                 DesignerActionUIService service = GetService(typeof(DesignerActionUIService)) as DesignerActionUIService;
 
                 // If we managed to get it then request it update to reflect new action setting
-                if (service != null)
-                    service.Refresh(_trackBar);
+                service?.Refresh(_trackBar);
             }
         }
         #endregion

@@ -59,8 +59,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (_page != null)
-                _page.Dispose();
+            _page?.Dispose();
 
             base.Dispose(disposing);
         }

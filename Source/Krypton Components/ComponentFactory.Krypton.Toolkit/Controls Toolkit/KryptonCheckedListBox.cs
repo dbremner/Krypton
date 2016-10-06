@@ -820,8 +820,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseEnter(EventArgs e)
             {
-                if (TrackMouseEnter != null)
-                    TrackMouseEnter(this, e);
+                TrackMouseEnter?.Invoke(this, e);
             }
 
             /// <summary>
@@ -830,8 +829,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseLeave(EventArgs e)
             {
-                if (TrackMouseLeave != null)
-                    TrackMouseLeave(this, e);
+                TrackMouseLeave?.Invoke(this, e);
             }
             #endregion
 
@@ -2159,10 +2157,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public new void Select()
         {
-            if (ListBox != null)
-                ListBox.Select();
+            ListBox?.Select();
         }
-        #endregion
+
+	    #endregion
 
         #region Protected
         /// <summary>
@@ -2186,8 +2184,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedIndexChanged(EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(this, e);
+            SelectedIndexChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2196,8 +2193,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedValueChanged(EventArgs e)
         {
-            if (SelectedValueChanged != null)
-                SelectedValueChanged(this, e);
+            SelectedValueChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2206,8 +2202,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ItemCheckEventArgs containing the event data.</param>
         protected virtual void OnItemCheck(ItemCheckEventArgs e)
         {
-            if (ItemCheck != null)
-                ItemCheck(this, e);
+            ItemCheck?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2216,8 +2211,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormat(ListControlConvertEventArgs e)
         {
-            if (Format != null)
-                Format(this, e);
+            Format?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2226,8 +2220,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatInfoChanged(EventArgs e)
         {
-            if (FormatInfoChanged != null)
-                FormatInfoChanged(this, e);
+            FormatInfoChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2236,8 +2229,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatStringChanged(EventArgs e)
         {
-            if (FormatStringChanged != null)
-                FormatStringChanged(this, e);
+            FormatStringChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2246,8 +2238,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormattingEnabledChanged(EventArgs e)
         {
-            if (FormattingEnabledChanged != null)
-                FormattingEnabledChanged(this, e);
+            FormattingEnabledChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -2305,8 +2296,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackColorChanged(EventArgs e)
         {
-            if (BackColorChanged != null)
-                BackColorChanged(this, e);
+            BackColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2315,8 +2305,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageChanged(EventArgs e)
         {
-            if (BackgroundImageChanged != null)
-                BackgroundImageChanged(this, e);
+            BackgroundImageChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2325,8 +2314,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageLayoutChanged(EventArgs e)
         {
-            if (BackgroundImageLayoutChanged != null)
-                BackgroundImageLayoutChanged(this, e);
+            BackgroundImageLayoutChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2335,8 +2323,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnForeColorChanged(EventArgs e)
         {
-            if (ForeColorChanged != null)
-                ForeColorChanged(this, e);
+            ForeColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2345,8 +2332,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnPaddingChanged(EventArgs e)
         {
-            if (PaddingChanged != null)
-                PaddingChanged(this, e);
+            PaddingChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2375,8 +2361,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An PaintEventArgs that contains the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (Paint != null)
-                Paint(this, e);
+            Paint?.Invoke(this, e);
 
             base.OnPaint(e);
         }
@@ -2387,8 +2372,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An PaintEventArgs that contains the event data.</param>
         protected override void OnTextChanged(EventArgs e)
         {
-            if (TextChanged != null)
-                TextChanged(this, e);
+            TextChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2397,8 +2381,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTrackMouseEnter(EventArgs e)
         {
-            if (TrackMouseEnter != null)
-                TrackMouseEnter(this, e);
+            TrackMouseEnter?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2407,8 +2390,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTrackMouseLeave(EventArgs e)
         {
-            if (TrackMouseLeave != null)
-                TrackMouseLeave(this, e);
+            TrackMouseLeave?.Invoke(this, e);
         }
 
         /// <summary>

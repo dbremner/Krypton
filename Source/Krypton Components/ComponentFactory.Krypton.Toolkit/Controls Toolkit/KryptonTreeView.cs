@@ -224,8 +224,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseEnter(EventArgs e)
             {
-                if (TrackMouseEnter != null)
-                    TrackMouseEnter(this, e);
+                TrackMouseEnter?.Invoke(this, e);
             }
 
             /// <summary>
@@ -234,8 +233,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseLeave(EventArgs e)
             {
-                if (TrackMouseLeave != null)
-                    TrackMouseLeave(this, e);
+                TrackMouseLeave?.Invoke(this, e);
             }
             #endregion
 
@@ -1551,10 +1549,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public new void Select()
         {
-            if (TreeView != null)
-                TreeView.Select();
+            TreeView?.Select();
         }
-        #endregion
+
+	    #endregion
 
         #region Protected
         /// <summary>
@@ -1578,8 +1576,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewEventArgs that contains the event data.</param>
         protected virtual void OnAfterCheck(TreeViewEventArgs e)
         {
-            if (AfterCheck != null)
-                AfterCheck(this, e);
+            AfterCheck?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1588,8 +1585,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewEventArgs that contains the event data.</param>
         protected virtual void OnAfterCollapse(TreeViewEventArgs e)
         {
-            if (AfterCollapse != null)
-                AfterCollapse(this, e);
+            AfterCollapse?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1598,8 +1594,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewEventArgs that contains the event data.</param>
         protected virtual void OnAfterExpand(TreeViewEventArgs e)
         {
-            if (AfterExpand != null)
-                AfterExpand(this, e);
+            AfterExpand?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1608,8 +1603,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An NodeLabelEditEventArgs that contains the event data.</param>
         protected virtual void OnAfterLabelEdit(NodeLabelEditEventArgs e)
         {
-            if (AfterLabelEdit != null)
-                AfterLabelEdit(this, e);
+            AfterLabelEdit?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1618,8 +1612,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewEventArgs that contains the event data.</param>
         protected virtual void OnAfterSelect(TreeViewEventArgs e)
         {
-            if (AfterSelect != null)
-                AfterSelect(this, e);
+            AfterSelect?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1628,8 +1621,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewCancelEventArgs that contains the event data.</param>
         protected virtual void OnBeforeCheck(TreeViewCancelEventArgs e)
         {
-            if (BeforeCheck != null)
-                BeforeCheck(this, e);
+            BeforeCheck?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1638,8 +1630,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewCancelEventArgs that contains the event data.</param>
         protected virtual void OnBeforeCollapse(TreeViewCancelEventArgs e)
         {
-            if (BeforeCollapse != null)
-                BeforeCollapse(this, e);
+            BeforeCollapse?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1648,8 +1639,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewCancelEventArgs that contains the event data.</param>
         protected virtual void OnBeforeExpand(TreeViewCancelEventArgs e)
         {
-            if (BeforeExpand != null)
-                BeforeExpand(this, e);
+            BeforeExpand?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1658,8 +1648,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An NodeLabelEditEventArgs that contains the event data.</param>
         protected virtual void OnBeforeLabelEdit(NodeLabelEditEventArgs e)
         {
-            if (BeforeLabelEdit != null)
-                BeforeLabelEdit(this, e);
+            BeforeLabelEdit?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1668,8 +1657,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeViewCancelEventArgs that contains the event data.</param>
         protected virtual void OnBeforeSelect(TreeViewCancelEventArgs e)
         {
-            if (BeforeSelect != null)
-                BeforeSelect(this, e);
+            BeforeSelect?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1678,8 +1666,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ItemDragEventArgs that contains the event data.</param>
         protected virtual void OnItemDrag(ItemDragEventArgs e)
         {
-            if (ItemDrag != null)
-                ItemDrag(this, e);
+            ItemDrag?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1688,8 +1675,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeNodeMouseClickEventArgs that contains the event data.</param>
         protected virtual void OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
         {
-            if (NodeMouseClick != null)
-                NodeMouseClick(this, e);
+            NodeMouseClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1698,8 +1684,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeNodeMouseClickEventArgs that contains the event data.</param>
         protected virtual void OnNodeMouseDoubleClick(TreeNodeMouseClickEventArgs e)
         {
-            if (NodeMouseDoubleClick != null)
-                NodeMouseDoubleClick(this, e);
+            NodeMouseDoubleClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1708,8 +1693,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An TreeNodeMouseHoverEventArgs that contains the event data.</param>
         protected virtual void OnNodeMouseHover(TreeNodeMouseHoverEventArgs e)
         {
-            if (NodeMouseHover != null)
-                NodeMouseHover(this, e);
+            NodeMouseHover?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1718,8 +1702,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected virtual void OnRightToLeftLayoutChanged(EventArgs e)
         {
-            if (RightToLeftLayoutChanged != null)
-                RightToLeftLayoutChanged(this, e);
+            RightToLeftLayoutChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -1785,8 +1768,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackColorChanged(EventArgs e)
         {
-            if (BackColorChanged != null)
-                BackColorChanged(this, e);
+            BackColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1795,8 +1777,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageChanged(EventArgs e)
         {
-            if (BackgroundImageChanged != null)
-                BackgroundImageChanged(this, e);
+            BackgroundImageChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1805,8 +1786,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageLayoutChanged(EventArgs e)
         {
-            if (BackgroundImageLayoutChanged != null)
-                BackgroundImageLayoutChanged(this, e);
+            BackgroundImageLayoutChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1815,8 +1795,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnForeColorChanged(EventArgs e)
         {
-            if (ForeColorChanged != null)
-                ForeColorChanged(this, e);
+            ForeColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1825,8 +1804,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnPaddingChanged(EventArgs e)
         {
-            if (PaddingChanged != null)
-                PaddingChanged(this, e);
+            PaddingChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1855,8 +1833,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An PaintEventArgs that contains the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (Paint != null)
-                Paint(this, e);
+            Paint?.Invoke(this, e);
 
             base.OnPaint(e);
         }
@@ -1867,8 +1844,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnTextChanged(EventArgs e)
         {
-            if (TextChanged != null)
-                TextChanged(this, e);
+            TextChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1877,8 +1853,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTrackMouseEnter(EventArgs e)
         {
-            if (TrackMouseEnter != null)
-                TrackMouseEnter(this, e);
+            TrackMouseEnter?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1887,8 +1862,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTrackMouseLeave(EventArgs e)
         {
-            if (TrackMouseLeave != null)
-                TrackMouseLeave(this, e);
+            TrackMouseLeave?.Invoke(this, e);
         }
 
         /// <summary>

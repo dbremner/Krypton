@@ -146,8 +146,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_richTextBox != null)
-                _richTextBox.DesignerMouseLeave();
+            _richTextBox?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

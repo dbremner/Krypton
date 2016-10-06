@@ -162,8 +162,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             base.Dispose(disposing);
 
-            if (ViewManager != null)
-                ViewManager.Dispose();
+            ViewManager?.Dispose();
 
             if (_screenDC != IntPtr.Zero)
                 PI.DeleteDC(_screenDC);
@@ -913,8 +912,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // A new palette source means we need to layout and redraw
             OnNeedPaint(Palette, new NeedLayoutEventArgs(true));
 
-            if (PaletteChanged != null)
-                PaletteChanged(this, e);
+            PaletteChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -923,8 +921,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnApplyCustomChromeChanged(EventArgs e)
         {
-            if (ApplyCustomChromeChanged != null)
-                ApplyCustomChromeChanged(this, e);
+            ApplyCustomChromeChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1429,15 +1426,12 @@ namespace ComponentFactory.Krypton.Toolkit
             // Find the view element under the mouse
             ViewBase pointView = ViewManager.Root.ViewFromPoint(windowPoint);
 
-            if (pointView != null)
-            {
-                // Try and find a mouse controller for the active view
-                IMouseController controller = pointView.FindMouseController();
+            // Try and find a mouse controller for the active view
+            IMouseController controller = pointView?.FindMouseController();
 
-                // Eat the message
-                if (controller != null)
-                    return true;
-            }
+            // Eat the message
+            if (controller != null)
+                return true;
 
             return false;
         }
@@ -1531,8 +1525,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected virtual void OnWindowActiveChanged()
         {
-            if (WindowActiveChanged != null)
-                WindowActiveChanged(this, EventArgs.Empty);
+            WindowActiveChanged?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -1599,13 +1592,10 @@ namespace ComponentFactory.Krypton.Toolkit
             ViewManager.MouseDown(new MouseEventArgs(MouseButtons.Left, 1, pt.X, pt.Y, 0), pt);
 
             // If we moused down on a active view element
-            if (ViewManager.ActiveView != null)
-            {
-                // Ask the controller if the mouse down should be ignored by wnd proc processing
-                IMouseController controller = ViewManager.ActiveView.FindMouseController();
-                if (controller != null)
-                    return controller.IgnoreVisualFormLeftButtonDown;
-            }
+            // Ask the controller if the mouse down should be ignored by wnd proc processing
+            IMouseController controller = ViewManager.ActiveView?.FindMouseController();
+            if (controller != null)
+                return controller.IgnoreVisualFormLeftButtonDown;
 
             return false;
         }

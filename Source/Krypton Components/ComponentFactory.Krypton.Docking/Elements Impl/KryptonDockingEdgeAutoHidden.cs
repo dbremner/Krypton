@@ -231,17 +231,14 @@ namespace ComponentFactory.Krypton.Docking
             for (int i = 0; i < Count; i++)
             {
                 KryptonDockingAutoHiddenGroup ahg = this[i] as KryptonDockingAutoHiddenGroup;
-                if (ahg != null)
+                // If the target page is inside this group
+                KryptonPage page = ahg?.AutoHiddenGroupControl.Pages[uniqueName];
+                if (page != null)
                 {
-                    // If the target page is inside this group
-                    KryptonPage page = ahg.AutoHiddenGroupControl.Pages[uniqueName];
-                    if (page != null)
-                    {
-                        // Request the sliding panel slide itself into view with the provided page
-                        KryptonAutoHiddenProxyPage proxyPage = (KryptonAutoHiddenProxyPage)page;
-                        _slidePanel.SlideOut(proxyPage.Page, ahg.AutoHiddenGroupControl, select);
-                        break;
-                    }
+                    // Request the sliding panel slide itself into view with the provided page
+                    KryptonAutoHiddenProxyPage proxyPage = (KryptonAutoHiddenProxyPage)page;
+                    _slidePanel.SlideOut(proxyPage.Page, ahg.AutoHiddenGroupControl, @select);
+                    break;
                 }
             }
         }
@@ -439,16 +436,14 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Generate event so that the close action is handled for the named page
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.CloseRequest(new string[] { e.UniqueName });
+            dockingManager?.CloseRequest(new string[] { e.UniqueName });
         }
 
         private void OnSlidePanelPageAutoHiddenClicked(object sender, UniqueNameEventArgs e)
         {
             // Generate event so that the auto hidden is switched to docked is handled for the group that contains the named page
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.SwitchAutoHiddenGroupToDockedCellRequest(e.UniqueName);
+            dockingManager?.SwitchAutoHiddenGroupToDockedCellRequest(e.UniqueName);
         }
 
         private void OnSlidePanelPageDropDownClicked(object sender, CancelDropDownEventArgs e)
@@ -463,8 +458,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Generate event so that the appropriate context menu options are preseted and actioned
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.RaiseAutoHiddenShowingStateChanged(e);
+            dockingManager?.RaiseAutoHiddenShowingStateChanged(e);
         }
 
         private Rectangle FindMovementRect(Rectangle moveRect)

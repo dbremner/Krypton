@@ -1762,8 +1762,9 @@ namespace ComponentFactory.Krypton.Navigator
             // Update each individual button with the new style for remapping page level button specs
             if (_pageStackLookup != null)
                 foreach (KeyValuePair<KryptonPage, ViewDrawNavCheckButtonBase> pair in _pageStackLookup)
-                    if (pair.Value.ButtonSpecManager != null)
-                        pair.Value.ButtonSpecManager.SetRemapTarget(Navigator.Outlook.CheckButtonStyle);
+                {
+                    pair.Value.ButtonSpecManager?.SetRemapTarget(Navigator.Outlook.CheckButtonStyle);
+                }
         }
 
         private void UpdateOverflowButtonStyle()

@@ -83,8 +83,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (disposing)
                 {
                     // Remove adorners
-                    if (_behaviorService != null)
-                        _behaviorService.Adorners.Remove(_adorner);
+                    _behaviorService?.Adorners.Remove(_adorner);
                 }
             }
             finally

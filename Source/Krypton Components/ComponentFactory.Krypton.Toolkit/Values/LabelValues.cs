@@ -191,9 +191,8 @@ namespace ComponentFactory.Krypton.Toolkit
 				{
 					_text = value;
 					PerformNeedPaint(true);
-                    if (TextChanged != null)
-                        TextChanged(this, EventArgs.Empty);
-				}
+                    TextChanged?.Invoke(this, EventArgs.Empty);
+                }
 			}
 		}
 

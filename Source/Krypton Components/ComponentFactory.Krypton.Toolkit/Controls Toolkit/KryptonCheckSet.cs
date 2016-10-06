@@ -389,8 +389,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             if (!_initializing)
             {
-                if (CheckedButtonChanged != null)
-                    CheckedButtonChanged(this, e);
+                CheckedButtonChanged?.Invoke(this, e);
             }
             else
                 _checkedChanged = true;

@@ -898,14 +898,12 @@ namespace ComponentFactory.Krypton.Docking
 
         private void OnDockspaceSeparatorMoving(object sender, SplitterCancelEventArgs e)
         {
-            if (SplitterMoving != null)
-                SplitterMoving(sender, e);
+            SplitterMoving?.Invoke(sender, e);
         }
 
         private void OnDockspaceSeparatorMoved(object sender, SplitterEventArgs e)
         {
-            if (SplitterMoved != null)
-                SplitterMoved(sender, e);
+            SplitterMoved?.Invoke(sender, e);
         }
 
         private void OnDockspaceSeparatorMoveRect(object sender, SplitterMoveRectMenuArgs e)
@@ -916,37 +914,31 @@ namespace ComponentFactory.Krypton.Docking
                 Application.DoEvents();
             }
 
-            if (SplitterMoveRect != null)
-                SplitterMoveRect(sender, e);
+            SplitterMoveRect?.Invoke(sender, e);
         }
 
         private void OnDockspacePageCloseClicked(object sender, UniqueNameEventArgs e)
         {
-            if (PageCloseClicked != null)
-                PageCloseClicked(sender, e);
+            PageCloseClicked?.Invoke(sender, e);
         }
 
         private void OnDockspacePageAutoHiddenClicked(object sender, UniqueNameEventArgs e)
         {
-            if (PageAutoHiddenClicked != null)
-                PageAutoHiddenClicked(sender, e);
+            PageAutoHiddenClicked?.Invoke(sender, e);
         }
 
         private void OnDockspacePageDropDownClicked(object sender, CancelDropDownEventArgs e)
         {
             // Click the drop down button should cause the slide out to be focused so that it
             // does not slide back again if you move the mouse away from the slide out area
-            if (_dockspaceSlide != null)
-                _dockspaceSlide.Select();
+            _dockspaceSlide?.Select();
 
-            if (PageDropDownClicked != null)
-                PageDropDownClicked(sender, e);
+            PageDropDownClicked?.Invoke(sender, e);
         }
 
         private void OnAutoHiddenShowingStateChanged(AutoHiddenShowingStateEventArgs e)
         {
-            if (AutoHiddenShowingStateChanged != null)
-                AutoHiddenShowingStateChanged(this, e);
+            AutoHiddenShowingStateChanged?.Invoke(this, e);
         }
         #endregion
     }

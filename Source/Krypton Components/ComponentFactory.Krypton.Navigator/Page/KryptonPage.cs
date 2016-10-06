@@ -1354,9 +1354,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnDockChanged(EventArgs e)
 		{
-			if (DockChanged != null)
-				DockChanged(this, e);
-		}
+            DockChanged?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the LocationChanged event.
@@ -1364,9 +1363,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnLocationChanged(EventArgs e)
 		{
-			if (LocationChanged != null)
-				LocationChanged(this, e);
-		}
+            LocationChanged?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the TabIndexChanged event.
@@ -1374,9 +1372,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnTabIndexChanged(EventArgs e)
 		{
-			if (TabIndexChanged != null)
-				TabIndexChanged(this, e);
-		}
+            TabIndexChanged?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the TabStopChanged event.
@@ -1384,9 +1381,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">An EventArgs containing the event data.</param>
 		protected override void OnTabStopChanged(EventArgs e)
 		{
-			if (TabStopChanged != null)
-				TabStopChanged(this, e);
-		}
+            TabStopChanged?.Invoke(this, e);
+        }
 
         /// <summary>
         /// Raises the AppearancePropertyChanged event.
@@ -1394,8 +1390,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="propertyName">Name of the appearance property that has changed.</param>
         protected virtual void OnAppearancePropertyChanged(string propertyName)
         {
-            if (AppearancePropertyChanged != null)
-                AppearancePropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            AppearancePropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -1404,8 +1399,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="changed">Set of flags that have changed.</param>
         protected virtual void OnFlagsChanged(KryptonPageFlags changed)
         {
-            if (FlagsChanged != null)
-                FlagsChanged(this, new KryptonPageFlagsEventArgs(changed));
+            FlagsChanged?.Invoke(this, new KryptonPageFlagsEventArgs(changed));
         }
 
         /// <summary>
@@ -1414,8 +1408,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnAutoHiddenSlideSizeChanged(EventArgs e)
         {
-            if (AutoHiddenSlideSizeChanged != null)
-                AutoHiddenSlideSizeChanged(this, e);
+            AutoHiddenSlideSizeChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1424,8 +1417,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnLoad(EventArgs e)
         {
-            if (Load != null)
-                Load(this, e);
+            Load?.Invoke(this, e);
         }
 
         /// <summary>

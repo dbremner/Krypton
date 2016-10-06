@@ -386,8 +386,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private void PressColorBlock()
         {
-            if (Click != null)
-                Click(this, EventArgs.Empty);
+            Click?.Invoke(this, EventArgs.Empty);
 
             // Should we automatically try and close the context menu stack
             if (_menuColorBlock.KryptonContextMenuColorColumns.AutoClose)
@@ -413,8 +412,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private void OnNeedPaint()
         {
-            if (_needPaint != null)
-                _needPaint(this, new NeedLayoutEventArgs(false));
+            _needPaint?.Invoke(this, new NeedLayoutEventArgs(false));
         }
 
         private void HighlightState()

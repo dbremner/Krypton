@@ -1422,8 +1422,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An DateRangeEventArgs that contains the event data.</param>
         protected virtual void OnDateChanged(DateRangeEventArgs e)
         {
-            if (DateChanged != null)
-                DateChanged(this, e);
+            DateChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1432,8 +1431,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected virtual void OnSelectionStartChanged(EventArgs e)
         {
-            if (SelectionStartChanged != null)
-                SelectionStartChanged(this, e);
+            SelectionStartChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1442,8 +1440,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected virtual void OnSelectionEndChanged(EventArgs e)
         {
-            if (SelectionEndChanged != null)
-                SelectionEndChanged(this, e);
+            SelectionEndChanged?.Invoke(this, e);
         }
         #endregion
 

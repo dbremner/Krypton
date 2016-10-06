@@ -77,8 +77,9 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (_mementos != null)
                 {
                     foreach (IDisposable memento in _mementos)
-                        if (memento != null)
-                            memento.Dispose();
+                    {
+                        memento?.Dispose();
+                    }
 
                     _mementos = null;
                 }

@@ -156,8 +156,9 @@ namespace ComponentFactory.Krypton.Ribbon
                 {
                     // Dispose of all the mementos in the array
                     foreach (IDisposable memento in _mementos)
-                        if (memento != null)
-                            memento.Dispose();
+                    {
+                        memento?.Dispose();
+                    }
 
                     _mementos = null;
                 }

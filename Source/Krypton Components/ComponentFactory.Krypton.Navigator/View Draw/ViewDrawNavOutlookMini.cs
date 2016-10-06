@@ -112,13 +112,10 @@ namespace ComponentFactory.Krypton.Navigator
         /// <returns>Image value.</returns>
         public override Image GetImage(PaletteState state)
         {
-            if (Page != null)
-                return Page.GetImageMapping(Navigator.Outlook.Mini.MiniMapImage);
-            else
-                return null;
+            return Page?.GetImageMapping(Navigator.Outlook.Mini.MiniMapImage);
         }
 
-        /// <summary>
+	    /// <summary>
         /// Gets the content short text.
         /// </summary>
         /// <returns>String value.</returns>

@@ -249,8 +249,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void PerformNeedPaint(bool needLayout, Rectangle invalidRect)
         {
-            if (_needPaintDelegate != null)
-                _needPaintDelegate(this, new NeedLayoutEventArgs(needLayout, invalidRect));
+            _needPaintDelegate?.Invoke(this, new NeedLayoutEventArgs(needLayout, invalidRect));
         }
         #endregion
     }

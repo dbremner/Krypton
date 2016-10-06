@@ -1222,13 +1222,10 @@ namespace ComponentFactory.Krypton.Docking
             if (element is KryptonDockingAutoHiddenGroup)
             {
                 KryptonDockingEdgeAutoHidden edge = element.GetParentType(typeof(KryptonDockingEdgeAutoHidden)) as KryptonDockingEdgeAutoHidden;
-                if (edge != null)
-                {
-                    // Finally we grab the auto hidden edge that is expected to be a sibling of the docked edge
-                    KryptonDockingEdgeDocked edgeDocked = edge["Docked"] as KryptonDockingEdgeDocked;
-                    if (edgeDocked != null)
-                        return edgeDocked;
-                }
+                // Finally we grab the auto hidden edge that is expected to be a sibling of the docked edge
+                KryptonDockingEdgeDocked edgeDocked = edge?["Docked"] as KryptonDockingEdgeDocked;
+                if (edgeDocked != null)
+                    return edgeDocked;
             }
 
             // First preference is to find an existing store page inside a dockspace element
@@ -1247,13 +1244,10 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Navigate upwards to find the edge that this group is inside
                 KryptonDockingEdge edge = group.GetParentType(typeof(KryptonDockingEdge)) as KryptonDockingEdge;
-                if (edge != null)
-                {
-                    // Finally we grab the docked edge that is expected to be a sibling of the auto hidden edge
-                    KryptonDockingEdgeDocked edgeDocked = edge["Docked"] as KryptonDockingEdgeDocked;
-                    if (edgeDocked != null)
-                        return edgeDocked;
-                }
+                // Finally we grab the docked edge that is expected to be a sibling of the auto hidden edge
+                KryptonDockingEdgeDocked edgeDocked = edge?["Docked"] as KryptonDockingEdgeDocked;
+                if (edgeDocked != null)
+                    return edgeDocked;
             }
 
             // Failed, so use default processing
@@ -1274,13 +1268,10 @@ namespace ComponentFactory.Krypton.Docking
             if (element is KryptonDockingDockspace)
             {
                 KryptonDockingEdge edge = element.GetParentType(typeof(KryptonDockingEdge)) as KryptonDockingEdge;
-                if (edge != null)
-                {
-                    // Finally we grab the auto hidden edge that is expected to be a sibling of the docked edge
-                    KryptonDockingEdgeAutoHidden edgeAutoHidden = edge["AutoHidden"] as KryptonDockingEdgeAutoHidden;
-                    if (edgeAutoHidden != null)
-                        return edgeAutoHidden;
-                }
+                // Finally we grab the auto hidden edge that is expected to be a sibling of the docked edge
+                KryptonDockingEdgeAutoHidden edgeAutoHidden = edge?["AutoHidden"] as KryptonDockingEdgeAutoHidden;
+                if (edgeAutoHidden != null)
+                    return edgeAutoHidden;
             }
 
             // If exists as a auto hidden group page...
@@ -1308,13 +1299,10 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Navigate upwards to find the edge that this dockspace is inside
                 KryptonDockingEdge edge = dockspace.GetParentType(typeof(KryptonDockingEdge)) as KryptonDockingEdge;
-                if (edge != null)
-                {
-                    // Finally we grab the auto hidden edge that is expected to be a sibling of the docked edge
-                    KryptonDockingEdgeAutoHidden edgeAutoHidden = edge["AutoHidden"] as KryptonDockingEdgeAutoHidden;
-                    if (edgeAutoHidden != null)
-                        return edgeAutoHidden;
-                }
+                // Finally we grab the auto hidden edge that is expected to be a sibling of the docked edge
+                KryptonDockingEdgeAutoHidden edgeAutoHidden = edge?["AutoHidden"] as KryptonDockingEdgeAutoHidden;
+                if (edgeAutoHidden != null)
+                    return edgeAutoHidden;
             }
 
             // Failed, so use default processing
@@ -1958,15 +1946,12 @@ namespace ComponentFactory.Krypton.Docking
 
                             // Navigate to the cell that holds the page
                             KryptonDockingDockspace dockspace = FindPageElement(page) as KryptonDockingDockspace;
-                            if (dockspace != null)
+                            KryptonWorkspaceCell cell = dockspace?.CellForPage(uniqueName);
+                            if (cell != null)
                             {
-                                KryptonWorkspaceCell cell = dockspace.CellForPage(uniqueName);
-                                if (cell != null)
-                                {
-                                    // Remember the page that is active
-                                    if (cell.SelectedPage == page)
-                                        selectedPage = page.UniqueName;
-                                }
+                                // Remember the page that is active
+                                if (cell.SelectedPage == page)
+                                    selectedPage = page.UniqueName;
                             }
                         }
                     }
@@ -2071,15 +2056,12 @@ namespace ComponentFactory.Krypton.Docking
 
                             // Navigate to the cell that holds the page
                             KryptonDockingFloatspace floatspace = FindPageElement(page) as KryptonDockingFloatspace;
-                            if (floatspace != null)
+                            KryptonWorkspaceCell cell = floatspace?.CellForPage(uniqueName);
+                            if (cell != null)
                             {
-                                KryptonWorkspaceCell cell = floatspace.CellForPage(uniqueName);
-                                if (cell != null)
-                                {
-                                    // Remember the page that is active
-                                    if (cell.SelectedPage == page)
-                                        selectedPage = page.UniqueName;
-                                }
+                                // Remember the page that is active
+                                if (cell.SelectedPage == page)
+                                    selectedPage = page.UniqueName;
                             }
                         }
                     }
@@ -2196,15 +2178,12 @@ namespace ComponentFactory.Krypton.Docking
 
                         // Navigate to the cell that holds the page
                         KryptonDockingFloatspace floatspace = FindPageElement(page) as KryptonDockingFloatspace;
-                        if (floatspace != null)
+                        KryptonWorkspaceCell cell = floatspace?.CellForPage(uniqueName);
+                        if (cell != null)
                         {
-                            KryptonWorkspaceCell cell = floatspace.CellForPage(uniqueName);
-                            if (cell != null)
-                            {
-                                // Remember the page that is active
-                                if (cell.SelectedPage == page)
-                                    selectedPage = page.UniqueName;
-                            }
+                            // Remember the page that is active
+                            if (cell.SelectedPage == page)
+                                selectedPage = page.UniqueName;
                         }
                     }
                 }
@@ -2265,93 +2244,90 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Grab the auto hidden group docking element that we expect to contain the target unique name 
                 KryptonDockingAutoHiddenGroup autoHiddenGroup = (KryptonDockingAutoHiddenGroup)ExpectPageElement(uniqueName, typeof(KryptonDockingAutoHiddenGroup));
-                if (autoHiddenGroup != null)
+                // Find the sibling docked edge so we can add/restore pages
+                KryptonDockingEdgeDocked edgeDocked = autoHiddenGroup?.EdgeDockedElement;
+                if (edgeDocked != null)
                 {
-                    // Find the sibling docked edge so we can add/restore pages
-                    KryptonDockingEdgeDocked edgeDocked = autoHiddenGroup.EdgeDockedElement;
-                    if (edgeDocked != null)
+                    // Grab the set of visible pages in the auto hidden group
+                    KryptonPage[] visiblePages = autoHiddenGroup.VisiblePages();
+                    if (visiblePages.Length > 0)
                     {
-                        // Grab the set of visible pages in the auto hidden group
-                        KryptonPage[] visiblePages = autoHiddenGroup.VisiblePages();
-                        if (visiblePages.Length > 0)
+                        // Use events to determine which pages in the cell should be switched
+                        List<string> switchUniqueNames = new List<string>();
+                        List<KryptonPage> switchPages = new List<KryptonPage>();
+                        foreach (KryptonPage page in visiblePages)
                         {
-                            // Use events to determine which pages in the cell should be switched
-                            List<string> switchUniqueNames = new List<string>();
-                            List<KryptonPage> switchPages = new List<KryptonPage>();
-                            foreach (KryptonPage page in visiblePages)
-                            {
-                                CancelUniqueNameEventArgs args = new CancelUniqueNameEventArgs(page.UniqueName, !page.AreFlagsSet(KryptonPageFlags.DockingAllowDocked));
-                                OnPageDockedRequest(args);
+                            CancelUniqueNameEventArgs args = new CancelUniqueNameEventArgs(page.UniqueName, !page.AreFlagsSet(KryptonPageFlags.DockingAllowDocked));
+                            OnPageDockedRequest(args);
 
-                                if (!args.Cancel)
-                                {
-                                    switchUniqueNames.Add(page.UniqueName);
-                                    switchPages.Add(page);
-                                }
+                            if (!args.Cancel)
+                            {
+                                switchUniqueNames.Add(page.UniqueName);
+                                switchPages.Add(page);
                             }
+                        }
 
-                            // Any pages that actually need to be switched?
-                            if (switchPages.Count > 0)
+                        // Any pages that actually need to be switched?
+                        if (switchPages.Count > 0)
+                        {
+                            using (DockingMultiUpdate update = new DockingMultiUpdate(this))
                             {
-                                using (DockingMultiUpdate update = new DockingMultiUpdate(this))
+                                // Remove the pages from the auto hidden group
+                                string[] uniqueNames = switchUniqueNames.ToArray();
+                                PropogateAction(DockingPropogateAction.RemovePages, uniqueNames);
+
+                                // Attempt to restore each page back to original location on the same edge
+                                List<KryptonPage> defaultPages = new List<KryptonPage>();
+                                KryptonPage defaultSelectedPage = null;
+                                for(int i=0; i<switchPages.Count; i++)
                                 {
-                                    // Remove the pages from the auto hidden group
-                                    string[] uniqueNames = switchUniqueNames.ToArray();
-                                    PropogateAction(DockingPropogateAction.RemovePages, uniqueNames);
-
-                                    // Attempt to restore each page back to original location on the same edge
-                                    List<KryptonPage> defaultPages = new List<KryptonPage>();
-                                    KryptonPage defaultSelectedPage = null;
-                                    for(int i=0; i<switchPages.Count; i++)
+                                    // If we find a store page then we can simply restore straight back to that position
+                                    bool? canRestore = edgeDocked.PropogateBoolState(DockingPropogateBoolState.ContainsStorePage, uniqueNames[i]);
+                                    if (canRestore.HasValue && canRestore.Value)
                                     {
-                                        // If we find a store page then we can simply restore straight back to that position
-                                        bool? canRestore = edgeDocked.PropogateBoolState(DockingPropogateBoolState.ContainsStorePage, uniqueNames[i]);
-                                        if (canRestore.HasValue && canRestore.Value)
-                                        {
-                                            // Restore page back into a dockspace
-                                            edgeDocked.PropogateAction(DockingPropogateAction.RestorePages, new KryptonPage[] { switchPages[i] });
+                                        // Restore page back into a dockspace
+                                        edgeDocked.PropogateAction(DockingPropogateAction.RestorePages, new KryptonPage[] { switchPages[i] });
 
-                                            // Should this page become the selected and focused page?
-                                            if (uniqueName == uniqueNames[i])
+                                        // Should this page become the selected and focused page?
+                                        if (uniqueName == uniqueNames[i])
+                                        {
+                                            // If this restored page was the selected page in the auto hidden group, make it selected in the dockspace
+                                            KryptonDockingDockspace restoreElement = edgeDocked.FindPageElement(uniqueNames[i]) as KryptonDockingDockspace;
+                                            if (restoreElement != null)
                                             {
-                                                // If this restored page was the selected page in the auto hidden group, make it selected in the dockspace
-                                                KryptonDockingDockspace restoreElement = edgeDocked.FindPageElement(uniqueNames[i]) as KryptonDockingDockspace;
-                                                if (restoreElement != null)
-                                                {
-                                                    restoreElement.SelectPage(uniqueNames[i]);
-                                                    restoreElement.DockspaceControl.UpdateVisible(true);
-                                                }
+                                                restoreElement.SelectPage(uniqueNames[i]);
+                                                restoreElement.DockspaceControl.UpdateVisible(true);
                                             }
                                         }
-                                        else
-                                        {
-                                            defaultPages.Add(switchPages[i]);
-
-                                            // Note the default page that should become selected
-                                            if (uniqueName == uniqueNames[i])
-                                                defaultSelectedPage = switchPages[i];
-                                        }
                                     }
-
-                                    // Remove any existing placeholders in all the docked edges
-                                    RemoveControlStorePages(edgeDocked, uniqueNames, false, true);
-
-                                    // Do we have some pages that still need adding?
-                                    if (defaultPages.Count > 0)
+                                    else
                                     {
-                                        // Place them all inside a new dockspace
-                                        KryptonDockingDockspace newDockspace = edgeDocked.AppendDockspace();
-                                        newDockspace.Append(defaultPages.ToArray());
+                                        defaultPages.Add(switchPages[i]);
 
-                                        // Make sure the same page is selected as was selected in the auto hidden group
-                                        if (defaultSelectedPage != null)
-                                        {
-                                            newDockspace.SelectPage(defaultSelectedPage.UniqueName);
-                                            newDockspace.DockspaceControl.UpdateVisible(true);
-                                        }
-
-                                        return newDockspace;
+                                        // Note the default page that should become selected
+                                        if (uniqueName == uniqueNames[i])
+                                            defaultSelectedPage = switchPages[i];
                                     }
+                                }
+
+                                // Remove any existing placeholders in all the docked edges
+                                RemoveControlStorePages(edgeDocked, uniqueNames, false, true);
+
+                                // Do we have some pages that still need adding?
+                                if (defaultPages.Count > 0)
+                                {
+                                    // Place them all inside a new dockspace
+                                    KryptonDockingDockspace newDockspace = edgeDocked.AppendDockspace();
+                                    newDockspace.Append(defaultPages.ToArray());
+
+                                    // Make sure the same page is selected as was selected in the auto hidden group
+                                    if (defaultSelectedPage != null)
+                                    {
+                                        newDockspace.SelectPage(defaultSelectedPage.UniqueName);
+                                        newDockspace.DockspaceControl.UpdateVisible(true);
+                                    }
+
+                                    return newDockspace;
                                 }
                             }
                         }
@@ -2911,35 +2887,32 @@ namespace ComponentFactory.Krypton.Docking
                 {
                     // Get access to a floating element that allows a new floating window to be created
                     KryptonDockingFloating floating = FindDockingFloating(firstFloatingPage.UniqueName);
-                    if (floating != null)
+                    KryptonDockingFloatingWindow floatingWindow = floating?.AddFloatingWindow();
+                    if (floatingWindow != null)
                     {
-                        KryptonDockingFloatingWindow floatingWindow = floating.AddFloatingWindow();
-                        if (floatingWindow != null)
+                        using (DockingMultiUpdate update = new DockingMultiUpdate(this))
                         {
-                            using (DockingMultiUpdate update = new DockingMultiUpdate(this))
-                            {
-                                // This is the window that will be moved during the drag operation
-                                dragManager.FloatingWindow = floatingWindow.FloatingWindow;
+                            // This is the window that will be moved during the drag operation
+                            dragManager.FloatingWindow = floatingWindow.FloatingWindow;
 
-                                // Make a list of all pages that should be appended to the floating window
-                                List<string> appendUniqueNames = new List<string>();
-                                List<KryptonPage> appendPages = new List<KryptonPage>();
-                                foreach (KryptonPage page in pages)
-                                    if (!(page is KryptonStorePage) && page.AreFlagsSet(KryptonPageFlags.DockingAllowFloating))
-                                    {
-                                        appendUniqueNames.Add(page.UniqueName);
-                                        appendPages.Add(page);
-                                    }
+                            // Make a list of all pages that should be appended to the floating window
+                            List<string> appendUniqueNames = new List<string>();
+                            List<KryptonPage> appendPages = new List<KryptonPage>();
+                            foreach (KryptonPage page in pages)
+                                if (!(page is KryptonStorePage) && page.AreFlagsSet(KryptonPageFlags.DockingAllowFloating))
+                                {
+                                    appendUniqueNames.Add(page.UniqueName);
+                                    appendPages.Add(page);
+                                }
 
-                                // Set the window location before it is shown otherwise we see a brief flash as it appears at the 
-                                // existing location and then it moves to the correct location based on the screen mouse position
-                                dragManager.FloatingWindow.Location = new Point(screenPoint.X - elementOffset.X, screenPoint.Y - elementOffset.Y);
+                            // Set the window location before it is shown otherwise we see a brief flash as it appears at the 
+                            // existing location and then it moves to the correct location based on the screen mouse position
+                            dragManager.FloatingWindow.Location = new Point(screenPoint.X - elementOffset.X, screenPoint.Y - elementOffset.Y);
 
-                                // Append the pages inside the new window, storing the current locations for later use
-                                PropogateAction(DockingPropogateAction.StorePages, appendUniqueNames.ToArray());
-                                floatingWindow.FloatspaceElement.Append(appendPages.ToArray());
-                                floatingWindow.FloatingWindow.Show();
-                            }
+                            // Append the pages inside the new window, storing the current locations for later use
+                            PropogateAction(DockingPropogateAction.StorePages, appendUniqueNames.ToArray());
+                            floatingWindow.FloatspaceElement.Append(appendPages.ToArray());
+                            floatingWindow.FloatingWindow.Show();
                         }
                     }
                 }
@@ -3427,8 +3400,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An AutoHiddenSeparatorResizeEventArgs containing the event args.</param>
         protected virtual void OnAutoHiddenSeparatorResize(AutoHiddenSeparatorResizeEventArgs e)
         {
-            if (AutoHiddenSeparatorResize != null)
-                AutoHiddenSeparatorResize(this, e);
+            AutoHiddenSeparatorResize?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3437,8 +3409,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CloseActionEventArgs containing the event args.</param>
         protected virtual void OnPageCloseRequest(CloseRequestEventArgs e)
         {
-            if (PageCloseRequest != null)
-                PageCloseRequest(this, e);
+            PageCloseRequest?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3447,8 +3418,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelUniqueNameEventArgs containing the event args.</param>
         protected virtual void OnPageDockedRequest(CancelUniqueNameEventArgs e)
         {
-            if (PageDockedRequest != null)
-                PageDockedRequest(this, e);
+            PageDockedRequest?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3457,8 +3427,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelUniqueNameEventArgs containing the event args.</param>
         protected virtual void OnPageAutoHiddenRequest(CancelUniqueNameEventArgs e)
         {
-            if (PageAutoHiddenRequest != null)
-                PageAutoHiddenRequest(this, e);
+            PageAutoHiddenRequest?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3467,8 +3436,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelUniqueNameEventArgs containing the event args.</param>
         protected virtual void OnPageFloatingRequest(CancelUniqueNameEventArgs e)
         {
-            if (PageFloatingRequest != null)
-                PageFloatingRequest(this, e);
+            PageFloatingRequest?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3477,8 +3445,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelUniqueNameEventArgs containing the event args.</param>
         protected virtual void OnPageWorkspaceRequest(CancelUniqueNameEventArgs e)
         {
-            if (PageWorkspaceRequest != null)
-                PageWorkspaceRequest(this, e);
+            PageWorkspaceRequest?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3487,8 +3454,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelUniqueNameEventArgs containing the event args.</param>
         protected virtual void OnPageNavigatorRequest(CancelUniqueNameEventArgs e)
         {
-            if (PageNavigatorRequest != null)
-                PageNavigatorRequest(this, e);
+            PageNavigatorRequest?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3497,8 +3463,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceSeparatorResizeEventArgs containing the event args.</param>
         protected virtual void OnDockspaceSeparatorResize(DockspaceSeparatorResizeEventArgs e)
         {
-            if (DockspaceSeparatorResize != null)
-                DockspaceSeparatorResize(this, e);
+            DockspaceSeparatorResize?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3507,8 +3472,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An ContextPageEventArgs containing the event args.</param>
         protected virtual void OnShowPageContextMenu(ContextPageEventArgs e)
         {
-            if (ShowPageContextMenu != null)
-                ShowPageContextMenu(this, e);
+            ShowPageContextMenu?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3517,8 +3481,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An ContextPageEventArgs containing the event args.</param>
         protected virtual void OnShowWorkspacePageContextMenu(ContextPageEventArgs e)
         {
-            if (ShowWorkspacePageContextMenu != null)
-                ShowWorkspacePageContextMenu(this, e);
+            ShowWorkspacePageContextMenu?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3527,8 +3490,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockGlobalSavingEventArgs containing event data.</param>
         protected virtual void OnGlobalSaving(DockGlobalSavingEventArgs e)
         {
-            if (GlobalSaving != null)
-                GlobalSaving(this, e);
+            GlobalSaving?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3537,8 +3499,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockGlobalLoadingEventArgs containing event data.</param>
         protected virtual void OnGlobalLoading(DockGlobalLoadingEventArgs e)
         {
-            if (GlobalLoading != null)
-                GlobalLoading(this, e);
+            GlobalLoading?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3547,8 +3508,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockPageSavingEventArgs containing event data.</param>
         protected virtual void OnPageSaving(DockPageSavingEventArgs e)
         {
-            if (PageSaving != null)
-                PageSaving(this, e);
+            PageSaving?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3557,8 +3517,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockPageLoadingEventArgs containing event data.</param>
         protected virtual void OnPageLoading(DockPageLoadingEventArgs e)
         {
-            if (PageLoading != null)
-                PageLoading(this, e);
+            PageLoading?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3567,8 +3526,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An PagesEventArgs containing event data.</param>
         protected virtual void OnOrphanedPages(PagesEventArgs e)
         {
-            if (OrphanedPages != null)
-                OrphanedPages(this, e);
+            OrphanedPages?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3577,8 +3535,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An RecreateLoadingPageEventArgs containing event data.</param>
         protected virtual void OnRecreateLoadingPage(RecreateLoadingPageEventArgs e)
         {
-            if (RecreateLoadingPage != null)
-                RecreateLoadingPage(this, e);
+            RecreateLoadingPage?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3587,8 +3544,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An AutoHiddenGroupEventArgs containing the event args.</param>
         protected virtual void OnAutoHiddenGroupAdding(AutoHiddenGroupEventArgs e)
         {
-            if (AutoHiddenGroupAdding != null)
-                AutoHiddenGroupAdding(this, e);
+            AutoHiddenGroupAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3597,8 +3553,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An AutoHiddenGroupEventArgs containing the event args.</param>
         protected virtual void OnAutoHiddenGroupRemoved(AutoHiddenGroupEventArgs e)
         {
-            if (AutoHiddenGroupRemoved != null)
-                AutoHiddenGroupRemoved(this, e);
+            AutoHiddenGroupRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3607,8 +3562,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An AutoHiddenGroupPanelEventArgs containing the event args.</param>
         protected virtual void OnAutoHiddenGroupPanelAdding(AutoHiddenGroupPanelEventArgs e)
         {
-            if (AutoHiddenGroupPanelAdding != null)
-                AutoHiddenGroupPanelAdding(this, e);
+            AutoHiddenGroupPanelAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3617,8 +3571,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An AutoHiddenGroupPanelEventArgs containing the event args.</param>
         protected virtual void OnAutoHiddenGroupPanelRemoved(AutoHiddenGroupPanelEventArgs e)
         {
-            if (AutoHiddenGroupPanelRemoved != null)
-                AutoHiddenGroupPanelRemoved(this, e);
+            AutoHiddenGroupPanelRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3627,8 +3580,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockableWorkspaceEventArgs containing the event args.</param>
         protected virtual void OnDockableWorkspaceAdded(DockableWorkspaceEventArgs e)
         {
-            if (DockableWorkspaceAdded != null)
-                DockableWorkspaceAdded(this, e);
+            DockableWorkspaceAdded?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3637,8 +3589,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockableWorkspaceEventArgs containing the event args.</param>
         protected virtual void OnDockableWorkspaceRemoved(DockableWorkspaceEventArgs e)
         {
-            if (DockableWorkspaceRemoved != null)
-                DockableWorkspaceRemoved(this, e);
+            DockableWorkspaceRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3647,8 +3598,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockableNavigatorEventArgs containing the event args.</param>
         protected virtual void OnDockableNavigatorAdded(DockableNavigatorEventArgs e)
         {
-            if (DockableNavigatorAdded != null)
-                DockableNavigatorAdded(this, e);
+            DockableNavigatorAdded?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3657,8 +3607,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockableNavigatorEventArgs containing the event args.</param>
         protected virtual void OnDockableNavigatorRemoved(DockableNavigatorEventArgs e)
         {
-            if (DockableNavigatorRemoved != null)
-                DockableNavigatorRemoved(this, e);
+            DockableNavigatorRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3667,8 +3616,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockableWorkspaceCellEventArgs containing the event args.</param>
         protected virtual void OnDockableWorkspaceCellAdding(DockableWorkspaceCellEventArgs e)
         {
-            if (DockableWorkspaceCellAdding != null)
-                DockableWorkspaceCellAdding(this, e);
+            DockableWorkspaceCellAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3677,8 +3625,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockableWorkspaceCellEventArgs containing the event args.</param>
         protected virtual void OnDockableWorkspaceCellRemoved(DockableWorkspaceCellEventArgs e)
         {
-            if (DockableWorkspaceCellRemoved != null)
-                DockableWorkspaceCellRemoved(this, e);
+            DockableWorkspaceCellRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3687,8 +3634,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceAddingEventArgs containing the event args.</param>
         protected virtual void OnDockspaceAdding(DockspaceEventArgs e)
         {
-            if (DockspaceAdding != null)
-                DockspaceAdding(this, e);
+            DockspaceAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3697,8 +3643,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceAddingEventArgs containing the event args.</param>
         protected virtual void OnDockspaceRemoved(DockspaceEventArgs e)
         {
-            if (DockspaceRemoved != null)
-                DockspaceRemoved(this, e);
+            DockspaceRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3707,8 +3652,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceCellEventArgs containing the event args.</param>
         protected virtual void OnDockspaceCellAdding(DockspaceCellEventArgs e)
         {
-            if (DockspaceCellAdding != null)
-                DockspaceCellAdding(this, e);
+            DockspaceCellAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3717,8 +3661,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceCellEventArgs containing the event args.</param>
         protected virtual void OnDockspaceCellRemoved(DockspaceCellEventArgs e)
         {
-            if (DockspaceCellRemoved != null)
-                DockspaceCellRemoved(this, e);
+            DockspaceCellRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3727,8 +3670,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceSeparatorEventArgs containing the event args.</param>
         protected virtual void OnDockspaceSeparatorAdding(DockspaceSeparatorEventArgs e)
         {
-            if (DockspaceSeparatorAdding != null)
-                DockspaceSeparatorAdding(this, e);
+            DockspaceSeparatorAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3737,8 +3679,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An DockspaceSeparatorEventArgs containing the event args.</param>
         protected virtual void OnDockspaceSeparatorRemoved(DockspaceSeparatorEventArgs e)
         {
-            if (DockspaceSeparatorRemoved != null)
-                DockspaceSeparatorRemoved(this, e);
+            DockspaceSeparatorRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3747,8 +3688,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An FloatspaceEventArgs containing the event args.</param>
         protected virtual void OnFloatspaceAdding(FloatspaceEventArgs e)
         {
-            if (FloatspaceAdding != null)
-                FloatspaceAdding(this, e);
+            FloatspaceAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3757,8 +3697,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An FloatspaceEventArgs containing the event args.</param>
         protected virtual void OnFloatspaceRemoved(FloatspaceEventArgs e)
         {
-            if (FloatspaceRemoved != null)
-                FloatspaceRemoved(this, e);
+            FloatspaceRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3767,8 +3706,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An FloatspaceCellEventArgs containing the event args.</param>
         protected virtual void OnFloatspaceCellAdding(FloatspaceCellEventArgs e)
         {
-            if (FloatspaceCellAdding != null)
-                FloatspaceCellAdding(this, e);
+            FloatspaceCellAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3777,8 +3715,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An FloatspaceCellEventArgs containing the event args.</param>
         protected virtual void OnFloatspaceCellRemoved(FloatspaceCellEventArgs e)
         {
-            if (FloatspaceCellRemoved != null)
-                FloatspaceCellRemoved(this, e);
+            FloatspaceCellRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3787,8 +3724,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An FloatingWindowEventArgs containing the event args.</param>
         protected virtual void OnFloatingWindowAdding(FloatingWindowEventArgs e)
         {
-            if (FloatingWindowAdding != null)
-                FloatingWindowAdding(this, e);
+            FloatingWindowAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3797,8 +3733,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An FloatingWindowEventArgs containing the event args.</param>
         protected virtual void OnFloatingWindowRemoved(FloatingWindowEventArgs e)
         {
-            if (FloatingWindowRemoved != null)
-                FloatingWindowRemoved(this, e);
+            FloatingWindowRemoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3807,8 +3742,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An AutoHiddenShowingStateEventArgs containing the event args.</param>
         protected virtual void OnAutoHiddenShowingStateChanged(AutoHiddenShowingStateEventArgs e)
         {
-            if (AutoHiddenShowingStateChanged != null)
-                AutoHiddenShowingStateChanged(this, e);
+            AutoHiddenShowingStateChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3817,8 +3751,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An EventArgs containing the event args.</param>
         protected virtual void OnDoDragDropEnd(EventArgs e)
         {
-            if (DoDragDropEnd != null)
-                DoDragDropEnd(this, e);
+            DoDragDropEnd?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3827,8 +3760,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An EventArgs containing the event args.</param>
         protected virtual void OnDoDragDropQuit(EventArgs e)
         {
-            if (DoDragDropQuit != null)
-                DoDragDropQuit(this, e);
+            DoDragDropQuit?.Invoke(this, e);
         }
 
         /// <summary>
@@ -4056,16 +3988,14 @@ namespace ComponentFactory.Krypton.Docking
                         if (autoHidden)
                         {
                             KryptonDockingEdgeAutoHidden autoHiddenEdge = edge["AutoHidden"] as KryptonDockingEdgeAutoHidden;
-                            if (autoHiddenEdge != null)
-                                autoHiddenEdge.PropogateAction(DockingPropogateAction.ClearStoredPages, uniqueNames);
+                            autoHiddenEdge?.PropogateAction(DockingPropogateAction.ClearStoredPages, uniqueNames);
                         }
 
                         // Do we need to clear docked elements?
                         if (docked)
                         {
                             KryptonDockingEdgeDocked dockedEdge = edge["Docked"] as KryptonDockingEdgeDocked;
-                            if (dockedEdge != null)
-                                dockedEdge.PropogateAction(DockingPropogateAction.ClearStoredPages, uniqueNames);
+                            dockedEdge?.PropogateAction(DockingPropogateAction.ClearStoredPages, uniqueNames);
                         }
                     }
                 }

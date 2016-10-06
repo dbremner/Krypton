@@ -500,11 +500,9 @@ namespace ComponentFactory.Krypton.Ribbon
         {
             // Perform processing that is common to any action that would dismiss
             // any popup controls such as the showing minimized group popup
-            if (Ribbon!= null)
-                Ribbon.ActionOccured();
+            Ribbon?.ActionOccured();
 
-            if (DialogBoxLauncherClick != null)
-                DialogBoxLauncherClick(this, e);
+            DialogBoxLauncherClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -513,8 +511,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -533,32 +530,27 @@ namespace ComponentFactory.Krypton.Ribbon
 
         internal void OnDesignTimeAddTriple()
         {
-            if (DesignTimeAddTriple != null)
-                DesignTimeAddTriple(this, EventArgs.Empty);
+            DesignTimeAddTriple?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddLines()
         {
-            if (DesignTimeAddLines != null)
-                DesignTimeAddLines(this, EventArgs.Empty);
+            DesignTimeAddLines?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddSeparator()
         {
-            if (DesignTimeAddSeparator != null)
-                DesignTimeAddSeparator(this, EventArgs.Empty);
+            DesignTimeAddSeparator?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeAddGallery()
         {
-            if (DesignTimeAddGallery != null)
-                DesignTimeAddGallery(this, EventArgs.Empty);
+            DesignTimeAddGallery?.Invoke(this, EventArgs.Empty);
         }
 
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal bool ProcessCmdKey(ref Message msg, Keys keyData)

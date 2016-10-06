@@ -419,8 +419,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An WorkspaceCellEventArgs containing the event data.</param>
         protected virtual void OnCellGainsFocus(WorkspaceCellEventArgs e)
         {
-            if (CellGainsFocus != null)
-                CellGainsFocus(this, e);
+            CellGainsFocus?.Invoke(this, e);
         }
 
         /// <summary>
@@ -429,8 +428,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An WorkspaceCellEventArgs containing the event data.</param>
         protected virtual void OnCellLosesFocus(WorkspaceCellEventArgs e)
         {
-            if (CellLosesFocus != null)
-                CellLosesFocus(this, e);
+            CellLosesFocus?.Invoke(this, e);
         }
 
         /// <summary>
@@ -439,8 +437,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An KryptonPageEventArgs containing the event data.</param>
         protected virtual void OnCellPageInserting(KryptonPageEventArgs e)
         {
-            if (CellPageInserting != null)
-                CellPageInserting(this, e);
+            CellPageInserting?.Invoke(this, e);
         }
 
         /// <summary>
@@ -449,8 +446,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An UniqueNameEventArgs containing the event data.</param>
         protected virtual void OnPageCloseClicked(UniqueNameEventArgs e)
         {
-            if (PageCloseClicked != null)
-                PageCloseClicked(this, e);
+            PageCloseClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -459,8 +455,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An UniqueNameEventArgs containing the event data.</param>
         protected virtual void OnPageAutoHiddenClicked(UniqueNameEventArgs e)
         {
-            if (PageAutoHiddenClicked != null)
-                PageAutoHiddenClicked(this, e);
+            PageAutoHiddenClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -469,8 +464,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelDropDownEventArgs containing the event data.</param>
         protected virtual void OnPageDropDownClicked(CancelDropDownEventArgs e)
         {
-            if (PageDropDownClicked != null)
-                PageDropDownClicked(this, e);
+            PageDropDownClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -479,8 +473,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An UniqueNamesEventArgs containing the event data.</param>
         protected virtual void OnPagesDoubleClicked(UniqueNamesEventArgs e)
         {
-            if (PagesDoubleClicked != null)
-                PagesDoubleClicked(this, e);
+            PagesDoubleClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -794,8 +787,7 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Set the focus into the active page
                 KryptonWorkspaceCell cell = (KryptonWorkspaceCell)sender;
-                if (cell.SelectedPage != null)
-                    cell.SelectedPage.SelectNextControl(cell.SelectedPage, true, true, true, false);
+                cell.SelectedPage?.SelectNextControl(cell.SelectedPage, true, true, true, false);
             }
         }
 

@@ -72,8 +72,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -126,8 +125,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -179,8 +177,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -494,8 +491,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoBackGlassThreeEdge))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoBackGlassThreeEdge(rect, backColor1, backColor2, orientation);
                     memento = cache;
@@ -705,8 +701,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -762,8 +757,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -818,8 +812,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -863,8 +856,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoTriple))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoTriple();
                     memento = cache;
@@ -916,8 +908,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoTriple))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoTriple();
                     memento = cache;
@@ -971,8 +962,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoTriple))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoTriple();
                     memento = cache;
@@ -1023,8 +1013,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             if ((memento == null) || !(memento is MementoDouble))
             {
-                if (memento != null)
-                    memento.Dispose();
+                memento?.Dispose();
 
                 cache = new MementoDouble();
                 memento = cache;
@@ -1043,8 +1032,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Access a cache instance and decide if cache resources need generating
             if ((cache.second == null) || !(cache.second is MementoBackLinearRadial))
             {
-                if (cache.second != null)
-                    cache.second.Dispose();
+                cache.second?.Dispose();
 
                 cacheThis = new MementoBackLinearRadial(drawRect, color2, color3, orientation);
                 cache.second = cacheThis;
@@ -1130,8 +1118,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             if ((memento == null) || !(memento is MementoDouble))
             {
-                if (memento != null)
-                    memento.Dispose();
+                memento?.Dispose();
 
                 cache = new MementoDouble();
                 memento = cache;
@@ -1155,8 +1142,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Access a cache instance and decide if cache resources need generating
             if ((cache.second == null) || !(cache.second is MementoBackGlassRadial))
             {
-                if (cache.second != null)
-                    cache.second.Dispose();
+                cache.second?.Dispose();
 
                 cacheThis = new MementoBackGlassRadial(drawRect, color1, color2, factorX, factorY, orientation);
                 cache.second = cacheThis;
@@ -1272,8 +1258,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 if ((memento == null) || !(memento is MementoDouble))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoDouble();
                     memento = cache;
@@ -1297,8 +1282,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((cache.second == null) || !(cache.second is MementoBackGlassCenter))
                 {
-                    if (cache.second != null)
-                        cache.second.Dispose();
+                    cache.second?.Dispose();
 
                     cacheThis = new MementoBackGlassCenter(drawRect, color2);
                     cache.second = cacheThis;
@@ -1349,8 +1333,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoBackGlassFade))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoBackGlassFade(drawRect, outerRect, color1, color2, 
                                                      glassColor1, glassColor2, orientation);
@@ -1456,8 +1439,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoBackGlassLinear))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoBackGlassLinear(drawRect, outerRect, color1, color2,
                                                        glassColor1, glassColor2, orientation, glassPercent);
@@ -1561,8 +1543,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoBackGlassBasic))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoBackGlassBasic(drawRect, color1, color2,
                                                       glassColor1, glassColor2,
@@ -1655,8 +1636,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoBackLinear))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoBackLinear(drawRect, sigma, color1, color2, orientation);
                     memento = cache;
@@ -1710,8 +1690,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoBackDarkEdge))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoBackDarkEdge(drawRect, color1, thickness, orientation);
                     memento = cache;

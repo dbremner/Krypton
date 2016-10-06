@@ -145,8 +145,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_numericUpDown != null)
-                _numericUpDown.DesignerMouseLeave();
+            _numericUpDown?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

@@ -517,8 +517,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnImageListChanged(EventArgs e)
         {
-            if (ImageListChanged != null)
-                ImageListChanged(this, e);
+            ImageListChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -527,8 +526,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedIndexChanged(EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(this, e);
+            SelectedIndexChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -538,8 +536,7 @@ namespace ComponentFactory.Krypton.Ribbon
         protected virtual void OnTrackingImage(ImageSelectEventArgs e)
         {
             _eventTrackingIndex = e.ImageIndex;
-            if (TrackingImage != null)
-                TrackingImage(this, e);
+            TrackingImage?.Invoke(this, e);
         }
 
         /// <summary>
@@ -548,8 +545,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An GalleryDropMenuEventArgs containing the event data.</param>
         protected virtual void OnGalleryDropMenu(GalleryDropMenuEventArgs e)
         {
-            if (GalleryDropMenu != null)
-                GalleryDropMenu(this, e);
+            GalleryDropMenu?.Invoke(this, e);
         }
         #endregion
 
@@ -901,8 +897,7 @@ namespace ComponentFactory.Krypton.Ribbon
             else
             {
                 // Nothing to show, but still need to call the finished delegate?
-                if (finishDelegate != null)
-                    finishDelegate(this, EventArgs.Empty);
+                finishDelegate?.Invoke(this, EventArgs.Empty);
             }
         }
 

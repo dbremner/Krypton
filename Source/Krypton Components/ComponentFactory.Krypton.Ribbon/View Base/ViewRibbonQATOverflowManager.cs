@@ -119,8 +119,7 @@ namespace ComponentFactory.Krypton.Ribbon
         public override void KeyDown(KeyEventArgs e)
         {
             // Tell current view of key event
-            if (FocusView != null)
-                FocusView.KeyDown(e);
+            FocusView?.KeyDown(e);
         }
 
         /// <summary>
@@ -130,8 +129,7 @@ namespace ComponentFactory.Krypton.Ribbon
         public override void KeyPress(KeyPressEventArgs e)
         {
             // Tell current view of key event
-            if (FocusView != null)
-                FocusView.KeyPress(e);
+            FocusView?.KeyPress(e);
         }
 
         /// <summary>
@@ -160,14 +158,12 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (_focusView != value)
                 {
                     // Remove focus from existing view
-                    if (_focusView != null)
-                        _focusView.LostFocus(Root.OwningControl);
+                    _focusView?.LostFocus(Root.OwningControl);
 
                     _focusView = value;
 
                     // Add focus to the new view
-                    if (_focusView != null)
-                        _focusView.GotFocus(Root.OwningControl);
+                    _focusView?.GotFocus(Root.OwningControl);
                 }
             }
         }

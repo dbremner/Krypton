@@ -158,8 +158,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_dateTimePicker != null)
-                _dateTimePicker.DesignerMouseLeave();
+            _dateTimePicker?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

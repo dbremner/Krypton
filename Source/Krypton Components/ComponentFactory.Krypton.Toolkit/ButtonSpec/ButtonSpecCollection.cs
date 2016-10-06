@@ -90,8 +90,7 @@ namespace ComponentFactory.Krypton.Toolkit
         protected void OnInserting(ButtonSpecEventArgs e)
         {
             e.ButtonSpec.Owner = _owner;
-            if (Inserting != null)
-                Inserting(this, e);
+            Inserting?.Invoke(this, e);
         }
 
         /// <summary>
@@ -100,8 +99,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A NavButtonSpecEventArgs instance containing event data.</param>
         protected void OnInserted(ButtonSpecEventArgs e)
         {
-            if (Inserted != null)
-                Inserted(this, e);
+            Inserted?.Invoke(this, e);
         }
 
         /// <summary>
@@ -111,8 +109,7 @@ namespace ComponentFactory.Krypton.Toolkit
         protected void OnRemoving(ButtonSpecEventArgs e)
         {
             e.ButtonSpec.Owner = null;
-            if (Removing != null)
-                Removing(this, e);
+            Removing?.Invoke(this, e);
         }
 
         /// <summary>
@@ -121,8 +118,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A NavButtonSpecEventArgs instance containing event data.</param>
         protected void OnRemoved(ButtonSpecEventArgs e)
         {
-            if (Removed != null)
-                Removed(this, e);
+            Removed?.Invoke(this, e);
         }
         #endregion
     }

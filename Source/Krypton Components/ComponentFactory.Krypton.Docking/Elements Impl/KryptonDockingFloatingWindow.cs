@@ -176,13 +176,10 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Find the cell that contains the target named paged
             KryptonWorkspaceCell cell = CellForPage(uniqueName);
-            if (cell != null)
-            {
-                // Check that the pages collection contains the named paged
-                KryptonPage page = cell.Pages[uniqueName];
-                if (page != null)
-                    cell.SelectedPage = page;
-            }
+            // Check that the pages collection contains the named paged
+            KryptonPage page = cell?.Pages[uniqueName];
+            if (page != null)
+                cell.SelectedPage = page;
         }
 
         /// <summary>
@@ -263,16 +260,14 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Events are generated from the parent docking manager
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.CloseRequest(e.UniqueNames);
+            dockingManager?.CloseRequest(e.UniqueNames);
         }
 
         private void OnFloatingWindowCaptionDragging(object sender, ScreenAndOffsetEventArgs e)
         {
             // Events are generated from the parent docking manager
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.DoDragDrop(e.ScreenPoint, e.ElementOffset, null, this);
+            dockingManager?.DoDragDrop(e.ScreenPoint, e.ElementOffset, null, this);
         }
 
         private void OnDockingFloatspaceDisposed(object sender, EventArgs e)

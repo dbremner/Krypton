@@ -1085,8 +1085,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A SplitterEventArgs containing the event data.</param>
         protected virtual void OnSplitterMoved(SplitterEventArgs e)
         {
-            if (SplitterMoved != null)
-                SplitterMoved(this, e);
+            SplitterMoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1095,8 +1094,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A SplitterEventArgs containing the event data.</param>
         protected virtual void OnSplitterMoving(SplitterCancelEventArgs e)
         {
-            if (SplitterMoving != null)
-                SplitterMoving(this, e);
+            SplitterMoving?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1426,8 +1424,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected override void OnAutoSizeChanged(EventArgs e)
         {
-            if (AutoSizeChanged != null)
-                AutoSizeChanged(this, e);
+            AutoSizeChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1436,8 +1433,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected override void OnBackgroundImageChanged(EventArgs e)
         {
-            if (BackgroundImageChanged != null)
-                BackgroundImageChanged(this, e);
+            BackgroundImageChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1446,8 +1442,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected override void OnBackgroundImageLayoutChanged(EventArgs e)
         {
-            if (BackgroundImageLayoutChanged != null)
-                BackgroundImageLayoutChanged(this, e);
+            BackgroundImageLayoutChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1456,8 +1451,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ControlEventArgs containing the event data.</param>
         protected override void OnControlAdded(ControlEventArgs e)
         {
-            if (ControlAdded != null)
-                ControlAdded(this, e);
+            ControlAdded?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1466,8 +1460,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ControlEventArgs containing the event data.</param>
         protected override void OnControlRemoved(ControlEventArgs e)
         {
-            if (ControlRemoved != null)
-                ControlRemoved(this, e);
+            ControlRemoved?.Invoke(this, e);
         }
         #endregion
 

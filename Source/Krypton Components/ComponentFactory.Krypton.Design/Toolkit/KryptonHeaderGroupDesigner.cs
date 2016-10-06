@@ -208,8 +208,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_headerGroup != null)
-                _headerGroup.DesignerMouseLeave();
+            _headerGroup?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }        

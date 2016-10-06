@@ -1181,12 +1181,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected void GenerateClick(EventArgs e)
         {
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
 
             // If we have an attached command then execute it
-            if (KryptonCommand != null)
-                KryptonCommand.PerformExecute();
+            KryptonCommand?.PerformExecute();
         }
 
         /// <summary>
@@ -1198,12 +1196,10 @@ namespace ComponentFactory.Krypton.Toolkit
             // Only if associated view is enabled do we perform the click
             if (GetViewEnabled())
             {
-                if (Click != null)
-                    Click(this, e);
+                Click?.Invoke(this, e);
 
                 // If we have an attached command then execute it
-                if (KryptonCommand != null)
-                    KryptonCommand.PerformExecute();
+                KryptonCommand?.PerformExecute();
             }
         }
 
@@ -1213,8 +1209,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="propertyName">Name of the appearance property that has changed.</param>
         protected virtual void OnButtonSpecPropertyChanged(string propertyName)
         {
-            if (ButtonSpecPropertyChanged != null)
-                ButtonSpecPropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            ButtonSpecPropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>

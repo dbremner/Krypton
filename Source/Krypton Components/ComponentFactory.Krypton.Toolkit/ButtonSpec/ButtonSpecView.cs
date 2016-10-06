@@ -399,8 +399,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         _buttonSpec.KryptonContextMenu.Closed -= new ToolStripDropDownClosedEventHandler(OnKryptonContextMenuClosed);
 
                         // Not showing a context menu, so remove the fixed view immediately
-                        if (_finishDelegate != null)
-                            _finishDelegate(this, EventArgs.Empty);
+                        _finishDelegate?.Invoke(this, EventArgs.Empty);
                     }
                 }
                 else if ((_buttonSpec.ContextMenuStrip != null) && (ViewButton != null))
@@ -418,15 +417,13 @@ namespace ComponentFactory.Krypton.Toolkit
                 else
                 {
                     // Not showing a context menu, so remove the fixed view immediately
-                    if (_finishDelegate != null)
-                        _finishDelegate(this, EventArgs.Empty);
+                    _finishDelegate?.Invoke(this, EventArgs.Empty);
                 }
             }
             else
             {
                 // Not showing a context menu, so remove the fixed view immediately
-                if (_finishDelegate != null)
-                    _finishDelegate(this, EventArgs.Empty);
+                _finishDelegate?.Invoke(this, EventArgs.Empty);
             }
         }
 

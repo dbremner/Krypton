@@ -969,8 +969,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSyncPropertyChanged(EventArgs e)
         {
-            if (SyncPropertyChanged != null)
-                SyncPropertyChanged(this, e);
+            SyncPropertyChanged?.Invoke(this, e);
         }
         #endregion
     }

@@ -1420,18 +1420,15 @@ namespace ComponentFactory.Krypton.Ribbon
             // Cannot process a message for a disposed control
             if (!IsDisposed && !Disposing)
             {
-                if (TabsArea != null)
-                    TabsArea.AppButtonVisibleChanged();
+                TabsArea?.AppButtonVisibleChanged();
 
-                if (CaptionArea != null)
-                    CaptionArea.AppButtonVisibleChanged();
+                CaptionArea?.AppButtonVisibleChanged();
             }
 
             // If we have a parent form then ask it to check for a change in composition height
-            if (_captionArea.KryptonForm != null)
-                _captionArea.KryptonForm.RecalculateComposition();
+		    _captionArea.KryptonForm?.RecalculateComposition();
 
-            base.OnLayout(levent);
+		    base.OnLayout(levent);
         }
 
         /// <summary>
@@ -1672,11 +1669,10 @@ namespace ComponentFactory.Krypton.Ribbon
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.MouseDown(e, new Point(e.X, e.Y));
+                ViewManager?.MouseDown(e, new Point(e.X, e.Y));
             }
 
-            // Do not call base class! Prevent capture of the mouse
+		    // Do not call base class! Prevent capture of the mouse
         }
 
         /// <summary>
@@ -1689,8 +1685,7 @@ namespace ComponentFactory.Krypton.Ribbon
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.MouseUp(e, new Point(e.X, e.Y));
+                ViewManager?.MouseUp(e, new Point(e.X, e.Y));
             }
 
             // Do not call base class! Prevent context menu from appearing by default
@@ -1841,11 +1836,8 @@ namespace ComponentFactory.Krypton.Ribbon
             if (RealMinimizedMode)
             {
                 // And we have a popup showing...
-                if (_minimizedPopup != null)
-                {
-                    // Then ensure the popup gets painted as well
-                    _minimizedPopup.PerformNeedPaint(e.NeedLayout);
-                }
+                // Then ensure the popup gets painted as well
+                _minimizedPopup?.PerformNeedPaint(e.NeedLayout);
             }
 
             // Let base class perform usual painting
@@ -1871,8 +1863,7 @@ namespace ComponentFactory.Krypton.Ribbon
             // Need to recalculate anything relying on the palette
             DirtyPaletteCounter++;
 
-            if (SelectedTabChanged != null)
-                SelectedTabChanged(this, e);
+            SelectedTabChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1881,8 +1872,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnSelectedContextChanged(EventArgs e)
         {
-            if (SelectedContextChanged != null)
-                SelectedContextChanged(this, e);
+            SelectedContextChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1891,8 +1881,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A ContextMenuArgs containing event data.</param>
         protected virtual void OnShowRibbonContextMenu(ContextMenuArgs e)
         {
-            if (ShowRibbonContextMenu != null)
-                ShowRibbonContextMenu(this, e);
+            ShowRibbonContextMenu?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1901,8 +1890,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A ContextMenuArgs containing event data.</param>
         protected virtual void OnShowQATCustomizeMenu(ContextMenuArgs e)
         {
-            if (ShowQATCustomizeMenu != null)
-                ShowQATCustomizeMenu(this, e);
+            ShowQATCustomizeMenu?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1911,8 +1899,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A CancelEventArgs containing the event data.</param>
         internal protected virtual void OnAppButtonMenuOpening(CancelEventArgs e)
         {
-            if (AppButtonMenuOpening != null)
-                AppButtonMenuOpening(this, e);
+            AppButtonMenuOpening?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1921,8 +1908,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         internal protected virtual void OnAppButtonMenuOpened(EventArgs e)
         {
-            if (AppButtonMenuOpened != null)
-                AppButtonMenuOpened(this, e);
+            AppButtonMenuOpened?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1931,8 +1917,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A CancelEventArgs containing the event data.</param>
         internal protected virtual void OnAppButtonMenuClosing(CancelEventArgs e)
         {
-            if (AppButtonMenuClosing != null)
-                AppButtonMenuClosing(this, e);
+            AppButtonMenuClosing?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1941,8 +1926,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An ToolStripDropDownClosedEventArgs containing the event data.</param>
         internal protected virtual void OnAppButtonMenuClosed(ToolStripDropDownClosedEventArgs e)
         {
-            if (AppButtonMenuClosed != null)
-                AppButtonMenuClosed(this, e);
+            AppButtonMenuClosed?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1951,16 +1935,14 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnMinimizedModeChanged(EventArgs e)
         {
-            if (MinimizedModeChanged != null)
-                MinimizedModeChanged(this, e);
+            MinimizedModeChanged?.Invoke(this, e);
         }
         #endregion
 
         #region Internal
         internal void OnDesignTimeAddTab()
         {
-            if (DesignTimeAddTab != null)
-                DesignTimeAddTab(this, EventArgs.Empty);
+            DesignTimeAddTab?.Invoke(this, EventArgs.Empty);
         }
 
         internal bool RealMinimizedMode
@@ -2300,8 +2282,7 @@ namespace ComponentFactory.Krypton.Ribbon
             else
             {
                 // if not showing the menu then fire completion delegate right away
-                if (finishDelegate != null)
-                    finishDelegate(this, EventArgs.Empty);
+                finishDelegate?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -2562,8 +2543,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         internal void UpdateQAT()
         {
-            if (_captionArea != null)
-                _captionArea.UpdateQAT();
+            _captionArea?.UpdateQAT();
         }
 
         internal KeyTipMode KeyTipMode
@@ -2596,11 +2576,9 @@ namespace ComponentFactory.Krypton.Ribbon
 
         internal void SetKeyTips(KeyTipInfoList keyTipList, KeyTipMode newMode)
         {
-            if (_keyTipControlE != null)
-                _keyTipControlE.Dispose();
+            _keyTipControlE?.Dispose();
 
-            if (_keyTipControlD != null)
-                _keyTipControlD.Dispose();
+            _keyTipControlD?.Dispose();
 
             _keyTipControlE = new KeyTipControl(this, keyTipList, false);
             _keyTipControlD = new KeyTipControl(this, keyTipList, true);
@@ -2609,8 +2587,8 @@ namespace ComponentFactory.Krypton.Ribbon
 
         internal void AppendKeyTipPress(char key)
         {
-            if (InKeyboardMode && InKeyTipsMode && (_keyTipControlE != null))
-                _keyTipControlE.AppendKeyPress(char.ToUpper(key));
+            if (InKeyboardMode && InKeyTipsMode)
+                _keyTipControlE?.AppendKeyPress(char.ToUpper(key));
         }
 
         internal KeyTipInfoList GenerateKeyTipsAtTopLevel()
@@ -2706,14 +2684,12 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (_focusView != value)
                 {
                     // Remove focus from existing view
-                    if (_focusView != null)
-                        _focusView.LostFocus(this);
+                    _focusView?.LostFocus(this);
 
                     _focusView = value;
 
                     // Add focus to the new view
-                    if (_focusView != null)
-                        _focusView.GotFocus(this);
+                    _focusView?.GotFocus(this);
                 }
             }
         }
@@ -3279,8 +3255,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Debug.Assert(qatButton != null);
 
             // Setup the back reference from tab to ribbon control
-            if (qatButton != null)
-                qatButton.SetRibbon(this);
+            qatButton?.SetRibbon(this);
 
             // Track changes in button properties
             qatButton.PropertyChanged += new PropertyChangedEventHandler(OnQATButtonPropertyChanged);
@@ -3301,9 +3276,8 @@ namespace ComponentFactory.Krypton.Ribbon
             qatButton.PropertyChanged -= new PropertyChangedEventHandler(OnQATButtonPropertyChanged);
 
             // Remove the backreference
-            if (qatButton != null)
-                qatButton.SetRibbon(null);
-            
+            qatButton?.SetRibbon(null);
+
             // Display not updated until a layout occurs
             PerformNeedPaint(true);
 
@@ -3317,11 +3291,8 @@ namespace ComponentFactory.Krypton.Ribbon
             if (RealMinimizedMode)
             {
                 // And we have a popup showing...
-                if (_minimizedPopup != null)
-                {
-                    // Then pass the paint request to the popup control
-                    _minimizedPopup.PerformNeedPaint(e.NeedLayout);
-                }
+                // Then pass the paint request to the popup control
+                _minimizedPopup?.PerformNeedPaint(e.NeedLayout);
             }
             else
             {

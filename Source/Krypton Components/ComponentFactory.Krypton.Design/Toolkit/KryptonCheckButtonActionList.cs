@@ -129,18 +129,14 @@ namespace ComponentFactory.Krypton.Toolkit
                 PropertyDescriptor checkedProp = TypeDescriptor.GetProperties(_checkButton)["Checked"];
 
                 // If we succeeded in getting the property
-                if (checkedProp != null)
-                {
-                    // Update the actual property with the new value
-                    checkedProp.SetValue(_checkButton, !isChecked);
-                }
+                // Update the actual property with the new value
+                checkedProp?.SetValue(_checkButton, !isChecked);
 
                 // Get the user interface service associated with actions
                 DesignerActionUIService service = GetService(typeof(DesignerActionUIService)) as DesignerActionUIService;
 
                 // If we managed to get it then request it update to reflect new action setting
-                if (service != null)
-                    service.Refresh(_checkButton);
+                service?.Refresh(_checkButton);
             }
         }
         #endregion

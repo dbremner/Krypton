@@ -354,8 +354,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ColorEventArgs that contains the event data.</param>
         protected virtual void OnSelectedColorChanged(ColorEventArgs e)
         {
-            if (SelectedColorChanged != null)
-                SelectedColorChanged(this, e);
+            SelectedColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -364,8 +363,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ColorEventArgs that contains the event data.</param>
         protected internal virtual void OnTrackingColor(ColorEventArgs e)
         {
-            if (TrackingColor != null)
-                TrackingColor(this, e);
+            TrackingColor?.Invoke(this, e);
         }
         #endregion
 

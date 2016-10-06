@@ -684,8 +684,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ContextPositionMenuArgs containing the event data.</param>
         internal protected virtual void OnCrumbDropDown(BreadCrumbMenuArgs e)
         {
-            if (CrumbDropDown != null)
-                CrumbDropDown(this, e);
+            CrumbDropDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -694,8 +693,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ContextPositionMenuArgs containing the event data.</param>
         internal protected virtual void OnOverflowDropDown(ContextPositionMenuArgs e)
         {
-            if (OverflowDropDown != null)
-                OverflowDropDown(this, e);
+            OverflowDropDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -704,8 +702,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedItemChanged(EventArgs e)
         {
-            if (SelectedItemChanged != null)
-                SelectedItemChanged(this, e);
+            SelectedItemChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -714,8 +711,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnInitialized(EventArgs e)
         {
-            if (Initialized != null)
-                Initialized(this, EventArgs.Empty);
+            Initialized?.Invoke(this, EventArgs.Empty);
         }
         #endregion
 
@@ -794,8 +790,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     if (sourceContent != null)
                     {
                         // Remove any currently showing tooltip
-                        if (_visualPopupToolTip != null)
-                            _visualPopupToolTip.Dispose();
+                        _visualPopupToolTip?.Dispose();
 
                         // Create the actual tooltip popup object
                         _visualPopupToolTip = new VisualPopupToolTip(Redirector,
@@ -817,11 +812,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private void OnCancelToolTip(object sender, EventArgs e)
         {
             // Remove any currently showing tooltip
-            if (_visualPopupToolTip != null)
-                _visualPopupToolTip.Dispose();
+            _visualPopupToolTip?.Dispose();
         }
 
-        private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
+	    private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
         {
             // Unhook events from the specific instance that generated event
             VisualPopupToolTip popupToolTip = (VisualPopupToolTip)sender;

@@ -152,8 +152,7 @@ namespace ComponentFactory.Krypton.Navigator
                 case "HeaderPositionBar":
                     UpdateOrientation();
                     UpdateItemOrientation();
-                    if (_buttonManager != null)
-                        _buttonManager.RecreateButtons();
+                    _buttonManager?.RecreateButtons();
                     Navigator.PerformNeedPaint(true);
                     break;
                 default:

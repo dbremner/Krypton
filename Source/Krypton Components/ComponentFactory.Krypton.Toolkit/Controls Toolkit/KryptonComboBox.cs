@@ -463,8 +463,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseEnter(EventArgs e)
             {
-                if (TrackMouseEnter != null)
-                    TrackMouseEnter(this, e);
+                TrackMouseEnter?.Invoke(this, e);
             }
 
             /// <summary>
@@ -473,8 +472,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseLeave(EventArgs e)
             {
-                if (TrackMouseLeave != null)
-                    TrackMouseLeave(this, e);
+                TrackMouseLeave?.Invoke(this, e);
             }
             #endregion
 
@@ -732,8 +730,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseEnter(EventArgs e)
             {
-                if (TrackMouseEnter != null)
-                    TrackMouseEnter(this, e);
+                TrackMouseEnter?.Invoke(this, e);
             }
 
             /// <summary>
@@ -742,8 +739,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="e">An EventArgs containing the event data.</param>
             protected virtual void OnTrackMouseLeave(EventArgs e)
             {
-                if (TrackMouseLeave != null)
-                    TrackMouseLeave(this, e);
+                TrackMouseLeave?.Invoke(this, e);
             }
             #endregion
         }
@@ -2050,11 +2046,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public new void Select()
         {
-            if (ComboBox != null)
-                ComboBox.Select();
+            ComboBox?.Select();
         }
 
-        /// <summary>
+	    /// <summary>
         /// Get the preferred size of the control based on a proposed size.
         /// </summary>
         /// <param name="proposedSize">Starting size proposed by the caller.</param>
@@ -2169,8 +2164,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnInitialized(EventArgs e)
         {
-            if (Initialized != null)
-                Initialized(this, EventArgs.Empty);
+            Initialized?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -2179,8 +2173,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTextUpdate(EventArgs e)
         {
-            if (TextUpdate != null)
-                TextUpdate(this, e);
+            TextUpdate?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2189,8 +2182,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectionChangeCommitted(EventArgs e)
         {
-            if (SelectionChangeCommitted != null)
-                SelectionChangeCommitted(this, e);
+            SelectionChangeCommitted?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2199,8 +2191,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedIndexChanged(EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(this, e);
+            SelectedIndexChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2209,8 +2200,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDownStyleChanged(EventArgs e)
         {
-            if (DropDownStyleChanged != null)
-                DropDownStyleChanged(this, e);
+            DropDownStyleChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2219,8 +2209,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDataSourceChanged(EventArgs e)
         {
-            if (DataSourceChanged != null)
-                DataSourceChanged(this, e);
+            DataSourceChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2229,8 +2218,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDisplayMemberChanged(EventArgs e)
         {
-            if (DisplayMemberChanged != null)
-                DisplayMemberChanged(this, e);
+            DisplayMemberChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2239,8 +2227,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An ListControlConvertEventArgs containing the event data.</param>
         protected virtual void OnFormat(ListControlConvertEventArgs e)
         {
-            if (Format != null)
-                Format(this, e);
+            Format?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2249,8 +2236,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatInfoChanged(EventArgs e)
         {
-            if (FormatInfoChanged != null)
-                FormatInfoChanged(this, e);
+            FormatInfoChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2259,8 +2245,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatStringChanged(EventArgs e)
         {
-            if (FormatStringChanged != null)
-                FormatStringChanged(this, e);
+            FormatStringChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2269,8 +2254,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormattingEnabledChanged(EventArgs e)
         {
-            if (FormattingEnabledChanged != null)
-                FormattingEnabledChanged(this, e);
+            FormattingEnabledChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2279,8 +2263,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedValueChanged(EventArgs e)
         {
-            if (SelectedValueChanged != null)
-                SelectedValueChanged(this, e);
+            SelectedValueChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2289,8 +2272,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnValueMemberChanged(EventArgs e)
         {
-            if (ValueMemberChanged != null)
-                ValueMemberChanged(this, e);
+            ValueMemberChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2299,8 +2281,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDownClosed(EventArgs e)
         {
-            if (DropDownClosed != null)
-                DropDownClosed(this, e);
+            DropDownClosed?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2309,8 +2290,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDown(EventArgs e)
         {
-            if (DropDown != null)
-                DropDown(this, e);
+            DropDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2319,8 +2299,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTrackMouseEnter(EventArgs e)
         {
-            if (TrackMouseEnter != null)
-                TrackMouseEnter(this, e);
+            TrackMouseEnter?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2329,8 +2308,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTrackMouseLeave(EventArgs e)
         {
-            if (TrackMouseLeave != null)
-                TrackMouseLeave(this, e);
+            TrackMouseLeave?.Invoke(this, e);
         }
         #endregion
 
@@ -2396,8 +2374,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackColorChanged(EventArgs e)
         {
-            if (BackColorChanged != null)
-                BackColorChanged(this, e);
+            BackColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2406,8 +2383,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageChanged(EventArgs e)
         {
-            if (BackgroundImageChanged != null)
-                BackgroundImageChanged(this, e);
+            BackgroundImageChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2416,8 +2392,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageLayoutChanged(EventArgs e)
         {
-            if (BackgroundImageLayoutChanged != null)
-                BackgroundImageLayoutChanged(this, e);
+            BackgroundImageLayoutChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2426,8 +2401,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnForeColorChanged(EventArgs e)
         {
-            if (ForeColorChanged != null)
-                ForeColorChanged(this, e);
+            ForeColorChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2436,8 +2410,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnPaddingChanged(EventArgs e)
         {
-            if (PaddingChanged != null)
-                PaddingChanged(this, e);
+            PaddingChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2474,8 +2447,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
 
             base.OnPaint(e);
-            if (Paint != null)
-                Paint(this, e);
+            Paint?.Invoke(this, e);
         }
 
         /// <summary>
@@ -3139,8 +3111,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     if (sourceContent != null)
                     {
                         // Remove any currently showing tooltip
-                        if (_visualPopupToolTip != null)
-                            _visualPopupToolTip.Dispose();
+                        _visualPopupToolTip?.Dispose();
 
                         // Create the actual tooltip popup object
                         _visualPopupToolTip = new VisualPopupToolTip(Redirector,
@@ -3162,11 +3133,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private void OnCancelToolTip(object sender, EventArgs e)
         {
             // Remove any currently showing tooltip
-            if (_visualPopupToolTip != null)
-                _visualPopupToolTip.Dispose();
+            _visualPopupToolTip?.Dispose();
         }
 
-        private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
+	    private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)
         {
             // Unhook events from the specific instance that generated event
             VisualPopupToolTip popupToolTip = (VisualPopupToolTip)sender;

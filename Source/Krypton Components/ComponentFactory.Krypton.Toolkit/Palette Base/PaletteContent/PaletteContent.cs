@@ -1024,8 +1024,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="property">Name of the property changed.</param>
         protected virtual void OnPropertyChanged(string property)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         #endregion
     }

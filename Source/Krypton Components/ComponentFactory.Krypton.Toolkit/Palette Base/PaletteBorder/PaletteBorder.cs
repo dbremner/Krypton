@@ -752,15 +752,12 @@ namespace ComponentFactory.Krypton.Toolkit
 		[RefreshPropertiesAttribute(RefreshProperties.All)]
 		public Image Image
 		{
-			get 
-            {
-                if (_storage == null)
-                    return null;
-                else
-                    return _storage.BorderImage; 
-            }
+			get
+			{
+			    return _storage?.BorderImage;
+			}
 
-			set
+		    set
 			{
                 if (_storage != null)
                 {
@@ -924,8 +921,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="property">Name of the property changed.</param>
         protected virtual void OnPropertyChanged(string property)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         #endregion
     }

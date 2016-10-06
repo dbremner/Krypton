@@ -500,8 +500,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Cache time of click generation
                 _clickTime = DateTime.Now;
 
-                if (Click != null)
-                    Click(_target, e);
+                Click?.Invoke(_target, e);
             }
 		}
 
@@ -511,9 +510,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="needLayout">Does the palette change require a layout.</param>
 		protected virtual void OnNeedPaint(bool needLayout)
 		{
-            if (_needPaint != null)
-                _needPaint(this, new NeedLayoutEventArgs(needLayout));
-		}
+            _needPaint?.Invoke(this, new NeedLayoutEventArgs(needLayout));
+        }
 		#endregion
 	}
 }

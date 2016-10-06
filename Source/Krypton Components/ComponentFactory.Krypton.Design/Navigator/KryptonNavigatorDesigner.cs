@@ -406,8 +406,7 @@ namespace ComponentFactory.Krypton.Navigator
             finally
             {
                 // If we managed to create the transaction, then do it
-                if (transaction != null)
-                    transaction.Commit();
+                transaction?.Commit();
             }
         }
 
@@ -435,8 +434,7 @@ namespace ComponentFactory.Krypton.Navigator
             finally
             {
                 // If we managed to create the transaction, then do it
-                if (transaction != null)
-                    transaction.Commit();
+                transaction?.Commit();
             }
         }
 
@@ -467,8 +465,7 @@ namespace ComponentFactory.Krypton.Navigator
                 finally
                 {
                     // If we managed to create the transaction, then do it
-                    if (transaction != null)
-                        transaction.Commit();
+                    transaction?.Commit();
                 }
             }
         }

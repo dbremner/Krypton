@@ -265,8 +265,7 @@ namespace ComponentFactory.Krypton.Docking
         {
             // Generate event so that the close action is handled for the named page
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.CloseRequest(new string[]{ e.UniqueName });
+            dockingManager?.CloseRequest(new string[]{ e.UniqueName });
         }
 
         private void OnFloatspacePagesDoubleClicked(object sender, UniqueNamesEventArgs e)
@@ -277,8 +276,7 @@ namespace ComponentFactory.Krypton.Docking
             if (e.UniqueNames.Length < FloatspaceControl.PageVisibleCount)
             {
                 KryptonDockingManager dockingManager = DockingManager;
-                if (dockingManager != null)
-                    dockingManager.SwitchFloatingToFloatingWindowRequest(e.UniqueNames);
+                dockingManager?.SwitchFloatingToFloatingWindowRequest(e.UniqueNames);
             }
         }
 
@@ -327,8 +325,7 @@ namespace ComponentFactory.Krypton.Docking
 
                     // Add a placeholder for the cell that contains the dragged page, so the cell is not removed during dragging
                     KryptonWorkspaceCell firstCell = FloatspaceControl.CellForPage(e.Pages[0]);
-                    if (firstCell != null)
-                        firstCell.Pages.Add(new KryptonStorePage("TemporaryPage", "Floating"));
+                    firstCell?.Pages.Add(new KryptonStorePage("TemporaryPage", "Floating"));
 
                     // Ask the docking manager for a IDragPageNotify implementation to handle the dragging operation
                     dockingManager.DoDragDrop(e.ScreenPoint, e.ElementOffset, e.Control, e.Pages);

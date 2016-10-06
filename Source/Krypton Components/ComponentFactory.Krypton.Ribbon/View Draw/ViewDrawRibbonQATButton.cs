@@ -238,8 +238,7 @@ namespace ComponentFactory.Krypton.Ribbon
                 Form ownerForm = _ribbon.FindForm();
 
                 // Ensure the form we are inside is active
-                if (ownerForm != null)
-                    ownerForm.Activate();
+                ownerForm?.Activate();
 
                 // Inform quick access toolbar button it has been clicked
                 _qatButton.PerformClick();

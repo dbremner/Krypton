@@ -137,11 +137,8 @@ namespace ComponentFactory.Krypton.Navigator
         public override void PageVisibleStateChanged(KryptonPage page)
         {
             // If is possible the header group has not been created yet
-            if (_headerGroup != null)
-            {
-                // Ensure buttons are recreated to reflect different previous/next visibility
-                _headerGroup.UpdateButtons();
-            }
+            // Ensure buttons are recreated to reflect different previous/next visibility
+            _headerGroup?.UpdateButtons();
 
             // Let base class do standard work
             base.PageVisibleStateChanged(page);

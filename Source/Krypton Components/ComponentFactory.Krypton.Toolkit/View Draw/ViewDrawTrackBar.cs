@@ -531,8 +531,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="needLayout">Does the layout need recalculating.</param>
         public void PerformNeedPaint(bool needLayout)
         {
-            if (_needPaint != null)
-                _needPaint(this, new NeedLayoutEventArgs(needLayout));
+            _needPaint?.Invoke(this, new NeedLayoutEventArgs(needLayout));
         }
         #endregion
 
@@ -543,8 +542,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnValueChanged(EventArgs e)
         {
-            if (ValueChanged != null)
-                ValueChanged(this, e);
+            ValueChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -553,8 +551,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnScroll(EventArgs e)
         {
-            if (Scroll != null)
-                Scroll(this, e);
+            Scroll?.Invoke(this, e);
         }
         #endregion
     }

@@ -990,8 +990,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private static void DefineFonts()
         {
             // Release existing resources
-            if (_menuToolFont != null) _menuToolFont.Dispose();
-            if (_statusFont != null) _statusFont.Dispose();
+            _menuToolFont?.Dispose();
+            _statusFont?.Dispose();
 
             // Create new font using system information
             _menuToolFont = new Font("Segoe UI", SystemFonts.MenuFont.SizeInPoints, FontStyle.Regular);

@@ -1362,8 +1362,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An PaletteLayoutEventArgs containing event data.</param>
         protected virtual void OnPalettePaint(object sender, PaletteLayoutEventArgs e)
         {
-            if (PalettePaint != null)
-                PalettePaint(this, e);
+            PalettePaint?.Invoke(this, e);
         }
         #endregion
 
@@ -1375,8 +1374,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnAllowFormChromeChanged(object sender, EventArgs e)
         {
-            if (AllowFormChromeChanged != null)
-                AllowFormChromeChanged(this, e);
+            AllowFormChromeChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -1388,8 +1386,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnBasePaletteChanged(object sender, EventArgs e)
         {
-            if (BasePaletteChanged != null)
-                BasePaletteChanged(this, e);
+            BasePaletteChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -1401,8 +1398,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnBaseRendererChanged(object sender, EventArgs e)
         {
-            if (BaseRendererChanged != null)
-                BaseRendererChanged(this, e);
+            BaseRendererChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -1414,8 +1410,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing event data.</param>
         protected virtual void OnButtonSpecChanged(object sender, EventArgs e)
         {
-            if (ButtonSpecChanged != null)
-                ButtonSpecChanged(this, e);
+            ButtonSpecChanged?.Invoke(this, e);
         }
         #endregion
     }

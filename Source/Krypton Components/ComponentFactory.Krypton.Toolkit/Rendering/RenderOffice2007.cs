@@ -125,8 +125,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Access a cache instance and decide if cache resources need generating
                 if ((memento == null) || !(memento is MementoRibbonTabContextOffice))
                 {
-                    if (memento != null)
-                        memento.Dispose();
+                    memento?.Dispose();
 
                     cache = new MementoRibbonTabContextOffice(rect, c1, c2);
                     memento = cache;

@@ -552,14 +552,12 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private void OnProviderClosing(object sender, CancelEventArgs e)
         {
-            if (_contextMenu != null)
-                _contextMenu.OnClosing(e);
+            _contextMenu?.OnClosing(e);
         }
 
         private void OnProviderClose(object sender, CloseReasonEventArgs e)
         {
-            if (_contextMenu != null)
-                _contextMenu.Close(e.CloseReason);
+            _contextMenu?.Close(e.CloseReason);
         }
 
         private void OnProviderClose(object sender, EventArgs e)

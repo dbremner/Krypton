@@ -100,12 +100,9 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Only interested in floating window elements
                 KryptonDockingFloatingWindow floatingWindow = child as KryptonDockingFloatingWindow;
-                if (floatingWindow != null)
-                {
-                    bool? ret = floatingWindow.PropogateBoolState(DockingPropogateBoolState.ContainsStorePage, uniqueName);
-                    if (ret.HasValue && ret.Value)
-                        return floatingWindow;
-                }
+                bool? ret = floatingWindow?.PropogateBoolState(DockingPropogateBoolState.ContainsStorePage, uniqueName);
+                if (ret != null && ret.Value)
+                    return floatingWindow;
             }
 
             return null;

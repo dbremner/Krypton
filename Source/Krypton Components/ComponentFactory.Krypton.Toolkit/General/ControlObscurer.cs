@@ -107,8 +107,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     _obscurer = new ObscurerForm();
 
                 // We need a control to work with!
-                if (f != null)
-                    _obscurer.ShowForm(f.Bounds);
+                _obscurer.ShowForm(f.Bounds);
             }
         }
 
@@ -127,8 +126,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     _obscurer = new ObscurerForm();
 
                 // We need a control to work with!
-                if (c != null)
-                    _obscurer.ShowForm(c.RectangleToScreen(c.ClientRectangle));
+                _obscurer.ShowForm(c.RectangleToScreen(c.ClientRectangle));
             }
         }
 
@@ -142,8 +140,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if ((f != null) && !f.IsDisposed)
             {
                 // Show over top of the provided form
-                if (_obscurer != null)
-                    _obscurer.ShowForm(f.Bounds);
+                _obscurer?.ShowForm(f.Bounds);
             }
         }
 
@@ -157,8 +154,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if ((c != null) && !c.IsDisposed)
             {
                 // Show over top of the provided control
-                if (_obscurer != null)
-                    _obscurer.ShowForm(c.RectangleToScreen(c.ClientRectangle));
+                _obscurer?.ShowForm(c.RectangleToScreen(c.ClientRectangle));
             }
         }
 
@@ -167,8 +163,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public void Uncover()
         {
-            if (_obscurer != null)
-                _obscurer.Hide();
+            _obscurer?.Hide();
         }
 
         /// <summary>

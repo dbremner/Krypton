@@ -470,8 +470,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private void ActionFinishedLarge(object sender, EventArgs e)
         {
             // Remove any popups that result from an action occuring
-            if (_ribbon != null)
-                _ribbon.ActionOccured();
+            _ribbon?.ActionOccured();
 
             // Remove the fixed pressed appearance
             _viewLargeController.RemoveFixed();
@@ -480,8 +479,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private void ActionFinishedMediumSmall(object sender, EventArgs e)
         {
             // Remove any popups that result from an action occuring
-            if (_ribbon != null)
-                _ribbon.ActionOccured();
+            _ribbon?.ActionOccured();
 
             // Remove the fixed pressed appearance
             _viewMediumSmallController.RemoveFixed();

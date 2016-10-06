@@ -641,8 +641,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">A PropertyChangedEventArgs containing the event data.</param>
         protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, e);
+            PropertyChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -657,8 +656,7 @@ namespace ComponentFactory.Krypton.Workspace
 
         private void OnMaximizeRestoreButtonClicked(object sender, EventArgs e)
         {
-            if (MaximizeRestoreClicked != null)
-                MaximizeRestoreClicked(this, EventArgs.Empty);
+            MaximizeRestoreClicked?.Invoke(this, EventArgs.Empty);
         }
         #endregion
     }

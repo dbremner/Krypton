@@ -326,8 +326,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedIndexChanged(EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(this, e);
+            SelectedIndexChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -337,8 +336,7 @@ namespace ComponentFactory.Krypton.Toolkit
         protected virtual void OnTrackingImage(ImageSelectEventArgs e)
         {
             _eventTrackingIndex = e.ImageIndex;
-            if (TrackingImage != null)
-                TrackingImage(this, e);
+            TrackingImage?.Invoke(this, e);
         }
         #endregion
 

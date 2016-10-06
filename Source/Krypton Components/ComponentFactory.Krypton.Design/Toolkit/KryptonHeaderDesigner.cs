@@ -37,14 +37,11 @@ namespace ComponentFactory.Krypton.Toolkit
         protected override void Dispose(bool disposing)
         {
             // Unhook from events
-            if (_header != null)
+            ViewManager vm = _header?.GetViewManager();
+            if (vm != null)
             {
-                ViewManager vm = _header.GetViewManager();
-                if (vm != null)
-                {
-                    vm.MouseUpProcessed -= new MouseEventHandler(OnHeaderMouseUp);
-                    vm.DoubleClickProcessed -= new PointHandler(OnHeaderDoubleClick);
-                }
+                vm.MouseUpProcessed -= new MouseEventHandler(OnHeaderMouseUp);
+                vm.DoubleClickProcessed -= new PointHandler(OnHeaderDoubleClick);
             }
 
             if (_changeService != null)
@@ -153,8 +150,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_header != null)
-                _header.DesignerMouseLeave();
+            _header?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

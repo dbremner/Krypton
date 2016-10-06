@@ -674,8 +674,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected override void OnDoubleClick(EventArgs e)
         {
-            if (DoubleClick != null)
-                DoubleClick(this, e);
+            DoubleClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -684,8 +683,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnMouseDoubleClick(EventArgs e)
         {
-            if (MouseDoubleClick != null)
-                MouseDoubleClick(this, e);
+            MouseDoubleClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -694,8 +692,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnMouseImeModeChanged(EventArgs e)
         {
-            if (ImeModeChanged != null)
-                ImeModeChanged(this, e);
+            ImeModeChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -704,8 +701,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCheckedChanged(EventArgs e)
         {
-            if (CheckedChanged != null)
-                CheckedChanged(this, e);
+            CheckedChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -717,8 +713,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Update the checked state that is drawn
             _drawCheckBox.CheckState = _checkState;
 
-            if (CheckStateChanged != null)
-                CheckStateChanged(this, e);
+            CheckStateChanged?.Invoke(this, e);
 
             // If there is a command associated then update with new state
             if (KryptonCommand != null)
@@ -750,8 +745,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnKryptonCommandChanged(EventArgs e)
         {
-            if (KryptonCommandChanged != null)
-                KryptonCommandChanged(this, e);
+            KryptonCommandChanged?.Invoke(this, e);
 
             // Use the values from the new command
             if (KryptonCommand != null)
@@ -833,8 +827,7 @@ namespace ComponentFactory.Krypton.Toolkit
             base.OnClick(e);
 
             // If we have an attached command then execute it
-            if (KryptonCommand != null)
-                KryptonCommand.PerformExecute();
+            KryptonCommand?.PerformExecute();
         }
 
         /// <summary>

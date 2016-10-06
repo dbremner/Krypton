@@ -101,13 +101,8 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Scan up the parent chain to get the edge we are expected to be inside
                 KryptonDockingEdge dockingEdge = GetParentType(typeof(KryptonDockingEdge)) as KryptonDockingEdge;
-                if (dockingEdge != null)
-                {
-                    // Extract the expected fixed name of the docked edge element
-                    return dockingEdge["Docked"] as KryptonDockingEdgeDocked;
-                }
-
-                return null;
+                // Extract the expected fixed name of the docked edge element
+                return dockingEdge?["Docked"] as KryptonDockingEdgeDocked;
             }
         }
 
@@ -474,8 +469,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An KryptonPageEventArgs containing the event data.</param>
         protected virtual void OnPageClicked(KryptonPageEventArgs e)
         {
-            if (PageClicked != null)
-                PageClicked(this, e);
+            PageClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -484,8 +478,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An KryptonPageEventArgs containing the event data.</param>
         protected virtual void OnPageHoverStart(KryptonPageEventArgs e)
         {
-            if (PageHoverStart != null)
-                PageHoverStart(this, e);
+            PageHoverStart?.Invoke(this, e);
         }
 
         /// <summary>
@@ -494,8 +487,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnPageHoverEnd(EventArgs e)
         {
-            if (PageHoverEnd != null)
-                PageHoverEnd(this, e);
+            PageHoverEnd?.Invoke(this, e);
         }
 
         /// <summary>

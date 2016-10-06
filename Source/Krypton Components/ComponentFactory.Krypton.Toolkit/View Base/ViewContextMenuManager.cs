@@ -123,8 +123,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public void SetTargetSubMenu(IContextMenuTarget target)
         {
             // Kill any running timer
-            if (_itemDelayTimer != null)
-                _itemDelayTimer.Stop();
+            _itemDelayTimer?.Stop();
 
             // If the currently showing sub menu is not for the new target
             if (_targetSubMenu != target)
@@ -151,8 +150,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _target = target;
 
             // Tell new target to draw as highlighted and start delay timer
-            if (_target != null)
-                _target.ShowTarget();
+            _target?.ShowTarget();
         }
 
         /// <summary>

@@ -539,8 +539,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected override void OnDoubleClick(EventArgs e)
         {
-            if (DoubleClick != null)
-                DoubleClick(this, e);
+            DoubleClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -549,8 +548,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnMouseDoubleClick(EventArgs e)
         {
-            if (MouseDoubleClick != null)
-                MouseDoubleClick(this, e);
+            MouseDoubleClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -559,8 +557,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnMouseImeModeChanged(EventArgs e)
         {
-            if (ImeModeChanged != null)
-                ImeModeChanged(this, e);
+            ImeModeChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -569,8 +566,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCheckedChanged(EventArgs e)
         {
-            if (CheckedChanged != null)
-                CheckedChanged(this, e);
+            CheckedChanged?.Invoke(this, e);
         }
 
         /// <summary>

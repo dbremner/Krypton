@@ -173,8 +173,7 @@ namespace ComponentFactory.Krypton.Toolkit
                       screenRect.Width, screenRect.Height);
 
             // If we have a shadow then update it now
-            if (_shadow != null)
-                _shadow.Show(screenRect);
+            _shadow?.Show(screenRect);
 
             // Show the window without activating it (i.e. do not take focus)
             PI.ShowWindow(this.Handle, PI.SW_SHOWNOACTIVATE);
@@ -560,8 +559,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.MouseMove(e, new Point(e.X, e.Y));
+                ViewManager?.MouseMove(e, new Point(e.X, e.Y));
             }
 
             // Let base class fire events
@@ -578,8 +576,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.MouseDown(e, new Point(e.X, e.Y));
+                ViewManager?.MouseDown(e, new Point(e.X, e.Y));
             }
 
             // Do not call base class! Prevent capture of the mouse
@@ -595,8 +592,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.MouseUp(e, new Point(e.X, e.Y));
+                ViewManager?.MouseUp(e, new Point(e.X, e.Y));
             }
 
             // Do not call base class! Prevent capture of the mouse
@@ -612,8 +608,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.MouseLeave(e);
+                ViewManager?.MouseLeave(e);
             }
 
             // Let base class fire events
@@ -630,8 +625,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing mouse messages?
-                if (ViewManager != null)
-                    ViewManager.DoubleClick(this.PointToClient(Control.MousePosition));
+                ViewManager?.DoubleClick(this.PointToClient(Control.MousePosition));
             }
 
             // Let base class fire events
@@ -680,8 +674,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 else
                 {
                     // Do we have a manager for processing key messages?
-                    if (ViewManager != null)
-                        ViewManager.KeyDown(e);
+                    ViewManager?.KeyDown(e);
                 }
             }
 
@@ -699,8 +692,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing key messages?
-                if (ViewManager != null)
-                    ViewManager.KeyPress(e);
+                ViewManager?.KeyPress(e);
             }
 
             // Let base class fire events
@@ -717,8 +709,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (!IsDisposed)
             {
                 // Do we have a manager for processing key messages?
-                if (ViewManager != null)
-                    ViewManager.KeyUp(e);
+                ViewManager?.KeyUp(e);
             }
 
             // Let base class fire events

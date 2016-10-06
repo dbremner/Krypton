@@ -693,8 +693,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="needLayout">Does the palette change require a layout.</param>
         protected virtual void OnNeedPaint(object sender, bool needLayout)
         {
-            if (_needPaint != null)
-                _needPaint(sender, new NeedLayoutEventArgs(needLayout));
+            _needPaint?.Invoke(sender, new NeedLayoutEventArgs(needLayout));
         }
         #endregion
 

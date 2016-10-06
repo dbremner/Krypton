@@ -648,25 +648,23 @@ namespace ComponentFactory.Krypton.Ribbon
                     if (VisualPopupManager.Singleton.CurrentPopup != null)
                     {
                         // Do we need to fire a delegate stating the click processing has finished?
-                        if (fireDelegate && (finishDelegate != null))
-                            finishDelegate(this, EventArgs.Empty);
+                        if (fireDelegate)
+                            finishDelegate?.Invoke(this, EventArgs.Empty);
 
                         fireDelegate = false;
                     }
 
                     // Generate actual click event
-                    if (Click != null)
-                        Click(this, EventArgs.Empty);
+                    Click?.Invoke(this, EventArgs.Empty);
 
                     // Clicking the button should execute the associated command
-                    if (KryptonCommand != null)
-                        KryptonCommand.PerformExecute();
+                    KryptonCommand?.PerformExecute();
                 }
             }
 
             // Do we need to fire a delegate stating the click processing has finished?
-            if (fireDelegate && (finishDelegate != null))
-                finishDelegate(this, EventArgs.Empty);
+            if (fireDelegate)
+                finishDelegate?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -691,8 +689,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
                             // Generate an event giving a chance for the krypton context menu strip to 
                             // be shown to be provided/modified or the action even to be cancelled
-                            if (DropDown != null)
-                                DropDown(this, contextArgs);
+                            DropDown?.Invoke(this, contextArgs);
 
                             // If user did not cancel and there is still a krypton context menu strip to show
                             if (!contextArgs.Cancel && (contextArgs.KryptonContextMenu != null))
@@ -721,8 +718,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
                             // Generate an event giving a chance for the context menu strip to be
                             // shown to be provided/modified or the action even to be cancelled
-                            if (DropDown != null)
-                                DropDown(this, contextArgs);
+                            DropDown?.Invoke(this, contextArgs);
 
                             // If user did not cancel and there is still a context menu strip to show
                             if (!contextArgs.Cancel && (contextArgs.ContextMenuStrip != null))
@@ -750,8 +746,8 @@ namespace ComponentFactory.Krypton.Ribbon
             }
 
             // Do we need to fire a delegate stating the click processing has finished?
-            if (fireDelegate && (finishDelegate != null))
-                finishDelegate(this, EventArgs.Empty);
+            if (fireDelegate)
+                finishDelegate?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -760,16 +756,14 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
         #region Internal
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal override bool ProcessCmdKey(ref Message msg, Keys keyData)

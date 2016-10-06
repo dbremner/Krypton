@@ -74,10 +74,7 @@ namespace ComponentFactory.Krypton.Navigator
         public override bool CanBeParentedTo(IDesigner parentDesigner)
         {
             // Can only place a KrytonPage in the KryptonNavigator
-            if (parentDesigner != null)
-                return (parentDesigner.Component is KryptonNavigator);
-            else
-                return false;
+            return parentDesigner?.Component is KryptonNavigator;
         }
 
         /// <summary>

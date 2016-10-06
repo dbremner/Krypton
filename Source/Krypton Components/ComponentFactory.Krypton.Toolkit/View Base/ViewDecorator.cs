@@ -357,22 +357,20 @@ namespace ComponentFactory.Krypton.Toolkit
         public override void MouseEnter()
         {
             // Bubble event up to the parent
-            if (Parent != null)
-                Parent.MouseEnter();
+            Parent?.MouseEnter();
         }
 
-        /// <summary>
+	    /// <summary>
         /// Mouse has moved inside the view.
         /// </summary>
         /// <param name="pt">Mouse position relative to control.</param>
         public override void MouseMove(Point pt)
-        {
-            // Bubble event up to the parent
-            if (Parent != null)
-                Parent.MouseMove(pt);
-        }
+	    {
+	        // Bubble event up to the parent
+	        Parent?.MouseMove(pt);
+	    }
 
-        /// <summary>
+	    /// <summary>
         /// Mouse button has been pressed in the view.
         /// </summary>
         /// <param name="pt">Mouse position relative to control.</param>
@@ -395,21 +393,20 @@ namespace ComponentFactory.Krypton.Toolkit
         public override void MouseUp(Point pt, MouseButtons button)
         {
             // Bubble event up to the parent
-            if (Parent != null)
-                Parent.MouseUp(pt, button);
+            Parent?.MouseUp(pt, button);
         }
 
-        /// <summary>
+	    /// <summary>
         /// Mouse has left the view.
         /// </summary>
         /// <param name="next">Reference to view that is next to have the mouse.</param>
         public override void MouseLeave(ViewBase next)
-        {
-            // Bubble event up to the parent
-            if (Parent != null)
-                Parent.MouseLeave(next);
-        }
-        #endregion
+	    {
+	        // Bubble event up to the parent
+	        Parent?.MouseLeave(next);
+	    }
+
+	    #endregion
 
         #region Key Events
         /// <summary>
@@ -419,22 +416,20 @@ namespace ComponentFactory.Krypton.Toolkit
         public override void KeyDown(KeyEventArgs e)
         {
             // Bubble event up to the parent
-            if (Parent != null)
-                Parent.KeyDown(e);
+            Parent?.KeyDown(e);
         }
 
-        /// <summary>
+	    /// <summary>
         /// Key has been pressed.
         /// </summary>
         /// <param name="e">A KeyPressEventArgs that contains the event data.</param>
         public override void KeyPress(KeyPressEventArgs e)
-        {
-            // Bubble event up to the parent
-            if (Parent != null)
-                Parent.KeyPress(e);
-        }
+	    {
+	        // Bubble event up to the parent
+	        Parent?.KeyPress(e);
+	    }
 
-        /// <summary>
+	    /// <summary>
         /// Key has been released.
         /// </summary>
         /// <param name="e">A KeyEventArgs that contains the event data.</param>
@@ -457,21 +452,20 @@ namespace ComponentFactory.Krypton.Toolkit
         public override void GotFocus(Control c)
         {
             // Bubble event up to the parent
-            if (Parent != null)
-                Parent.GotFocus(c);
+            Parent?.GotFocus(c);
         }
 
-        /// <summary>
+	    /// <summary>
         /// Source control has lost the focus.
         /// </summary>
         /// <param name="c">Reference to the source control instance.</param>
         public override void LostFocus(Control c)
-        {
-            // Bubble event up to the parent
-            if (Parent != null)
-                Parent.LostFocus(c);
-        }
-        #endregion
+	    {
+	        // Bubble event up to the parent
+	        Parent?.LostFocus(c);
+	    }
+
+	    #endregion
 
         #region ElementState
         /// <summary>

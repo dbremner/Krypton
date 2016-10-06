@@ -504,8 +504,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnKryptonCommandChanged(EventArgs e)
         {
-            if (KryptonCommandChanged != null)
-                KryptonCommandChanged(this, e);
+            KryptonCommandChanged?.Invoke(this, e);
 
             // Use the values from the new command
             if (KryptonCommand != null)

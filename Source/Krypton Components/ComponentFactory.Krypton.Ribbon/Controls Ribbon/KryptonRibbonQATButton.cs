@@ -124,8 +124,8 @@ namespace ComponentFactory.Krypton.Ribbon
                     OnPropertyChanged("Image");
 
                     // Only need to update display if we are visible
-                    if (Visible && (_ribbon != null))
-                        _ribbon.PerformNeedPaint(false);
+                    if (Visible)
+                        _ribbon?.PerformNeedPaint(false);
                 }
             }
         }
@@ -198,8 +198,8 @@ namespace ComponentFactory.Krypton.Ribbon
                     OnPropertyChanged("Enabled");
 
                     // Must try and paint to show change
-                    if (Visible && (_ribbon != null))
-                        _ribbon.PerformNeedPaint(false);
+                    if (Visible)
+                        _ribbon?.PerformNeedPaint(false);
                 }
             }
         }
@@ -350,8 +350,8 @@ namespace ComponentFactory.Krypton.Ribbon
                         _command.PropertyChanged += new PropertyChangedEventHandler(OnCommandPropertyChanged);
 
                     // Only need to update display if we are visible
-                    if (Visible && (_ribbon != null))
-                        _ribbon.PerformNeedPaint(false);
+                    if (Visible)
+                        _ribbon?.PerformNeedPaint(false);
                 }
             }
         }
@@ -551,8 +551,8 @@ namespace ComponentFactory.Krypton.Ribbon
             if (refresh)
             {
                 // Only need to update display if we are visible
-                if (Visible && (_ribbon != null))
-                    _ribbon.PerformNeedPaint(false);
+                if (Visible)
+                    _ribbon?.PerformNeedPaint(false);
             }
         }
         
@@ -564,15 +564,12 @@ namespace ComponentFactory.Krypton.Ribbon
         {
             // Perform processing that is common to any action that would dismiss
             // any popup controls such as the showing minimized group popup
-            if (Ribbon != null)
-                Ribbon.ActionOccured();
+            Ribbon?.ActionOccured();
 
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
 
             // Clicking the button should execute the associated command
-            if (KryptonCommand != null)
-                KryptonCommand.PerformExecute();
+            KryptonCommand?.PerformExecute();
         }
 
         /// <summary>
@@ -581,8 +578,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

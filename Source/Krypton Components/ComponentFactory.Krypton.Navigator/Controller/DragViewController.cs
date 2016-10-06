@@ -377,8 +377,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnLeftMouseDown(EventArgs e)
         {
-            if (LeftMouseDown != null)
-                LeftMouseDown(this, e);
+            LeftMouseDown?.Invoke(this, e);
 
             // If this click is within the double click time of the last one, generate the double click event.
             DateTime now = DateTime.Now;
@@ -400,8 +399,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnRightMouseDown(EventArgs e)
         {
-            if (RightMouseDown != null)
-                RightMouseDown(this, e);
+            RightMouseDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -410,8 +408,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnLeftDoubleClick(EventArgs e)
         {
-            if (LeftDoubleClick != null)
-                LeftDoubleClick(this, e);
+            LeftDoubleClick?.Invoke(this, e);
         }
 
         /// <summary>
@@ -425,9 +422,8 @@ namespace ComponentFactory.Krypton.Navigator
             // Convert point from client to screen coordinates
             mousePt = _target.OwningControl.PointToScreen(mousePt);
             DragStartEventCancelArgs ce = new DragStartEventCancelArgs(mousePt, offset, c);
-            
-            if (DragStart != null)
-                DragStart(this, ce);
+
+            DragStart?.Invoke(this, ce);
 
             // If event is not cancelled then allow dragging
             _dragging = !ce.Cancel;
@@ -468,8 +464,7 @@ namespace ComponentFactory.Krypton.Navigator
         protected virtual void OnDragQuit()
         {
             _dragging = false;
-            if (DragQuit != null)
-                DragQuit(this, EventArgs.Empty);
+            DragQuit?.Invoke(this, EventArgs.Empty);
         }
 		#endregion
 	}

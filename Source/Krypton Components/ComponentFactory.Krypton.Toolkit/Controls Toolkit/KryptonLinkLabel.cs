@@ -256,12 +256,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnLinkClicked(LinkClickedEventArgs e)
         {
-            if (LinkClicked != null)
-                LinkClicked(this, e);
+            LinkClicked?.Invoke(this, e);
 
             // If we have an attached command then execute it
-            if (KryptonCommand != null)
-                KryptonCommand.PerformExecute();
+            KryptonCommand?.PerformExecute();
         }
         #endregion
 

@@ -600,8 +600,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // Remove cell from parent collection
                         MenuTreeNode parentNode = (MenuTreeNode)node.Parent;
                         TreeNodeCollection parentCollection = (node.Parent == null ? treeView1.Nodes : node.Parent.Nodes);
-                        if (parentNode != null)
-                            parentNode.Item.Items.Remove(node.Item);
+                        parentNode?.Item.Items.Remove(node.Item);
                         parentCollection.Remove(node);
 
                         if (contained)
@@ -619,8 +618,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                     pageIndex++;
                             }
 
-                            if (previousParent != null)
-                                previousParent.Item.Items.Insert(pageIndex, node.Item);
+                            previousParent?.Item.Items.Insert(pageIndex, node.Item);
                             parentCollection.Insert(pageIndex, node);
                         }
                         else
@@ -655,8 +653,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         // Remove cell from parent collection
                         MenuTreeNode parentNode = (MenuTreeNode)node.Parent;
                         TreeNodeCollection parentCollection = (node.Parent == null ? treeView1.Nodes : node.Parent.Nodes);
-                        if (parentNode != null)
-                            parentNode.Item.Items.Remove(node.Item);
+                        parentNode?.Item.Items.Remove(node.Item);
                         parentCollection.Remove(node);
 
                         if (contained)
@@ -665,8 +662,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             MenuTreeNode previousParent = (MenuTreeNode)nextNode.Parent;
                             parentCollection = (nextNode.Parent == null ? treeView1.Nodes : nextNode.Parent.Nodes);
                             int pageIndex = parentCollection.IndexOf(nextNode);
-                            if (previousParent != null)
-                                previousParent.Item.Items.Insert(pageIndex + 1, node.Item);
+                            previousParent?.Item.Items.Insert(pageIndex + 1, node.Item);
                             parentCollection.Insert(pageIndex + 1, node);
                         }
                         else
@@ -840,8 +836,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 foreach (KryptonBreadCrumbItem item in after.Values)
                     if (!before.ContainsKey(item))
                     {
-                        if (context.Container != null)
-                            context.Container.Add(item as IComponent);
+                        context.Container?.Add(item as IComponent);
                     }
 
                 // Delete all old components (in the 'before' but not the 'after'
@@ -850,8 +845,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DestroyInstance(item);
 
-                        if (context.Container != null)
-                            context.Container.Remove(item as IComponent);
+                        context.Container?.Remove(item as IComponent);
                     }
 
                 IComponentChangeService changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));

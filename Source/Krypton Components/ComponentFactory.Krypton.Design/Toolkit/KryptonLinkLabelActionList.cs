@@ -242,8 +242,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 DesignerActionUIService service = GetService(typeof(DesignerActionUIService)) as DesignerActionUIService;
 
                 // If we managed to get it then request it update to reflect new action setting
-                if (service != null)
-                    service.Refresh(_linkLabel);
+                service?.Refresh(_linkLabel);
             }
         }
         #endregion   

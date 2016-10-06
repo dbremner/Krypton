@@ -471,8 +471,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An NeedLayoutEventArgs containing event data.</param>
         protected virtual void OnNeedPaint(object sender, NeedLayoutEventArgs e)
         {
-            if (_needPaint != null)
-                _needPaint(this, e);
+            _needPaint?.Invoke(this, e);
         }
         #endregion
 
@@ -640,14 +639,12 @@ namespace ComponentFactory.Krypton.Navigator
 
         private void OnButtonDragRectangle(object sender, ButtonDragRectangleEventArgs e)
         {
-            if (ButtonDragRectangle != null)
-                ButtonDragRectangle(this, e);
+            ButtonDragRectangle?.Invoke(this, e);
         }
 
         private void OnButtonDragOffset(object sender, ButtonDragOffsetEventArgs e)
         {
-            if (ButtonDragOffset != null)
-                ButtonDragOffset(this, e);
+            ButtonDragOffset?.Invoke(this, e);
         }
         #endregion
     }

@@ -657,20 +657,17 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnClick(object sender, EventArgs e)
         {
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
         }
 
         private void OnContextClick(object sender, MouseEventArgs e)
         {
-            if (ContextClick != null)
-                ContextClick(this, e);
+            ContextClick?.Invoke(this, e);
         }
 
         private void OnDropDown(object sender, EventArgs e)
         {
-            if (DropDown != null)
-                DropDown(this, e);
+            DropDown?.Invoke(this, e);
         }
         #endregion
     }

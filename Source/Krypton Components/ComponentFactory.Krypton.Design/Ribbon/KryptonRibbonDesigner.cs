@@ -287,8 +287,7 @@ namespace ComponentFactory.Krypton.Ribbon
             finally
             {
                 // If we managed to create the transaction, then do it
-                if (transaction != null)
-                    transaction.Commit();
+                transaction?.Commit();
 
                 UpdateVerbStatus();
             }
@@ -322,8 +321,7 @@ namespace ComponentFactory.Krypton.Ribbon
             finally
             {
                 // If we managed to create the transaction, then do it
-                if (transaction != null)
-                    transaction.Commit();
+                transaction?.Commit();
 
                 UpdateVerbStatus();
             }

@@ -146,18 +146,15 @@ namespace ComponentFactory.Krypton.Docking
                     break;
                 case PI.WM_KEYDOWN:
                     base.WndProc(ref m);
-                    if (_floatingMessages != null)
-                        _floatingMessages.OnKEYDOWN(ref m);
+                    _floatingMessages?.OnKEYDOWN(ref m);
                     return;
                 case PI.WM_MOUSEMOVE:
                     base.WndProc(ref m);
-                    if (_floatingMessages != null)
-                        _floatingMessages.OnMOUSEMOVE();
+                    _floatingMessages?.OnMOUSEMOVE();
                     return;
                 case PI.WM_LBUTTONUP:
                     base.WndProc(ref m);
-                    if (_floatingMessages != null)
-                        _floatingMessages.OnLBUTTONUP();
+                    _floatingMessages?.OnLBUTTONUP();
                     return;
             }
 
@@ -170,8 +167,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An UniqueNamesEventArgs that contains the event data.</param>
         protected virtual void OnWindowCloseClicked(UniqueNamesEventArgs e)
         {
-            if (WindowCloseClicked != null)
-                WindowCloseClicked(this, e);
+            WindowCloseClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -180,8 +176,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An ScreenAndOffsetEventArgs that contains the event data.</param>
         protected virtual void OnWindowCaptionDragging(ScreenAndOffsetEventArgs e)
         {
-            if (WindowCaptionDragging != null)
-                WindowCaptionDragging(this, e);
+            WindowCaptionDragging?.Invoke(this, e);
         }
 
         /// <summary>

@@ -481,8 +481,7 @@ namespace ComponentFactory.Krypton.Ribbon
         protected virtual void OnNeedPaint(bool needLayout,
                                            Rectangle invalidRect)
         {
-            if (NeedPaint != null)
-                NeedPaint(this, new NeedLayoutEventArgs(needLayout, invalidRect));
+            NeedPaint?.Invoke(this, new NeedLayoutEventArgs(needLayout, invalidRect));
         }
 
         /// <summary>
@@ -491,8 +490,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A MouseEventArgs containing the event data.</param>
         protected virtual void OnClick(MouseEventArgs e)
         {
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
 
             _keyboard = false;
         }
@@ -503,8 +501,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">A MouseEventArgs containing the event data.</param>
         protected virtual void OnMouseReleased(MouseEventArgs e)
         {
-            if (MouseReleased != null)
-                MouseReleased(this, e);
+            MouseReleased?.Invoke(this, e);
         }
         #endregion
 

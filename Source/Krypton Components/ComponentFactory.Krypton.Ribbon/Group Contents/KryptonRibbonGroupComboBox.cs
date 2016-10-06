@@ -972,8 +972,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnTextUpdate(EventArgs e)
         {
-            if (TextUpdate != null)
-                TextUpdate(this, e);
+            TextUpdate?.Invoke(this, e);
         }
 
         /// <summary>
@@ -982,8 +981,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectionChangeCommitted(EventArgs e)
         {
-            if (SelectionChangeCommitted != null)
-                SelectionChangeCommitted(this, e);
+            SelectionChangeCommitted?.Invoke(this, e);
         }
 
         /// <summary>
@@ -992,8 +990,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedIndexChanged(EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(this, e);
+            SelectedIndexChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1002,8 +999,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDownStyleChanged(EventArgs e)
         {
-            if (DropDownStyleChanged != null)
-                DropDownStyleChanged(this, e);
+            DropDownStyleChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1012,8 +1008,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDataSourceChanged(EventArgs e)
         {
-            if (DataSourceChanged != null)
-                DataSourceChanged(this, e);
+            DataSourceChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1022,8 +1017,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDisplayMemberChanged(EventArgs e)
         {
-            if (DisplayMemberChanged != null)
-                DisplayMemberChanged(this, e);
+            DisplayMemberChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1032,8 +1026,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormat(EventArgs e)
         {
-            if (Format != null)
-                Format(this, e);
+            Format?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1042,8 +1035,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatInfoChanged(EventArgs e)
         {
-            if (FormatInfoChanged != null)
-                FormatInfoChanged(this, e);
+            FormatInfoChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1052,8 +1044,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormatStringChanged(EventArgs e)
         {
-            if (FormatStringChanged != null)
-                FormatStringChanged(this, e);
+            FormatStringChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1062,8 +1053,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnFormattingEnabledChanged(EventArgs e)
         {
-            if (FormattingEnabledChanged != null)
-                FormattingEnabledChanged(this, e);
+            FormattingEnabledChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1072,8 +1062,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnSelectedValueChanged(EventArgs e)
         {
-            if (SelectedValueChanged != null)
-                SelectedValueChanged(this, e);
+            SelectedValueChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1082,8 +1071,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnValueMemberChanged(EventArgs e)
         {
-            if (ValueMemberChanged != null)
-                ValueMemberChanged(this, e);
+            ValueMemberChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1092,8 +1080,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDownClosed(EventArgs e)
         {
-            if (DropDownClosed != null)
-                DropDownClosed(this, e);
+            DropDownClosed?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1102,8 +1089,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnDropDown(EventArgs e)
         {
-            if (DropDown != null)
-                DropDown(this, e);
+            DropDown?.Invoke(this, e);
         }
 
 
@@ -1113,8 +1099,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnGotFocus(EventArgs e)
         {
-            if (GotFocus != null)
-                GotFocus(this, e);
+            GotFocus?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1123,8 +1108,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnLostFocus(EventArgs e)
         {
-            if (LostFocus != null)
-                LostFocus(this, e);
+            LostFocus?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1133,8 +1117,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An KeyEventArgs containing the event data.</param>
         protected virtual void OnKeyDown(KeyEventArgs e)
         {
-            if (KeyDown != null)
-                KeyDown(this, e);
+            KeyDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1143,8 +1126,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An KeyEventArgs containing the event data.</param>
         protected virtual void OnKeyUp(KeyEventArgs e)
         {
-            if (KeyUp != null)
-                KeyUp(this, e);
+            KeyUp?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1153,8 +1135,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An KeyPressEventArgs containing the event data.</param>
         protected virtual void OnKeyPress(KeyPressEventArgs e)
         {
-            if (KeyPress != null)
-                KeyPress(this, e);
+            KeyPress?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1163,8 +1144,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An PreviewKeyDownEventArgs containing the event data.</param>
         protected virtual void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
         {
-            if (PreviewKeyDown != null)
-                PreviewKeyDown(this, e);
+            PreviewKeyDown?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1173,8 +1153,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -1199,8 +1178,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -1247,21 +1225,18 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnControlEnter(object sender, EventArgs e)
         {
-            if (MouseEnterControl != null)
-                MouseEnterControl(this, e);
+            MouseEnterControl?.Invoke(this, e);
         }
 
         private void OnControlLeave(object sender, EventArgs e)
         {
-            if (MouseLeaveControl != null)
-                MouseLeaveControl(this, e);
+            MouseLeaveControl?.Invoke(this, e);
         }
 
         private void OnPaletteNeedPaint(object sender, NeedLayoutEventArgs e)
         {
             // Pass request onto the view provided paint delegate
-            if (_viewPaintDelegate != null)
-                _viewPaintDelegate(this, e);
+            _viewPaintDelegate?.Invoke(this, e);
         }
 
         private void OnComboBoxGotFocus(object sender, EventArgs e)

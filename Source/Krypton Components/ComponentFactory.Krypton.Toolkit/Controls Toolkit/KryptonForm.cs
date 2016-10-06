@@ -294,8 +294,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     _allowStatusStripMerge = value;
 
-                    if (_statusStrip != null)
-                        _statusStrip.Invalidate();
+                    _statusStrip?.Invalidate();
 
                     PerformNeedPaint(false);
                 }
@@ -1376,8 +1375,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Region = newRegion;
 
             // Cleanup old region gracefully
-            if (oldRegion != null)
-                oldRegion.Dispose();
+            oldRegion?.Dispose();
         }
 
         private void UpdateCustomChromeDecision()
@@ -1476,8 +1474,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     if (sourceContent != null)
                     {
                         // Remove any currently showing tooltip
-                        if (_visualPopupToolTip != null)
-                            _visualPopupToolTip.Dispose();
+                        _visualPopupToolTip?.Dispose();
 
                         // Create the actual tooltip popup object
                         _visualPopupToolTip = new VisualPopupToolTip(Redirector,
@@ -1499,8 +1496,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private void OnCancelToolTip(object sender, EventArgs e)
         {
             // Remove any currently showing tooltip
-            if (_visualPopupToolTip != null)
-                _visualPopupToolTip.Dispose();
+            _visualPopupToolTip?.Dispose();
         }
 
         private void OnVisualPopupToolTipDisposed(object sender, EventArgs e)

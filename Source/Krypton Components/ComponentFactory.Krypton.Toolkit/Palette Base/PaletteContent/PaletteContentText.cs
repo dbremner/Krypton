@@ -143,13 +143,10 @@ namespace ComponentFactory.Krypton.Toolkit
 		{
             get
             {
-                if (_storage == null)
-                    return null;
-                else
-                    return _storage.ContentTextFont;
+                return _storage?.ContentTextFont;
             }
 
-			set
+		    set
 			{
                 if (_storage != null)
                 {
@@ -715,10 +712,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (_storage == null)
-                    return null;
-                else
-                    return _storage.ContentTextImage;
+                return _storage?.ContentTextImage;
             }
 
             set
@@ -841,8 +835,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="property">Name of the property changed.</param>
         protected virtual void OnPropertyChanged(string property)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         #endregion
     }

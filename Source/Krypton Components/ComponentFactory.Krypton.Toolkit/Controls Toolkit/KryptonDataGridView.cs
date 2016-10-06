@@ -920,8 +920,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // A new palette source means we need to layout and redraw
             OnNeedPaint(Palette, new NeedLayoutEventArgs(true));
 
-            if (PaletteChanged != null)
-                PaletteChanged(this, e);
+            PaletteChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2104,8 +2103,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private void CellAreaMouseLeaveInternal()
         {
             // Stop the timer from showing a tooltip
-            if (_showTimer != null)
-                _showTimer.Stop();
+            _showTimer?.Stop();
 
             // If there is a popup tooltip showing
             if (_visualPopupToolTip != null)
@@ -2135,8 +2133,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     DismissBaseToolTips();
 
                     // Remove any currently showing tooltip
-                    if (_visualPopupToolTip != null)
-                        _visualPopupToolTip.Dispose();
+                    _visualPopupToolTip?.Dispose();
 
                     // Create the actual tooltip popup object
                     _visualPopupToolTip = new VisualPopupToolTip(Redirector,

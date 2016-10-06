@@ -1586,8 +1586,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected virtual void OnDateChanged(DateRangeEventArgs e)
         {
-            if (DateChanged != null)
-                DateChanged(this, e);
+            DateChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1596,8 +1595,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected virtual void OnSelectionStartChanged(EventArgs e)
         {
-            if (SelectionStartChanged != null)
-                SelectionStartChanged(this, e);
+            SelectionStartChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1606,8 +1604,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected virtual void OnSelectionEndChanged(EventArgs e)
         {
-            if (SelectionEndChanged != null)
-                SelectionEndChanged(this, e);
+            SelectionEndChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1649,8 +1646,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An PaintEventArgs that contains the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (Paint != null)
-                Paint(this, e);
+            Paint?.Invoke(this, e);
 
             base.OnPaint(e);
         }
@@ -1661,8 +1657,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnClick(EventArgs e)
         {
-            if (Click != null)
-                Click(this, e);
+            Click?.Invoke(this, e);
 
             base.OnClick(e);
         }
@@ -1673,8 +1668,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnDoubleClick(EventArgs e)
         {
-            if (DoubleClick != null)
-                DoubleClick(this, e);
+            DoubleClick?.Invoke(this, e);
 
             base.OnDoubleClick(e);
         }
@@ -1685,8 +1679,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnTextChanged(EventArgs e)
         {
-            if (TextChanged != null)
-                TextChanged(this, e);
+            TextChanged?.Invoke(this, e);
 
             base.OnTextChanged(e);
         }
@@ -1697,8 +1690,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnForeColorChanged(EventArgs e)
         {
-            if (ForeColorChanged != null)
-                ForeColorChanged(this, e);
+            ForeColorChanged?.Invoke(this, e);
 
             base.OnForeColorChanged(e);
         }
@@ -1709,8 +1701,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnFontChanged(EventArgs e)
         {
-            if (FontChanged != null)
-                FontChanged(this, e);
+            FontChanged?.Invoke(this, e);
 
             base.OnFontChanged(e);
         }
@@ -1721,8 +1712,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageChanged(EventArgs e)
         {
-            if (BackgroundImageChanged != null)
-                BackgroundImageChanged(this, e);
+            BackgroundImageChanged?.Invoke(this, e);
 
             base.OnBackgroundImageChanged(e);
         }
@@ -1733,8 +1723,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackgroundImageLayoutChanged(EventArgs e)
         {
-            if (BackgroundImageLayoutChanged != null)
-                BackgroundImageLayoutChanged(this, e);
+            BackgroundImageLayoutChanged?.Invoke(this, e);
 
             base.OnBackgroundImageLayoutChanged(e);
         }
@@ -1745,8 +1734,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnBackColorChanged(EventArgs e)
         {
-            if (BackColorChanged != null)
-                BackColorChanged(this, e);
+            BackColorChanged?.Invoke(this, e);
 
             base.OnBackColorChanged(e);
         }
@@ -1757,8 +1745,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs that contains the event data.</param>
         protected override void OnPaddingChanged(EventArgs e)
         {
-            if (PaddingChanged != null)
-                PaddingChanged(this, e);
+            PaddingChanged?.Invoke(this, e);
 
             base.OnPaddingChanged(e);
         }

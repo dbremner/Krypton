@@ -2248,8 +2248,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event data.</param>
         public virtual void OnGlobalSaving(XmlSavingEventArgs e)
         {
-            if (GlobalSaving != null)
-                GlobalSaving(this, e);
+            GlobalSaving?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2258,8 +2257,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event data.</param>
         public virtual void OnGlobalLoading(XmlLoadingEventArgs e)
         {
-            if (GlobalLoading != null)
-                GlobalLoading(this, e);
+            GlobalLoading?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2268,8 +2266,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event data.</param>
         public virtual void OnPageSaving(PageSavingEventArgs e)
         {
-            if (PageSaving != null)
-                PageSaving(this, e);
+            PageSaving?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2278,8 +2275,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event data.</param>
         public virtual void OnPageLoading(PageLoadingEventArgs e)
         {
-            if (PageLoading != null)
-                PageLoading(this, e);
+            PageLoading?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2288,8 +2284,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event data.</param>
         public virtual void OnRecreateLoadingPage(RecreateLoadingPageEventArgs e)
         {
-            if (RecreateLoadingPage != null)
-                RecreateLoadingPage(this, e);
+            RecreateLoadingPage?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2298,8 +2293,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">Event data.</param>
         public virtual void OnPagesUnmatched(PagesUnmatchedEventArgs e)
         {
-            if (PagesUnmatched != null)
-                PagesUnmatched(this, e);
+            PagesUnmatched?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2392,8 +2386,7 @@ namespace ComponentFactory.Krypton.Workspace
         {
             if (!directed)
             {
-                if (ActiveCell != null)
-                    ActiveCell.Select();
+                ActiveCell?.Select();
             }
             else
                 base.Select(directed, forward);
@@ -2671,8 +2664,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCellCountChanged(EventArgs e)
         {
-            if (CellCountChanged != null)
-                CellCountChanged(this, e);
+            CellCountChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2681,8 +2673,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnCellVisibleCountChanged(EventArgs e)
         {
-            if (CellVisibleCountChanged != null)
-                CellVisibleCountChanged(this, e);
+            CellVisibleCountChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2692,9 +2683,8 @@ namespace ComponentFactory.Krypton.Workspace
         protected virtual void OnWorkspaceCellAdding(WorkspaceCellEventArgs e)
         {
             NewCellInitialize(e.Cell);
-            
-            if (WorkspaceCellAdding != null)
-                WorkspaceCellAdding(this, e);
+
+            WorkspaceCellAdding?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2703,8 +2693,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">An WorkspaceCellEventArgs containing the event data.</param>
         protected virtual void OnWorkspaceCellRemoved(WorkspaceCellEventArgs e)
         {
-            if (WorkspaceCellRemoved != null)
-                WorkspaceCellRemoved(this, e);
+            WorkspaceCellRemoved?.Invoke(this, e);
 
             ExistingCellDetach(e.Cell);
         }
@@ -2715,8 +2704,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">An ActiveCellChangedEventArgs containing the event data.</param>
         protected virtual void OnActiveCellChanged(ActiveCellChangedEventArgs e)
         {
-            if (ActiveCellChanged != null)
-                ActiveCellChanged(this, e);
+            ActiveCellChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2728,8 +2716,7 @@ namespace ComponentFactory.Krypton.Workspace
             // Do not generate event when its firing is suspended
             if (!IsActivePageChangedEventSuspended)
             {
-                if (ActivePageChanged != null)
-                    ActivePageChanged(this, e);
+                ActivePageChanged?.Invoke(this, e);
             }
         }
 
@@ -2739,8 +2726,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">An EventArgs containing the event data.</param>
         protected virtual void OnMaximizedCellChanged(EventArgs e)
         {
-            if (MaximizedCellChanged != null)
-                MaximizedCellChanged(this, e);
+            MaximizedCellChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2749,8 +2735,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="de">A PageDragCancelEventArgs containing event details.</param>
         protected virtual void OnBeforePageDrag(PageDragCancelEventArgs de)
         {
-            if (BeforePageDrag != null)
-                BeforePageDrag(this, de);
+            BeforePageDrag?.Invoke(this, de);
         }
 
         /// <summary>
@@ -2759,8 +2744,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">A PageDragEndEventArgs containing event details.</param>
         protected virtual void OnAfterPageDrag(PageDragEndEventArgs e)
         {
-            if (AfterPageDrag != null)
-                AfterPageDrag(this, e);
+            AfterPageDrag?.Invoke(this, e);
         }
 
         /// <summary>
@@ -2769,8 +2753,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="e">A v containing event details.</param>
         internal protected virtual void OnPageDrop(PageDropEventArgs e)
         {
-            if (PageDrop != null)
-                PageDrop(this, e);
+            PageDrop?.Invoke(this, e);
         }
 
         /// <summary>

@@ -418,8 +418,7 @@ namespace ComponentFactory.Krypton.Toolkit
         protected void NeedPaint(bool needLayout)
         {
             // Request a layout be performed immediately
-            if (_needPaintDelegate != null)
-                _needPaintDelegate(this, new NeedLayoutEventArgs(needLayout));
+            _needPaintDelegate?.Invoke(this, new NeedLayoutEventArgs(needLayout));
         }
         #endregion
 
@@ -466,8 +465,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private void OnAnimateStep(object sender, EventArgs e)
         {
-            if (AnimateStep != null)
-                AnimateStep(sender, e);
+            AnimateStep?.Invoke(sender, e);
         }
         #endregion
     }

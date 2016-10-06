@@ -139,8 +139,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override void OnMouseLeave()
         {
-            if (_comboBox != null)
-                _comboBox.DesignerMouseLeave();
+            _comboBox?.DesignerMouseLeave();
 
             base.OnMouseLeave();
         }

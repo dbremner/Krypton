@@ -549,8 +549,7 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Ask the docking manager for a IDragPageNotify implementation to handle the dragging operation
                 KryptonDockingManager dockingManager = DockingManager;
-                if (dockingManager != null)
-                    dockingManager.DoDragDrop(e.ScreenPoint, e.ElementOffset, e.Control, e.Pages);
+                dockingManager?.DoDragDrop(e.ScreenPoint, e.ElementOffset, e.Control, e.Pages);
             }
 
             // Always take over docking

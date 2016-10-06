@@ -155,8 +155,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             _mouseOver = true;
 
-            if (ViewManager != null)
-                ViewManager.SetTarget(this, true);
+            ViewManager?.SetTarget(this, true);
         }
 
         /// <summary>
@@ -303,8 +302,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 _mouseOver = false;
                 _months.TrackingDay = null;
 
-                if (ViewManager != null)
-                    ViewManager.ClearTarget(this);
+                ViewManager?.ClearTarget(this);
             }
         }
 

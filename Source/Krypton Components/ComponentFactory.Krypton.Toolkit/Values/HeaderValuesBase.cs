@@ -213,8 +213,7 @@ namespace ComponentFactory.Krypton.Toolkit
 				{
 					_heading = value;
 					PerformNeedPaint(true);
-                    if (TextChanged != null)
-                        TextChanged(this, EventArgs.Empty);
+                    TextChanged?.Invoke(this, EventArgs.Empty);
                 }
 			}
 		}

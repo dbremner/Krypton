@@ -66,8 +66,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An KryptonPageEventArgs containing the event data.</param>
         protected virtual void OnCellPageInserting(KryptonPageEventArgs e)
         {
-            if (CellPageInserting != null)
-                CellPageInserting(this, e);
+            CellPageInserting?.Invoke(this, e);
         }
 
         /// <summary>
@@ -76,8 +75,7 @@ namespace ComponentFactory.Krypton.Docking
         /// <param name="e">An CancelDropDownEventArgs containing the event data.</param>
         protected virtual void OnPageDropDownClicked(CancelDropDownEventArgs e)
         {
-            if (PageDropDownClicked != null)
-                PageDropDownClicked(this, e);
+            PageDropDownClicked?.Invoke(this, e);
         }
         #endregion
 

@@ -329,22 +329,19 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
         #region Internal
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal void OnDesignTimeAddGroup()
         {
-            if (DesignTimeAddGroup != null)
-                DesignTimeAddGroup(this, EventArgs.Empty);
+            DesignTimeAddGroup?.Invoke(this, EventArgs.Empty);
         }
 
         internal bool ProcessCmdKey(ref Message msg, Keys keyData)

@@ -216,8 +216,7 @@ namespace ComponentFactory.Krypton.Ribbon
             Form ownerForm = _ribbon.FindForm();
 
             // Ensure the form we are inside is active
-            if (ownerForm != null)
-                ownerForm.Activate();
+            ownerForm?.Activate();
 
             if ((ClickAndFinish != null) && !_ribbon.InDesignMode)
                 ClickAndFinish(this, _finishDelegate);

@@ -64,10 +64,9 @@ namespace ComponentFactory.Krypton.Navigator
             PostCreate();
 
             // Force buttons to be recreated in the headers
-            if (_buttonManager != null)
-                _buttonManager.RecreateButtons();
-            
-            // Canvas becomes the new root
+		    _buttonManager?.RecreateButtons();
+
+		    // Canvas becomes the new root
             ViewManager.Root = _newRoot;
 
 			// Need to monitor changes in the enabled state
@@ -466,8 +465,7 @@ namespace ComponentFactory.Krypton.Navigator
                 // Tell the viewport to shift to previous area
                 _layoutBarViewport.MovePrevious();
 
-                if (_buttonManager != null)
-                    _buttonManager.RecreateButtons();
+                _buttonManager?.RecreateButtons();
 
                 // Need to layout and paint to effect change
                 Navigator.PerformNeedPaint(true);

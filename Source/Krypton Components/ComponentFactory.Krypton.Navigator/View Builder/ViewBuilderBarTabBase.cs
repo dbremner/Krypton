@@ -143,8 +143,7 @@ namespace ComponentFactory.Krypton.Navigator
                 foreach (KeyValuePair<KryptonPage, INavCheckItem> pair in PageLookup)
                 {
                     ViewDrawNavCheckButtonTab tabHeader = (ViewDrawNavCheckButtonTab)pair.Value;
-                    if (tabHeader.ButtonSpecManager != null)
-                        tabHeader.ButtonSpecManager.SetRemapTarget(Navigator.Bar.TabStyle);
+                    tabHeader.ButtonSpecManager?.SetRemapTarget(Navigator.Bar.TabStyle);
                 }
         }
         #endregion

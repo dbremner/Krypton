@@ -853,8 +853,7 @@ namespace ComponentFactory.Krypton.Docking
             // Remove any store page for the unique name of this page being added. In either case of adding a store
             // page or a regular page we want to ensure there does not exist a store page for that same unique name.
             KryptonDockingManager dockingManager = DockingManager;
-            if (dockingManager != null)
-                dockingManager.PropogateAction(DockingPropogateAction.ClearFillerStoredPages, new string[] { e.Item.UniqueName });
+            dockingManager?.PropogateAction(DockingPropogateAction.ClearFillerStoredPages, new string[] { e.Item.UniqueName });
         }
 
         private void OnDockableNavigatorBeforePageDrag(object sender, PageDragCancelEventArgs e)
@@ -870,8 +869,7 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // Ask the docking manager for a IDragPageNotify implementation to handle the dragging operation
                 KryptonDockingManager dockingManager = DockingManager;
-                if (dockingManager != null)
-                    dockingManager.DoDragDrop(e.ScreenPoint, e.ElementOffset, e.Control, e.Pages);
+                dockingManager?.DoDragDrop(e.ScreenPoint, e.ElementOffset, e.Control, e.Pages);
             }
 
             // Always take over docking

@@ -605,8 +605,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 // Update palettes based on Checked state
                 PaletteTripleJustImage justImage = (ResolveChecked ? _menuItem.StateChecked.ItemImage : menuItemState.ItemImage);
-                if (_imageCanvas != null)
-                    _imageCanvas.SetPalettes(justImage.Back, justImage.Border);
+                _imageCanvas?.SetPalettes(justImage.Back, justImage.Border);
 
                 // Update the Enabled state
                 _imageContent.SetPalette(justImage.Content);
@@ -627,8 +626,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             }
 
-            if (_splitSeparator != null)
-                _splitSeparator.SetPalettes(splitPalette.Back, splitPalette.Border);
+            _splitSeparator?.SetPalettes(splitPalette.Back, splitPalette.Border);
 
             return base.GetPreferredSize(context);
         }

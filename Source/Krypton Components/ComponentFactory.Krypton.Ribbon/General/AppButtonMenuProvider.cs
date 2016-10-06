@@ -124,8 +124,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An EventArgs containing the event data.</param>
         public void OnDispose(EventArgs e)
         {
-            if (Dispose != null)
-                Dispose(this, e);
+            Dispose?.Invoke(this, e);
         }
 
         /// <summary>
@@ -136,8 +135,7 @@ namespace ComponentFactory.Krypton.Ribbon
         {
             if (_parent != null)
                 _parent.OnClosing(cea);
-            else if (Closing != null)
-                Closing(this, cea);
+            else Closing?.Invoke(this, cea);
         }
 
         /// <summary>

@@ -594,8 +594,7 @@ namespace ComponentFactory.Krypton.Ribbon
             foreach (ViewBase item in this)
             {
                 IRibbonViewGroupItemView viewItem = item as IRibbonViewGroupItemView;
-                if (viewItem != null)
-                    viewItem.SetGroupItemSize(size);
+                viewItem?.SetGroupItemSize(size);
             }
 
             SetCurrentSize(size);
@@ -606,8 +605,7 @@ namespace ComponentFactory.Krypton.Ribbon
             foreach (ViewBase item in this)
             {
                 IRibbonViewGroupItemView viewItem = item as IRibbonViewGroupItemView;
-                if (viewItem != null)
-                    viewItem.ResetGroupItemSize();
+                viewItem?.ResetGroupItemSize();
             }
 
             SetCurrentSize(_ribbonTriple.ItemSizeCurrent);

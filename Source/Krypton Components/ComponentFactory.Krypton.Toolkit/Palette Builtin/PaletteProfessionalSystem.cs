@@ -8624,21 +8624,21 @@ namespace ComponentFactory.Krypton.Toolkit
         protected override void DefineFonts()
         {
             // Release existing resources
-            if (_header1ShortFont != null) _header1ShortFont.Dispose();
-            if (_header2ShortFont != null) _header2ShortFont.Dispose();
-            if (_header1LongFont != null) _header1LongFont.Dispose();
-            if (_header2LongFont != null) _header2LongFont.Dispose();
-            if (_headerFormFont != null) _headerFormFont.Dispose();
-            if (_buttonFont != null) _buttonFont.Dispose();
-            if (_buttonFontNavigatorMini != null) _buttonFontNavigatorMini.Dispose();
-            if (_tabFontSelected != null) _tabFontSelected.Dispose();
-            if (_tabFontNormal != null) _tabFontNormal.Dispose();
-            if (_gridFont != null) _gridFont.Dispose();
-            if (_calendarFont != null) _calendarFont.Dispose();
-            if (_calendarBoldFont != null) _calendarBoldFont.Dispose();
-            if (_superToolFont != null) _superToolFont.Dispose();
-            if (_boldFont != null) _boldFont.Dispose();
-            if (_italicFont != null) _italicFont.Dispose();
+            _header1ShortFont?.Dispose();
+            _header2ShortFont?.Dispose();
+            _header1LongFont?.Dispose();
+            _header2LongFont?.Dispose();
+            _headerFormFont?.Dispose();
+            _buttonFont?.Dispose();
+            _buttonFontNavigatorMini?.Dispose();
+            _tabFontSelected?.Dispose();
+            _tabFontNormal?.Dispose();
+            _gridFont?.Dispose();
+            _calendarFont?.Dispose();
+            _calendarBoldFont?.Dispose();
+            _superToolFont?.Dispose();
+            _boldFont?.Dispose();
+            _italicFont?.Dispose();
 
             float baseFontSize = BaseFontSize;
             _header1ShortFont = new Font("Arial", baseFontSize + 4.5f, FontStyle.Bold);

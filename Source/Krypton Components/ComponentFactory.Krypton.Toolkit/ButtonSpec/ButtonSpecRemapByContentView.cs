@@ -60,10 +60,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (_foreground != null)
-                    return _foreground.GetPalette();
-                else
-                    return null;
+                return _foreground?.GetPalette();
             }
         }
         #endregion

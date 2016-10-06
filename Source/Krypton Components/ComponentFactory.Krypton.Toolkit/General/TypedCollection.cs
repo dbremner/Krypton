@@ -470,8 +470,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A KryptonRibbonTabEventArgs instance containing event data.</param>
         protected virtual void OnInserting(TypedCollectionEventArgs<T> e)
         {
-            if (Inserting != null)
-                Inserting(this, e);
+            Inserting?.Invoke(this, e);
         }
 
         /// <summary>
@@ -480,9 +479,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
         protected virtual void OnInserted(TypedCollectionEventArgs<T> e)
 		{
-			if (Inserted != null)
-				Inserted(this, e);
-		}
+            Inserted?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Removing event.
@@ -490,9 +488,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
         protected virtual void OnRemoving(TypedCollectionEventArgs<T> e)
 		{
-			if (Removing != null)
-				Removing(this, e);
-		}
+            Removing?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Removed event.
@@ -500,9 +497,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
         protected virtual void OnRemoved(TypedCollectionEventArgs<T> e)
 		{
-			if (Removed != null)
-				Removed(this, e);
-		}
+            Removed?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Clearing event.
@@ -510,9 +506,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs instance containing event data.</param>
         protected virtual void OnClearing(EventArgs e)
 		{
-			if (Clearing != null)
-				Clearing(this, e);
-		}
+            Clearing?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Cleared event.
@@ -520,9 +515,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <param name="e">An EventArgs instance containing event data.</param>
         protected virtual void OnCleared(EventArgs e)
 		{
-			if (Cleared != null)
-				Cleared(this, e);
-		}
+            Cleared?.Invoke(this, e);
+        }
 
         /// <summary>
         /// Raises the Reordered event.
@@ -530,8 +524,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs instance containing event data.</param>
         protected virtual void OnReordered(EventArgs e)
         {
-            if (Reordered != null)
-                Reordered(this, e);
+            Reordered?.Invoke(this, e);
         }
         #endregion
 	}

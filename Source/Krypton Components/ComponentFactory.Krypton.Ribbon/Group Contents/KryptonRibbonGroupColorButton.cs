@@ -1020,25 +1020,23 @@ namespace ComponentFactory.Krypton.Ribbon
                     if (VisualPopupManager.Singleton.CurrentPopup != null)
                     {
                         // Do we need to fire a delegate stating the click processing has finished?
-                        if (fireDelegate && (finishDelegate != null))
-                            finishDelegate(this, EventArgs.Empty);
+                        if (fireDelegate)
+                            finishDelegate?.Invoke(this, EventArgs.Empty);
 
                         fireDelegate = false;
                     }
 
                     // Generate actual click event
-                    if (Click != null)
-                        Click(this, EventArgs.Empty);
+                    Click?.Invoke(this, EventArgs.Empty);
 
                     // Clicking the button should execute the associated command
-                    if (KryptonCommand != null)
-                        KryptonCommand.PerformExecute();
+                    KryptonCommand?.PerformExecute();
                 }
             }
 
             // Do we need to fire a delegate stating the click processing has finished?
-            if (fireDelegate && (finishDelegate != null))
-                finishDelegate(this, EventArgs.Empty);
+            if (fireDelegate)
+                finishDelegate?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -1065,8 +1063,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
                             // Generate an event giving a chance for the krypton context menu strip to 
                             // be shown to be provided/modified or the action even to be cancelled
-                            if (DropDown != null)
-                                DropDown(this, contextArgs);
+                            DropDown?.Invoke(this, contextArgs);
 
                             // If user did not cancel and there is still a krypton context menu strip to show
                             if (!contextArgs.Cancel && (contextArgs.KryptonContextMenu != null))
@@ -1104,8 +1101,8 @@ namespace ComponentFactory.Krypton.Ribbon
             }
 
             // Do we need to fire a delegate stating the click processing has finished?
-            if (fireDelegate && (finishDelegate != null))
-                finishDelegate(this, EventArgs.Empty);
+            if (fireDelegate)
+                finishDelegate?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -1114,8 +1111,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="selectedColor">New selected color.</param>
         protected virtual void OnSelectedColorChanged(Color selectedColor)
         {
-            if (SelectedColorChanged != null)
-                SelectedColorChanged(this, new ColorEventArgs(selectedColor));
+            SelectedColorChanged?.Invoke(this, new ColorEventArgs(selectedColor));
         }
 
         /// <summary>
@@ -1124,8 +1120,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An ColorEventArgs that contains the event data.</param>
         protected virtual void OnTrackingColor(ColorEventArgs e)
         {
-            if (TrackingColor != null)
-                TrackingColor(this, e);
+            TrackingColor?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1134,8 +1129,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="e">An CancelEventArgs that contains the event data.</param>
         protected virtual void OnMoreColors(CancelEventArgs e)
         {
-            if (MoreColors != null)
-                MoreColors(this, e);
+            MoreColors?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1144,16 +1138,14 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="propertyName">Name of property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
         #region Internal
         internal void OnDesignTimeContextMenu(MouseEventArgs e)
         {
-            if (DesignTimeContextMenu != null)
-                DesignTimeContextMenu(this, e);
+            DesignTimeContextMenu?.Invoke(this, e);
         }
 
         internal override bool ProcessCmdKey(ref Message msg, Keys keyData)

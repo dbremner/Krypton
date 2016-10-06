@@ -787,8 +787,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (m.Msg == PI.WM_WINDOWPOSCHANGED)
             {
                 // Uncover from the covered area
-                if (_obscurer != null)
-                    _obscurer.Uncover();
+                _obscurer?.Uncover();
             }
 
             base.WndProc(ref m);
@@ -817,11 +816,10 @@ namespace ComponentFactory.Krypton.Toolkit
 		#region Implementation
         private void OnRemoveObscurer(object sender, EventArgs e)
         {
-            if (_obscurer != null)
-                _obscurer.Uncover();
+            _obscurer?.Uncover();
         }
 
-        private void OnValuesTextChanged(object sender, EventArgs e)
+	    private void OnValuesTextChanged(object sender, EventArgs e)
         {
             OnTextChanged(EventArgs.Empty);
         }

@@ -1344,8 +1344,7 @@ namespace ComponentFactory.Krypton.Navigator
         protected override void OnLostFocus(EventArgs e)
         {
             // We should have a view builder at all times
-            if (_viewBuilder != null)
-                _viewBuilder.LostFocus();
+            _viewBuilder?.LostFocus();
 
             // Let base class perform standard processing
             base.OnLostFocus(e);
@@ -1548,9 +1547,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">A KryptonPageCancelEventArgs containing event details.</param>
 		protected virtual void OnDeselecting(KryptonPageCancelEventArgs e)
 		{
-			if (Deselecting != null)
-				Deselecting(this, e);
-		}
+            Deselecting?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Selecting event.
@@ -1558,9 +1556,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">A KryptonPageCancelEventArgs containing event details.</param>
 		protected virtual void OnSelecting(KryptonPageCancelEventArgs e)
 		{
-			if (Selecting != null)
-				Selecting(this, e);
-		}
+            Selecting?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Deselected event.
@@ -1568,9 +1565,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">A KryptonPageEventArgs containing event details.</param>
 		protected virtual void OnDeselected(KryptonPageEventArgs e)
 		{
-			if (Deselected != null)
-				Deselected(this, e);
-		}
+            Deselected?.Invoke(this, e);
+        }
 
 		/// <summary>
 		/// Raises the Selected event.
@@ -1578,9 +1574,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="e">A KryptonPageEventArgs containing event details.</param>
 		protected virtual void OnSelected(KryptonPageEventArgs e)
 		{
-			if (Selected != null)
-				Selected(this, e);
-		}
+            Selected?.Invoke(this, e);
+        }
 
         /// <summary>
         /// Raises the BeforePageReorder event.
@@ -1588,8 +1583,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="de">A PageDragCancelEventArgs containing event details.</param>
         internal protected virtual void OnBeforePageReorder(PageReorderEventArgs de)
         {
-            if (BeforePageReorder != null)
-                BeforePageReorder(this, de);
+            BeforePageReorder?.Invoke(this, de);
         }
 
         /// <summary>
@@ -1598,8 +1592,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="de">A PageDragCancelEventArgs containing event details.</param>
         protected virtual void OnBeforePageDrag(PageDragCancelEventArgs de)
         {
-            if (BeforePageDrag != null)
-                BeforePageDrag(this, de);
+            BeforePageDrag?.Invoke(this, de);
         }
 
         /// <summary>
@@ -1608,8 +1601,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">A EventArgs containing event details.</param>
         protected virtual void OnAfterPageDrag(PageDragEndEventArgs e)
         {
-            if (AfterPageDrag != null)
-                AfterPageDrag(this, e);
+            AfterPageDrag?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1618,8 +1610,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">A v containing event details.</param>
         internal protected virtual void OnPageDrop(PageDropEventArgs e)
         {
-            if (PageDrop != null)
-                PageDrop(this, e);
+            PageDrop?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1659,8 +1650,7 @@ namespace ComponentFactory.Krypton.Navigator
                 if (AutoSize)
                     PerformLayout();
 
-                if (SelectedPageChanged != null)
-                    SelectedPageChanged(this, e);
+                SelectedPageChanged?.Invoke(this, e);
             }
 		}
 
@@ -1680,8 +1670,7 @@ namespace ComponentFactory.Krypton.Navigator
                                                                           SelectedIndex,
                                                                           Button.PreviousButtonAction);
 
-                if (PreviousAction != null)
-                    PreviousAction(this, e);
+                PreviousAction?.Invoke(this, e);
 
                 // Return the actual action performed
                 dba = e.Action;
@@ -1709,8 +1698,7 @@ namespace ComponentFactory.Krypton.Navigator
                                                                           SelectedIndex,
                                                                           Button.NextButtonAction);
 
-                if (NextAction != null)
-                    NextAction(this, e);
+                NextAction?.Invoke(this, e);
 
                 // Return the actual action performed
                 dba = e.Action;
@@ -1736,8 +1724,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An CloseActionEventArgs containing the event args.</param>
         protected virtual void OnCloseAction(CloseActionEventArgs e)
         {
-            if (CloseAction != null)
-                CloseAction(this, e);
+            CloseAction?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1770,8 +1757,7 @@ namespace ComponentFactory.Krypton.Navigator
                                                                           Pages.IndexOf(page),
                                                                           Button.CloseButtonAction);
 
-                        if (CloseAction != null)
-                            CloseAction(this, e);
+                        CloseAction?.Invoke(this, e);
 
                         // Return the action we processed
                         cba = e.Action;
@@ -1821,8 +1807,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event args.</param>
         protected virtual void OnTabCountChanged(EventArgs e)
         {
-            if (TabCountChanged != null)
-                TabCountChanged(this, e);
+            TabCountChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1831,8 +1816,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event args.</param>
         internal protected virtual void OnTabVisibleCountChanged(EventArgs e)
         {
-            if (TabVisibleCountChanged != null)
-                TabVisibleCountChanged(this, e);
+            TabVisibleCountChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1841,8 +1825,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An KryptonPageEventArgs containing the event args.</param>
         internal protected virtual void OnTabClicked(KryptonPageEventArgs e)
         {
-            if (TabClicked != null)
-                TabClicked(this, e);
+            TabClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1851,8 +1834,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An KryptonPageEventArgs containing the event args.</param>
         internal protected virtual void OnTabDoubleClicked(KryptonPageEventArgs e)
         {
-            if (TabDoubleClicked != null)
-                TabDoubleClicked(this, e);
+            TabDoubleClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1861,8 +1843,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event args.</param>
         internal protected virtual void OnPrimaryHeaderLeftClicked(EventArgs e)
         {
-            if (PrimaryHeaderLeftClicked != null)
-                PrimaryHeaderLeftClicked(this, e);
+            PrimaryHeaderLeftClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1871,8 +1852,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event args.</param>
         internal protected virtual void OnPrimaryHeaderRightClicked(EventArgs e)
         {
-            if (PrimaryHeaderRightClicked != null)
-                PrimaryHeaderRightClicked(this, e);
+            PrimaryHeaderRightClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1881,8 +1861,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing the event args.</param>
         internal protected virtual void OnPrimaryHeaderDoubleClicked(EventArgs e)
         {
-            if (PrimaryHeaderDoubleClicked != null)
-                PrimaryHeaderDoubleClicked(this, e);
+            PrimaryHeaderDoubleClicked?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1891,10 +1870,9 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="kcm">Context menu about to be displayed.</param>
         internal protected virtual void OnOutlookDropDown(KryptonContextMenu kcm)
         {
-            if (OutlookDropDown != null)
-                OutlookDropDown(this, new KryptonContextMenuEventArgs(SelectedPage,
-                                                                      SelectedIndex,
-                                                                      kcm));
+            OutlookDropDown?.Invoke(this, new KryptonContextMenuEventArgs(SelectedPage,
+                                                      SelectedIndex,
+                                                      kcm));
         }
 
         /// <summary>
@@ -1903,8 +1881,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">A PopupPageEventArgs containing event data.</param>
         internal protected virtual void OnDisplayPopupPage(PopupPageEventArgs e)
         {
-            if (DisplayPopupPage != null)
-                DisplayPopupPage(this, e);
+            DisplayPopupPage?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1913,8 +1890,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">A ShowContextMenuArgs containing event data.</param>
         internal protected virtual void OnShowContextMenu(ShowContextMenuArgs e)
         {
-            if (ShowContextMenu != null)
-                ShowContextMenu(this, e);
+            ShowContextMenu?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1923,8 +1899,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An CtrlTabCancelEventArgs containing event details.</param>
         internal protected virtual void OnCtrlTabStart(CtrlTabCancelEventArgs e)
         {
-            if (CtrlTabStart != null)
-                CtrlTabStart(this, e);
+            CtrlTabStart?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1933,8 +1908,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An CtrlTabCancelEventArgs containing event details.</param>
         internal protected virtual void OnCtrlTabWrap(CtrlTabCancelEventArgs e)
         {
-            if (CtrlTabWrap != null)
-                CtrlTabWrap(this, e);
+            CtrlTabWrap?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1943,8 +1917,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An KryptonPageEventArgs containing event details.</param>
         protected virtual void OnTabMouseHoverStart(KryptonPageEventArgs e)
         {
-            if (TabMouseHoverStart != null)
-                TabMouseHoverStart(this, e);
+            TabMouseHoverStart?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1953,8 +1926,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An EventArgs containing event details.</param>
         protected virtual void OnTabMouseHoverEnd(EventArgs e)
         {
-            if (TabMouseHoverEnd != null)
-                TabMouseHoverEnd(this, e);
+            TabMouseHoverEnd?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1963,8 +1935,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="e">An TabMovedEventArgs containing event details.</param>
         internal protected virtual void OnTabMoved(TabMovedEventArgs e)
         {
-            if (TabMoved != null)
-                TabMoved(this, e);
+            TabMoved?.Invoke(this, e);
         }
 
         /// <summary>
@@ -1973,8 +1944,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <param name="propertyName">Name of the property that has changed.</param>
         internal protected virtual void OnViewBuilderPropertyChanged(string propertyName)
         {
-            if (ViewBuilderPropertyChanged != null)
-                ViewBuilderPropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            ViewBuilderPropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -2035,11 +2005,8 @@ namespace ComponentFactory.Krypton.Navigator
         protected virtual void OnNeedPagePaint(object sender, NeedLayoutEventArgs e)
 		{
             // Is there a selected page?
-            if (SelectedPage != null)
-            {
-                // Then need to repaint the page as well
-                SelectedPage.Invalidate();
-            }
+            // Then need to repaint the page as well
+            SelectedPage?.Invalidate();
 
             // Pass request onto standard handler
             OnNeedPaint(sender, e);
@@ -2265,8 +2232,7 @@ namespace ComponentFactory.Krypton.Navigator
                 if (_pageDragging)
                 {
                     _pageDragging = false;
-                    if (DragPageNotify != null)
-                        DragPageNotify.PageDragQuit(this);
+                    DragPageNotify?.PageDragQuit(this);
                 }
 
                 // Create a list of the pages being dragged
@@ -2974,8 +2940,7 @@ namespace ComponentFactory.Krypton.Navigator
                                                                             Button.ContextButtonAction,
                                                                             contextMenu);
 
-                    if (ContextAction != null)
-                        ContextAction(this, cae);
+                    ContextAction?.Invoke(this, cae);
 
                     // Process the requested action
                     switch (cae.Action)

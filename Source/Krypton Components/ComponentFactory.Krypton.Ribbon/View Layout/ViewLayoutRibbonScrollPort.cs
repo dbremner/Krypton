@@ -658,20 +658,17 @@ namespace ComponentFactory.Krypton.Ribbon
         #region Implementation
         private void OnChildWndProcHitTest(object sender, ViewControlHitTestArgs e)
         {
-            if (_ribbonTabs != null)
+            if (_ribbonTabs?.GetViewForSpare != null)
             {
-                if (_ribbonTabs.GetViewForSpare != null)
+                if (_ribbonTabs.GetViewForSpare.ClientRectangle.Contains(e.Point))
                 {
-                    if (_ribbonTabs.GetViewForSpare.ClientRectangle.Contains(e.Point))
-                    {
-                        e.Cancel = false;
-                        e.Result = (IntPtr)PI.HTTRANSPARENT;
-                    }
+                    e.Cancel = false;
+                    e.Result = (IntPtr)PI.HTTRANSPARENT;
                 }
             }
         }
 
-        private bool ScrollIntoView(Rectangle rect, bool paint)
+	    private bool ScrollIntoView(Rectangle rect, bool paint)
         {
             // If the item does not fully it into the clipping (visible rect)
             if ((rect.Right > _viewClipRect.Right) ||
@@ -752,8 +749,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void OnViewControlPaintBackground(object sender, PaintEventArgs e)
         {
-            if (PaintBackground != null)
-                PaintBackground(sender, e);
+            PaintBackground?.Invoke(sender, e);
         }
         #endregion
     }
