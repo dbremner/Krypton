@@ -46,7 +46,7 @@ namespace ComponentFactory.Krypton.Navigator
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawNavCheckButtonStack:" + Id;
+            return "ViewDrawNavCheckButtonStack:" + Id.ToString();
 		}
 		#endregion
 

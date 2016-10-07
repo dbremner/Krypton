@@ -138,7 +138,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>For internal use only.</summary>
         public bool UseCachedValues(Rectangle r, Color color1)
         {
-            bool ret = rect.Equals(r) && c1.Equals(color1);
+            bool ret = rect == r && c1 == color1;
 
             rect = r;
             c1 = color1;
@@ -170,9 +170,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>For internal use only.</summary>
         public bool UseCachedValues(Rectangle r, Color color1, Color color2)
         {
-            bool ret = rect.Equals(r) && 
-                       c1.Equals(color1) && 
-                       c2.Equals(color2);
+            bool ret = rect == r && 
+                       c1 == color1 && 
+                       c2 == color2;
 
             rect = r;
             c1 = color1;
@@ -207,7 +207,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color color3)
         {
             bool ret = (base.UseCachedValues(r, color1, color2) && 
-                        c3.Equals(color3));
+                        c3 == color3);
 
             c3 = color3;
 
@@ -240,7 +240,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color color3, Color color4)
         {
             bool ret = (base.UseCachedValues(r, color1, color2, color3) &&
-                        c4.Equals(color4));
+                        c4 == color4);
 
             c4 = color4;
 
@@ -275,7 +275,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color color5)
         {
             bool ret = (base.UseCachedValues(r, color1, color2, color3, color4) &&
-                        c5.Equals(color5));
+                        c5 == color5);
 
             c5 = color5;
 
@@ -1107,9 +1107,9 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color color1, Color color2,
                                     VisualOrientation orient)
         {
-            bool ret = rect.Equals(r) &&
-                       c1.Equals(color1) &&
-                       c2.Equals(color2) &&
+            bool ret = rect == r &&
+                       c1 == color1 &&
+                       c2 == color2 &&
                        (orient == orientation);
 
             rect = r;
@@ -1200,11 +1200,11 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color color3, Color color4,
                                     VisualOrientation orient)
         {
-            bool ret = rect.Equals(r) &&
-                       c1.Equals(color1) &&
-                       c2.Equals(color2) &&
-                       c3.Equals(color1) &&
-                       c4.Equals(color2) &&
+            bool ret = rect == r &&
+                       c1 == color1 &&
+                       c2 == color2 &&
+                       c3 == color1 &&
+                       c4 == color2 &&
                        (orient == orientation);
 
             rect = r;
@@ -2239,9 +2239,9 @@ namespace ComponentFactory.Krypton.Toolkit
                                     VisualOrientation orient,
                                     float gP)
         {
-            bool ret = (drawRect.Equals(dR) &&
-                        color1.Equals(c1) && color2.Equals(c2) &&
-                        glassColor1.Equals(gC1) && glassColor2.Equals(gC2) &&
+            bool ret = (drawRect == dR &&
+                        color1 == c1 && color2 == c2 &&
+                        glassColor1 == gC1 && glassColor2 == gC2 &&
                         (factorX == fX) && (factorY == fY) &&
                         (orientation == orient) &&
                         (glassPercent == gP));
@@ -2472,9 +2472,9 @@ namespace ComponentFactory.Krypton.Toolkit
                                     float fX, float fY,
                                     VisualOrientation orient)
         {
-            bool ret = (drawRect.Equals(dR) &&
-                        color1.Equals(c1) &&
-                        color2.Equals(c2) &&
+            bool ret = (drawRect == dR &&
+                        color1 == c1 &&
+                        color2 == c2 &&
                         (factorX == fX) &&
                         (factorY == fY) &&
                         (orientation == orient));
@@ -2685,8 +2685,8 @@ namespace ComponentFactory.Krypton.Toolkit
                                     int thick,
                                     VisualOrientation orient)
         {
-            bool ret = (drawRect.Equals(dR) &&
-                        color1.Equals(c1) &&
+            bool ret = (drawRect == dR &&
+                        color1 == c1 &&
                         (thickness == thick) &&
                         (orientation == orient));
 
@@ -2751,9 +2751,9 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color c1, Color c2,
                                     VisualOrientation orient)
         {
-            bool ret = (drawRect.Equals(dR) &&
-                        color1.Equals(c1) &&
-                        color2.Equals(c2) &&
+            bool ret = (drawRect == dR &&
+                        color1 == c1 &&
+                        color2 == c2 &&
                         (orientation == orient));
 
             drawRect = dR;
@@ -2821,9 +2821,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>For internal use only.</summary>
         public bool UseCachedValues(RectangleF dR, Color c1, Color c2)
         {
-            bool ret = (drawRect.Equals(dR) &&
-                        color1.Equals(c1) &&
-                        color2.Equals(c2));
+            bool ret = (drawRect == dR &&
+                        color1 == c1 &&
+                        color2 == c2);
 
             drawRect = dR;
             color1 = c1;
@@ -2898,9 +2898,9 @@ namespace ComponentFactory.Krypton.Toolkit
                                     Color c1, Color c2,
                                     VisualOrientation orient)
         {
-            bool ret = (drawRect.Equals(dR) &&
-                        color1.Equals(c1) &&
-                        color2.Equals(c2) &&
+            bool ret = (drawRect == dR &&
+                        color1 == c1 &&
+                        color2 == c2 &&
                         (orientation == orient));
 
             drawRect = dR;

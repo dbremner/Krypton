@@ -185,7 +185,7 @@ namespace ComponentFactory.Krypton.Ribbon
         public override string ToString()
         {
             // Return the class name and instance identifier
-            return "ViewLayoutRibbonTabsArea:" + Id;
+            return "ViewLayoutRibbonTabsArea:" + Id.ToString();
         }
         #endregion
 

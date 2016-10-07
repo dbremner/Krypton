@@ -135,7 +135,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawRibbonTab:" + Id;
+            return "ViewDrawRibbonTab:" + Id.ToString();
 		}
 
         /// <summary>

@@ -121,8 +121,8 @@ namespace ComponentFactory.Krypton.Ribbon
                         (AppButtonTextColor == Color.White) &&
                         (AppButtonMenuItems.Count == 0) &&
                         (AppButtonRecentDocs.Count == 0) &&
-                        AppButtonMinRecentSize.Equals(new Size(250, 250)) &&
-                        AppButtonMaxRecentSize.Equals(new Size(350, 350)) &&
+                        AppButtonMinRecentSize == new Size(250, 250) &&
+                        AppButtonMaxRecentSize == new Size(350, 350) &&
                         AppButtonShowRecentDocs &&
                         (AppButtonSpecs.Count == 0) &&
                         string.IsNullOrEmpty(AppButtonToolTipBody) &&

@@ -52,7 +52,7 @@ namespace ComponentFactory.Krypton.Navigator
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutPopupPage:" + Id;
+            return "ViewLayoutPopupPage:" + Id.ToString();
 		}
 		#endregion
 

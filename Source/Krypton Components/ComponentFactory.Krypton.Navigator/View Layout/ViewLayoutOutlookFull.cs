@@ -71,7 +71,7 @@ namespace ComponentFactory.Krypton.Navigator
         public override string ToString()
         {
             // Return the class name and instance identifier
-            return "ViewLayoutOutlookFull:" + Id;
+            return "ViewLayoutOutlookFull:" + Id.ToString();
         }
         #endregion
 

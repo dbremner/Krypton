@@ -60,7 +60,7 @@ namespace ComponentFactory.Krypton.Navigator
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawNavOutlookMini:" + Id + " Text:" + Page.Text;
+            return "ViewDrawNavOutlookMini:" + Id.ToString() + " Text:" + Page.Text;
 		}
 		#endregion
 

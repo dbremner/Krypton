@@ -45,7 +45,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutRibbonCenterPadding:" + Id;
+            return "ViewLayoutRibbonCenterPadding:" + Id.ToString();
 		}
         #endregion
 

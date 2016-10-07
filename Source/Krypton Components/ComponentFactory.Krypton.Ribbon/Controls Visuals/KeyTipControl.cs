@@ -130,7 +130,7 @@ namespace ComponentFactory.Krypton.Ribbon
             key = char.ToUpper(key);
 
             // Find the new prefix with the additional key
-            string newPrefix = _prefix + key;
+            string newPrefix = _prefix + key.ToString();
 
             // Search for any keytip that is an exact match
             foreach (ViewDrawRibbonKeyTip viewKeyTip in _viewList)

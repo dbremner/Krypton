@@ -61,7 +61,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawRibbonGroupButtonImage:" + Id;
+            return "ViewDrawRibbonGroupButtonImage:" + Id.ToString();
 		}
         #endregion
 

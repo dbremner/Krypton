@@ -199,7 +199,7 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_outputDebug)
             {
                 Console.WriteLine("Id:{0} GetPreferredSize Type:{1} Ret:{2} Proposed:{3}",
-                    Id, 
+                    Id.ToString(), 
                     _control.GetType().ToString(), 
                     retSize,
                     proposedSize);
@@ -354,7 +354,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     long outputDiff = outputEnd - _outputStart;
 
                     Console.WriteLine("Id:{0} Layout Type:{1} Elapsed:{2} Rect:{3}",
-                        Id, 
+                        Id.ToString(), 
                         context.Control.GetType().ToString(),
                         outputDiff.ToString(),
                         context.DisplayRectangle);
@@ -426,7 +426,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     long outputDiff = outputEnd - _outputStart;
 
                     Console.WriteLine("Id:{0} Paint Type:{1} Elapsed: {2}",
-                        Id, 
+                        Id.ToString(), 
                         _control.GetType().ToString(),
                         outputDiff.ToString());
                 }

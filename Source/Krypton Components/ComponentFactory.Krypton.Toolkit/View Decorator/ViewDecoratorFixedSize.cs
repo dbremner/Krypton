@@ -45,7 +45,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDecoratorFixedSize:" + Id;
+            return "ViewDecoratorFixedSize:" + Id.ToString();
 		}
 		#endregion
 

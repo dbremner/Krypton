@@ -52,7 +52,7 @@ namespace ComponentFactory.Krypton.Navigator
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawNavOutlookStack:" + Id + " Text:" + Page.Text;
+            return "ViewDrawNavOutlookStack:" + Id.ToString() + " Text:" + Page.Text;
 		}
 		#endregion
 

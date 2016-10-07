@@ -168,7 +168,7 @@ namespace ComponentFactory.Krypton.Navigator
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutBar:" + Id;
+            return "ViewLayoutBar:" + Id.ToString();
         }
         #endregion
 

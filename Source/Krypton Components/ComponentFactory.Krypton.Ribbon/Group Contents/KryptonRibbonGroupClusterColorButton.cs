@@ -1213,11 +1213,11 @@ namespace ComponentFactory.Krypton.Ribbon
                 }
 
                 // If this color valid and so possible to become a recent color
-                if (!color.Equals(Color.Empty))
+                if (color != Color.Empty)
                 {
                     bool found = false;
                     foreach (Color recentColor in _recentColors)
-                        if (recentColor.Equals(color))
+                        if (recentColor == color)
                         {
                             found = true;
                             break;

@@ -73,7 +73,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawMenuColorBlock:" + Id;
+            return "ViewDrawMenuColorBlock:" + Id.ToString();
 		}
 		#endregion
         
@@ -221,7 +221,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Color inside = Color.Empty;
 
             // Is this element selected?
-            bool selected = (_colorColumns.SelectedColor.Equals(_color));
+            bool selected = (_colorColumns.SelectedColor == _color);
 
             switch (ElementState)
             {

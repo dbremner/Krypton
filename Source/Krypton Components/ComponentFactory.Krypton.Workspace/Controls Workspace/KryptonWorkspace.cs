@@ -2401,27 +2401,27 @@ namespace ComponentFactory.Krypton.Workspace
             // Only if enabled and with an active cell/page are we able to do something with keys
             if (Enabled && (ActiveCell != null) && (ActivePage != null))
             {
-                if (keyData.Equals(ContextMenus.ShortcutClose))
+                if (keyData == ContextMenus.ShortcutClose)
                 {
                     ClosePage(ActivePage);
                     return true;
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutCloseAllButThis))
+                else if (keyData == ContextMenus.ShortcutCloseAllButThis)
                 {
                     CloseAllButThisPage(ActivePage);
                     return true;
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutMoveNext))
+                else if (keyData == ContextMenus.ShortcutMoveNext)
                 {
                     MovePageNext(ActivePage, true);
                     return true;
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutMovePrevious))
+                else if (keyData == ContextMenus.ShortcutMovePrevious)
                 {
                     MovePagePrevious(ActivePage, true);
                     return true;
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutSplitVertical))
+                else if (keyData == ContextMenus.ShortcutSplitVertical)
                 {
                     if (ActiveCell.Pages.VisibleCount > 1)
                     {
@@ -2429,7 +2429,7 @@ namespace ComponentFactory.Krypton.Workspace
                         return true;
                     }
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutSplitHorizontal))
+                else if (keyData == ContextMenus.ShortcutSplitHorizontal)
                 {
                     if (ActiveCell.Pages.VisibleCount > 1)
                     {
@@ -2437,7 +2437,7 @@ namespace ComponentFactory.Krypton.Workspace
                         return true;
                     }
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutRebalance))
+                else if (keyData == ContextMenus.ShortcutRebalance)
                 {
                     if (CellVisibleCount > 1)
                     {
@@ -2445,7 +2445,7 @@ namespace ComponentFactory.Krypton.Workspace
                         return true;
                     }
                 }
-                else if (keyData.Equals(ContextMenus.ShortcutMaximizeRestore))
+                else if (keyData == ContextMenus.ShortcutMaximizeRestore)
                 {
                     if (MaximizedCell != null)
                         MaximizedCell = null;

@@ -55,7 +55,7 @@ namespace ComponentFactory.Krypton.Workspace
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawWorkspaceSeparator:" + Id;
+            return "ViewDrawWorkspaceSeparator:" + Id.ToString();
 		}
 		#endregion
 

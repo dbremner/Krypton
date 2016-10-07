@@ -112,7 +112,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutRibbonGroupCluster:" + Id;
+            return "ViewLayoutRibbonGroupCluster:" + Id.ToString();
 		}
 
         /// <summary>

@@ -51,7 +51,7 @@ namespace ComponentFactory.Krypton.Navigator
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutPageHide:" + Id;
+            return "ViewLayoutPageHide:" + Id.ToString();
 		}
 		#endregion
 

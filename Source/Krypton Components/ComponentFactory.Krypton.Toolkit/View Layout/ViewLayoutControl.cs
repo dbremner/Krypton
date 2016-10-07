@@ -123,7 +123,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override string ToString()
         {
             // Return the class name and instance identifier
-            return "ViewLayoutControl:" + Id + " ClientLocation:" + ClientLocation;
+            return "ViewLayoutControl:" + Id.ToString() + " ClientLocation:" + ClientLocation.ToString();
         }
         #endregion
 

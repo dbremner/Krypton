@@ -61,7 +61,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutDocker:" + Id + " " + _childDocking.Count.ToString();
+            return "ViewLayoutDocker:" + Id.ToString() + " " + _childDocking.Count.ToString();
 		}
 		#endregion
 

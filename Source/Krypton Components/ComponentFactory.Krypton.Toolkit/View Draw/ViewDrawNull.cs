@@ -44,7 +44,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawNull:" + Id;
+            return "ViewDrawNull:" + Id.ToString();
 		}
 		#endregion
 

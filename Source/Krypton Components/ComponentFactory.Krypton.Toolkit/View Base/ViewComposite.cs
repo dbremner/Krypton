@@ -61,7 +61,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier with child count
-            return "ViewComposite:" + Id;
+            return "ViewComposite:" + Id.ToString();
 		}
 		#endregion
 

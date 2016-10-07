@@ -2077,7 +2077,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
             set
             {
-                if (!LinkBehavior.Equals(value))
+                if (LinkBehavior != value)
                 {
                     ((KryptonDataGridViewLinkCell)CellTemplate).LinkBehaviorInternal = value;
                     if (base.DataGridView != null)

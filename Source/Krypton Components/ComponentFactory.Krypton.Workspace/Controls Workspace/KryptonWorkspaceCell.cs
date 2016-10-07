@@ -558,7 +558,7 @@ namespace ComponentFactory.Krypton.Workspace
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void DebugOutput(int indent)
         {
-            Console.WriteLine("{0}Cell Count:{1} Visible:{2}", new string(' ', indent++ * 2), Pages.Count, LastVisibleSet);
+            Console.WriteLine("{0}Cell Count:{1} Visible:{2}", new string(' ', indent++ * 2), Pages.Count.ToString(), LastVisibleSet);
 
             string prefix = new string(' ', indent * 2);
             foreach (KryptonPage page in Pages)

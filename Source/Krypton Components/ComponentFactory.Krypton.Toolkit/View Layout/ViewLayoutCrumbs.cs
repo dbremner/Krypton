@@ -88,7 +88,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutCrumbs:" + Id;
+            return "ViewLayoutCrumbs:" + Id.ToString();
 		}
 		#endregion
 

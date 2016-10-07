@@ -53,7 +53,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawMonthDayNames:" + Id;
+            return "ViewDrawMonthDayNames:" + Id.ToString();
 		}
 
         /// <summary>

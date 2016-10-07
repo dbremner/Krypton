@@ -69,7 +69,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override string ToString()
         {
             // Return the class name and instance identifier
-            return "ViewDrawScrollBar:" + Id;
+            return "ViewDrawScrollBar:" + Id.ToString();
         }
 
         /// <summary>

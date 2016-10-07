@@ -376,7 +376,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     using (Graphics g = Graphics.FromImage(copyBitmap))
                     {
                         // If the color is not defined, i.e. it is empty then...
-                        if (_selectedColor.Equals(Color.Empty))
+                        if (_selectedColor == Color.Empty)
                         {
                             // Indicate the absense of a color by drawing a border around 
                             // the selected color area, thus indicating the area inside the

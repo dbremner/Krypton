@@ -99,7 +99,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutCenter:" + Id;
+            return "ViewLayoutCenter:" + Id.ToString();
 		}
         #endregion
 

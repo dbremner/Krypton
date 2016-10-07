@@ -100,7 +100,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawSplitCanvas:" + Id;
+            return "ViewDrawSplitCanvas:" + Id.ToString();
 		}
 
         /// <summary>

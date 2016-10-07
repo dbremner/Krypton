@@ -339,7 +339,7 @@ namespace ComponentFactory.Krypton.Toolkit
             {
                 foreach (Color[] column in _colors)
                     foreach (Color row in column)
-                        if (color.Equals(row))
+                        if (color == row)
                             return true;
             }
 

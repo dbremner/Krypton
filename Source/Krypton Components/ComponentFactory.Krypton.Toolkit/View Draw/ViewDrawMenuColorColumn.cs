@@ -56,7 +56,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawMenuColorColumn:" + Id;
+            return "ViewDrawMenuColorColumn:" + Id.ToString();
 		}
 		#endregion
 

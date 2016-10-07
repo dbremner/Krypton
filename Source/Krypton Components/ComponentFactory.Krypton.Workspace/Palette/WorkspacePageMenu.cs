@@ -113,14 +113,14 @@ namespace ComponentFactory.Krypton.Workspace
                         TextRebalance.Equals(_defaultTextRebalance) &&
                         TextMaximize.Equals(_defaultTextMaximize) &&
                         TextRestore.Equals(_defaultTextRestore) &&
-                        ShortcutClose.Equals(_defaultShortcutClose) &&
-                        ShortcutCloseAllButThis.Equals(_defaultShortcutCloseAllButThis) &&
-                        ShortcutMoveNext.Equals(_defaultShortcutMoveNext) &&
-                        ShortcutMovePrevious.Equals(_defaultShortcutMovePrevious) &&
-                        ShortcutSplitVertical.Equals(_defaultShortcutSplitVertical) &&
-                        ShortcutSplitHorizontal.Equals(_defaultShortcutSplitHorizontal) &&
-                        ShortcutRebalance.Equals(_defaultShortcutRebalance) &&
-                        ShortcutMaximizeRestore.Equals(_defaultShortcutMaximizeRestore) &&
+                        ShortcutClose == _defaultShortcutClose &&
+                        ShortcutCloseAllButThis == _defaultShortcutCloseAllButThis &&
+                        ShortcutMoveNext == _defaultShortcutMoveNext &&
+                        ShortcutMovePrevious == _defaultShortcutMovePrevious &&
+                        ShortcutSplitVertical == _defaultShortcutSplitVertical &&
+                        ShortcutSplitHorizontal == _defaultShortcutSplitHorizontal &&
+                        ShortcutRebalance == _defaultShortcutRebalance &&
+                        ShortcutMaximizeRestore == _defaultShortcutMaximizeRestore &&
                         (ShowContextMenu == true));
             }
         }
@@ -361,7 +361,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutClose()
         {
-            return !_shortcutClose.Equals(_defaultShortcutClose);
+            return _shortcutClose != _defaultShortcutClose;
         }
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutCloseAllButThis()
         {
-            return !_shortcutCloseAllButThis.Equals(_defaultShortcutCloseAllButThis);
+            return _shortcutCloseAllButThis != _defaultShortcutCloseAllButThis;
         }
 
         /// <summary>
@@ -423,7 +423,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutMoveNext()
         {
-            return !_shortcutMoveNext.Equals(_defaultShortcutMoveNext);
+            return _shortcutMoveNext != _defaultShortcutMoveNext;
         }
 
         /// <summary>
@@ -454,7 +454,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutMovePrevious()
         {
-            return !_shortcutMovePrevious.Equals(_defaultShortcutMovePrevious);
+            return _shortcutMovePrevious != _defaultShortcutMovePrevious;
         }
 
         /// <summary>
@@ -485,7 +485,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutSplitVertical()
         {
-            return !_shortcutSplitVertical.Equals(_defaultShortcutSplitVertical);
+            return _shortcutSplitVertical != _defaultShortcutSplitVertical;
         }
 
         /// <summary>
@@ -516,7 +516,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutSplitHorizontal()
         {
-            return !_shortcutSplitHorizontal.Equals(_defaultShortcutSplitHorizontal);
+            return _shortcutSplitHorizontal != _defaultShortcutSplitHorizontal;
         }
 
         /// <summary>
@@ -547,7 +547,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutRebalance()
         {
-            return !_shortcutRebalance.Equals(_defaultShortcutRebalance);
+            return _shortcutRebalance != _defaultShortcutRebalance;
         }
 
         /// <summary>
@@ -578,7 +578,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <returns>True if value should be serialized.</returns>
         protected bool ShouldSerializeShortcutMaximizeRestore()
         {
-            return !_shortcutMaximizeRestore.Equals(_defaultShortcutMaximizeRestore);
+            return _shortcutMaximizeRestore != _defaultShortcutMaximizeRestore;
         }
 
         /// <summary>

@@ -104,7 +104,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawMenuRadioButton:" + Id;
+            return "ViewDrawMenuRadioButton:" + Id.ToString();
 		}
 
         /// <summary>

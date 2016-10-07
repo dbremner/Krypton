@@ -81,7 +81,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewLayoutRibbonScroller:" + Id;
+            return "ViewLayoutRibbonScroller:" + Id.ToString();
 		}
 		#endregion
 

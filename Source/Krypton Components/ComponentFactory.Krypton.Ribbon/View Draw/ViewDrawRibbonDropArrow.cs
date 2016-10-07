@@ -50,7 +50,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawRibbonDropArrow:" + Id;
+            return "ViewDrawRibbonDropArrow:" + Id.ToString();
 		}
 		#endregion
 
