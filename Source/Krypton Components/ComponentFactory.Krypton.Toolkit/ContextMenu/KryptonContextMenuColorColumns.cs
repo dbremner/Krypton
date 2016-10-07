@@ -335,7 +335,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>True if found; otherwise false.</returns>
         public bool ContainsColor(Color color)
         {
-            if ((_colors != null) && (color != null))
+            if ((_colors != null))
             {
                 foreach (Color[] column in _colors)
                     foreach (Color row in column)

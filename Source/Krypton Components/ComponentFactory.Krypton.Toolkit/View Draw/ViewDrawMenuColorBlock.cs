@@ -221,7 +221,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Color inside = Color.Empty;
 
             // Is this element selected?
-            bool selected = (_colorColumns.SelectedColor != null) && (_colorColumns.SelectedColor.Equals(_color));
+            bool selected = (_colorColumns.SelectedColor.Equals(_color));
 
             switch (ElementState)
             {

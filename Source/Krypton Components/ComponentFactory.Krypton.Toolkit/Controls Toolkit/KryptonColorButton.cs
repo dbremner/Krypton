@@ -1440,7 +1440,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 }
 
                 // If this color valid and so possible to become a recent color
-                if ((color != null) && !color.Equals(Color.Empty))
+                if (!color.Equals(Color.Empty))
                 {
                     bool found = false;
                     foreach (Color recentColor in _recentColors)

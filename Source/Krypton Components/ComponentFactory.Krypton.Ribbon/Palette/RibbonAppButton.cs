@@ -181,11 +181,8 @@ namespace ComponentFactory.Krypton.Ribbon
             
             set 
             {
-                if (_appButtonBaseColorDark != null)
-                {
-                    _appButtonBaseColorDark = value;
-                    _ribbon.PerformNeedPaint(true);
-                }
+                _appButtonBaseColorDark = value;
+                _ribbon.PerformNeedPaint(true);
             }
         }
         #endregion
@@ -205,11 +202,8 @@ namespace ComponentFactory.Krypton.Ribbon
             
             set 
             {
-                if (_appButtonBaseColorLight != null)
-                {
-                    _appButtonBaseColorLight = value;
-                    _ribbon.PerformNeedPaint(true);
-                }
+                _appButtonBaseColorLight = value;
+                _ribbon.PerformNeedPaint(true);
             }
         }
         #endregion
@@ -229,11 +223,8 @@ namespace ComponentFactory.Krypton.Ribbon
             
             set 
             {
-                if (_appButtonTextColor != null)
-                {
-                    _appButtonTextColor = value;
-                    _ribbon.PerformNeedPaint(true);
-                }
+                _appButtonTextColor = value;
+                _ribbon.PerformNeedPaint(true);
             }
         }
         #endregion

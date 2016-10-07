@@ -353,7 +353,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         private bool ShouldSerializeImageTransparentColor()
         {
-            return (_imageTransparentColor == null) || !_imageTransparentColor.Equals(Color.Empty);
+            return !_imageTransparentColor.Equals(Color.Empty);
         }
 
         /// <summary>

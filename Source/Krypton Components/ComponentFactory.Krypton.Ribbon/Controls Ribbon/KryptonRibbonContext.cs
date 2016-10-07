@@ -123,7 +123,7 @@ namespace ComponentFactory.Krypton.Ribbon
             set
             {
                 // We never allow a null or transparent color
-                if ((value == null) || (value == Color.Transparent))
+                if ((value == Color.Transparent))
                     value = Color.Red;
 
                 if (value != _contextColor)
