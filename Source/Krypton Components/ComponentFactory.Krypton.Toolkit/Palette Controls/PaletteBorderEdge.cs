@@ -24,7 +24,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteBorderEdge : PaletteBack
     {
         #region Instance Fields
-        private PaletteBorderEdgeRedirect _inherit;
+        private readonly PaletteBorderEdgeRedirect _inherit;
         private int _borderWidth;
         #endregion
 

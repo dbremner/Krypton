@@ -35,7 +35,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
 		private bool _collapsed;
-		private KryptonSplitContainer _container;
+		private readonly KryptonSplitContainer _container;
 		#endregion
 
 		#region Events

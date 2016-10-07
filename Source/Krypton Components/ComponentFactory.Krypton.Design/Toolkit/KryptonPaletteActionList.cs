@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonPaletteActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonPalette _palette;
-        private IComponentChangeService _service;
+        private readonly KryptonPalette _palette;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

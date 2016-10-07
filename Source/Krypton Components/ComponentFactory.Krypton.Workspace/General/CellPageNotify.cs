@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Workspace
     public class CellPageNotify : IDragPageNotify
     {
         #region Instance Fields
-        private KryptonWorkspace _workspace;
+        private readonly KryptonWorkspace _workspace;
         #endregion
 
         #region Identity

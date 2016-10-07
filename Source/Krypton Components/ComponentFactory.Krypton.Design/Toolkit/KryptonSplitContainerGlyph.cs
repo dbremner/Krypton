@@ -24,10 +24,10 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonSplitContainerGlyph : Glyph
     {
         #region Instance Fields
-        private KryptonSplitContainer _splitContainer;
-        private ISelectionService _selectionService;
-        private BehaviorService _behaviorService; 
-        private Adorner _adorner;
+        private readonly KryptonSplitContainer _splitContainer;
+        private readonly ISelectionService _selectionService;
+        private readonly BehaviorService _behaviorService; 
+        private readonly Adorner _adorner;
         #endregion
 
         #region Identity

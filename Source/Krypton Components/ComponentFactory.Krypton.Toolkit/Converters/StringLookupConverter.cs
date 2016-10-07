@@ -27,12 +27,12 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <summary>
             /// Enumeration value.
             /// </summary>
-            public object Enum;
+            public readonly object Enum;
 
             /// <summary>
             /// Enumeration value display string.
             /// </summary>
-            public string Display;
+            public readonly string Display;
 
             /// <summary>
             /// Initialize a new instance of the Pair structure.

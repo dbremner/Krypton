@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonHeaderGroupActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonHeaderGroup _headerGroup;
-        private IComponentChangeService _service;
+        private readonly KryptonHeaderGroup _headerGroup;
+        private readonly IComponentChangeService _service;
         private DesignerVerb _visible1;
         private DesignerVerb _visible2;
         private string _text1;

@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonTextBoxActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonTextBox _textBox;
-        private IComponentChangeService _service;
+        private readonly KryptonTextBox _textBox;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

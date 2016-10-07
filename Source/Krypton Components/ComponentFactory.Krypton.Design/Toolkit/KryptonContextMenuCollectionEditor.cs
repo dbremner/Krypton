@@ -43,8 +43,8 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class MenuTreeNode : TreeNode
             {
                 #region Instance Fields
-                private KryptonContextMenuItemBase _item;
-                private object _propertyObject;
+                private readonly KryptonContextMenuItemBase _item;
+                private readonly object _propertyObject;
                 #endregion
 
                 #region Identity
@@ -130,8 +130,8 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class PropertyGridSite : ISite, IServiceProvider
             {
                 #region Instance Fields
-                private IComponent _component;
-                private IServiceProvider _serviceProvider;
+                private readonly IComponent _component;
+                private readonly IServiceProvider _serviceProvider;
                 private bool _inGetService;
                 #endregion
 
@@ -212,27 +212,27 @@ namespace ComponentFactory.Krypton.Toolkit
             #region Instance Fields
             private DictItemBase _beforeItems;
             private KryptonContextMenuCollectionEditor _editor;
-            private Button buttonOK;
-            private TreeView treeView;
-            private Label label1;
-            private Label label2;
-            private ImageList imageList;
-            private Button buttonDelete;
-            private Button buttonMoveUp;
-            private Button buttonMoveDown;
-            private Button buttonAddCheckBox;
-            private Button buttonAddCheckButton;
-            private Button buttonAddRadioButton;
-            private Button buttonAddLinkLabel;
-            private Button buttonAddSeparator;
-            private Button buttonAddItem;
-            private Button buttonAddItems;
-            private Button buttonAddHeading;
-            private Button buttonAddMonthCalendar;
-            private Button buttonAddColorColumns;
-            private Button buttonAddImageSelect;
-            private PropertyGrid propertyGrid1;
-            private IContainer components = null;
+            private readonly Button buttonOK;
+            private readonly TreeView treeView;
+            private readonly Label label1;
+            private readonly Label label2;
+            private readonly ImageList imageList;
+            private readonly Button buttonDelete;
+            private readonly Button buttonMoveUp;
+            private readonly Button buttonMoveDown;
+            private readonly Button buttonAddCheckBox;
+            private readonly Button buttonAddCheckButton;
+            private readonly Button buttonAddRadioButton;
+            private readonly Button buttonAddLinkLabel;
+            private readonly Button buttonAddSeparator;
+            private readonly Button buttonAddItem;
+            private readonly Button buttonAddItems;
+            private readonly Button buttonAddHeading;
+            private readonly Button buttonAddMonthCalendar;
+            private readonly Button buttonAddColorColumns;
+            private readonly Button buttonAddImageSelect;
+            private readonly PropertyGrid propertyGrid1;
+            private readonly IContainer components = null;
             #endregion
 
             #region Identity

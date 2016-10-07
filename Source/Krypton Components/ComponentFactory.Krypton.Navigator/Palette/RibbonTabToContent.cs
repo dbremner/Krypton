@@ -22,7 +22,7 @@ namespace ComponentFactory.Krypton.Navigator
     internal class RibbonTabToContent : IPaletteContent
     {
         #region Instance Fields
-        private IPaletteRibbonGeneral _ribbonGeneral;
+        private readonly IPaletteRibbonGeneral _ribbonGeneral;
         private IPaletteRibbonText _ribbonTabText;
         private IPaletteContent _content;
         #endregion

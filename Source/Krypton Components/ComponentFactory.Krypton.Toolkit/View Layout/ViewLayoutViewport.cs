@@ -32,7 +32,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private Timer _animationTimer;
+        private readonly Timer _animationTimer;
         private IPaletteMetric _paletteMetrics;
         private PaletteMetricPadding _metricPadding;
         private PaletteMetricInt _metricOvers;

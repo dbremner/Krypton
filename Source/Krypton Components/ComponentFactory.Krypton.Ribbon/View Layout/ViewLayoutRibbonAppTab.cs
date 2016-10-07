@@ -28,7 +28,7 @@ namespace ComponentFactory.Krypton.Ribbon
     {
         #region Instance Fields
         private KryptonRibbon _ribbon;
-        private ViewDrawRibbonAppTab _appTab;
+        private readonly ViewDrawRibbonAppTab _appTab;
         #endregion
 
         #region Identity

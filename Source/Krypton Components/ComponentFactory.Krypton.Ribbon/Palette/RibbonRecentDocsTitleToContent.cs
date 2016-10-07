@@ -26,7 +26,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private IPaletteRibbonText _ribbonRecentTitleText;
+        private readonly IPaletteRibbonText _ribbonRecentTitleText;
         private Font _shortTextFont;
         #endregion
 

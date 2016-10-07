@@ -56,7 +56,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private PaletteButtonOrientation _orientation;
         private PaletteButtonSpecStyle _type;
         private PaletteRelativeEdgeAlign _edge;
-        private CheckButtonImageStates _imageStates;
+        private readonly CheckButtonImageStates _imageStates;
         private ContextMenuStrip _contextMenuStrip;
         private KryptonContextMenu _kryptonContextMenu;
         #endregion

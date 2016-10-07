@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonTrackBarActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonTrackBar _trackBar;
-        private IComponentChangeService _service;
+        private readonly KryptonTrackBar _trackBar;
+        private readonly IComponentChangeService _service;
         private string _action;
         #endregion
 

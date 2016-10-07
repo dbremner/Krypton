@@ -21,8 +21,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ContextMenuArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private ContextMenuStrip _cms;
-        private KryptonContextMenu _kcm;
+        private readonly ContextMenuStrip _cms;
+        private readonly KryptonContextMenu _kcm;
         #endregion
 
 		#region Identity

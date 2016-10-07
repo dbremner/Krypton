@@ -26,7 +26,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteElementColorRedirect : PaletteElementColor
     {
         #region Instance Fields
-        private PaletteElementColorInheritRedirect _redirect;
+        private readonly PaletteElementColorInheritRedirect _redirect;
         #endregion
 
         #region Identity

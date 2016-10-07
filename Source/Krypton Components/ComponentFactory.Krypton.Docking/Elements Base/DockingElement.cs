@@ -31,7 +31,7 @@ namespace ComponentFactory.Krypton.Docking
                                            IDockingElement
     {
         #region Instance Fields
-        private string _name;
+        private readonly string _name;
         private IDockingElement _parent;
         #endregion
 

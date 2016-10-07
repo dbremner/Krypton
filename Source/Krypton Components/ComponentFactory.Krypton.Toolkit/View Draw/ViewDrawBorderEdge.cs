@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Toolkit
     {
         #region Instance Fields
         private PaletteBorderEdge _palette;
-        private PaletteBackInheritForced _borderForced;
+        private readonly PaletteBackInheritForced _borderForced;
         private Orientation _orientation;
         #endregion
 

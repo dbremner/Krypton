@@ -25,9 +25,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public abstract class KryptonPaletteDouble3 : Storage
     {
         #region Instance Fields
-        internal PaletteDoubleRedirect _stateCommon;
-        internal PaletteDouble _stateDisabled;
-        internal PaletteDouble _stateNormal;
+        internal readonly PaletteDoubleRedirect _stateCommon;
+        internal readonly PaletteDouble _stateDisabled;
+        internal readonly PaletteDouble _stateNormal;
         #endregion
 
         #region Identity

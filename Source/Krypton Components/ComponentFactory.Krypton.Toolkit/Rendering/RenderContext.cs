@@ -23,7 +23,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class RenderContext : ViewContext
     {
         #region Instance Fields
-        private Rectangle _clipRect;
+        private readonly Rectangle _clipRect;
         #endregion
 
         #region Identity

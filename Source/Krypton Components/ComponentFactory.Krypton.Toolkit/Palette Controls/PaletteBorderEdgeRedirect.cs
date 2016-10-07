@@ -28,7 +28,7 @@ namespace ComponentFactory.Krypton.Toolkit
         internal class BackToBorder : IPaletteBack
         {
             #region Instance Fields
-            private IPaletteBorder _parent;
+            private readonly IPaletteBorder _parent;
             #endregion
 
             #region Identity
@@ -150,7 +150,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #region Instance Fields
         private IPaletteBorder _inherit;
-        private BackToBorder _translate;
+        private readonly BackToBorder _translate;
         private int _borderWidth;
         #endregion
 

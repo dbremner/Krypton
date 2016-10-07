@@ -23,8 +23,8 @@ namespace ComponentFactory.Krypton.Toolkit
                              IDisposable
 	{
 		#region Instance Fields
-        private Graphics _g;
-        private SmoothingMode _old;
+        private readonly Graphics _g;
+        private readonly SmoothingMode _old;
 		#endregion
 
 		#region Identity
@@ -63,8 +63,8 @@ namespace ComponentFactory.Krypton.Toolkit
                                  IDisposable
     {
         #region Instance Fields
-        private Graphics _g;
-        private SmoothingMode _old;
+        private readonly Graphics _g;
+        private readonly SmoothingMode _old;
         #endregion
 
         #region Identity

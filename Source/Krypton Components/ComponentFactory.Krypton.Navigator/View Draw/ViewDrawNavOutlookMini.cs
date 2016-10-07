@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Navigator
     {
         #region Instance Fields
         private OutlookMiniController _controller;
-        private EventHandler _finishDelegate;
+        private readonly EventHandler _finishDelegate;
         #endregion
 
         #region Identity

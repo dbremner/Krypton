@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteRedirectCheckBox : PaletteRedirect
     {
         #region Instance Fields
-        private CheckBoxImages _images;
+        private readonly CheckBoxImages _images;
 		#endregion
 
 		#region Identity

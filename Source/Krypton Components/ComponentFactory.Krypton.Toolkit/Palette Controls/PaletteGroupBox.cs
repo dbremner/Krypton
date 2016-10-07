@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteGroupBox : PaletteDouble
 	{
 		#region Instance Fields
-        private PaletteContent _content;
+        private readonly PaletteContent _content;
         #endregion
 
 		#region Identity

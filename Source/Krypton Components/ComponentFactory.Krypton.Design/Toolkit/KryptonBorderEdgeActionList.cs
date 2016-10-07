@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonBorderEdgeActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonBorderEdge _borderEdge;
-        private IComponentChangeService _service;
+        private readonly KryptonBorderEdge _borderEdge;
+        private readonly IComponentChangeService _service;
         private string _action;
         #endregion
 

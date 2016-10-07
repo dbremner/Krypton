@@ -26,7 +26,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteMonthCalendarState : Storage
     {
         #region Instance Fields
-        private PaletteTriple _paletteDay;
+        private readonly PaletteTriple _paletteDay;
         #endregion
 
         #region Identity

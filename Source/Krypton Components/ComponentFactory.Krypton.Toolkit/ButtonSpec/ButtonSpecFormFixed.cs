@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public abstract class ButtonSpecFormFixed : ButtonSpec
     {
         #region Instance Fields
-        private KryptonForm _form;
+        private readonly KryptonForm _form;
         #endregion
 
         #region Identity

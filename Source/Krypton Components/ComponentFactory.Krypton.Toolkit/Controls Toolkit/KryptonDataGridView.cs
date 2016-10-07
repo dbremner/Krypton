@@ -43,7 +43,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class ToolTipContent : IContentValues
         {
             #region Instance Fields
-            private string _toolTipText;
+            private readonly string _toolTipText;
             #endregion
 
             #region Identity

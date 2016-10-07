@@ -32,10 +32,10 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonForm _ownerForm;
-        private ViewLayoutRibbonSeparator _separator;
-        private ViewDrawRibbonAppButton _appButton;
+        private readonly ViewLayoutRibbonSeparator _separator;
+        private readonly ViewDrawRibbonAppButton _appButton;
         #endregion
 
         #region Identity

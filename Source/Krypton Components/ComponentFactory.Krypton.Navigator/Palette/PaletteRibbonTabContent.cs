@@ -26,8 +26,8 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteRibbonTabContent : Storage
     {
         #region Instance Fields
-        private PaletteRibbonDouble _paletteTabDraw;
-        private PaletteNavContent _paletteContent;
+        private readonly PaletteRibbonDouble _paletteTabDraw;
+        private readonly PaletteNavContent _paletteContent;
         #endregion
 
 		#region Identity

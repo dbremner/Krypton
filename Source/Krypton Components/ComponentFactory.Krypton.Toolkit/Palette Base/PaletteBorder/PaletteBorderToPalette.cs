@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteBorderToPalette : IPaletteBorder
     {
         #region Instance Fields
-        private IPalette _palette;
+        private readonly IPalette _palette;
         private PaletteBorderStyle _style;
         #endregion
 

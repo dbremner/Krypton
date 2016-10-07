@@ -31,7 +31,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbonGroupClusterButton _ribbonButton;
+        private readonly KryptonRibbonGroupClusterButton _ribbonButton;
         #endregion
 
         #region Identity

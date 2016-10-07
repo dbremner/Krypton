@@ -33,7 +33,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private IKryptonMonthCalendar _calendar;
+        private readonly IKryptonMonthCalendar _calendar;
         #endregion
 
         #region Identity

@@ -21,7 +21,7 @@ namespace ComponentFactory.Krypton.Docking
 	public class StorePageEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonStorePage _storePage;
+        private readonly KryptonStorePage _storePage;
 		#endregion
 
 		#region Identity

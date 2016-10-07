@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonWrapLabelActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonWrapLabel _wrapLabel;
-        private IComponentChangeService _service;
+        private readonly KryptonWrapLabel _wrapLabel;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

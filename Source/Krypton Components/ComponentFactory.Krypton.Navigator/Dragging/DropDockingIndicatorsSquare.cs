@@ -25,9 +25,9 @@ namespace ComponentFactory.Krypton.Navigator
                                                IDropDockingIndicator
     {
         #region Instance Fields
-        private IRenderer _renderer;
-        private IPaletteDragDrop _paletteDragDrop;
-        private RenderDragDockingData _dragData;
+        private readonly IRenderer _renderer;
+        private readonly IPaletteDragDrop _paletteDragDrop;
+        private readonly RenderDragDockingData _dragData;
         #endregion
 
         #region Identity

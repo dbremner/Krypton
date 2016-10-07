@@ -25,10 +25,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteInputControl : Storage
     {
         #region Instance Fields
-        internal PaletteTripleRedirect _stateCommon;
-        internal PaletteTriple _stateDisabled;
-        internal PaletteTriple _stateNormal;
-        internal PaletteTriple _stateActive;
+        internal readonly PaletteTripleRedirect _stateCommon;
+        internal readonly PaletteTriple _stateDisabled;
+        internal readonly PaletteTriple _stateNormal;
+        internal readonly PaletteTriple _stateActive;
         #endregion
 
         #region Identity

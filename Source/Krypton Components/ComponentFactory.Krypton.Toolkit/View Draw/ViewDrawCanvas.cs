@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Toolkit
         internal IPaletteBack _paletteBack;
         internal IPaletteBorder _paletteBorder;
         internal IPaletteMetric _paletteMetric;
-        internal PaletteMetricPadding _metricPadding;
+        internal readonly PaletteMetricPadding _metricPadding;
         private IDisposable _mementoBack;
         private PaletteBorderInheritForced _borderForced;
 		private VisualOrientation _orientation;

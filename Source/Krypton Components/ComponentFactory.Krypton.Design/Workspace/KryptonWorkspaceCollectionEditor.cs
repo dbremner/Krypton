@@ -43,7 +43,7 @@ namespace ComponentFactory.Krypton.Workspace
             protected class PageProxy
             {
                 #region Instance Fields
-                private KryptonPage _item;
+                private readonly KryptonPage _item;
                 #endregion
 
                 #region Identity
@@ -340,7 +340,7 @@ namespace ComponentFactory.Krypton.Workspace
             protected class CellProxy
             {
                 #region Instance Fields
-                private KryptonWorkspaceCell _item;
+                private readonly KryptonWorkspaceCell _item;
                 #endregion
 
                 #region Identity
@@ -679,7 +679,7 @@ namespace ComponentFactory.Krypton.Workspace
             protected class SequenceProxy
             {
                 #region Instance Fields
-                private KryptonWorkspaceSequence _item;
+                private readonly KryptonWorkspaceSequence _item;
                 #endregion
 
                 #region Identity
@@ -739,10 +739,10 @@ namespace ComponentFactory.Krypton.Workspace
                 #endregion
 
                 #region Instance Fields
-                private int _instanceId;
-                private KryptonPage _page;
-                private KryptonWorkspaceCell _cell;
-                private KryptonWorkspaceSequence _sequence;
+                private readonly int _instanceId;
+                private readonly KryptonPage _page;
+                private readonly KryptonWorkspaceCell _cell;
+                private readonly KryptonWorkspaceSequence _sequence;
                 #endregion
 
                 #region Identity
@@ -843,8 +843,8 @@ namespace ComponentFactory.Krypton.Workspace
             protected class PropertyGridSite : ISite, IServiceProvider
             {
                 #region Instance Fields
-                private IComponent _component;
-                private IServiceProvider _serviceProvider;
+                private readonly IComponent _component;
+                private readonly IServiceProvider _serviceProvider;
                 private bool _inGetService;
                 #endregion
 
@@ -923,19 +923,19 @@ namespace ComponentFactory.Krypton.Workspace
             #endregion
 
             #region Instance Fields
-            private KryptonWorkspaceCollectionEditor _editor;
+            private readonly KryptonWorkspaceCollectionEditor _editor;
             private DictItemBase _beforeItems;
-            private TreeView treeView;
-            private PropertyGrid propertyGrid;
-            private Button buttonMoveUp;
-            private Button buttonMoveDown;
-            private Button buttonAddPage;
-            private Button buttonAddCell;
-            private Button buttonAddSequence;
-            private Button buttonOK;
-            private Button buttonDelete;
-            private Label labelItemProperties;
-            private Label labelWorkspaceCollection;
+            private readonly TreeView treeView;
+            private readonly PropertyGrid propertyGrid;
+            private readonly Button buttonMoveUp;
+            private readonly Button buttonMoveDown;
+            private readonly Button buttonAddPage;
+            private readonly Button buttonAddCell;
+            private readonly Button buttonAddSequence;
+            private readonly Button buttonOK;
+            private readonly Button buttonDelete;
+            private readonly Label labelItemProperties;
+            private readonly Label labelWorkspaceCollection;
             #endregion
 
             #region Identity

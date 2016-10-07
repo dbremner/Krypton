@@ -27,9 +27,9 @@ namespace ComponentFactory.Krypton.Toolkit
 
 	{
 		#region Instance Fields
-        private ViewDrawMenuImageSelectItem _target;
-        private ViewLayoutMenuItemSelect _layout;
-        private ViewContextMenuManager _viewManager;
+        private readonly ViewDrawMenuImageSelectItem _target;
+        private readonly ViewLayoutMenuItemSelect _layout;
+        private readonly ViewContextMenuManager _viewManager;
         private NeedPaintHandler _needPaint;
         private Point _mousePoint;
         private bool _captured;

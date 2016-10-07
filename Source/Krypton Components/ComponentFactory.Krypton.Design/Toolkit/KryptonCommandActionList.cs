@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonCommandActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonCommand _command;
+        private readonly KryptonCommand _command;
         #endregion
 
         #region Identity

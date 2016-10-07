@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Toolkit
     {
         #region Instance Fields
         private ViewDrawMonth _month;
-        private RelativeEdgeAlign _edge;
+        private readonly RelativeEdgeAlign _edge;
         private bool _visible;
         private bool _enabled;
         #endregion

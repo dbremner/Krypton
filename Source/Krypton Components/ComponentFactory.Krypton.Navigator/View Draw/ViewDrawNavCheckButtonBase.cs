@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Navigator
                                                          IContentValues
 	{
 		#region Instance Fields
-        private KryptonNavigator _navigator;
+        private readonly KryptonNavigator _navigator;
         private KryptonPage _page;
         private NeedPaintHandler _needPaint;
         private ButtonSpecNavManagerLayoutBar _buttonManager;
@@ -35,15 +35,15 @@ namespace ComponentFactory.Krypton.Navigator
         private DateTime _lastClick;
 
         /// <summary>Override for accessing the disable state.</summary>
-        protected PaletteTripleOverride _overrideDisabled;
+        protected readonly PaletteTripleOverride _overrideDisabled;
         /// <summary>Override for accessing the normal state.</summary>
-        protected PaletteTripleOverride _overrideNormal;
+        protected readonly PaletteTripleOverride _overrideNormal;
         /// <summary>Override for accessing the tracking state.</summary>
-        protected PaletteTripleOverride _overrideTracking;
+        protected readonly PaletteTripleOverride _overrideTracking;
         /// <summary>Override for accessing the pressed state.</summary>
-        protected PaletteTripleOverride _overridePressed;
+        protected readonly PaletteTripleOverride _overridePressed;
         /// <summary>Override for accessing the selected state.</summary>
-        protected PaletteTripleOverride _overrideSelected;
+        protected readonly PaletteTripleOverride _overrideSelected;
         #endregion
 
         #region Events

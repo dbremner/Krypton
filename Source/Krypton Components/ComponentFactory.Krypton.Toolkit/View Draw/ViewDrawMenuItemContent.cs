@@ -22,7 +22,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                              IContextMenuItemColumn
     {
         #region Instance Field
-        private int _columnIndex;
+        private readonly int _columnIndex;
         private Size _lastPreferredSize;
         private int _overridePreferredWidth;
         #endregion

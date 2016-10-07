@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonTreeViewActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonTreeView _treeView;
-        private IComponentChangeService _service;
+        private readonly KryptonTreeView _treeView;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

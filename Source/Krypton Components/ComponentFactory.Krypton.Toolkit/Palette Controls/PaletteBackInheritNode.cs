@@ -23,7 +23,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteBackInheritNode : PaletteBackInherit
 	{
         #region Instance Fields
-        private IPaletteBack _inherit;
+        private readonly IPaletteBack _inherit;
         private TreeNode _node;
         #endregion
 

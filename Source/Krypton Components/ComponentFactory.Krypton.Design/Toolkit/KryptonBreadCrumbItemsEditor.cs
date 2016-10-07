@@ -41,7 +41,7 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class CrumbProxy
             {
                 #region Instance Fields
-                private KryptonBreadCrumbItem _item;
+                private readonly KryptonBreadCrumbItem _item;
                 #endregion
 
                 #region Identity
@@ -126,8 +126,8 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class MenuTreeNode : TreeNode
             {
                 #region Instance Fields
-                private KryptonBreadCrumbItem _item;
-                private object _propertyObject;
+                private readonly KryptonBreadCrumbItem _item;
+                private readonly object _propertyObject;
                 #endregion
 
                 #region Identity
@@ -180,8 +180,8 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class PropertyGridSite : ISite, IServiceProvider
             {
                 #region Instance Fields
-                private IComponent _component;
-                private IServiceProvider _serviceProvider;
+                private readonly IComponent _component;
+                private readonly IServiceProvider _serviceProvider;
                 private bool _inGetService;
                 #endregion
 
@@ -262,16 +262,16 @@ namespace ComponentFactory.Krypton.Toolkit
             #region Instance Fields
             private KryptonBreadCrumbItemsEditor _editor;
             private DictItemBase _beforeItems;
-            private Button buttonOK;
-            private TreeView treeView1;
-            private Button buttonMoveUp;
-            private Button buttonMoveDown;
-            private Button buttonAddItem;
-            private Button buttonDelete;
-            private PropertyGrid propertyGrid1;
-            private Label label1;
-            private Label label2;
-            private Button buttonAddChild;
+            private readonly Button buttonOK;
+            private readonly TreeView treeView1;
+            private readonly Button buttonMoveUp;
+            private readonly Button buttonMoveDown;
+            private readonly Button buttonAddItem;
+            private readonly Button buttonDelete;
+            private readonly PropertyGrid propertyGrid1;
+            private readonly Label label1;
+            private readonly Label label2;
+            private readonly Button buttonAddChild;
             #endregion
 
             #region Identity

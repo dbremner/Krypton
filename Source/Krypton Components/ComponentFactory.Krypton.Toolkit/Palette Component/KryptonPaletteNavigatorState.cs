@@ -26,7 +26,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteNavigatorState : Storage
     {
         #region Instance Fields
-        private KryptonPaletteNavigatorStateBar _bar;
+        private readonly KryptonPaletteNavigatorStateBar _bar;
         #endregion
 
         #region Identity

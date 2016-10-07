@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonDomainUpDownActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonDomainUpDown _domainUpDown;
-        private IComponentChangeService _service;
+        private readonly KryptonDomainUpDown _domainUpDown;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

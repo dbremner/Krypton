@@ -135,7 +135,7 @@ namespace ComponentFactory.Krypton.Toolkit
 										 
 	{
 		#region Instance Fields
-        private List<T> _specs;
+        private readonly List<T> _specs;
 		#endregion
 
 		#region Identity

@@ -24,10 +24,10 @@ namespace ComponentFactory.Krypton.Navigator
     public class KryptonNavigatorActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonNavigator _navigator;
-        private KryptonNavigatorDesigner _designer;
-        private IComponentChangeService _serviceComponentChange;
-        private DesignerActionUIService _serviceDesignerAction;
+        private readonly KryptonNavigator _navigator;
+        private readonly KryptonNavigatorDesigner _designer;
+        private readonly IComponentChangeService _serviceComponentChange;
+        private readonly DesignerActionUIService _serviceDesignerAction;
         private DesignerVerb _headerBarVisible;
         private DesignerVerb _headerPrimaryVisible;
         private DesignerVerb _headerSecondaryVisible;

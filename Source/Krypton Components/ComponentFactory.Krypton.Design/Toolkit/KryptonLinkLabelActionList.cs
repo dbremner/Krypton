@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonLinkLabelActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonLinkLabel _linkLabel;
-        private IComponentChangeService _service;
+        private readonly KryptonLinkLabel _linkLabel;
+        private readonly IComponentChangeService _service;
         private string _action;
         #endregion
 

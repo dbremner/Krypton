@@ -51,9 +51,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class DataGridViewButtonSpecClickEventArgs : EventArgs
     {
         #region Instance Fields
-        private DataGridViewColumn _column;
-        private DataGridViewCell _cell;
-        private ButtonSpecAny _buttonSpec;
+        private readonly DataGridViewColumn _column;
+        private readonly DataGridViewCell _cell;
+        private readonly ButtonSpecAny _buttonSpec;
         #endregion
 
         #region Identity
@@ -108,7 +108,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDataGridViewTextBoxColumn : DataGridViewColumn
     {
         #region Instance Fields
-        private DataGridViewColumnSpecCollection _buttonSpecs;
+        private readonly DataGridViewColumnSpecCollection _buttonSpecs;
         #endregion
 
         #region Events
@@ -2608,7 +2608,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDataGridViewNumericUpDownColumn : DataGridViewColumn
     {
         #region Instance Fields
-        private DataGridViewColumnSpecCollection _buttonSpecs;
+        private readonly DataGridViewColumnSpecCollection _buttonSpecs;
         #endregion
 
         #region Events
@@ -3782,8 +3782,8 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDataGridViewDomainUpDownColumn : DataGridViewColumn
     {
         #region Instance Fields
-        private DataGridViewColumnSpecCollection _buttonSpecs;
-        private StringCollection _items;
+        private readonly DataGridViewColumnSpecCollection _buttonSpecs;
+        private readonly StringCollection _items;
         #endregion
 
         #region Events
@@ -4411,9 +4411,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDataGridViewComboBoxColumn : DataGridViewColumn
     {
         #region Instance Fields
-        private StringCollection _items;
-        private AutoCompleteStringCollection _autoCompleteCustom;
-        private DataGridViewColumnSpecCollection _buttonSpecs;
+        private readonly StringCollection _items;
+        private readonly AutoCompleteStringCollection _autoCompleteCustom;
+        private readonly DataGridViewColumnSpecCollection _buttonSpecs;
         #endregion
 
         #region Events
@@ -5565,10 +5565,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDataGridViewDateTimePickerColumn : DataGridViewColumn
     {
         #region Instance Fields
-        private DataGridViewColumnSpecCollection _buttonSpecs;
-        private DateTimeList _annualDates;
-        private DateTimeList _monthlyDates;
-        private DateTimeList _dates;
+        private readonly DataGridViewColumnSpecCollection _buttonSpecs;
+        private readonly DateTimeList _annualDates;
+        private readonly DateTimeList _monthlyDates;
+        private readonly DateTimeList _dates;
         #endregion
 
         #region Events
@@ -6526,7 +6526,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Static Fields
         [ThreadStatic]
         private static KryptonDateTimePicker _paintingDateTime;
-        private static DateTimeConverter _dtc = new DateTimeConverter();
+        private static readonly DateTimeConverter _dtc = new DateTimeConverter();
         private static readonly Type _defaultEditType = typeof(KryptonDataGridViewDateTimePickerEditingControl);
         private static readonly Type _defaultValueType = typeof(System.DateTime);
         private static readonly Size _sizeLarge = new Size(10000, 10000);
@@ -7437,7 +7437,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                                                    IDataGridViewEditingControl
     {
         #region Static Fields
-        private static DateTimeConverter _dtc = new DateTimeConverter();
+        private static readonly DateTimeConverter _dtc = new DateTimeConverter();
         #endregion
 
         #region Instance Fields
@@ -7606,7 +7606,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDataGridViewMaskedTextBoxColumn : DataGridViewColumn
     {
         #region Instance Fields
-        private DataGridViewColumnSpecCollection _buttonSpecs;
+        private readonly DataGridViewColumnSpecCollection _buttonSpecs;
         #endregion
 
         #region Events

@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonSplitContainerActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonSplitContainer _splitContainer;
-        private IComponentChangeService _service;
+        private readonly KryptonSplitContainer _splitContainer;
+        private readonly IComponentChangeService _service;
         private string _action;
         #endregion
 

@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteListItemTriple : Storage
 	{
 		#region Instance Fields
-        private PaletteTriple _paletteItem;
+        private readonly PaletteTriple _paletteItem;
 		#endregion
 
 		#region Identity

@@ -43,7 +43,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private PopupStack _stack;
+        private readonly PopupStack _stack;
         private VisualPopup _current;
         private IntPtr _activeWindow;
         private bool _filtering;

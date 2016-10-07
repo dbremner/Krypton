@@ -28,11 +28,11 @@ namespace ComponentFactory.Krypton.Toolkit
 		#endregion
 
 		#region Instance Fields
-        private bool _disposeFont;
-        private string _text;
-        private Size _size;
+        private readonly bool _disposeFont;
+        private readonly string _text;
+        private readonly Size _size;
         private Font _font;
-        private StringFormat _format;
+        private readonly StringFormat _format;
         private TextRenderingHint _hint;
 		#endregion
 

@@ -32,8 +32,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbonGroupLabel _ribbonLabel;
-        private bool _large;
+        private readonly KryptonRibbonGroupLabel _ribbonLabel;
+        private readonly bool _large;
         #endregion
 
         #region Identity

@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                             
 	{
 		#region Instance Fields
-        private IPaletteMetric _inherit;
+        private readonly IPaletteMetric _inherit;
         private Padding _separatorPadding;
 		#endregion
 

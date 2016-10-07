@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Navigator
 	public class KryptonPageFlagsEventArgs : EventArgs
 	{
 		#region Instance Fields
-		private KryptonPageFlags _flags;
+		private readonly KryptonPageFlags _flags;
 		#endregion
 
 		#region Identity

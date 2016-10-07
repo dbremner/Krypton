@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class ListEntry
         {
             #region Instance Fields
-            private KryptonCheckButton _checkButton;
+            private readonly KryptonCheckButton _checkButton;
             #endregion
 
             #region Identity
@@ -62,7 +62,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private KryptonCheckSet _checkSet;
+        private readonly KryptonCheckSet _checkSet;
         #endregion
 
         #region Identity
