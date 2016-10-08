@@ -69,7 +69,7 @@ namespace ComponentFactory.Krypton.Workspace
             {
                 // Validate the incoming value
                 if (value == null)
-                    throw new ArgumentNullException("Cannot be assigned a null value.");
+                    throw new ArgumentNullException(nameof(value), "Cannot be assigned a null value.");
 
                 // If it ends with an asterisk...
                 if (value.EndsWith("*"))

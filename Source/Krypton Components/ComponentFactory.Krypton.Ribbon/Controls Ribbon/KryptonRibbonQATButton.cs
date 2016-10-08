@@ -117,7 +117,7 @@ namespace ComponentFactory.Krypton.Ribbon
                         // The image must be 16x16 or less in order to be displayed on the
                         // quick access toolbar. So we reject anything bigger than 16x16.
                         if ((value.Width > 16) || (value.Height > 16))
-                            throw new ArgumentOutOfRangeException("Image must be 16x16 or smaller.");
+                            throw new ArgumentOutOfRangeException(nameof(value), "Image must be 16x16 or smaller.");
                     }
 
                     _image = value;

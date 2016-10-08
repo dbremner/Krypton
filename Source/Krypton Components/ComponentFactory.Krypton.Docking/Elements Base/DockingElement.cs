@@ -141,7 +141,7 @@ namespace ComponentFactory.Krypton.Docking
             {
                 // We do not allow the same name to occur twice in a collection (so check new parent collection)
                 if ((value != null) && (value[Name] != null))
-                    throw new ArgumentNullException("Parent provided already has our Name in its collection.");
+                    throw new ArgumentNullException(nameof(value), "Parent provided already has our Name in its collection.");
 
                 _parent = value; 
             }
@@ -523,7 +523,7 @@ namespace ComponentFactory.Krypton.Docking
             // We always allow store pages but check that others are not already present in the docking hierarchy
             foreach (KryptonPage page in pages)
                 if (!(page is KryptonStorePage) && DockingManager.ContainsPage(page))
-                    throw new ArgumentOutOfRangeException("Cannot perform operation with a page that is already present inside docking hierarchy");
+                    throw new ArgumentOutOfRangeException(nameof(pages), "Cannot perform operation with a page that is already present inside docking hierarchy");
         }
 
         /// <summary>

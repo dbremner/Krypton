@@ -301,7 +301,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _value)
                 {
                     if ((value < Minimum) || (value > Maximum))
-                        throw new ArgumentOutOfRangeException("Value", "Provided value is out of the Minimum to Maximum range of values.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Provided value is out of the Minimum to Maximum range of values.");
 
                     _value = value;
                     OnValueChanged(EventArgs.Empty);
@@ -319,7 +319,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _value)
                 {
                     if ((value < Minimum) || (value > Maximum))
-                        throw new ArgumentOutOfRangeException("Value", "Provided value is out of the Minimum to Maximum range of values.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Provided value is out of the Minimum to Maximum range of values.");
 
                     _value = value;
                     OnScroll(EventArgs.Empty);
@@ -338,7 +338,7 @@ namespace ComponentFactory.Krypton.Toolkit
             set
             {
                 if (value < 0)
-                    throw new ArgumentOutOfRangeException("SmallChange", "SmallChange cannot be less than zero.");
+                    throw new ArgumentOutOfRangeException(nameof(value), "SmallChange cannot be less than zero.");
 
                 _smallChange = value;
             }
@@ -354,7 +354,7 @@ namespace ComponentFactory.Krypton.Toolkit
             set
             {
                 if (value < 0)
-                    throw new ArgumentOutOfRangeException("LargeChange", "LargeChange cannot be less than zero.");
+                    throw new ArgumentOutOfRangeException(nameof(value), "LargeChange cannot be less than zero.");
 
                 _largeChange = value;
             }

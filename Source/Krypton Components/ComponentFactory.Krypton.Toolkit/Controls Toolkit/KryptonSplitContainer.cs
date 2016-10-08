@@ -478,7 +478,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     // Cannot assign a value of less than zero
                     if (value < 0)
-                        throw new ArgumentOutOfRangeException("Panel2MinSize", "Value cannot be less than zero");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Panel2MinSize - Value cannot be less than zero");
 
                     // Use the new minimum size
                     _panel2MinSize = value;
@@ -694,7 +694,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     // Cannot assign a value of less than zero
                     if (value < 0)
-                        throw new ArgumentOutOfRangeException("SplitterWidth", "Value cannot be less than zero");
+                        throw new ArgumentOutOfRangeException(nameof(value), "SplitterWidth - Value cannot be less than zero");
 
                     // Use new width of the splitter area
                     _splitterWidth = value;
@@ -732,7 +732,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     // Cannot assign a value of less than zero
                     if (value < 1)
-                        throw new ArgumentOutOfRangeException("SplitterIncrement", "Value cannot be less than one");
+                        throw new ArgumentOutOfRangeException(nameof(value), "SplitterIncrement - Value cannot be less than one");
 
                     // Remember new value for use when moving the splitter
                     _splitterIncrement = value;

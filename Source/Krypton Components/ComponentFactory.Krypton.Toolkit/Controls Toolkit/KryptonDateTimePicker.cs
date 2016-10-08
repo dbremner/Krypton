@@ -931,10 +931,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _maxDateTime)
                 {
                     if (value < EffectiveMinDate(_minDateTime))
-                        throw new ArgumentOutOfRangeException("Date provided is less than the minimum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is less than the minimum supported date.");
 
                     if (value > DateTimePicker.MaximumDateTime)
-                        throw new ArgumentOutOfRangeException("Date provided is greater than the maximum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is greater than the maximum supported date.");
 
                     _maxDateTime = value;
 
@@ -983,10 +983,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _minDateTime)
                 {
                     if (value > EffectiveMaxDate(_maxDateTime))
-                        throw new ArgumentOutOfRangeException("Date provided is greater than the maximum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is greater than the maximum supported date.");
 
                     if (value < DateTimePicker.MinimumDateTime)
-                        throw new ArgumentOutOfRangeException("Date provided is less than the minimum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is less than the minimum supported date.");
 
                     _minDateTime = value;
 

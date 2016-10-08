@@ -156,7 +156,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -246,7 +246,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -329,7 +329,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");

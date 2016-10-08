@@ -439,7 +439,7 @@ namespace ComponentFactory.Krypton.Navigator
 				{
                     // If tab selection is disabled then prevent setting the selection
                     if (!AllowTabSelect)
-                        throw new ArgumentOutOfRangeException("Cannot select a tab when AllowTabSelect=False");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Cannot select a tab when AllowTabSelect=False");
 
 					// Range check the index
 					if ((value < 0) || (value >= Pages.Count))
@@ -472,7 +472,7 @@ namespace ComponentFactory.Krypton.Navigator
 				{
                     // If tab selection is disabled then prevent setting the selection
                     if (!AllowTabSelect)
-                        throw new ArgumentOutOfRangeException("Cannot select a tab when AllowTabSelect=False");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Cannot select a tab when AllowTabSelect=False");
                     
                     // You cannot remove the selection entirely by using null
 					if (value == null)

@@ -193,7 +193,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		{
 			// We do not allow null references in the collection
 			if (item == null)
-				throw new ArgumentNullException("Cannot add a null view into a composite view.");
+				throw new ArgumentNullException(nameof(item), "Cannot add a null view into a composite view.");
 
             if (_views != null)
             {
@@ -319,7 +319,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		{
 			// We do not allow null references in the collection
 			if (item == null)
-				throw new ArgumentNullException("Cannot insert a null view inside a composite view.");
+				throw new ArgumentNullException(nameof(item), "Cannot insert a null view inside a composite view.");
 
             if (_views != null)
             {
@@ -366,7 +366,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			{
 				// We do not allow null references in the collection
 				if (value == null)
-					throw new ArgumentNullException("Cannot set a null view into a composite view.");
+					throw new ArgumentNullException(nameof(value), "Cannot set a null view into a composite view.");
 
                 if (_views != null)
                 {

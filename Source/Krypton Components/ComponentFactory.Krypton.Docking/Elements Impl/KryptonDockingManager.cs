@@ -626,7 +626,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -716,7 +716,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -849,7 +849,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -1000,7 +1000,7 @@ namespace ComponentFactory.Krypton.Docking
                 foreach (string uniqueName in uniqueNames)
                 {
                     if (uniqueName == null)
-                        throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                        throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                     if (uniqueName.Length == 0)
                         throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -1064,7 +1064,7 @@ namespace ComponentFactory.Krypton.Docking
             foreach (string uniqueName in uniqueNames)
             {
                 if (uniqueName == null)
-                    throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                    throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                 if (uniqueName.Length == 0)
                     throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -1353,7 +1353,7 @@ namespace ComponentFactory.Krypton.Docking
             foreach (string uniqueName in uniqueNames)
             {
                 if (uniqueName == null)
-                    throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                    throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                 if (uniqueName.Length == 0)
                     throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -1918,7 +1918,7 @@ namespace ComponentFactory.Krypton.Docking
             foreach (string uniqueName in uniqueNames)
             {
                 if (uniqueName == null)
-                    throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                    throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                 if (uniqueName.Length == 0)
                     throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -2028,7 +2028,7 @@ namespace ComponentFactory.Krypton.Docking
             foreach (string uniqueName in uniqueNames)
             {
                 if (uniqueName == null)
-                    throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                    throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                 if (uniqueName.Length == 0)
                     throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -2155,7 +2155,7 @@ namespace ComponentFactory.Krypton.Docking
             foreach (string uniqueName in uniqueNames)
             {
                 if (uniqueName == null)
-                    throw new ArgumentNullException("uniqueNames array contains a null string reference");
+                    throw new ArgumentNullException(nameof(uniqueNames), "uniqueNames array contains a null string reference");
 
                 if (uniqueName.Length == 0)
                     throw new ArgumentException("uniqueNames array contains a zero length string");
@@ -2362,7 +2362,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking control element
             KryptonDockingControl control = ResolvePath(path) as KryptonDockingControl;
@@ -2443,7 +2443,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking control element
             KryptonDockingControl control = ResolvePath(path) as KryptonDockingControl;
@@ -2547,7 +2547,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking floating element
             KryptonDockingFloating floating = ResolvePath(path) as KryptonDockingFloating;
@@ -2592,7 +2592,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking workspace element
             KryptonDockingWorkspace workspace = ResolvePath(path) as KryptonDockingWorkspace;
@@ -2623,7 +2623,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking navigator element
             KryptonDockingNavigator navigator = ResolvePath(path) as KryptonDockingNavigator;
@@ -2661,7 +2661,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking control element
             KryptonDockingControl control = ResolvePath(path) as KryptonDockingControl;
@@ -2744,7 +2744,7 @@ namespace ComponentFactory.Krypton.Docking
             // Cannot action a null page reference
             foreach (KryptonPage page in pages)
                 if (page == null)
-                    throw new ArgumentNullException("pages array contains a null page reference");
+                    throw new ArgumentNullException(nameof(pages), "pages array contains a null page reference");
 
             // Resolve the given path to the expected docking control element
             KryptonDockingControl control = ResolvePath(path) as KryptonDockingControl;
@@ -2815,7 +2815,7 @@ namespace ComponentFactory.Krypton.Docking
                 {
                     // Cannot drag a null page reference
                     if (page == null)
-                        throw new ArgumentNullException("pages collection contains a null page reference");
+                        throw new ArgumentNullException(nameof(pages), "pages collection contains a null page reference");
 
                     // Remember the first page that is allowed to be made floating
                     if (!atLeastOneFloating && page.AreFlagsSet(KryptonPageFlags.DockingAllowFloating))

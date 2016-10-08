@@ -71,7 +71,7 @@ namespace ComponentFactory.Krypton.Docking
                     break;
                 default:
                     Debug.Assert(false);
-                    throw new ArgumentOutOfRangeException("Hint must be an edge value.");
+                    throw new ArgumentOutOfRangeException(nameof(hint), "Hint must be an edge value.");
             }
         }
 

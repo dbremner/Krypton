@@ -336,7 +336,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     PI.QueryPerformanceCounter(ref _outputStart);
 
                 // Validate incoming references
-                if (context.Renderer == null) throw new ArgumentNullException("renderer");
+                if (context.Renderer == null) throw new ArgumentNullException(nameof(context), "context.Renderer cannot be null");
 
                 // If someone is interested, tell them the layout cycle to beginning
                 LayoutBefore?.Invoke(this, EventArgs.Empty);

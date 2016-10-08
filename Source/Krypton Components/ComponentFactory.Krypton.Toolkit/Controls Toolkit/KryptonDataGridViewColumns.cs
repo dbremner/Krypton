@@ -3032,7 +3032,7 @@ namespace ComponentFactory.Krypton.Toolkit
             set
             {
                 if (value < 0 || value > 99)
-                    throw new ArgumentOutOfRangeException("The DecimalPlaces property cannot be smaller than 0 or larger than 99.");
+                    throw new ArgumentOutOfRangeException(nameof(value), "The DecimalPlaces property cannot be smaller than 0 or larger than 99.");
 
                 if (_decimalPlaces != value)
                 {
@@ -3069,7 +3069,7 @@ namespace ComponentFactory.Krypton.Toolkit
             set
             {
                 if (value < (Decimal)0.0)
-                    throw new ArgumentOutOfRangeException("The Increment property cannot be smaller than 0.");
+                    throw new ArgumentOutOfRangeException(nameof(value), "The Increment property cannot be smaller than 0.");
 
                 SetIncrement(RowIndex, value);
             }
@@ -4985,7 +4985,7 @@ namespace ComponentFactory.Krypton.Toolkit
             set
             {
                 if (value == ComboBoxStyle.Simple)
-                    throw new ArgumentOutOfRangeException("The DropDownStyle property does not support the Simple style.");
+                    throw new ArgumentOutOfRangeException(nameof(value), "The DropDownStyle property does not support the Simple style.");
 
                 if (_dropDownStyle != value)
                 {

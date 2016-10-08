@@ -1492,7 +1492,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (_comboBox.DropDownStyle != value)
                 {
                     if (value == ComboBoxStyle.Simple)
-                        throw new ArgumentOutOfRangeException("KryptonComboBox does not support the DropDownStyle.Simple style.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "KryptonComboBox does not support the DropDownStyle.Simple style.");
 
                     _comboBox.DropDownStyle = value;
                     UpdateEditControl();

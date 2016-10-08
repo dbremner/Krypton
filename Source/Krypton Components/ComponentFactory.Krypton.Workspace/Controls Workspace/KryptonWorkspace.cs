@@ -513,7 +513,7 @@ namespace ComponentFactory.Krypton.Workspace
                 {
                     // Cannot assign a value of less than zero
                     if (value < 0)
-                        throw new ArgumentOutOfRangeException("SplitterWidth", "Value cannot be less than zero");
+                        throw new ArgumentOutOfRangeException(nameof(value), "SplitterWidth - Value cannot be less than zero");
 
                     // Use new width of the splitter area
                     _splitterWidth = value;

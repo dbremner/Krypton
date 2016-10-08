@@ -339,10 +339,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _minDate)
                 {
                     if (value > EffectiveMaxDate(_maxDate))
-                        throw new ArgumentOutOfRangeException("Date provided is greater than the maximum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is greater than the maximum supported date.");
 
                     if (value < DateTimePicker.MinimumDateTime)
-                        throw new ArgumentOutOfRangeException("Date provided is less than the minimum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is less than the minimum supported date.");
 
                     _minDate = value;
 
@@ -552,10 +552,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _maxDate)
                 {
                     if (value < EffectiveMinDate(_minDate))
-                        throw new ArgumentOutOfRangeException("Date provided is less than the minimum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is less than the minimum supported date.");
 
                     if (value > DateTimePicker.MaximumDateTime)
-                        throw new ArgumentOutOfRangeException("Date provided is greater than the maximum supported date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is greater than the maximum supported date.");
 
                     _maxDate = value;
 
@@ -589,7 +589,7 @@ namespace ComponentFactory.Krypton.Toolkit
             set 
             {
                 if (value < 1)
-                    throw new ArgumentOutOfRangeException("MaxSelectionCount cannot be less than zero.");
+                    throw new ArgumentOutOfRangeException(nameof(value), "MaxSelectionCount cannot be less than zero.");
 
                 if (value != _maxSelectionCount)
                 {
@@ -616,10 +616,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _selectionStart)
                 {
                     if (value > _maxDate)
-                        throw new ArgumentOutOfRangeException("Date provided is greater than the maximum date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is greater than the maximum date.");
 
                     if (value < _minDate)
-                        throw new ArgumentOutOfRangeException("Date provided is less than the minimum date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is less than the minimum date.");
 
                     DateTime endDate = _selectionEnd;
 
@@ -664,10 +664,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (value != _selectionEnd)
                 {
                     if (value > _maxDate)
-                        throw new ArgumentOutOfRangeException("Date provided is greater than the maximum date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is greater than the maximum date.");
 
                     if (value < _minDate)
-                        throw new ArgumentOutOfRangeException("Date provided is less than the minimum date.");
+                        throw new ArgumentOutOfRangeException(nameof(value), "Date provided is less than the minimum date.");
 
                     DateTime startDate = _selectionStart;
 
@@ -737,10 +737,10 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (!_dimensions.Equals(value))
                 {
                     if (value.Width < 1)
-                        throw new ArgumentOutOfRangeException("CalendarDimension Width must be greater than 0");
+                        throw new ArgumentOutOfRangeException(nameof(value), "CalendarDimension Width must be greater than 0");
 
                     if (value.Height < 1)
-                        throw new ArgumentOutOfRangeException("CalendarDimension Height must be greater than 0");
+                        throw new ArgumentOutOfRangeException(nameof(value), "CalendarDimension Height must be greater than 0");
 
 
                     _dimensions = value;
@@ -1394,16 +1394,16 @@ namespace ComponentFactory.Krypton.Toolkit
         public void SetSelectionRange(DateTime start, DateTime end)
         {
             if (start.Ticks > _maxDate.Ticks)
-                throw new ArgumentOutOfRangeException("Start date provided is greater than the maximum date.");
+                throw new ArgumentOutOfRangeException(nameof(start), "Start date provided is greater than the maximum date.");
 
             if (start.Ticks < _minDate.Ticks)
-                throw new ArgumentOutOfRangeException("Start date provided is less than the minimum date.");
+                throw new ArgumentOutOfRangeException(nameof(start), "Start date provided is less than the minimum date.");
 
             if (end.Ticks > _maxDate.Ticks)
-                throw new ArgumentOutOfRangeException("End date provided is greater than the maximum date.");
+                throw new ArgumentOutOfRangeException(nameof(end), "End date provided is greater than the maximum date.");
 
             if (end.Ticks < _minDate.Ticks)
-                throw new ArgumentOutOfRangeException("End date provided is less than the minimum date.");
+                throw new ArgumentOutOfRangeException(nameof(end), "End date provided is less than the minimum date.");
 
             if (start > end)
                 end = start;
