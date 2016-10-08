@@ -1,3 +1,16 @@
+#Code Analysis
+*.lastcodeanalysissucceeded
+*.CodeAnalysisLog.xml
+
+#binaries
+*.cache
+*.FileListAbsolute.txt
+*.Properties.Resources.resources
+/obj/
+.vs/
+*.pdb
+*.resources
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
