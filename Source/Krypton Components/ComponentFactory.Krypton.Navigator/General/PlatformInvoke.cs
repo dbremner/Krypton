@@ -34,7 +34,7 @@ namespace ComponentFactory.Krypton.Navigator
 
         #region Static User32
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern int ShowWindow(IntPtr hWnd, short cmdShow);
+        internal static extern int ShowWindow(IntPtr hWnd, int cmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr GetDC(IntPtr hWnd);

@@ -231,7 +231,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 PI.POINT screenPIPt = new PI.POINT();
                 screenPIPt.x = screenPt.X;
                 screenPIPt.y = screenPt.Y;
-                IntPtr hWnd = PI.WindowFromPoint(screenPIPt);
+                IntPtr hWnd = PI.WindowFromPoint(ref screenPIPt);
 
                 // Assuming we got back a valid window handle
                 if (hWnd != IntPtr.Zero)

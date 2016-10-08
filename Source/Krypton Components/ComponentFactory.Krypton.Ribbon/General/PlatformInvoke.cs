@@ -81,10 +81,10 @@ namespace ComponentFactory.Krypton.Ribbon
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern bool SetMenu(HandleRef hWnd, HandleRef hMenu);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern uint SetWindowLong(IntPtr hwnd, int nIndex, uint nLong);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -103,13 +103,13 @@ namespace ComponentFactory.Krypton.Ribbon
         internal static extern IntPtr GetActiveWindow();
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern int ShowWindow(IntPtr hWnd, short cmdShow);
+        internal static extern int ShowWindow(IntPtr hWnd, int cmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern bool MessageBeep(int type);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern uint SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, ref TITLEBARINFOEX lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, ref TITLEBARINFOEX lParam);
         #endregion
 
         #region Static Gdi32

@@ -649,7 +649,7 @@ namespace ComponentFactory.Krypton.Toolkit
             screenPIPt.y = screenPt.Y;
 
             // Get the window handle of the window under this screen point
-            IntPtr hWnd = PI.WindowFromPoint(screenPIPt);
+            IntPtr hWnd = PI.WindowFromPoint(ref screenPIPt);
 
             // Is the window handle that of the currently tracking popup
             if (_current.Handle == hWnd)

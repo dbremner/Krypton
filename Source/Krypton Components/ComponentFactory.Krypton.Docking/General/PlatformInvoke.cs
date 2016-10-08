@@ -48,8 +48,8 @@ namespace ComponentFactory.Krypton.Docking
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern bool TrackMouseEvent(ref TRACKMOUSEEVENTS tme);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern uint SendMessage(IntPtr hWnd, int Msg, uint wParam, uint lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern short GetKeyState(int keyCode);

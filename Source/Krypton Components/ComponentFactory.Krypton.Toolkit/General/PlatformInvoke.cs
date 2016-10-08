@@ -190,25 +190,25 @@ namespace ComponentFactory.Krypton.Toolkit
         internal static extern short VkKeyScan(char ch);
         
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern IntPtr WindowFromPoint(PI.POINT pt);
+        internal static extern IntPtr WindowFromPoint(ref PI.POINT pt);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern uint SetWindowLong(IntPtr hwnd, int nIndex, int nLong);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr GetActiveWindow();
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern int ShowWindow(IntPtr hWnd, short cmdShow);
+        internal static extern int ShowWindow(IntPtr hWnd, int cmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern ushort GetKeyState(int virtKey);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern uint SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern int SetWindowPos(IntPtr hWnd, IntPtr hWndAfter, int X, int Y, int Width, int Height, uint flags);
@@ -249,7 +249,7 @@ namespace ComponentFactory.Krypton.Toolkit
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern bool TranslateMessage([In] ref MSG lpMsg);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName,int nMaxCount);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -267,7 +267,7 @@ namespace ComponentFactory.Krypton.Toolkit
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr GetWindow(IntPtr hWnd, uint uCmd);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern uint RegisterWindowMessage(string lpString);
         #endregion
 
@@ -297,7 +297,8 @@ namespace ComponentFactory.Krypton.Toolkit
         internal static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
 
         [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
-        internal static extern IntPtr DeleteObject(IntPtr hObject);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool DeleteObject(IntPtr hObject);
 
         [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
         internal static extern bool DeleteDC(IntPtr hDC);
@@ -365,7 +366,7 @@ namespace ComponentFactory.Krypton.Toolkit
         [DllImport("uxtheme.dll", CharSet = CharSet.Auto)]
         internal static extern bool IsThemeActive();
 
-        [DllImport("uxtheme.dll", CharSet = CharSet.Auto)]
+        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
         internal static extern int SetWindowTheme(IntPtr hWnd, String subAppName, String subIdList);
 
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
@@ -374,10 +375,12 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #region Static Kernel32
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-        internal static extern short QueryPerformanceCounter(ref long var);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool QueryPerformanceCounter(ref long var);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-        internal static extern short QueryPerformanceFrequency(ref long var);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool QueryPerformanceFrequency(ref long var);
         #endregion
 
         #region Structures
