@@ -1263,7 +1263,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>Reference to new instance.</returns>
         public static object CreateInstance(Type itemType, IDesignerHost host)
         {
-            object retObj = null;
+            object retObj;
 
             // Cannot use the designer host to create component unless the type implements IComponent
             if (typeof(IComponent).IsAssignableFrom(itemType) && (host != null))

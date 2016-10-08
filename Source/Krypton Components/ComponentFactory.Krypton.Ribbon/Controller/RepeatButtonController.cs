@@ -263,8 +263,6 @@ namespace ComponentFactory.Krypton.Ribbon
                 newState = PaletteState.Disabled;
             else
             {
-                newState = PaletteState.Normal;
-
                 // If capturing input....
                 if (_captured)
                 {

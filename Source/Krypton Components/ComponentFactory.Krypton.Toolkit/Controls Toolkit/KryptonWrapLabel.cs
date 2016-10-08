@@ -482,9 +482,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void UpdateFont()
         {
-            Font font = null;
-            Color textColor = Color.Empty;
-            PaletteTextHint hint = PaletteTextHint.Inherit;
+            Font font;
+            Color textColor;
+            PaletteTextHint hint;
             PaletteState ps = PaletteState.Normal;
 
             // Get values from correct enabled/disabled state
@@ -582,9 +582,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="e">An EventArgs containing the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            Font font = null;
-            Color textColor = Color.Empty;
-            PaletteTextHint hint = PaletteTextHint.Inherit;
+            Font font;
+            Color textColor;
+            PaletteTextHint hint;
             PaletteState ps = PaletteState.Normal;
 
             // Get values from correct enabled/disabled state

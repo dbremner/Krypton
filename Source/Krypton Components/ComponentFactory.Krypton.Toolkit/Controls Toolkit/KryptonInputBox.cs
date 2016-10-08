@@ -166,7 +166,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                            string caption,
                                            string defaultResponse)
         {
-            IWin32Window showOwner = null;
+            IWin32Window showOwner;
 
             // If do not have an owner passed in then get the active window and use that instead
             if (owner == null)

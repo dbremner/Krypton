@@ -614,7 +614,7 @@ namespace ComponentFactory.Krypton.Ribbon
                     if (AutoCheck)
                     {
                         // Find current state
-                        CheckState checkState = CheckState.Unchecked;
+                        CheckState checkState;
                         if (KryptonCommand != null)
                             checkState = KryptonCommand.CheckState;
                         else

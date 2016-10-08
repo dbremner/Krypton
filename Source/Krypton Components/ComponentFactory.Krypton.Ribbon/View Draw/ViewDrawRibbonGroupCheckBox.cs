@@ -433,7 +433,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private void UpdateCheckState()
         {
-            CheckState newCheckState = CheckState.Unchecked;
+            CheckState newCheckState;
             if (_ribbonCheckBox.KryptonCommand != null)
                 newCheckState = _ribbonCheckBox.KryptonCommand.CheckState;
             else

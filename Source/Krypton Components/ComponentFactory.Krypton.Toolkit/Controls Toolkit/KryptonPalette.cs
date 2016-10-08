@@ -1652,7 +1652,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>Appropriate image for drawing; otherwise null.</returns>
         public Image GetTreeViewImage(bool expanded)
         {
-            Image retImage = null;
+            Image retImage;
 
             if (expanded)
                 retImage = _images.TreeView.Minus;
@@ -1734,7 +1734,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>Appropriate image for drawing; otherwise null.</returns>
         public Image GetRadioButtonImage(bool enabled, bool checkState, bool tracking, bool pressed)
         {
-            Image retImage = null;
+            Image retImage;
 
             // Get the state specific image
             if (!checkState)
@@ -2625,7 +2625,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public string Import(string filename, 
                              bool silent)
         {
-            string ret = string.Empty;
+            string ret;
 
             try
             {
@@ -2825,7 +2825,7 @@ namespace ComponentFactory.Krypton.Toolkit
                              bool ignoreDefaults,
                              bool silent)
         {
-            string ret = string.Empty;
+            string ret;
 
             try
             {
@@ -2945,7 +2945,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public byte[] Export(bool ignoreDefaults,
                              bool silent)
         {
-            byte[] ret = null;
+            byte[] ret;
 
             try
             {

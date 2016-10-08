@@ -148,7 +148,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             using (Graphics g = Graphics.FromHdc(hdc))
                             {
                                 // Grab the client area of the control
-                                PI.RECT rect = new PI.RECT();
+                                PI.RECT rect;
                                 PI.GetClientRect(Handle, out rect);
 
                                 // Drawn entire client area in the background color
@@ -453,7 +453,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             using (Graphics g = Graphics.FromHdc(hdc))
                             {
                                 // Grab the client area of the control
-                                PI.RECT rect = new PI.RECT();
+                                PI.RECT rect;
                                 PI.GetClientRect(Handle, out rect);
 
                                 // Drawn entire client area in the background color
@@ -701,7 +701,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             hdc = m.WParam;
 
                         // Grab the client area of the control
-                        PI.RECT rect = new PI.RECT();
+                        PI.RECT rect;
                         PI.GetClientRect(Handle, out rect);
                         Rectangle clientRect = new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
 

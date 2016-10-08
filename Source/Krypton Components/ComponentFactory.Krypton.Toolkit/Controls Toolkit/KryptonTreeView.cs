@@ -2191,7 +2191,6 @@ namespace ComponentFactory.Krypton.Toolkit
                         // Easier to draw using a graphics instance than a DC!
                         using (Graphics g = Graphics.FromHdc(_screenDC))
                         {
-                            Size prefSize = Size.Empty;
                             using (ViewLayoutContext context = new ViewLayoutContext(this, Renderer))
                             {
                                 context.DisplayRectangle = e.Bounds;
@@ -2199,7 +2198,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                 context.DisplayRectangle = bounds;
 
                                 // If no using full row selection, then layout using only required width
-                                prefSize = _layoutDocker.GetPreferredSize(context);
+                                Size prefSize = _layoutDocker.GetPreferredSize(context);
                                 if (!FullRowSelect)
                                 {
                                     if (prefSize.Width < bounds.Width)

@@ -574,7 +574,7 @@ namespace ComponentFactory.Krypton.Ribbon
                         (item is ViewDrawRibbonGroupClusterColorButton))
                     {
                         // By default each button shows only the top and bottom
-                        PaletteDrawBorders maxBorders = PaletteDrawBorders.TopBottom;
+                        PaletteDrawBorders maxBorders;
 
                         switch (_lastShape)
                         {

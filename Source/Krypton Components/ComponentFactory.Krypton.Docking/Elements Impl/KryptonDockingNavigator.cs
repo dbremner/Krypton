@@ -747,7 +747,7 @@ namespace ComponentFactory.Krypton.Docking
                     bool boolStore = CommonHelper.StringToBool(CommonHelper.XmlAttributeToText(xmlReader, "S"));
                     bool boolVisible = CommonHelper.StringToBool(CommonHelper.XmlAttributeToText(xmlReader, "V", "True"));
 
-                    KryptonPage page = null;
+                    KryptonPage page;
 
                     // If the entry is for just a placeholder...
                     if (boolStore)

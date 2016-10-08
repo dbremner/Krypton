@@ -532,7 +532,6 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_offset.Y < _limit.Y) _offset.Y = _limit.Y;
 
             // Calculate the offset given the current alignment and counter alignment
-            Point childOffset;
             int childOffsetX;
             int childOffsetY;
 
@@ -548,7 +547,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 childOffsetY = CalculateAlignedOffset(AlignmentRTL, positionRectangle.Y, positionRectangle.Height, _offset.Y, _extent.Height, _limit.Y);
             }
 
-            childOffset = new Point(childOffsetX, childOffsetY);
+            var childOffset = new Point(childOffsetX, childOffsetY);
 
             // Ask each child to layout in turn
             foreach (ViewBase child in this)

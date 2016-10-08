@@ -227,7 +227,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <returns>ViewBase of item; otherwise false.</returns>
         public ViewBase GetFirstFocusItem()
         {
-            ViewBase view = null;
+            ViewBase view;
 
             if (Collapsed)
                 view = _layoutCollapsedMain;
@@ -245,7 +245,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <returns>ViewBase of item; otherwise false.</returns>
         public ViewBase GetLastFocusItem()
         {
-            ViewBase view = null;
+            ViewBase view;
 
             if (Collapsed)
                 view = _layoutCollapsedMain;

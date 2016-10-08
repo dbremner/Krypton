@@ -60,7 +60,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="context">Layout context.</param>
         public override Size GetPreferredSize(ViewLayoutContext context)
         {
-            Padding paddingText = Padding.Empty;
+            Padding paddingText;
 
             // Grab the padding used for the text/extra content of a menu item
             if (_standardStyle)

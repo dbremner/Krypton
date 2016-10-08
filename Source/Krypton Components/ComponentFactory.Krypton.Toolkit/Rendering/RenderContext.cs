@@ -104,7 +104,7 @@ namespace ComponentFactory.Krypton.Toolkit
 					local.Inflate(2, 2);
                     return local;
 				case PaletteRectangleAlign.Control:
-                    Rectangle clientRect = Rectangle.Empty;
+                    Rectangle clientRect;
                     if (AlignControl == Control)
                          clientRect = Control.ClientRectangle;
                     else

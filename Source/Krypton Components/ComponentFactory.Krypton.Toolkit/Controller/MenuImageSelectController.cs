@@ -502,8 +502,6 @@ namespace ComponentFactory.Krypton.Toolkit
                 newState = PaletteState.Disabled;
             else
             {
-                newState = PaletteState.Normal;
-
                 // If capturing input....
                 if (_captured)
                 {

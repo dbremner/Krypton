@@ -1174,7 +1174,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                     using (RenderContext renderContext = new RenderContext(kDGV, graphics, cellBounds, kDGV.Renderer))
                     {
-                        Size checkBoxSize = Size.Empty;
+                        Size checkBoxSize;
 
                         // Find out the requested size of the check box drawing
                         using (ViewLayoutContext viewContent = new ViewLayoutContext(kDGV, kDGV.Renderer))

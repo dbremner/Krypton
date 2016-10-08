@@ -331,7 +331,7 @@ namespace ComponentFactory.Krypton.Navigator
             if (Count > 0)
             {
                 // Default to no space between each child item
-                int gap = 0;
+                int gap;
 
                 // If we have a metric provider then get the child gap to use
                 if (_paletteMetric != null)
@@ -825,7 +825,7 @@ namespace ComponentFactory.Krypton.Navigator
             if (Count > 0)
             {
                 // Default to no space between each child item
-                int gap = 0;
+                int gap;
 
                 // If we have a metric provider then get the child gap to use
                 if (_paletteMetric != null)

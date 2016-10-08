@@ -527,7 +527,7 @@ namespace ComponentFactory.Krypton.Ribbon
                 else
                     _nearScroller.Visible = false;
 
-                int maxOffset = 0;
+                int maxOffset;
 
                 // Work out the maximum scroll offset needed to show all of the filler
                 if (Orientation == Orientation.Horizontal)

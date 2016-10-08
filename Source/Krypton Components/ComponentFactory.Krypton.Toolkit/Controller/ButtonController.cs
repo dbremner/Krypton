@@ -770,8 +770,6 @@ namespace ComponentFactory.Krypton.Toolkit
                 newState = PaletteState.Disabled;
             else
             {
-                newState = PaletteState.Normal;
-
                 if (_fixedPressed)
                     newState = PaletteState.Pressed;
                 else

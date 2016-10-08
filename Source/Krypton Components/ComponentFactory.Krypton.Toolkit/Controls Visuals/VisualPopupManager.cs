@@ -230,7 +230,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Are we tracking a popup?
             if (_current != null)
             {
-                bool found = false;
+                bool found;
 
                 do
                 {

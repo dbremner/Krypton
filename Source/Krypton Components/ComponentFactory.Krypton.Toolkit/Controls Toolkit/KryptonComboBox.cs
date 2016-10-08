@@ -291,7 +291,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             }
 
                             // Grab the client area of the control
-                            PI.RECT rect = new PI.RECT();
+                            PI.RECT rect;
                             PI.GetClientRect(Handle, out rect);
 
                             // Get the constant used to crack open the display
@@ -334,7 +334,7 @@ namespace ComponentFactory.Krypton.Toolkit
                             using (Graphics g = Graphics.FromHdc(hdc))
                             {
                                 // Grab the client area of the control
-                                PI.RECT rect = new PI.RECT();
+                                PI.RECT rect;
                                 PI.GetClientRect(Handle, out rect);
 
                                 // Drawn entire client area in the background color

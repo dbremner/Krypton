@@ -3057,11 +3057,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
                     // Draw a marker for each value between min and max
                     float factor = (range == 0) ? float.MinValue : (float)drawRect.Width / range;
-                    float top = drawRect.Y + 1;
-                    float bottom = drawRect.Bottom - 2;
                     for (int i = minimum, y = 0; i <= maximum; i += frequency, y += frequency)
                     {
                         float offset = drawRect.X + (factor * y);
+                        float top;
+                        float bottom;
                         if (!topRight)
                         {
                             top = drawRect.Y + 2;
@@ -3089,11 +3089,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
                     // Draw a marker for each value between min and max
                     float factor = (range == 0) ? float.MinValue : (float)drawRect.Height / range;
-                    float left = drawRect.X + 1;
-                    float right = drawRect.Right - 2;
                     for (int i = minimum, y = 0; i <= maximum; i += frequency, y += frequency)
                     {
                         float offset = drawRect.Y + (factor * y);
+                        float right;
+                        float left;
                         if (topRight)
                         {
                             left = drawRect.X + 2;
@@ -6948,9 +6948,6 @@ namespace ComponentFactory.Krypton.Toolkit
             GraphicsPath outsidePath = new GraphicsPath();
             GraphicsPath topPath = new GraphicsPath();
             GraphicsPath ellipsePath = new GraphicsPath();
-            RectangleF half1RectF, vertRectF, horzRectF;
-            int full, half1, half2;
-            Rectangle fullRect;
 
             // Create path for a curved border around the tab
             outsidePath.AddLine(rect.Left + 1, rect.Bottom - 2, rect.Left + 1, rect.Top + 1.5f);
@@ -6965,13 +6962,13 @@ namespace ComponentFactory.Krypton.Toolkit
             topPath.AddLine(rect.Right - 5, rect.Top + 1, rect.Right - 4, rect.Top + 2);
 
             // Create the top and bottom half rectangles
-            full = rect.Height - 3;
-            half1 = full / 2;
-            half2 = full - half1;
+            int full = rect.Height - 3;
+            int half1 = full / 2;
+            int half2 = full - half1;
             cache.half1Rect = new Rectangle(rect.Left + 3, rect.Top + 2, rect.Width - 6, half1);
             cache.half2Rect = new Rectangle(rect.Left + 3, rect.Top + 2 + half1, rect.Width - 6, half2);
-            fullRect = new Rectangle(rect.Left + 3, rect.Top + 2, rect.Width - 6, half1 + half2);
-            half1RectF = new RectangleF(cache.half1Rect.Left - 1, cache.half1Rect.Top - 0.5f, cache.half1Rect.Width + 2, cache.half1Rect.Height + 1);
+            var fullRect = new Rectangle(rect.Left + 3, rect.Top + 2, rect.Width - 6, half1 + half2);
+            var half1RectF = new RectangleF(cache.half1Rect.Left - 1, cache.half1Rect.Top - 0.5f, cache.half1Rect.Width + 2, cache.half1Rect.Height + 1);
             cache.half2RectF = new RectangleF(cache.half2Rect.Left - 1, cache.half2Rect.Top - 0.5f, cache.half2Rect.Width + 2, cache.half2Rect.Height + 1);
 
             cache.half1LeftBrush = new LinearGradientBrush(half1RectF, Color.FromArgb(85, c2), Color.Transparent, 0f);
@@ -6995,8 +6992,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 cache.ellipseBrush.SurroundColors = new Color[] { Color.Transparent };
             }
 
-            vertRectF = new RectangleF(rect.Left - 1, rect.Top + 2, rect.Width + 2, rect.Height - 2);
-            horzRectF = new RectangleF(rect.Left + 1, rect.Top, rect.Width - 2, rect.Height);
+            var vertRectF = new RectangleF(rect.Left - 1, rect.Top + 2, rect.Width + 2, rect.Height - 2);
+            var horzRectF = new RectangleF(rect.Left + 1, rect.Top, rect.Width - 2, rect.Height);
             cache.outsideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten128, 90f);
             cache.outsideBrush.Blend = _ribbonOutBlend;
             cache.insideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten200, 90f);
@@ -7034,9 +7031,6 @@ namespace ComponentFactory.Krypton.Toolkit
             GraphicsPath outsidePath = new GraphicsPath();
             GraphicsPath topPath = new GraphicsPath();
             GraphicsPath ellipsePath = new GraphicsPath();
-            RectangleF half1RectF, vertRectF, horzRectF;
-            int full, half1, half2;
-            Rectangle fullRect;
 
             // Create path for a curved border around the tab
             outsidePath.AddLine(rect.Right - 2, rect.Bottom - 2, rect.Left + 1.5f, rect.Bottom - 2);
@@ -7051,13 +7045,13 @@ namespace ComponentFactory.Krypton.Toolkit
             topPath.AddLine(rect.Left + 1, rect.Top + 4, rect.Left + 2, rect.Top + 3);
 
             // Create the top and bottom half rectangles
-            full = rect.Width - 3;
-            half1 = full / 2;
-            half2 = full - half1;
+            int full = rect.Width - 3;
+            int half1 = full / 2;
+            int half2 = full - half1;
             cache.half1Rect = new Rectangle(rect.Left + 2, rect.Top + 3, half1, rect.Height - 6);
             cache.half2Rect = new Rectangle(rect.Left + 2 + half1, rect.Top + 3, half2, rect.Height - 6);
-            fullRect = new Rectangle(rect.Left + 2, rect.Top + 3, half1 + half2, rect.Height - 6);
-            half1RectF = new RectangleF(cache.half1Rect.Left - 0.5f, cache.half1Rect.Top - 1f, cache.half1Rect.Width + 1, cache.half1Rect.Height + 2);
+            var fullRect = new Rectangle(rect.Left + 2, rect.Top + 3, half1 + half2, rect.Height - 6);
+            var half1RectF = new RectangleF(cache.half1Rect.Left - 0.5f, cache.half1Rect.Top - 1f, cache.half1Rect.Width + 1, cache.half1Rect.Height + 2);
             cache.half2RectF = new RectangleF(cache.half2Rect.Left - 0.5f, cache.half2Rect.Top - 1f, cache.half2Rect.Width + 1, cache.half2Rect.Height + 2);
 
             cache.half1LeftBrush = new LinearGradientBrush(half1RectF, Color.FromArgb(85, c2), Color.Transparent, 90f);
@@ -7081,8 +7075,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 cache.ellipseBrush.SurroundColors = new Color[] { Color.Transparent };
             }
 
-            vertRectF = new RectangleF(rect.Left + 2, rect.Top - 1, rect.Width - 2, rect.Height + 2);
-            horzRectF = new RectangleF(rect.Left, rect.Top + 1, rect.Width, rect.Height - 2);
+            var vertRectF = new RectangleF(rect.Left + 2, rect.Top - 1, rect.Width - 2, rect.Height + 2);
+            var horzRectF = new RectangleF(rect.Left, rect.Top + 1, rect.Width, rect.Height - 2);
             cache.outsideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten128, 180f);
             cache.outsideBrush.Blend = _ribbonOutBlend;
             cache.insideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten200, 180f);
@@ -7120,9 +7114,6 @@ namespace ComponentFactory.Krypton.Toolkit
             GraphicsPath outsidePath = new GraphicsPath();
             GraphicsPath topPath = new GraphicsPath();
             GraphicsPath ellipsePath = new GraphicsPath();
-            RectangleF half1RectF, vertRectF, horzRectF;
-            int full, half1, half2;
-            Rectangle fullRect;
 
             // Create path for a curved border around the tab
             outsidePath.AddLine(rect.Left + 1, rect.Bottom - 2, rect.Right - 2.5f, rect.Bottom - 2);
@@ -7137,13 +7128,13 @@ namespace ComponentFactory.Krypton.Toolkit
             topPath.AddLine(rect.Right - 2, rect.Top + 4, rect.Right - 3, rect.Top + 3);
 
             // Create the top and bottom half rectangles
-            full = rect.Width - 3;
-            half1 = full / 2;
-            half2 = full - half1;
+            int full = rect.Width - 3;
+            int half1 = full / 2;
+            int half2 = full - half1;
             cache.half1Rect = new Rectangle(rect.Right - 2 - half1, rect.Top + 3, half1, rect.Height - 6);
             cache.half2Rect = new Rectangle(rect.Right - 2 - half1 - half2, rect.Top + 3, half2, rect.Height - 6);
-            fullRect = new Rectangle(rect.Right - 2 - half1 - half2, rect.Top + 3, half1 + half2, rect.Height - 6);
-            half1RectF = new RectangleF(cache.half1Rect.Left - 0.5f, cache.half1Rect.Top - 1f, cache.half1Rect.Width + 1, cache.half1Rect.Height + 2);
+            var fullRect = new Rectangle(rect.Right - 2 - half1 - half2, rect.Top + 3, half1 + half2, rect.Height - 6);
+            var half1RectF = new RectangleF(cache.half1Rect.Left - 0.5f, cache.half1Rect.Top - 1f, cache.half1Rect.Width + 1, cache.half1Rect.Height + 2);
             cache.half2RectF = new RectangleF(cache.half2Rect.Left - 0.5f, cache.half2Rect.Top - 1f, cache.half2Rect.Width + 1, cache.half2Rect.Height + 2);
 
             cache.half1LeftBrush = new LinearGradientBrush(half1RectF, Color.FromArgb(85, c2), Color.Transparent, 270f);
@@ -7167,8 +7158,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 cache.ellipseBrush.SurroundColors = new Color[] { Color.Transparent };
             }
 
-            vertRectF = new RectangleF(rect.Left, rect.Top - 1, rect.Width - 2, rect.Height + 2);
-            horzRectF = new RectangleF(rect.Left, rect.Top + 1, rect.Width, rect.Height - 2);
+            var vertRectF = new RectangleF(rect.Left, rect.Top - 1, rect.Width - 2, rect.Height + 2);
+            var horzRectF = new RectangleF(rect.Left, rect.Top + 1, rect.Width, rect.Height - 2);
             cache.outsideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten128, 0f);
             cache.outsideBrush.Blend = _ribbonOutBlend;
             cache.insideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten200, 0f);
@@ -7206,9 +7197,6 @@ namespace ComponentFactory.Krypton.Toolkit
             GraphicsPath outsidePath = new GraphicsPath();
             GraphicsPath topPath = new GraphicsPath();
             GraphicsPath ellipsePath = new GraphicsPath();
-            RectangleF half1RectF, vertRectF, horzRectF;
-            int full, half1, half2;
-            Rectangle fullRect;
 
             // Create path for a curved border around the tab
             outsidePath.AddLine(rect.Left + 1, rect.Top + 1, rect.Left + 1, rect.Bottom - 2.5f);
@@ -7223,13 +7211,13 @@ namespace ComponentFactory.Krypton.Toolkit
             topPath.AddLine(rect.Right - 5, rect.Bottom - 2, rect.Right - 4, rect.Bottom - 3);
 
             // Create the top and bottom half rectangles
-            full = rect.Height - 3;
-            half1 = full / 2;
-            half2 = full - half1;
+            int full = rect.Height - 3;
+            int half1 = full / 2;
+            int half2 = full - half1;
             cache.half1Rect = new Rectangle(rect.Left + 3, rect.Bottom - 2 - half1, rect.Width - 6, half1);
             cache.half2Rect = new Rectangle(rect.Left + 3, rect.Bottom - 2 - half1 - half2, rect.Width - 6, half2);
-            fullRect = new Rectangle(rect.Left + 3, rect.Bottom - 2 - half1 - half2, rect.Width - 6, half1 + half2);
-            half1RectF = new RectangleF(cache.half1Rect.Left - 1, cache.half1Rect.Top - 0.5f, cache.half1Rect.Width + 2, cache.half1Rect.Height + 1);
+            var fullRect = new Rectangle(rect.Left + 3, rect.Bottom - 2 - half1 - half2, rect.Width - 6, half1 + half2);
+            var half1RectF = new RectangleF(cache.half1Rect.Left - 1, cache.half1Rect.Top - 0.5f, cache.half1Rect.Width + 2, cache.half1Rect.Height + 1);
             cache.half2RectF = new RectangleF(cache.half2Rect.Left - 1, cache.half2Rect.Top - 0.5f, cache.half2Rect.Width + 2, cache.half2Rect.Height + 1);
 
             cache.half1LeftBrush = new LinearGradientBrush(half1RectF, Color.FromArgb(85, c2), Color.Transparent, 180f);
@@ -7253,8 +7241,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 cache.ellipseBrush.SurroundColors = new Color[] { Color.Transparent };
             }
 
-            vertRectF = new RectangleF(rect.Left - 1, rect.Top, rect.Width + 2, rect.Height - 2);
-            horzRectF = new RectangleF(rect.Left + 1, rect.Top, rect.Width - 2, rect.Height);
+            var vertRectF = new RectangleF(rect.Left - 1, rect.Top, rect.Width + 2, rect.Height - 2);
+            var horzRectF = new RectangleF(rect.Left + 1, rect.Top, rect.Width - 2, rect.Height);
             cache.outsideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten128, 270f);
             cache.outsideBrush.Blend = _ribbonOutBlend;
             cache.insideBrush = new LinearGradientBrush(vertRectF, Color.Transparent, _whiten200, 270f);

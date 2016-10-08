@@ -519,7 +519,7 @@ namespace ComponentFactory.Krypton.Docking
             string boolStore = xmlReader.GetAttribute("S");
             string boolVisible = xmlReader.GetAttribute("V");
 
-            KryptonPage page = null;
+            KryptonPage page;
 
             // If the entry is for just a placeholder...
             if (CommonHelper.StringToBool(boolStore))

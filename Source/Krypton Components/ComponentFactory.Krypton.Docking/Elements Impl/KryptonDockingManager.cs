@@ -1970,7 +1970,7 @@ namespace ComponentFactory.Krypton.Docking
                         // Convert the pages to placeholders so they can be returned to the same location
                         PropogateAction(DockingPropogateAction.StorePages, switchUniqueNames.ToArray());
 
-                        KryptonWorkspaceCell cell = null;
+                        KryptonWorkspaceCell cell;
                         foreach (string switchUniqueName in switchUniqueNames)
                         {
                             // Is there a floating window with a restore page for this unique name?
@@ -2379,7 +2379,7 @@ namespace ComponentFactory.Krypton.Docking
             if (edgeDocked == null)
                 throw new ArgumentException("KryptonDockingControl edge does not have a docked element.");
 
-            KryptonDockingDockspace dockspace = null;
+            KryptonDockingDockspace dockspace;
             using (DockingMultiUpdate update = new DockingMultiUpdate(this))
             {
                 // Create a new dockspace and add the provided array of pages
@@ -2460,7 +2460,7 @@ namespace ComponentFactory.Krypton.Docking
             if (edgeAutoHidden == null)
                 throw new ArgumentException("KryptonDockingControl edge does not have an auto hidden element.");
 
-            KryptonDockingAutoHiddenGroup autoHiddenGroup = null;
+            KryptonDockingAutoHiddenGroup autoHiddenGroup;
             using (DockingMultiUpdate update = new DockingMultiUpdate(this))
             {
                 // Create a new auto hidden group and add the provided array of pages
@@ -2678,7 +2678,7 @@ namespace ComponentFactory.Krypton.Docking
             if (edgeDocked == null)
                 throw new ArgumentException("KryptonDockingControl edge does not have a docked element.");
 
-            KryptonDockingDockspace dockspace = null;
+            KryptonDockingDockspace dockspace;
             using (DockingMultiUpdate update = new DockingMultiUpdate(this))
             {
                 // Create a new dockspace and insert the provided array of pages
@@ -2761,7 +2761,7 @@ namespace ComponentFactory.Krypton.Docking
             if (edgeAutoHidden == null)
                 throw new ArgumentException("KryptonDockingControl edge does not have an auto hidden element.");
 
-            KryptonDockingAutoHiddenGroup autoHiddenGroup = null;
+            KryptonDockingAutoHiddenGroup autoHiddenGroup;
             using (DockingMultiUpdate update = new DockingMultiUpdate(this))
             {
                 // Create a new auto hidden group and add the provided array of pages

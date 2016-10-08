@@ -111,7 +111,7 @@ namespace ComponentFactory.Krypton.Ribbon
         {
             get 
             {
-                Image newImage = null;
+                Image newImage;
                 if (_ribbonColorButton.KryptonCommand != null)
                     newImage = _ribbonColorButton.KryptonCommand.ImageSmall;
                 else

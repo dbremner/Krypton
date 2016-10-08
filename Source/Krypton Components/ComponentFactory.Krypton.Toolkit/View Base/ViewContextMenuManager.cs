@@ -201,7 +201,7 @@ namespace ComponentFactory.Krypton.Toolkit
             TargetList targets = ConstructKeyboardTargets(Root);
 
             // Find the next appropriate target
-            IContextMenuTarget newTarget = null;
+            IContextMenuTarget newTarget;
             if (_target == null)
                 newTarget = FindBottomLeftTarget(targets);
             else
@@ -220,7 +220,7 @@ namespace ComponentFactory.Krypton.Toolkit
             TargetList targets = ConstructKeyboardTargets(Root);
 
             // Find the next appropriate target
-            IContextMenuTarget newTarget = null;
+            IContextMenuTarget newTarget;
             if (_target == null)
                 newTarget = FindTopLeftTarget(targets);
             else
@@ -242,7 +242,7 @@ namespace ComponentFactory.Krypton.Toolkit
             TargetList targets = ConstructKeyboardTargets(Root);
 
             // Find the next appropriate target
-            IContextMenuTarget newTarget = null;
+            IContextMenuTarget newTarget;
             if (_target == null)
                 newTarget = FindTopRightTarget(targets);
             else
@@ -263,7 +263,7 @@ namespace ComponentFactory.Krypton.Toolkit
             TargetList targets = ConstructKeyboardTargets(Root);
 
             // Find the next appropriate target
-            IContextMenuTarget newTarget = null;
+            IContextMenuTarget newTarget;
             if (_target == null)
                 newTarget = FindTopLeftTarget(targets);
             else

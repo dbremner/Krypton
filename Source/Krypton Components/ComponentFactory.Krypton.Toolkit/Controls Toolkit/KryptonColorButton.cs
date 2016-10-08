@@ -568,7 +568,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             set
             {
-                VisualOrientation converted = value;
+                VisualOrientation converted;
                 switch (value)
                 {
                     default:
