@@ -12,6 +12,7 @@ using System;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -247,7 +248,7 @@ namespace ComponentFactory.Krypton.Toolkit
         internal static extern int MapWindowPoints(IntPtr hWndFrom, IntPtr hWndTo, [In, Out]PI.POINTC pt, int cPoints);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern bool TranslateMessage([In] ref MSG lpMsg);
+        internal static extern bool TranslateMessage([In] ref Message lpMsg);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName,int nMaxCount);
@@ -465,17 +466,6 @@ namespace ComponentFactory.Krypton.Toolkit
             public ushort Data7;
             public ushort Data8;
         }
-
-        [StructLayout(LayoutKind.Sequential)]
-        internal struct MSG
-        {
-             public IntPtr hwnd;
-             public int message;
-             public IntPtr wParam;
-             public IntPtr lParam;
-             public uint time;
-             public POINT pt;
-         }
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct DTTOPTS

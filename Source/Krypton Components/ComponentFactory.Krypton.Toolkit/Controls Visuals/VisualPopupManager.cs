@@ -429,11 +429,11 @@ namespace ComponentFactory.Krypton.Toolkit
                             // KeyPress events occur for the current popup.
                             if (!_current.ContainsFocus)
                             {
-                                PI.MSG msg = new PI.MSG();
-                                msg.hwnd = m.HWnd;
-                                msg.message = m.Msg;
-                                msg.lParam = m.LParam;
-                                msg.wParam = m.WParam;
+                                var msg = new System.Windows.Forms.Message();
+                                msg.HWnd = m.HWnd;
+                                msg.Msg = m.Msg;
+                                msg.LParam = m.LParam;
+                                msg.WParam = m.WParam;
                                 PI.TranslateMessage(ref msg);
                             }
                             return ProcessKeyboard(ref m);
